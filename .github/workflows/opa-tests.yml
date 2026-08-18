@@ -1,4 +1,4 @@
-name: OPA Policy Tests
+name: Governance Tests
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  opa-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,3 +20,21 @@ jobs:
             -v "$PWD:/workspace" \
             openpolicyagent/opa:1.19.0 \
             test /workspace/policies -v
+
+  schema-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Run governance schema tests
+        run: pytest -v
