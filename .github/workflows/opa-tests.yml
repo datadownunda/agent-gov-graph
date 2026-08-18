@@ -1,0 +1,22 @@
+name: OPA Policy Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run OPA tests
+        run: |
+          docker run --rm \
+            -v "$PWD:/workspace" \
+            openpolicyagent/opa:1.19.0 \
+            test /workspace/policies -v
