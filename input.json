@@ -1,0 +1,13 @@
+{
+  "user": {
+    "id": "E1042",
+    "name": "Jane Investigator",
+    "roles": ["hr_investigator"]
+  },
+  "action": "read",
+  "resource": {
+    "type": "employee_complaint",
+    "classification": "restricted",
+    "contains_pii": true
+  }
+}
