@@ -15,6 +15,15 @@
     "name": "employee_complaint_access",
     "version": "1.0"
   },
+  "context": {
+  "workflow_id": "workflow-123",
+  "agent_id": "agent-research-01",
+  "tool": "document_search"
+},
+  "telemetry": {
+  "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+  "span_id": "00f067aa0ba902b7"
+},
   "decision": {
     "allowed": false,
     "status": "DENY",

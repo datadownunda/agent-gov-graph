@@ -1,0 +1,43 @@
+[
+  {
+    "scenario_id": "complaint-001",
+    "description": "HR Investigator reads a restricted employee complaint",
+    "input": {
+      "user": {
+        "id": "E1042",
+        "roles": ["hr_investigator"]
+      },
+      "action": "read",
+      "resource": {
+        "id": "complaint-456",
+        "type": "employee_complaint",
+        "classification": "restricted"
+      }
+    },
+    "expected": {
+     "decision": "ALLOW",
+     "policy": "employee_complaint_access"
+    }
+  },
+  {
+    "scenario_id": "complaint-002",
+    "description": "Manager attempts to read a restricted employee complaint",
+    "input": {
+      "user": {
+        "id": "E2001",
+        "roles": ["manager"]
+      },
+      "action": "read",
+      "resource": {
+        "id": "complaint-789",
+        "type": "employee_complaint",
+        "classification": "restricted"
+      }
+    },
+    "expected": {
+     "decision": "DENY",
+     "policy": "employee_complaint_access",
+     "reason_contains": "Restricted employee complaint data requires HR Investigator role"
+    }   
+  }
+]

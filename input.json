@@ -6,6 +6,7 @@
   },
   "action": "read",
   "resource": {
+    "id": "complaint-456",
     "type": "employee_complaint",
     "classification": "restricted",
     "contains_pii": true
