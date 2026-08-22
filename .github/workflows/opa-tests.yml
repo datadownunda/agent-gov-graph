@@ -21,7 +21,7 @@ jobs:
             openpolicyagent/opa:1.19.0 \
             test /workspace/policies -v
 
-  schema-tests:
+  governance-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,5 +36,5 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Run governance schema tests
+      - name: Run governance tests
         run: pytest -v
