@@ -1,0 +1,110 @@
+{
+  "run_id": "run-complaint-multiagent-001",
+  "workflow": "employee_complaint_review",
+  "goal": "Review complaint-456 using an authorized policy specialist agent and produce an authorized summary",
+  "steps": [
+    {
+      "step_id": "step-001",
+      "sequence": 1,
+      "actor": {
+        "type": "agent",
+        "id": "complaint-review-agent"
+      },
+      "event_type": "resource_access",
+      "action": "read",
+      "resource": {
+        "id": "complaint-456",
+        "type": "employee_complaint"
+      },
+      "observed_outcome": "ALLOW"
+    },
+    {
+      "step_id": "step-002",
+      "sequence": 2,
+      "parent_step_id": "step-001",
+      "actor": {
+        "type": "agent",
+        "id": "complaint-review-agent"
+      },
+      "event_type": "agent_delegation",
+      "action": "delegate_policy_research",
+      "target_actor": {
+        "type": "agent",
+        "id": "policy-review-agent"
+      },
+      "observed_outcome": "SUCCESS"
+    },
+    {
+      "step_id": "step-003",
+      "sequence": 3,
+      "parent_step_id": "step-002",
+      "actor": {
+        "type": "agent",
+        "id": "policy-review-agent"
+      },
+      "event_type": "tool_call",
+      "tool": "hr_policy_search",
+      "observed_outcome": "SUCCESS"
+    },
+    {
+      "step_id": "step-004",
+      "sequence": 4,
+      "parent_step_id": "step-001",
+      "actor": {
+        "type": "agent",
+        "id": "complaint-review-agent"
+      },
+      "event_type": "resource_access",
+      "action": "read",
+      "resource": {
+        "id": "complaint-789",
+        "type": "employee_complaint"
+      },
+      "observed_outcome": "DENY"
+    },
+    {
+      "step_id": "step-005",
+      "sequence": 5,
+      "parent_step_id": "step-004",
+      "actor": {
+        "type": "agent",
+        "id": "complaint-review-agent"
+      },
+      "event_type": "recovery",
+      "action": "continue_with_authorized_resource",
+      "observed_outcome": "SUCCESS"
+    },
+    {
+      "step_id": "step-006",
+      "sequence": 6,
+      "parent_step_id": "step-003",
+      "actor": {
+        "type": "agent",
+        "id": "policy-review-agent"
+      },
+      "event_type": "agent_message",
+      "action": "return_policy_findings",
+      "target_actor": {
+        "type": "agent",
+        "id": "complaint-review-agent"
+      },
+      "observed_outcome": "SUCCESS"
+    },
+    {
+      "step_id": "step-007",
+      "sequence": 7,
+      "parent_step_id": "step-005",
+      "actor": {
+        "type": "agent",
+        "id": "complaint-review-agent"
+      },
+      "event_type": "output",
+      "action": "summarize",
+      "resource": {
+        "id": "complaint-456",
+        "type": "employee_complaint"
+      },
+      "observed_outcome": "SUCCESS"
+    }
+  ]
+}
