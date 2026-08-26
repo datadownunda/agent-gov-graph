@@ -32,7 +32,7 @@ def evaluate_policy(input_data):
             "--stdin-input",
             "--data",
             "/workspace/policies/complaints.rego",
-            "data.aigov.complaints.decision",
+            "data.agentgov.complaints.decision",
         ],
         input=json.dumps(input_data),
         text=True,

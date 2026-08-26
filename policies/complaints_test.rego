@@ -1,4 +1,4 @@
-package aigov.complaints
+package agentgov.complaints
 
 import rego.v1
 
