@@ -7,6 +7,9 @@
         "id": "E1042",
         "roles": ["hr_investigator"]
       },
+      "authorized_resource_ids": [
+        "complaint-456"
+    ],
       "action": "read",
       "resource": {
         "id": "complaint-456",
@@ -27,6 +30,9 @@
         "id": "E2001",
         "roles": ["manager"]
       },
+      "authorized_resource_ids": [
+        "complaint-789"
+      ],
       "action": "read",
       "resource": {
         "id": "complaint-789",

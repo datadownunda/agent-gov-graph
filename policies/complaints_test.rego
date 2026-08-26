@@ -19,8 +19,10 @@ test_hr_investigator_restricted_complaint_is_allowed if {
         "user": {
             "roles": ["hr_investigator"]
         },
+        "authorized_resource_ids": ["complaint-456"],
         "action": "read",
         "resource": {
+            "id": "complaint-456",
             "type": "employee_complaint",
             "classification": "restricted"
         }
@@ -67,4 +69,23 @@ test_denied_decision_contains_status_and_reason if {
     "Restricted employee complaint data requires HR Investigator role" in result.reasons
     result.policy == "employee_complaint_access"
     result.policy_version == "1.0"
+}
+test_hr_investigator_cannot_read_out_of_scope_complaint if {
+    result := decision with input as {
+        "user": {
+            "id": "E1042",
+            "roles": ["hr_investigator"]
+        },
+        "authorized_resource_ids": ["complaint-456"],
+        "action": "read",
+        "resource": {
+            "id": "complaint-789",
+            "type": "employee_complaint",
+            "classification": "restricted"
+        }
+    }
+
+    result.allowed == false
+    result.decision == "DENY"
+    "Requested complaint is outside the authorized workflow scope" in result.reasons
 }
