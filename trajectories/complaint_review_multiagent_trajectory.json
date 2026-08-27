@@ -8,13 +8,17 @@
       "sequence": 1,
       "actor": {
         "type": "agent",
-        "id": "complaint-review-agent"
+        "id": "complaint-review-agent",
+        "roles": [
+            "hr_investigator"
+            ]
       },
       "event_type": "resource_access",
       "action": "read",
       "resource": {
         "id": "complaint-456",
-        "type": "employee_complaint"
+        "type": "employee_complaint",
+        "classification": "restricted"
       },
       "observed_outcome": "ALLOW"
     },
@@ -24,13 +28,19 @@
       "parent_step_id": "step-001",
       "actor": {
         "type": "agent",
-        "id": "complaint-review-agent"
+        "id": "complaint-review-agent",
+        "roles": [
+            "hr_investigator"
+            ]
       },
       "event_type": "agent_delegation",
       "action": "delegate_policy_research",
       "target_actor": {
         "type": "agent",
-        "id": "policy-review-agent"
+        "id": "policy-review-agent",
+        "roles": [
+            "policy_specialist"
+        ]
       },
       "observed_outcome": "SUCCESS"
     },
@@ -40,7 +50,10 @@
       "parent_step_id": "step-002",
       "actor": {
         "type": "agent",
-        "id": "policy-review-agent"
+        "id": "policy-review-agent",
+        "roles": [
+            "policy_specialist"
+        ]
       },
       "event_type": "tool_call",
       "tool": "hr_policy_search",
@@ -52,13 +65,17 @@
       "parent_step_id": "step-001",
       "actor": {
         "type": "agent",
-        "id": "complaint-review-agent"
+        "id": "complaint-review-agent",
+        "roles": [
+            "hr_investigator"
+            ]
       },
       "event_type": "resource_access",
       "action": "read",
       "resource": {
         "id": "complaint-789",
-        "type": "employee_complaint"
+        "type": "employee_complaint",
+        "classification": "restricted"
       },
       "observed_outcome": "DENY"
     },
@@ -68,7 +85,10 @@
       "parent_step_id": "step-004",
       "actor": {
         "type": "agent",
-        "id": "complaint-review-agent"
+        "id": "complaint-review-agent",
+        "roles": [
+            "hr_investigator"
+            ]
       },
       "event_type": "recovery",
       "action": "continue_with_authorized_resource",
@@ -86,7 +106,10 @@
       "action": "return_policy_findings",
       "target_actor": {
         "type": "agent",
-        "id": "complaint-review-agent"
+        "id": "complaint-review-agent",
+        "roles": [
+            "hr_investigator"
+            ]
       },
       "observed_outcome": "SUCCESS"
     },
@@ -96,13 +119,17 @@
       "parent_step_id": "step-005",
       "actor": {
         "type": "agent",
-        "id": "complaint-review-agent"
+        "id": "complaint-review-agent",
+        "roles": [
+            "hr_investigator"
+            ]
       },
       "event_type": "output",
       "action": "summarize",
       "resource": {
         "id": "complaint-456",
-        "type": "employee_complaint"
+        "type": "employee_complaint",
+        "classification": "restricted"
       },
       "observed_outcome": "SUCCESS"
     }

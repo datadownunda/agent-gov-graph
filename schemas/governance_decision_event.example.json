@@ -18,7 +18,9 @@
   "context": {
   "workflow_id": "workflow-123",
   "agent_id": "agent-research-01",
-  "tool": "document_search"
+  "tool": "document_search",
+  "run_id": "run-complaint-multiagent-001",
+"step_id": "step-004"
 },
   "telemetry": {
   "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
