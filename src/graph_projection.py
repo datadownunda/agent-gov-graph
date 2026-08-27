@@ -425,8 +425,9 @@ def build_graph():
     )
 
     return {
-        "nodes": list(nodes.values()),
-        "edges": edges,
+    "graph_version": "1.0",
+    "nodes": list(nodes.values()),
+    "edges": edges,
     }
 
 
