@@ -76,23 +76,15 @@ def governance_required(
 
 
 def governance_key(event):
-    return (
-        event["context"]["run_id"],
-        event["context"]["step_id"],
-        event["subject"]["id"],
-        event["action"],
-        event["resource"]["id"],
-    )
+    return event["context"][
+        "action_attempt_id"
+    ]
 
 
 def execution_key(event):
-    return (
-        event["run_id"],
-        event["step_id"],
-        event["actor_id"],
-        event["action"],
-        event["resource"]["id"],
-    )
+    return event[
+        "action_attempt_id"
+    ]
 
 
 def reconcile_runtime(
@@ -126,18 +118,33 @@ def reconcile_runtime(
             execution_by_key.get(key)
         )
 
-        (
-            run_id,
-            step_id,
-            actor_id,
-            action,
-            resource_id,
-        ) = key
-
         source_event = (
             governance_event
             or execution_event
         )
+
+        if governance_event:
+            run_id = governance_event[
+                "context"
+            ]["run_id"]
+
+            step_id = governance_event[
+                "context"
+            ]["step_id"]
+
+            actor_id = governance_event[
+                "subject"
+            ]["id"]
+
+        else:
+            run_id = execution_event["run_id"]
+            step_id = execution_event["step_id"]
+            actor_id = execution_event["actor_id"]
+
+        action = source_event["action"]
+        resource_id = source_event[
+            "resource"
+        ]["id"]
 
         resource_type = (
             source_event["resource"]["type"]
@@ -186,7 +193,7 @@ def reconcile_runtime(
             and not effect_observed
         ):
             enforcement_status = (
-                "BLOCKED"
+                "CONSISTENT_WITH_BLOCKING"
             )
 
         elif (
@@ -232,7 +239,7 @@ def reconcile_runtime(
             and not effect_observed
         ):
             classification = (
-                "CONTROL_OPERATED_CORRECTLY"
+                "DENY_EFFECT_NOT_OBSERVED"
             )
 
         elif (
@@ -251,6 +258,7 @@ def reconcile_runtime(
         results.append({
             "run_id": run_id,
             "step_id": step_id,
+            "action_attempt_id": key,
             "actor_id": actor_id,
             "action": action,
             "resource_id": resource_id,

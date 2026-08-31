@@ -91,7 +91,7 @@ def test_runtime_reconciliation_detects_four_cases(
 
     assert classifications[
         "run-b-deny-block"
-    ] == "CONTROL_OPERATED_CORRECTLY"
+    ] == "DENY_EFFECT_NOT_OBSERVED"
 
     assert classifications[
         "run-c-deny-bypass"

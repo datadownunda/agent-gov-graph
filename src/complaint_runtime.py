@@ -1,4 +1,5 @@
 import json
+import uuid
 from pathlib import Path
 
 from src.complaint_store import (
@@ -9,6 +10,9 @@ from src.governance_event import (
     build_event,
     evaluate_policy,
     validate_event,
+)
+from src.authority_resolver import (
+    resolve_authority,
 )
 
 
@@ -46,18 +50,18 @@ def build_policy_input(
     resource_id,
     *,
     actor_id,
+    authority,
 ):
     return {
         "user": {
             "id": actor_id,
-            "roles": [
-                "hr_investigator",
-            ],
+            "roles": authority["roles"],
         },
         "action": "read",
-        "authorized_resource_ids": [
-            "complaint-456",
-        ],
+        "authorized_resource_ids":
+            authority[
+                "authorized_resource_ids"
+            ],
         "resource": {
             "id": resource_id,
             "type": "employee_complaint",
@@ -76,9 +80,16 @@ def governed_read(
     governance_log_path=DEFAULT_GOVERNANCE_LOG,
     execution_log_path=DEFAULT_EXECUTION_LOG,
 ):
+    action_attempt_id = str(uuid.uuid4())
+
+    authority = resolve_authority(
+    actor_id
+    )
+
     policy_input = build_policy_input(
-        resource_id,
-        actor_id=actor_id,
+    resource_id,
+    actor_id=actor_id,
+    authority=authority,
     )
 
     decision = evaluate_policy(
@@ -88,11 +99,14 @@ def governed_read(
     decision_event = build_event(
         policy_input,
         decision,
-        context={
-            "run_id": run_id,
-            "step_id": step_id,
-            "agent_id": actor_id,
-        },
+    context={
+    "run_id": run_id,
+    "step_id": step_id,
+    "action_attempt_id": action_attempt_id,
+    "agent_id": actor_id,
+    "authority_provenance":
+        authority["provenance"],
+},
     )
 
     validate_event(
@@ -111,12 +125,13 @@ def governed_read(
         or bypass_enforcement
     ):
         complaint = read_complaint(
-            resource_id,
-            run_id=run_id,
-            step_id=step_id,
-            actor_id=actor_id,
-            log_path=execution_log_path,
-        )
+        resource_id,
+        run_id=run_id,
+        step_id=step_id,
+        actor_id=actor_id,
+        action_attempt_id=action_attempt_id,
+        log_path=execution_log_path,
+    )
 
     return {
         "run_id": run_id,

@@ -1,0 +1,29 @@
+{
+  "source_id": "synthetic-agent-authority-registry",
+  "source_version": "1.0",
+  "valid_from": "2026-08-31T00:00:00Z",
+  "principals": {
+    "complaint-review-agent": {
+      "roles": [
+        "hr_investigator"
+      ],
+      "authorized_resource_ids": [
+        "complaint-456"
+      ]
+    },
+    "policy-review-agent": {
+      "roles": [
+        "policy_specialist"
+      ],
+      "authorized_resource_ids": []
+    },
+    "manager-agent": {
+      "roles": [
+        "manager"
+      ],
+      "authorized_resource_ids": [
+        "complaint-456"
+      ]
+    }
+  }
+}

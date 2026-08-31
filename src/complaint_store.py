@@ -52,8 +52,14 @@ def read_complaint(
     run_id,
     step_id,
     actor_id,
+    action_attempt_id=None,
     log_path=DEFAULT_EXECUTION_LOG,
 ):
+    if action_attempt_id is None:
+        action_attempt_id = str(
+            uuid.uuid4()
+        )
+
     resource_path = (
         COMPLAINT_DIR
         / f"{resource_id}.json"
@@ -68,6 +74,8 @@ def read_complaint(
     execution_event = {
         "event_id": str(uuid.uuid4()),
         "timestamp": utc_now(),
+        "action_attempt_id":
+            action_attempt_id,
         "run_id": run_id,
         "step_id": step_id,
         "actor_id": actor_id,
@@ -75,9 +83,10 @@ def read_complaint(
         "resource": {
             "id": complaint["id"],
             "type": complaint["type"],
-            "classification": complaint[
-                "classification"
-            ],
+            "classification":
+                complaint[
+                    "classification"
+                ],
         },
         "effect": "RESOURCE_READ",
         "source": "complaint_store",

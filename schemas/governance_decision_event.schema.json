@@ -132,6 +132,38 @@
 "step_id": {
   "type": "string",
   "minLength": 1
+},
+"action_attempt_id": {
+  "type": "string",
+  "minLength": 1
+},
+"authority_provenance": {
+  "type": "object",
+  "required": [
+    "source_id",
+    "source_version",
+    "valid_from",
+    "resolved_at"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "valid_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "resolved_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
 }
   },
   "additionalProperties": false
