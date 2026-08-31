@@ -7,3 +7,6 @@ __pycache__/
 .pytest_cache/
 .pytest_cache/
 artifacts/agent_governance_graph.json
+
+# Generated runtime evidence
+artifacts/*.jsonl

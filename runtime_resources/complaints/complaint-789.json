@@ -1,0 +1,6 @@
+{
+  "id": "complaint-789",
+  "type": "employee_complaint",
+  "classification": "restricted",
+  "summary": "Synthetic complaint outside the authorized workflow scope."
+}

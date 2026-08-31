@@ -1,0 +1,10 @@
+{
+  "contract_version": "1.0",
+  "governed_actions": [
+    {
+      "action": "read",
+      "resource_type": "employee_complaint",
+      "governance_required": true
+    }
+  ]
+}

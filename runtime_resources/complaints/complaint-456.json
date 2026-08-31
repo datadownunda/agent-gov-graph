@@ -1,0 +1,6 @@
+{
+  "id": "complaint-456",
+  "type": "employee_complaint",
+  "classification": "restricted",
+  "summary": "Synthetic authorized employee complaint."
+}
