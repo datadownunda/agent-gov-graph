@@ -87,20 +87,41 @@ def execution_key(event):
     ]
 
 
+def group_events_by_key(
+    events,
+    key_function,
+):
+    grouped_events = {}
+
+    for event in events:
+        key = key_function(event)
+
+        grouped_events.setdefault(
+            key,
+            [],
+        ).append(event)
+
+    return grouped_events
+
+
 def reconcile_runtime(
     governance_events,
     execution_events,
     coverage_contract,
 ):
-    governance_by_key = {
-        governance_key(event): event
-        for event in governance_events
-    }
+    governance_by_key = (
+    group_events_by_key(
+        governance_events,
+        governance_key,
+    )
+)
 
-    execution_by_key = {
-        execution_key(event): event
-        for event in execution_events
-    }
+    execution_by_key = (
+    group_events_by_key(
+        execution_events,
+        execution_key,
+    )
+)
 
     all_keys = (
         set(governance_by_key)
@@ -110,50 +131,155 @@ def reconcile_runtime(
     results = []
 
     for key in sorted(all_keys):
-        governance_event = (
-            governance_by_key.get(key)
+        governance_matches = (
+            governance_by_key.get(
+                key,
+                [],
+            )
         )
 
-        execution_event = (
-            execution_by_key.get(key)
+        execution_matches = (
+            execution_by_key.get(
+                key,
+                [],
+            )
         )
 
         source_event = (
-            governance_event
-            or execution_event
+            governance_matches[0]
+            if governance_matches
+            else execution_matches[0]
         )
 
-        if governance_event:
-            run_id = governance_event[
+        if governance_matches:
+            identity_event = (
+                governance_matches[0]
+            )
+
+            run_id = identity_event[
                 "context"
             ]["run_id"]
 
-            step_id = governance_event[
+            step_id = identity_event[
                 "context"
             ]["step_id"]
 
-            actor_id = governance_event[
+            actor_id = identity_event[
                 "subject"
             ]["id"]
 
         else:
-            run_id = execution_event["run_id"]
-            step_id = execution_event["step_id"]
-            actor_id = execution_event["actor_id"]
+            identity_event = (
+                execution_matches[0]
+            )
+
+            run_id = identity_event[
+                "run_id"
+            ]
+
+            step_id = identity_event[
+                "step_id"
+            ]
+
+            actor_id = identity_event[
+                "actor_id"
+            ]
 
         action = source_event["action"]
+
         resource_id = source_event[
             "resource"
         ]["id"]
 
-        resource_type = (
-            source_event["resource"]["type"]
-        )
+        resource_type = source_event[
+            "resource"
+        ]["type"]
 
         required = governance_required(
             coverage_contract,
             action,
             resource_type,
+        )
+
+        if (
+            len(governance_matches) > 1
+            or len(execution_matches) > 1
+        ):
+            results.append({
+                "run_id": run_id,
+                "step_id": step_id,
+                "action_attempt_id": key,
+                "actor_id": actor_id,
+                "action": action,
+                "resource_id": resource_id,
+                "resource_type":
+                    resource_type,
+                "coverage_required":
+                    required,
+                "coverage_status": (
+                    "COVERED"
+                    if governance_matches
+                    else (
+                        "COVERAGE_MISSING"
+                        if required
+                        else "NOT_REQUIRED"
+                    )
+                ),
+                "decision_status":
+                    "CONFLICT"
+                    if len(
+                        governance_matches
+                    ) > 1
+                    else (
+                        governance_matches[0][
+                            "decision"
+                        ]["status"]
+                        if governance_matches
+                        else "NO_DECISION"
+                    ),
+                "enforcement_status":
+                    "NOT_EVALUABLE",
+                "outcome_status":
+                    "CONFLICT"
+                    if len(
+                        execution_matches
+                    ) > 1
+                    else (
+                        execution_matches[0][
+                            "effect"
+                        ]
+                        if execution_matches
+                        else
+                        "NO_EFFECT_OBSERVED"
+                    ),
+                "classification":
+                    "EVIDENCE_CONFLICT",
+                "evidence": {
+                    "governance_event_ids": [
+                        event["event_id"]
+                        for event
+                        in governance_matches
+                    ],
+                    "execution_event_ids": [
+                        event["event_id"]
+                        for event
+                        in execution_matches
+                    ],
+                },
+            })
+
+            continue
+
+        governance_event = (
+            governance_matches[0]
+            if governance_matches
+            else None
+        )
+
+        execution_event = (
+            execution_matches[0]
+            if execution_matches
+            else None
         )
 
         decision_status = None
