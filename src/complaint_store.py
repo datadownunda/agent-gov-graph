@@ -72,6 +72,7 @@ def read_complaint(
         complaint = json.load(file)
 
     execution_event = {
+        "schema_version": "1.0",
         "event_id": str(uuid.uuid4()),
         "timestamp": utc_now(),
         "action_attempt_id":
