@@ -1,5 +1,6 @@
 import copy
 import json
+from unittest import result
 
 from src.cross_source_reconciler import (
     reconcile_opa_governance,
@@ -107,6 +108,14 @@ def test_runtime_reconciliation_detects_five_cases(
         execution_log,
     )
 
+    governance_events = load_jsonl(
+    governance_log
+    )
+
+    execution_events = load_jsonl(
+    execution_log
+    )
+
     classifications = (
         classifications_by_run(results)
     )
@@ -140,6 +149,42 @@ def test_runtime_reconciliation_detects_five_cases(
         "run-a-allow"
     ]
 
+    reproducibility = (
+        allow_result[
+            "reproducibility"
+        ]
+    )
+
+    allow_governance_event = next(
+    event
+    for event in governance_events
+    if event["context"]["run_id"]
+    == "run-a-allow"
+    )
+
+    assert (
+        reproducibility[
+            "reconciler_version"
+        ]
+        == "1.0"
+    )
+
+    assert (
+        reproducibility[
+            "coverage_contract_version"
+        ]
+        == "1.0"
+    )
+    assert (
+        reproducibility[
+            "coverage_contract_digest"
+        ]
+        == evidence_digest(
+            load_json(
+                COVERAGE_CONTRACT_PATH
+            )
+        )
+    )
     assert (
         allow_result["coverage_status"]
         == "COVERED"
@@ -155,6 +200,14 @@ def test_runtime_reconciliation_detects_five_cases(
     assert (
         allow_result["outcome_status"]
         == "RESOURCE_READ"
+    )
+    assert (
+    allow_result["evidence"][
+        "governance_digest"
+    ]
+    == evidence_digest(
+    allow_governance_event
+    )
     )
 
     deny_result = results_by_run[
@@ -301,6 +354,26 @@ def test_runtime_reconciliation_detects_five_cases(
         governance_log
     )
 
+    execution_events = load_jsonl(
+        execution_log
+        )
+
+    allow_execution_event = next(
+    event
+    for event in execution_events
+    if event["run_id"]
+    == "run-a-allow"
+    )
+
+    assert (
+    allow_result["evidence"][
+        "execution_digest"
+    ]
+    == evidence_digest(
+        allow_execution_event
+    )
+    )
+
     manager_event = next(
         event
         for event in governance_events
@@ -430,6 +503,21 @@ def test_duplicate_governance_attempt_is_evidence_conflict(
     ) == 2
 
     assert len(
+    result["evidence"][
+        "governance_digests"
+    ]
+    ) == 2
+
+    assert (
+    result["evidence"][
+        "governance_digests"
+    ][0]
+    != result["evidence"][
+        "governance_digests"
+    ][1]
+)
+
+    assert len(
         result["evidence"][
             "execution_event_ids"
         ]
@@ -531,6 +619,20 @@ def test_duplicate_execution_attempt_is_evidence_conflict(
         ]
     ) == 2
 
+    assert len(
+    result["evidence"][
+        "execution_digests"
+    ]
+    ) == 2
+
+    assert (
+    result["evidence"][
+        "execution_digests"
+    ][0]
+    != result["evidence"][
+        "execution_digests"
+    ][1]
+    )
 
 def test_policy_input_includes_action_attempt_id():
     authority = {

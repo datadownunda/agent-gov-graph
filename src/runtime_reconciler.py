@@ -1,6 +1,13 @@
 import json
 from pathlib import Path
 
+from src.evidence_digest import (
+    evidence_digest,
+)
+
+
+RUNTIME_RECONCILER_VERSION = "1.0"
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
@@ -109,6 +116,17 @@ def reconcile_runtime(
     execution_events,
     coverage_contract,
 ):
+    coverage_contract_version = (
+        coverage_contract[
+            "contract_version"
+        ]
+    )
+
+    coverage_contract_digest = (
+        evidence_digest(
+            coverage_contract
+        )
+    )
     governance_by_key = (
     group_events_by_key(
         governance_events,
@@ -253,15 +271,33 @@ def reconcile_runtime(
                         "NO_EFFECT_OBSERVED"
                     ),
                 "classification":
-                    "EVIDENCE_CONFLICT",
+                "EVIDENCE_CONFLICT",
+                "reproducibility": {
+                "reconciler_version":
+                    RUNTIME_RECONCILER_VERSION,
+                "coverage_contract_version":
+                    coverage_contract_version,
+                "coverage_contract_digest":
+                    coverage_contract_digest,
+            },
                 "evidence": {
                     "governance_event_ids": [
                         event["event_id"]
                         for event
                         in governance_matches
                     ],
+                    "governance_digests": [
+                        evidence_digest(event)
+                        for event
+                        in governance_matches
+                    ],
                     "execution_event_ids": [
                         event["event_id"]
+                        for event
+                        in execution_matches
+                    ],
+                    "execution_digests": [
+                        evidence_digest(event)
                         for event
                         in execution_matches
                     ],
@@ -404,22 +440,44 @@ def reconcile_runtime(
             ),
             "classification":
                 classification,
+            "reproducibility": {
+                    "reconciler_version":
+                        RUNTIME_RECONCILER_VERSION,
+                    "coverage_contract_version":
+                        coverage_contract_version,
+                    "coverage_contract_digest":
+                        coverage_contract_digest,
+                },
             "evidence": {
-                "governance_event_id": (
-                    governance_event[
-                        "event_id"
-                    ]
-                    if governance_event
-                    else None
-                ),
-                "execution_event_id": (
-                    execution_event[
-                        "event_id"
-                    ]
-                    if execution_event
-                    else None
-                ),
-            },
+    "governance_event_id": (
+        governance_event[
+            "event_id"
+        ]
+        if governance_event
+        else None
+    ),
+    "governance_digest": (
+        evidence_digest(
+            governance_event
+        )
+        if governance_event
+        else None
+    ),
+    "execution_event_id": (
+        execution_event[
+            "event_id"
+        ]
+        if execution_event
+        else None
+    ),
+    "execution_digest": (
+        evidence_digest(
+            execution_event
+        )
+        if execution_event
+        else None
+    ),
+},
         })
 
     return results
