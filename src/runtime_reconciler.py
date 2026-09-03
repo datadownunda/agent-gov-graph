@@ -83,15 +83,17 @@ def governance_required(
 
 
 def governance_key(event):
-    return event["context"][
-        "action_attempt_id"
-    ]
+    return (
+        event
+        .get("context", {})
+        .get("action_attempt_id")
+    )
 
 
 def execution_key(event):
-    return event[
+    return event.get(
         "action_attempt_id"
-    ]
+    )
 
 
 def group_events_by_key(
@@ -127,16 +129,41 @@ def reconcile_runtime(
             coverage_contract
         )
     )
+    valid_governance_events = []
+    governance_defects = []
+
+    for event in governance_events:
+        if governance_key(event):
+         valid_governance_events.append(
+            event
+        )
+        else:
+         governance_defects.append(
+            event
+        )
+
     governance_by_key = (
     group_events_by_key(
-        governance_events,
+        valid_governance_events,
         governance_key,
     )
 )
+    valid_execution_events = []
+    execution_defects = []
+
+    for event in execution_events:
+        if execution_key(event):
+            valid_execution_events.append(
+                event
+            )
+        else:
+            execution_defects.append(
+                event
+            )
 
     execution_by_key = (
     group_events_by_key(
-        execution_events,
+        valid_execution_events,
         execution_key,
     )
 )
@@ -147,6 +174,119 @@ def reconcile_runtime(
     )
 
     results = []
+    for event in governance_defects:
+        results.append({
+            "run_id": (
+                event
+                .get("context", {})
+                .get("run_id")
+            ),
+            "step_id": (
+                event
+                .get("context", {})
+                .get("step_id")
+            ),
+            "action_attempt_id": None,
+            "actor_id": (
+                event
+                .get("subject", {})
+                .get("id")
+            ),
+            "action":
+                event.get("action"),
+            "resource_id": (
+                event
+                .get("resource", {})
+                .get("id")
+            ),
+            "resource_type": (
+                event
+                .get("resource", {})
+                .get("type")
+            ),
+            "coverage_required": None,
+            "coverage_status":
+                "NOT_EVALUABLE",
+            "decision_status": (
+                event
+                .get("decision", {})
+                .get(
+                    "status",
+                    "NO_DECISION",
+                )
+            ),
+            "enforcement_status":
+                "NOT_EVALUABLE",
+            "outcome_status":
+                "NOT_EVALUABLE",
+            "classification":
+                "EVIDENCE_DEFECT",
+            "defect_reason":
+                "MISSING_ACTION_ATTEMPT_ID",
+            "evidence_source":
+                "governance",
+            "reproducibility": {
+                "reconciler_version":
+                    RUNTIME_RECONCILER_VERSION,
+            },
+            "evidence": {
+                "governance_event_id":
+                    event.get("event_id"),
+                "governance_digest":
+                    evidence_digest(event),
+            },
+        })
+
+    for event in execution_defects:
+            results.append({
+                "run_id":
+                    event.get("run_id"),
+                "step_id":
+                    event.get("step_id"),
+                "action_attempt_id": None,
+                "actor_id":
+                    event.get("actor_id"),
+                "action":
+                    event.get("action"),
+                "resource_id": (
+                    event
+                    .get("resource", {})
+                    .get("id")
+                ),
+                "resource_type": (
+                    event
+                    .get("resource", {})
+                    .get("type")
+                ),
+                "coverage_required": None,
+                "coverage_status":
+                    "NOT_EVALUABLE",
+                "decision_status":
+                    "NO_DECISION",
+                "enforcement_status":
+                    "NOT_EVALUABLE",
+                "outcome_status":
+                    event.get(
+                        "effect",
+                        "NOT_EVALUABLE",
+                    ),
+                "classification":
+                    "EVIDENCE_DEFECT",
+                "defect_reason":
+                    "MISSING_ACTION_ATTEMPT_ID",
+                "evidence_source":
+                    "execution",
+                "reproducibility": {
+                    "reconciler_version":
+                        RUNTIME_RECONCILER_VERSION,
+                },
+                "evidence": {
+                    "execution_event_id":
+                        event.get("event_id"),
+                    "execution_digest":
+                        evidence_digest(event),
+            },
+        })
 
     for key in sorted(all_keys):
         governance_matches = (

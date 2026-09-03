@@ -1160,3 +1160,184 @@ def test_opa_and_governance_resource_mismatch(
         ]
         == "complaint-789"
     )
+
+
+def test_missing_governance_attempt_id_is_evidence_defect(
+    tmp_path,
+):
+    governance_log = (
+        tmp_path
+        / "governance.jsonl"
+    )
+
+    execution_log = (
+        tmp_path
+        / "execution.jsonl"
+    )
+
+    governed_read(
+        "complaint-789",
+        run_id="run-missing-attempt-id",
+        step_id="step-001",
+        actor_id="complaint-review-agent",
+        governance_log_path=
+            governance_log,
+        execution_log_path=
+            execution_log,
+    )
+
+    governance_event = load_jsonl(
+        governance_log
+    )[0]
+
+    del governance_event[
+        "context"
+    ]["action_attempt_id"]
+
+    with governance_log.open(
+        "w",
+        encoding="utf-8",
+    ) as file:
+        file.write(
+            json.dumps(
+                governance_event
+            )
+            + "\n"
+        )
+
+    results = run_reconciliation(
+        governance_log,
+        execution_log,
+    )
+
+    result = next(
+        result
+        for result in results
+        if result["run_id"]
+        == "run-missing-attempt-id"
+    )
+
+    assert (
+        result["classification"]
+        == "EVIDENCE_DEFECT"
+    )
+
+    assert (
+        result["defect_reason"]
+        == "MISSING_ACTION_ATTEMPT_ID"
+    )
+
+    assert (
+        result["evidence_source"]
+        == "governance"
+    )
+
+    assert (
+        result["action_attempt_id"]
+        is None
+    )
+
+    assert (
+        result["evidence"][
+            "governance_event_id"
+        ]
+        == governance_event[
+            "event_id"
+        ]
+    )
+
+    assert (
+        result["evidence"][
+            "governance_digest"
+        ]
+        == evidence_digest(
+            governance_event
+        )
+    )
+
+
+def test_missing_execution_attempt_id_is_evidence_defect(
+    tmp_path,
+):
+    execution_log = (
+        tmp_path
+        / "execution.jsonl"
+    )
+
+    governance_log = (
+        tmp_path
+        / "governance.jsonl"
+    )
+
+    read_complaint(
+        "complaint-456",
+        run_id="run-missing-execution-attempt-id",
+        step_id="step-001",
+        actor_id="complaint-review-agent",
+        action_attempt_id=
+            "attempt-to-remove",
+        log_path=execution_log,
+    )
+
+    execution_event = load_jsonl(
+        execution_log
+    )[0]
+
+    del execution_event[
+        "action_attempt_id"
+    ]
+
+    with execution_log.open(
+        "w",
+        encoding="utf-8",
+    ) as file:
+        file.write(
+            json.dumps(
+                execution_event
+            )
+            + "\n"
+        )
+
+    results = run_reconciliation(
+        governance_log,
+        execution_log,
+    )
+
+    result = next(
+        result
+        for result in results
+        if (
+            result["classification"]
+            == "EVIDENCE_DEFECT"
+            and result["evidence_source"]
+            == "execution"
+        )
+    )
+
+    assert (
+        result["defect_reason"]
+        == "MISSING_ACTION_ATTEMPT_ID"
+    )
+
+    assert (
+        result["action_attempt_id"]
+        is None
+    )
+
+    assert (
+        result["evidence"][
+            "execution_event_id"
+        ]
+        == execution_event[
+            "event_id"
+        ]
+    )
+
+    assert (
+        result["evidence"][
+            "execution_digest"
+        ]
+        == evidence_digest(
+            execution_event
+        )
+    )
