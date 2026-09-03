@@ -1,3 +1,10 @@
+from src.evidence_digest import (
+    evidence_digest,
+)
+
+
+RECONCILER_VERSION = "1.0"
+
 def reconcile_opa_governance(
     opa_event,
     governance_event,
@@ -12,6 +19,14 @@ def reconcile_opa_governance(
         governance_event
         .get("context", {})
         .get("action_attempt_id")
+    )
+
+    opa_digest = evidence_digest(
+        opa_event
+    )
+
+    governance_digest = evidence_digest(
+        governance_event
     )
 
     if (
@@ -30,11 +45,17 @@ def reconcile_opa_governance(
                     opa_event.get(
                         "decision_id"
                     ),
+                "opa_digest":
+                    opa_digest,
                 "governance_event_id":
                     governance_event.get(
                         "event_id"
                     ),
+                "governance_digest":
+                    governance_digest,
             },
+            "reconciler_version":
+                RECONCILER_VERSION,
         }
 
     comparisons = {
@@ -123,9 +144,15 @@ def reconcile_opa_governance(
         "evidence": {
             "opa_decision_id":
                 opa_event["decision_id"],
+            "opa_digest":
+                opa_digest,
             "governance_event_id":
                 governance_event[
                     "event_id"
                 ],
+            "governance_digest":
+                governance_digest,
         },
+        "reconciler_version":
+            RECONCILER_VERSION,
     }

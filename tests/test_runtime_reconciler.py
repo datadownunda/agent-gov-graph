@@ -5,6 +5,10 @@ from src.cross_source_reconciler import (
     reconcile_opa_governance,
 )
 
+from src.evidence_digest import (
+    evidence_digest,
+)
+
 from src.complaint_runtime import (
     build_policy_input,
     governed_read,
@@ -756,6 +760,29 @@ def test_opa_and_governance_evidence_match(
         ]
     )
 
+    assert (
+        finding["evidence"][
+            "opa_digest"
+        ]
+        == evidence_digest(
+            opa_event
+        )
+    )
+
+    assert (
+        finding["evidence"][
+            "governance_digest"
+        ]
+        == evidence_digest(
+            governance_event
+        )
+    )
+
+    assert (
+        finding["reconciler_version"]
+        == "1.0"
+    )
+
 
 def test_opa_and_governance_evidence_mismatch(
     tmp_path,
@@ -809,6 +836,24 @@ def test_opa_and_governance_evidence_mismatch(
     finding = reconcile_opa_governance(
         opa_event,
         altered_governance_event,
+    )
+
+    assert (
+        finding["evidence"][
+            "governance_digest"
+        ]
+        == evidence_digest(
+            altered_governance_event
+        )
+    )
+
+    assert (
+        finding["evidence"][
+            "governance_digest"
+        ]
+        != evidence_digest(
+            governance_event
+        )
     )
 
     assert (
