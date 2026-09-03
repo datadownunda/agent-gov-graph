@@ -1,6 +1,10 @@
 import copy
 import json
 
+from src.cross_source_reconciler import (
+    reconcile_opa_governance,
+)
+
 from src.complaint_runtime import (
     build_policy_input,
     governed_read,
@@ -676,3 +680,336 @@ def test_governed_read_persists_opa_native_evidence(
     )
 
     assert opa_event["decision_id"]
+
+
+def test_opa_and_governance_evidence_match(
+    tmp_path,
+):
+    governance_log = (
+        tmp_path
+        / "governance.jsonl"
+    )
+
+    execution_log = (
+        tmp_path
+        / "execution.jsonl"
+    )
+
+    opa_log = (
+        tmp_path
+        / "opa.jsonl"
+    )
+
+    governed_read(
+        "complaint-456",
+        run_id="run-cross-source",
+        step_id="step-001",
+        actor_id="complaint-review-agent",
+        governance_log_path=
+            governance_log,
+        execution_log_path=
+            execution_log,
+        opa_decision_log_path=
+            opa_log,
+    )
+
+    governance_event = load_jsonl(
+        governance_log
+    )[0]
+
+    opa_event = load_jsonl(
+        opa_log
+    )[0]
+
+    finding = reconcile_opa_governance(
+        opa_event,
+        governance_event,
+    )
+
+    assert (
+        finding["classification"]
+        == "MATCH"
+    )
+
+    assert (
+        finding["action_attempt_id"]
+        == governance_event[
+            "context"
+        ]["action_attempt_id"]
+    )
+
+    assert finding["mismatches"] == []
+
+    assert (
+        finding["evidence"][
+            "opa_decision_id"
+        ]
+        == opa_event["decision_id"]
+    )
+
+    assert (
+        finding["evidence"][
+            "governance_event_id"
+        ]
+        == governance_event[
+            "event_id"
+        ]
+    )
+
+
+def test_opa_and_governance_evidence_mismatch(
+    tmp_path,
+):
+    governance_log = (
+        tmp_path
+        / "governance.jsonl"
+    )
+
+    execution_log = (
+        tmp_path
+        / "execution.jsonl"
+    )
+
+    opa_log = (
+        tmp_path
+        / "opa.jsonl"
+    )
+
+    governed_read(
+        "complaint-456",
+        run_id="run-cross-source-mismatch",
+        step_id="step-001",
+        actor_id="complaint-review-agent",
+        governance_log_path=
+            governance_log,
+        execution_log_path=
+            execution_log,
+        opa_decision_log_path=
+            opa_log,
+    )
+
+    governance_event = load_jsonl(
+        governance_log
+    )[0]
+
+    opa_event = load_jsonl(
+        opa_log
+    )[0]
+
+    altered_governance_event = (
+        copy.deepcopy(
+            governance_event
+        )
+    )
+
+    altered_governance_event[
+        "decision"
+    ]["status"] = "DENY"
+
+    finding = reconcile_opa_governance(
+        opa_event,
+        altered_governance_event,
+    )
+
+    assert (
+        finding["classification"]
+        == "MISMATCH"
+    )
+
+    assert len(
+        finding["mismatches"]
+    ) == 1
+
+    mismatch = (
+        finding["mismatches"][0]
+    )
+
+    assert (
+        mismatch["field"]
+        == "decision"
+    )
+
+    assert (
+        mismatch["opa_value"]
+        == "ALLOW"
+    )
+
+    assert (
+        mismatch[
+            "governance_value"
+        ]
+        == "DENY"
+    )
+
+
+def test_opa_and_governance_evidence_uncorrelatable(
+    tmp_path,
+):
+    governance_log = (
+        tmp_path
+        / "governance.jsonl"
+    )
+
+    execution_log = (
+        tmp_path
+        / "execution.jsonl"
+    )
+
+    opa_log = (
+        tmp_path
+        / "opa.jsonl"
+    )
+
+    governed_read(
+        "complaint-456",
+        run_id="run-cross-source-uncorrelatable",
+        step_id="step-001",
+        actor_id="complaint-review-agent",
+        governance_log_path=
+            governance_log,
+        execution_log_path=
+            execution_log,
+        opa_decision_log_path=
+            opa_log,
+    )
+
+    governance_event = load_jsonl(
+        governance_log
+    )[0]
+
+    opa_event = load_jsonl(
+        opa_log
+    )[0]
+
+    altered_governance_event = (
+        copy.deepcopy(
+            governance_event
+        )
+    )
+
+    altered_governance_event[
+        "context"
+    ]["action_attempt_id"] = (
+        "different-attempt-id"
+    )
+
+    finding = reconcile_opa_governance(
+        opa_event,
+        altered_governance_event,
+    )
+
+    assert (
+        finding["classification"]
+        == "UNCORRELATABLE"
+    )
+
+    assert (
+        finding["action_attempt_id"]
+        is None
+    )
+
+    assert (
+        finding["mismatches"]
+        == []
+    )
+
+    assert (
+        finding["evidence"][
+            "opa_decision_id"
+        ]
+        == opa_event["decision_id"]
+    )
+
+    assert (
+        finding["evidence"][
+            "governance_event_id"
+        ]
+        == governance_event[
+            "event_id"
+        ]
+    )
+
+
+def test_opa_and_governance_resource_mismatch(
+    tmp_path,
+):
+    governance_log = (
+        tmp_path
+        / "governance.jsonl"
+    )
+
+    execution_log = (
+        tmp_path
+        / "execution.jsonl"
+    )
+
+    opa_log = (
+        tmp_path
+        / "opa.jsonl"
+    )
+
+    governed_read(
+        "complaint-456",
+        run_id="run-resource-mismatch",
+        step_id="step-001",
+        actor_id="complaint-review-agent",
+        governance_log_path=
+            governance_log,
+        execution_log_path=
+            execution_log,
+        opa_decision_log_path=
+            opa_log,
+    )
+
+    governance_event = load_jsonl(
+        governance_log
+    )[0]
+
+    opa_event = load_jsonl(
+        opa_log
+    )[0]
+
+    altered_governance_event = (
+        copy.deepcopy(
+            governance_event
+        )
+    )
+
+    altered_governance_event[
+        "resource"
+    ]["id"] = "complaint-789"
+
+    finding = reconcile_opa_governance(
+        opa_event,
+        altered_governance_event,
+    )
+
+    assert (
+        finding["classification"]
+        == "MISMATCH"
+    )
+
+    assert len(
+        finding["mismatches"]
+    ) == 1
+
+    mismatch = (
+        finding["mismatches"][0]
+    )
+
+    assert (
+        mismatch["field"]
+        == "resource_id"
+    )
+
+    assert (
+        mismatch["opa_value"]
+        == "complaint-456"
+    )
+
+    assert (
+        mismatch[
+            "governance_value"
+        ]
+        == "complaint-789"
+    )
