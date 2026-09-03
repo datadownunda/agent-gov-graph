@@ -10,6 +10,7 @@ from src.governance_event import (
     build_event,
     evaluate_policy,
     validate_event,
+    evaluate_policy_with_decision_log,
 )
 from src.authority_resolver import (
     resolve_authority,
@@ -22,6 +23,12 @@ DEFAULT_GOVERNANCE_LOG = (
     PROJECT_ROOT
     / "artifacts"
     / "runtime_governance_events.jsonl"
+)
+
+DEFAULT_OPA_DECISION_LOG = (
+    PROJECT_ROOT
+    / "artifacts"
+    / "runtime_opa_decision_events.jsonl"
 )
 
 
@@ -46,13 +53,37 @@ def append_governance_event(
         )
 
 
+def append_opa_decision_event(
+    event,
+    log_path=DEFAULT_OPA_DECISION_LOG,
+):
+    log_path = Path(log_path)
+
+    log_path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    with log_path.open(
+        "a",
+        encoding="utf-8",
+    ) as file:
+        file.write(
+            json.dumps(event)
+            + "\n"
+        )
+
+
 def build_policy_input(
     resource_id,
     *,
     actor_id,
     authority,
+    action_attempt_id,
 ):
     return {
+         "action_attempt_id":
+            action_attempt_id,
         "user": {
             "id": actor_id,
             "roles": authority["roles"],
@@ -79,6 +110,7 @@ def governed_read(
     bypass_enforcement=False,
     governance_log_path=DEFAULT_GOVERNANCE_LOG,
     execution_log_path=DEFAULT_EXECUTION_LOG,
+    opa_decision_log_path=DEFAULT_OPA_DECISION_LOG,
 ):
     action_attempt_id = str(uuid.uuid4())
 
@@ -90,12 +122,21 @@ def governed_read(
     resource_id,
     actor_id=actor_id,
     authority=authority,
+    action_attempt_id=
+        action_attempt_id,
     )
 
-    decision = evaluate_policy(
+    decision, opa_decision_event = (
+    evaluate_policy_with_decision_log(
         policy_input
     )
+    )
 
+    append_opa_decision_event(
+    opa_decision_event,
+    opa_decision_log_path,
+    )
+    
     decision_event = build_event(
         policy_input,
         decision,

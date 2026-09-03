@@ -1,13 +1,19 @@
 import copy
 import json
 
-from src.complaint_runtime import governed_read
+from src.complaint_runtime import (
+    build_policy_input,
+    governed_read,
+)
 from src.complaint_store import read_complaint
 from src.runtime_reconciler import (
     load_json,
     load_jsonl,
     reconcile_runtime,
     COVERAGE_CONTRACT_PATH,
+)
+from src.governance_event import (
+    evaluate_policy_with_decision_log,
 )
 
 
@@ -516,3 +522,157 @@ def test_duplicate_execution_attempt_is_evidence_conflict(
             "execution_event_ids"
         ]
     ) == 2
+
+
+def test_policy_input_includes_action_attempt_id():
+    authority = {
+        "roles": ["hr_investigator"],
+        "authorized_resource_ids": [
+            "complaint-456"
+        ],
+    }
+
+    policy_input = build_policy_input(
+        "complaint-456",
+        actor_id="complaint-review-agent",
+        authority=authority,
+        action_attempt_id=
+            "test-attempt-001",
+    )
+
+    assert (
+        policy_input["action_attempt_id"]
+        == "test-attempt-001"
+    )
+
+
+def test_opa_native_decision_log_preserves_attempt_id():
+    policy_input = {
+        "action_attempt_id":
+            "test-attempt-001",
+        "user": {
+            "id": "complaint-review-agent",
+            "roles": ["hr_investigator"],
+        },
+        "action": "read",
+        "authorized_resource_ids": [
+            "complaint-456"
+        ],
+        "resource": {
+            "id": "complaint-456",
+            "type": "employee_complaint",
+            "classification":
+                "restricted",
+        },
+    }
+
+    decision, decision_log = (
+        evaluate_policy_with_decision_log(
+            policy_input
+        )
+    )
+
+    assert decision["decision"] == "ALLOW"
+
+    assert (
+        decision_log["input"][
+            "action_attempt_id"
+        ]
+        == "test-attempt-001"
+    )
+
+    assert (
+        decision_log["result"]
+        == decision
+    )
+
+    assert decision_log["decision_id"]
+
+    assert (
+        decision_log["labels"][
+            "version"
+        ]
+        == "1.19.0"
+    )
+
+    assert (
+        decision_log["type"]
+        == "openpolicyagent.org/decision_logs"
+    )
+
+
+def test_governed_read_persists_opa_native_evidence(
+    tmp_path,
+):
+    governance_log = (
+        tmp_path
+        / "governance.jsonl"
+    )
+
+    execution_log = (
+        tmp_path
+        / "execution.jsonl"
+    )
+
+    opa_log = (
+        tmp_path
+        / "opa.jsonl"
+    )
+
+    governed_read(
+        "complaint-456",
+        run_id="run-opa-evidence",
+        step_id="step-001",
+        actor_id="complaint-review-agent",
+        governance_log_path=governance_log,
+        execution_log_path=execution_log,
+        opa_decision_log_path=opa_log,
+    )
+
+    governance_events = load_jsonl(
+        governance_log
+    )
+
+    opa_events = load_jsonl(
+        opa_log
+    )
+
+    assert len(governance_events) == 1
+    assert len(opa_events) == 1
+
+    governance_event = governance_events[0]
+    opa_event = opa_events[0]
+
+    assert (
+        governance_event["context"][
+            "action_attempt_id"
+        ]
+        == opa_event["input"][
+            "action_attempt_id"
+        ]
+    )
+
+    assert (
+        governance_event["decision"][
+            "status"
+        ]
+        == opa_event["result"][
+            "decision"
+        ]
+    )
+
+    assert (
+        governance_event["resource"]["id"]
+        == opa_event["input"][
+            "resource"
+        ]["id"]
+    )
+
+    assert (
+        governance_event["subject"]["id"]
+        == opa_event["input"][
+            "user"
+        ]["id"]
+    )
+
+    assert opa_event["decision_id"]
