@@ -166,3 +166,11 @@ identifier would falsify the stated implementation boundary itself.
 This increment stops at foreign evidence correlation. It does not advance the
 real-agent milestone or establish production accuracy thresholds.
 
+## Reliability benchmark
+
+The subsequent [controlled benchmark](../experiments/foreign_opa/BENCHMARK.md)
+characterizes the unchanged matcher using synthetic observations. Its
+[107-scenario results](../experiments/foreign_opa/results/reliability-v1/README.md)
+cover repetition, timestamp separation, clock skew, missing counterparts, and
+plausible impostors, with evaluator ground truth kept outside the matcher.
+These results are algorithm experiments, not new native-log custody evidence.

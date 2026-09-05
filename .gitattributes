@@ -1,0 +1,2 @@
+# Python csv.writer emits CRLF; preserve audited benchmark CSV bytes.
+experiments/foreign_opa/results/**/metrics.csv whitespace=cr-at-eol
