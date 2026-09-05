@@ -1,29 +1,62 @@
 {
+  "schema_version": "2.0",
   "source_id": "synthetic-agent-authority-registry",
-  "source_version": "1.0",
-  "valid_from": "2026-08-31T00:00:00Z",
-  "principals": {
-    "complaint-review-agent": {
+  "source_version": "2.0",
+  "records": [
+    {
+      "authority_record_id": "complaint-review-agent-authority",
+      "authority_version": "1",
+      "principal": "complaint-review-agent",
       "roles": [
         "hr_investigator"
       ],
-      "authorized_resource_ids": [
-        "complaint-456"
-      ]
+      "permitted_scopes": [
+        {
+          "action": "read",
+          "resource_type": "employee_complaint",
+          "resource_ids": [
+            "complaint-456"
+          ]
+        }
+      ],
+      "valid_from": "2026-08-31T00:00:00Z",
+      "valid_to": null
     },
-    "policy-review-agent": {
+    {
+      "authority_record_id": "policy-review-agent-authority",
+      "authority_version": "1",
+      "principal": "policy-review-agent",
       "roles": [
         "policy_specialist"
       ],
-      "authorized_resource_ids": []
+      "permitted_scopes": [
+        {
+          "action": "read",
+          "resource_type": "employee_complaint",
+          "resource_ids": []
+        }
+      ],
+      "valid_from": "2026-08-31T00:00:00Z",
+      "valid_to": null
     },
-    "manager-agent": {
+    {
+      "authority_record_id": "manager-agent-authority",
+      "authority_version": "1",
+      "principal": "manager-agent",
       "roles": [
         "manager"
       ],
-      "authorized_resource_ids": [
-        "complaint-456"
-      ]
+      "permitted_scopes": [
+        {
+          "action": "read",
+          "resource_type": "employee_complaint",
+          "resource_ids": [
+            "complaint-456"
+          ]
+        }
+      ],
+      "valid_from": "2026-08-31T00:00:00Z",
+      "valid_to": null
     }
-  }
+  ]
 }

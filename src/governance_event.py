@@ -158,7 +158,7 @@ def build_event(input_data, decision, context=None, telemetry=None):
 
 def validate_event(event):
     schema = load_json(SCHEMA_PATH)
-    jsonschema.validate(instance=event, schema=schema)
+    jsonschema.validate(instance=event, schema=schema, format_checker=jsonschema.FormatChecker())
 
 
 def main():

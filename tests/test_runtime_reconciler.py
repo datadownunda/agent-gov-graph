@@ -385,20 +385,14 @@ def test_runtime_reconciliation_detects_five_cases(
         "subject"
     ]["roles"] == ["manager"]
 
-    provenance = manager_event[
-        "context"
-    ]["authority_provenance"]
-
-    assert (
-        provenance["source_id"]
-        == "synthetic-agent-authority-registry"
-    )
-    assert (
-        provenance["source_version"]
-        == "1.0"
-    )
-    assert provenance["valid_from"]
-    assert provenance["resolved_at"]
+    binding = manager_event["context"]["authority_binding"]
+    assert binding["revision"]["source_id"] == "synthetic-agent-authority-registry"
+    assert binding["revision"]["source_version"] == "2.0"
+    assert binding["authority_resolution_at"]
+    assert binding["opa_decision_at"]
+    assert binding["status"] == "RESOLVED"
+    assert binding["at_opa_decision"]["record_refs"] == [
+        {"authority_record_id": "manager-agent-authority", "authority_version": "1"}]
 
 
 def test_duplicate_governance_attempt_is_evidence_conflict(

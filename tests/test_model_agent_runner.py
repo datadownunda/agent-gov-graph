@@ -34,10 +34,10 @@ def test_exact_proposal_through_governance_and_execution(tmp_path, monkeypatch, 
     def evaluate(policy_input):
         seen.append(policy_input)
         evidence = records(tmp_path / "agent.jsonl")
-        assert [e["event_type"] for e in evidence][-2:] == ["MODEL_PROPOSAL", "PROPOSAL_ACCEPTED"]
+        assert [e["event_type"] for e in evidence][-3:] == ["MODEL_PROPOSAL", "PROPOSAL_ACCEPTED", "AUTHORITY_RESOLUTION"]
         decision = {"allowed": allowed, "decision": "ALLOW" if allowed else "DENY",
                     "policy": "employee_complaint_access", "policy_version": "1.0", "reasons": []}
-        return decision, {"input": policy_input, "result": decision, "decision_id": "test"}
+        return decision, {"input": policy_input, "result": decision, "timestamp": policy_input["authority_resolution_at"], "decision_id": "test"}
 
     def read(resource_id, **kwargs):
         assert records(tmp_path / "agent.jsonl")[-1]["event_type"] == "EXECUTION_ATTEMPT"
@@ -75,7 +75,7 @@ def test_execution_failure_has_attempt_and_failed_outcome(tmp_path, monkeypatch)
     def evaluate(data):
         decision = {"allowed": True, "decision": "ALLOW", "policy": "employee_complaint_access",
                     "policy_version": "1.0", "reasons": []}
-        return decision, {"input": data, "result": decision}
+        return decision, {"input": data, "result": decision, "timestamp": data["authority_resolution_at"]}
     monkeypatch.setattr(runtime, "evaluate_policy_with_decision_log", evaluate)
     def fail(*args, **kwargs):
         raise OSError("synthetic read failure")
@@ -106,7 +106,7 @@ def test_unexpected_allow_for_export_fails_closed(tmp_path, monkeypatch):
     def evaluate(data):
         decision = {"allowed": True, "decision": "ALLOW", "policy": "employee_complaint_access",
                     "policy_version": "1.0", "reasons": []}
-        return decision, {"input": data, "result": decision}
+        return decision, {"input": data, "result": decision, "timestamp": data["authority_resolution_at"]}
     monkeypatch.setattr(runtime, "evaluate_policy_with_decision_log", evaluate)
     monkeypatch.setattr(runtime, "read_complaint", lambda *a, **k: pytest.fail("export rewritten to read"))
     result = run_trial("task", CANDIDATES, output_dir=tmp_path,
@@ -134,9 +134,27 @@ def test_successive_provider_choices_are_not_cached_or_rewritten(tmp_path, monke
         seen.append(data["resource"]["id"])
         decision = {"allowed": False, "decision": "DENY", "policy": "employee_complaint_access",
                     "policy_version": "1.0", "reasons": []}
-        return decision, {"input": data, "result": decision}
+        return decision, {"input": data, "result": decision, "timestamp": data["authority_resolution_at"]}
     monkeypatch.setattr(runtime, "evaluate_policy_with_decision_log", evaluate)
     for i, resource in enumerate(("complaint-789", "complaint-456", "complaint-789")):
         run_trial("task", CANDIDATES, output_dir=tmp_path / str(i),
                   propose=model(json.dumps({"action": "read", "resource_id": resource, "reason": "x"})), model="stub")
     assert seen == ["complaint-789", "complaint-456", "complaint-789"]
+
+
+def test_missing_authority_is_not_invalid_proposal_or_deny(tmp_path, monkeypatch):
+    original_loader = runtime.load_authority_source
+    def missing_registry(path):
+        if str(path).endswith('agent_authority.json'):
+            raise FileNotFoundError()
+        return original_loader(path)
+    monkeypatch.setattr(runtime, 'load_authority_source', missing_registry)
+    monkeypatch.setattr(runtime, 'evaluate_policy_with_decision_log', lambda *a: pytest.fail('OPA called'))
+    result = run_trial('task', CANDIDATES, output_dir=tmp_path,
+                      propose=model('{"action":"read","resource_id":"complaint-456","reason":"x"}'), model='stub')
+    assert result['status'] == 'AUTHORITY_NOT_EVALUABLE'
+    assert result['policy_decision'] is None
+    events = records(tmp_path/'agent.jsonl')
+    assert any(e['event_type'] == 'PROPOSAL_ACCEPTED' for e in events)
+    assert any(e['event_type'] == 'AUTHORITY_RESOLUTION' for e in events)
+    assert not any(e['event_type'] in ('GOVERNANCE_DECISION', 'EXECUTION_ATTEMPT') for e in events)

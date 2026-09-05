@@ -1,6 +1,9 @@
 import json
 import uuid
+from copy import deepcopy
 from pathlib import Path
+
+import jsonschema
 
 from src.complaint_store import (
     DEFAULT_EXECUTION_LOG,
@@ -13,7 +16,8 @@ from src.governance_event import (
     evaluate_policy_with_decision_log,
 )
 from src.authority_resolver import (
-    resolve_authority,
+    AUTHORITY_SOURCE_PATH, RULE_VERSION, boundary_status, instant, load_authority_source,
+    load_preserved_revision, policy_authority, preserve_revision, resolve_authority, utc_now,
 )
 
 
@@ -114,13 +118,48 @@ def _governed_action(
     opa_decision_log_path=DEFAULT_OPA_DECISION_LOG,
     action="read",
     emit=None,
+    authority_path=AUTHORITY_SOURCE_PATH,
 ):
     emit = emit or (lambda event_type, data: None)
     action_attempt_id = str(uuid.uuid4())
 
-    authority = resolve_authority(
-    actor_id
-    )
+    identity = {"action": action, "resource_id": resource_id, "action_attempt_id": action_attempt_id}
+    authority_resolution_at = utc_now()
+    history = Path(governance_log_path).parent / "authority_history"
+    revision_ref = None
+    try:
+        revision = load_authority_source(authority_path)
+        revision_ref = preserve_revision(revision, history)
+        # Evaluate the preserved bytes, not a subsequent read of the current registry.
+        revision = load_preserved_revision(revision_ref, history)
+        first = resolve_authority(actor_id, effective_at=authority_resolution_at, registry_revision=revision)
+    except (OSError, ValueError, TypeError, KeyError, jsonschema.ValidationError) as error:
+        first = {"status": "INSUFFICIENT_EVIDENCE" if isinstance(error, FileNotFoundError) else "EVIDENCE_DEFECT",
+                 "principal": actor_id, "effective_at": authority_resolution_at, "rule_version": RULE_VERSION,
+                 "record_refs": [], "candidates": [], "basis": None}
+    binding = {"rule_version": RULE_VERSION, "authority_resolution_at": authority_resolution_at,
+               "opa_decision_at": None, "revision": revision_ref, "at_resolution": first,
+               "at_opa_decision": None, "status": first["status"]}
+
+    def record_authority():
+        schema = load_authority_source(PROJECT_ROOT / "schemas/authority_resolution.schema.json")
+        jsonschema.validate(binding, schema, format_checker=jsonschema.FormatChecker())
+        snapshot = deepcopy(binding)
+        append_governance_event({"run_id": run_id, "step_id": step_id, **identity,
+                                 "recorded_at": utc_now(), "authority_binding": snapshot},
+                                Path(governance_log_path).parent / "authority_resolution.jsonl")
+        emit("AUTHORITY_RESOLUTION", {**identity, "authority_binding": snapshot})
+
+    def not_evaluable(policy_decision=None):
+        emit("EXECUTION_DISPOSITION", {**identity, "status": "NOT_ATTEMPTED_AUTHORITY", "authority_status": binding["status"]})
+        emit("OBSERVED_OUTCOME", {**identity, "status": "AUTHORITY_NOT_EVALUABLE", "resource_read": False})
+        return {"run_id": run_id, "authority_status": binding["status"],
+                "policy_decision": policy_decision, "resource_returned": False}
+
+    record_authority()
+    if first["status"] != "RESOLVED":
+        return not_evaluable()
+    authority = policy_authority(first, action, "employee_complaint")
 
     policy_input = build_policy_input(
     resource_id,
@@ -130,6 +169,8 @@ def _governed_action(
         action_attempt_id,
     action=action,
     )
+
+    policy_input["authority_resolution_at"] = authority_resolution_at
 
     decision, opa_decision_event = (
     evaluate_policy_with_decision_log(
@@ -142,6 +183,15 @@ def _governed_action(
     opa_decision_log_path,
     )
     
+    native_timestamp = opa_decision_event.get("timestamp")
+    binding["opa_decision_at"] = native_timestamp if isinstance(native_timestamp, str) else None
+    second = resolve_authority(actor_id, effective_at=binding["opa_decision_at"], registry_revision=revision)
+    binding["at_opa_decision"] = second
+    binding["status"] = boundary_status(first, second)
+    if second["status"] != "EVIDENCE_DEFECT" and instant(binding["opa_decision_at"]) < instant(authority_resolution_at):
+        binding["status"] = "EVIDENCE_DEFECT"
+    record_authority()
+
     decision_event = build_event(
         policy_input,
         decision,
@@ -150,8 +200,7 @@ def _governed_action(
     "step_id": step_id,
     "action_attempt_id": action_attempt_id,
     "agent_id": actor_id,
-    "authority_provenance":
-        authority["provenance"],
+    "authority_binding": binding,
 },
     )
 
@@ -164,9 +213,11 @@ def _governed_action(
         governance_log_path,
     )
 
-    identity = {"action": action, "resource_id": resource_id, "action_attempt_id": action_attempt_id}
     emit("GOVERNANCE_DECISION", {**identity, "governance_event_id": decision_event["event_id"],
                                  "policy_input": policy_input, "decision": decision})
+
+    if binding["status"] != "RESOLVED":
+        return not_evaluable(decision["decision"])
 
     complaint = None
 
@@ -196,6 +247,7 @@ def _governed_action(
 
     return {
         "run_id": run_id,
+        "authority_status": binding["status"],
         "policy_decision": decision["decision"],
         "resource_returned": complaint is not None,
     }

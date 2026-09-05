@@ -77,5 +77,7 @@ def run_trial(task, candidates, *, output_dir, model=DEFAULT_MODEL, propose=prop
                 emit("EXECUTION_DISPOSITION", {"status": "NOT_ATTEMPTED_RUNTIME_ERROR"})
             emit("OBSERVED_OUTCOME", {"status": "RUNTIME_ERROR", "resource_read": None if attempted else False})
         return {"run_id": run_id, "status": "RUNTIME_ERROR", "proposal": proposal}
-    return {"run_id": run_id, "status": "EXECUTED" if result["resource_returned"] else "DENIED",
+    status = ("AUTHORITY_NOT_EVALUABLE" if result["authority_status"] != "RESOLVED"
+              else "EXECUTED" if result["resource_returned"] else "DENIED")
+    return {"run_id": run_id, "status": status,
             "proposal": proposal, **result}
