@@ -1,0 +1,477 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "assertion_id": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "relationship_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "correlation_method": {
+      "enum": [
+        "NATIVE_IDENTIFIER_LINKAGE",
+        "EXACT_COMPOSITE_LINKAGE"
+      ]
+    },
+    "focus": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "source",
+        "evidence_ref"
+      ],
+      "additionalProperties": false
+    },
+    "source_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content_digest": {
+            "type": "string",
+            "minLength": 1
+          },
+          "location": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "observed_signals": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "source",
+          "evidence_ref",
+          "content_digest",
+          "location",
+          "observed_signals"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "signals_used": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string",
+            "minLength": 1
+          },
+          "operator": {
+            "enum": [
+              "EXACT_EQUALITY",
+              "ABSOLUTE_TIME_WINDOW"
+            ]
+          },
+          "role": {
+            "enum": [
+              "CANDIDATE_SELECTION",
+              "REQUIRED_INVARIANT"
+            ]
+          }
+        },
+        "required": [
+          "field",
+          "operator",
+          "role"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "candidate_population": {
+      "type": "object",
+      "properties": {
+        "scope": {
+          "const": "SUPPLIED_SNAPSHOT_ONLY"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "source",
+              "count",
+              "evidence_refs"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "snapshot_digest": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "scope",
+        "sources",
+        "snapshot_digest"
+      ],
+      "additionalProperties": false
+    },
+    "competing_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reverse_candidate_refs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence_ref": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "source",
+                "evidence_ref"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "source",
+          "evidence_ref",
+          "reverse_candidate_refs"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "result": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "enum": [
+            "LINKED",
+            "AMBIGUOUS",
+            "UNMATCHED",
+            "CONTRADICTED",
+            "INSUFFICIENT_EVIDENCE"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "linked_evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "source",
+              "evidence_ref"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "defects": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "minLength": 1
+              },
+              "focus_value": {},
+              "candidate_value": {}
+            },
+            "required": [
+              "field",
+              "focus_value",
+              "candidate_value"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "state",
+        "reason",
+        "linked_evidence",
+        "defects",
+        "conflicts"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "LINKED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "linked_evidence": {
+                "minItems": 1,
+                "maxItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "linked_evidence": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "CONTRADICTED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "conflicts": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "INSUFFICIENT_EVIDENCE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "defects": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "evidence_coverage": {
+      "type": "object",
+      "properties": {
+        "completeness": {
+          "enum": [
+            "UNKNOWN",
+            "PARTIAL",
+            "COMPLETE_FOR_DECLARED_SCOPE"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "interval_start": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "interval_end": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "completeness",
+        "basis",
+        "interval_start",
+        "interval_end"
+      ],
+      "additionalProperties": false
+    },
+    "time_assumptions": {
+      "type": "object",
+      "properties": {
+        "used_for_matching": {
+          "type": "boolean"
+        },
+        "window_seconds": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "boundary": {
+          "enum": [
+            "INCLUSIVE_ABSOLUTE_DIFFERENCE",
+            "NOT_APPLIED"
+          ]
+        },
+        "timestamp_field": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "clock_skew_verified": {
+          "const": false
+        },
+        "offset_applied_ns": {
+          "const": 0
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "used_for_matching",
+        "window_seconds",
+        "boundary",
+        "timestamp_field",
+        "clock_skew_verified",
+        "offset_applied_ns",
+        "assumptions"
+      ],
+      "additionalProperties": false
+    },
+    "rule": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assertion_adapter_version": {
+          "const": "1.0"
+        },
+        "parameters": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "version",
+        "assertion_adapter_version",
+        "parameters"
+      ],
+      "additionalProperties": false
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "method_output": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "assertion_id",
+    "relationship_type",
+    "correlation_method",
+    "focus",
+    "source_evidence",
+    "signals_used",
+    "candidate_population",
+    "competing_candidates",
+    "result",
+    "evidence_coverage",
+    "time_assumptions",
+    "rule",
+    "limitations",
+    "method_output"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/correlation_assertion.schema.json",
+  "title": "Correlation Assertion"
+}

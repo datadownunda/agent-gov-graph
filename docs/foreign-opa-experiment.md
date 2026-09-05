@@ -174,3 +174,8 @@ characterizes the unchanged matcher using synthetic observations. Its
 cover repetition, timestamp separation, clock skew, missing counterparts, and
 plausible impostors, with evaluator ground truth kept outside the matcher.
 These results are algorithm experiments, not new native-log custody evidence.
+
+The additive [correlation assertion model](correlation-assertions.md) now exposes
+the existing matcher's findings as reviewable records with candidate populations,
+source references, assumptions, coverage, and limitations. It preserves the
+matcher and benchmark results and does not feed control-effectiveness findings.

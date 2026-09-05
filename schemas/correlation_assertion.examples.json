@@ -1,0 +1,830 @@
+[
+  {
+    "schema_version": "1.0",
+    "relationship_type": "REQUEST_DECISION_ASSOCIATION",
+    "correlation_method": "EXACT_COMPOSITE_LINKAGE",
+    "focus": {
+      "source": "opa",
+      "evidence_ref": "opa-1"
+    },
+    "source_evidence": [
+      {
+        "source": "opa",
+        "evidence_ref": "opa-1",
+        "content_digest": "sha256:77782bdf9c4f274b36f8aff3e77bd00a7f6366171bf5c54cf3f2b0fcead33aee",
+        "location": null,
+        "observed_signals": {
+          "actor": "alice",
+          "action": "read",
+          "resource_id": "c1",
+          "resource_type": "complaint",
+          "observed_at": "2026-09-05T12:00:00Z"
+        }
+      },
+      {
+        "source": "journal",
+        "evidence_ref": "journal-1",
+        "content_digest": "sha256:fe669d4ebaede15cc0a0dae4922ae44de55b8264110678be3484f5de13c4b79a",
+        "location": null,
+        "observed_signals": {
+          "actor": "alice",
+          "action": "read",
+          "resource_id": "c1",
+          "resource_type": "complaint",
+          "observed_at": "2026-09-05T12:00:00Z"
+        }
+      }
+    ],
+    "signals_used": [
+      {
+        "field": "actor",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "action",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "resource_id",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "resource_type",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "observed_at",
+        "operator": "ABSOLUTE_TIME_WINDOW",
+        "role": "CANDIDATE_SELECTION"
+      }
+    ],
+    "candidate_population": {
+      "scope": "SUPPLIED_SNAPSHOT_ONLY",
+      "sources": [
+        {
+          "source": "opa",
+          "count": 1,
+          "evidence_refs": [
+            "opa-1"
+          ]
+        },
+        {
+          "source": "journal",
+          "count": 1,
+          "evidence_refs": [
+            "journal-1"
+          ]
+        }
+      ],
+      "snapshot_digest": "sha256:ea42609db07f2608b7c24cf428063a1f95474eb6afabc0652630e12c7ebe79aa"
+    },
+    "competing_candidates": [
+      {
+        "source": "journal",
+        "evidence_ref": "journal-1",
+        "reverse_candidate_refs": [
+          {
+            "source": "opa",
+            "evidence_ref": "opa-1"
+          }
+        ]
+      }
+    ],
+    "result": {
+      "state": "LINKED",
+      "reason": "Mutually unique candidate under the declared rule; conditional linkage, not proven identity.",
+      "linked_evidence": [
+        {
+          "source": "journal",
+          "evidence_ref": "journal-1"
+        }
+      ],
+      "defects": [],
+      "conflicts": []
+    },
+    "evidence_coverage": {
+      "completeness": "UNKNOWN",
+      "basis": "Only supplied evidence is available; completeness is not verified.",
+      "interval_start": null,
+      "interval_end": null
+    },
+    "time_assumptions": {
+      "used_for_matching": true,
+      "window_seconds": "2",
+      "boundary": "INCLUSIVE_ABSOLUTE_DIFFERENCE",
+      "timestamp_field": "observed_at",
+      "clock_skew_verified": false,
+      "offset_applied_ns": 0,
+      "assumptions": [
+        "OPA decision time and request observation time are comparable.",
+        "The window must accommodate latency and clock offset; neither is independently verified."
+      ]
+    },
+    "rule": {
+      "name": "exact-fields-mutually-unique-time-window-v1",
+      "version": "1",
+      "assertion_adapter_version": "1.0",
+      "parameters": {
+        "window_seconds": "2"
+      }
+    },
+    "limitations": [
+      "Evidence coverage is a caller declaration, not a completeness check.",
+      "Mutual uniqueness does not exclude missing originals or plausible impostors.",
+      "Hashes identify supplied content; they do not authenticate provenance.",
+      "No execution or control-effectiveness conclusion is implied."
+    ],
+    "method_output": {
+      "source": "opa",
+      "evidence_ref": "opa-1",
+      "state": "MATCHED",
+      "candidate_refs": [
+        "journal-1"
+      ],
+      "defects": [],
+      "method": "exact-fields-mutually-unique-time-window-v1",
+      "window_seconds": "2",
+      "opa_minus_request_ns": 0
+    },
+    "assertion_id": "sha256:c31685fd4c2ec334a9c49fcfc0f4d22d37585e98d444826d298e203e0e94f22f"
+  },
+  {
+    "schema_version": "1.0",
+    "relationship_type": "SAME_POLICY_EVALUATION",
+    "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+    "focus": {
+      "source": "left",
+      "evidence_ref": "native-left"
+    },
+    "source_evidence": [
+      {
+        "source": "left",
+        "evidence_ref": "native-left",
+        "content_digest": "sha256:742ac98185aacbc0da13ee5630e403197cf79e4f5a0076b8ee359aa3fcc73169",
+        "location": null,
+        "observed_signals": {
+          "decision_id": "native-example"
+        }
+      },
+      {
+        "source": "right",
+        "evidence_ref": "native-right",
+        "content_digest": "sha256:94475f0531b2e5a33938499e8d30cf7e452e081efe037032ca33167f68a83aa7",
+        "location": null,
+        "observed_signals": {
+          "decision_id": "native-example"
+        }
+      }
+    ],
+    "signals_used": [
+      {
+        "field": "decision_id",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      }
+    ],
+    "candidate_population": {
+      "scope": "SUPPLIED_SNAPSHOT_ONLY",
+      "sources": [
+        {
+          "source": "left",
+          "count": 1,
+          "evidence_refs": [
+            "native-left"
+          ]
+        },
+        {
+          "source": "right",
+          "count": 1,
+          "evidence_refs": [
+            "native-right"
+          ]
+        }
+      ],
+      "snapshot_digest": "sha256:cd6df3d338676e9b0a7539592f30e3f38f214f4464cfe6a5fe1d468ac342c6bc"
+    },
+    "competing_candidates": [
+      {
+        "source": "right",
+        "evidence_ref": "native-right",
+        "reverse_candidate_refs": [
+          {
+            "source": "left",
+            "evidence_ref": "native-left"
+          }
+        ]
+      }
+    ],
+    "result": {
+      "state": "LINKED",
+      "reason": "Mutually unique candidate under the declared rule; conditional linkage, not proven identity.",
+      "linked_evidence": [
+        {
+          "source": "right",
+          "evidence_ref": "native-right"
+        }
+      ],
+      "defects": [],
+      "conflicts": []
+    },
+    "evidence_coverage": {
+      "completeness": "UNKNOWN",
+      "basis": "Only supplied evidence is available; completeness is not verified.",
+      "interval_start": null,
+      "interval_end": null
+    },
+    "time_assumptions": {
+      "used_for_matching": false,
+      "window_seconds": null,
+      "boundary": "NOT_APPLIED",
+      "timestamp_field": null,
+      "clock_skew_verified": false,
+      "offset_applied_ns": 0,
+      "assumptions": [
+        "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+      ]
+    },
+    "rule": {
+      "name": "native-identifier-mutual-uniqueness",
+      "version": "1",
+      "assertion_adapter_version": "1.0",
+      "parameters": {
+        "identifier_field": "decision_id",
+        "namespace": "opa.example/instance-a",
+        "issuer": "Synthetic example declaration",
+        "required_equal_fields": []
+      }
+    },
+    "limitations": [
+      "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+      "An identifier value may be copied, reused, or incorrectly recorded.",
+      "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+      "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+      "No execution or control-effectiveness conclusion is implied."
+    ],
+    "method_output": {
+      "source": "left",
+      "evidence_ref": "native-left",
+      "state": "LINKED",
+      "candidate_refs": [
+        "native-right"
+      ],
+      "defects": [],
+      "conflicts": []
+    },
+    "assertion_id": "sha256:fef8c183cb6bc795759fddc0b4a8165267f1c74f4d262cfd8cf64a8cd67a18bb"
+  },
+  {
+    "schema_version": "1.0",
+    "relationship_type": "REQUEST_DECISION_ASSOCIATION",
+    "correlation_method": "EXACT_COMPOSITE_LINKAGE",
+    "focus": {
+      "source": "opa",
+      "evidence_ref": "opa-1"
+    },
+    "source_evidence": [
+      {
+        "source": "opa",
+        "evidence_ref": "opa-1",
+        "content_digest": "sha256:77782bdf9c4f274b36f8aff3e77bd00a7f6366171bf5c54cf3f2b0fcead33aee",
+        "location": null,
+        "observed_signals": {
+          "actor": "alice",
+          "action": "read",
+          "resource_id": "c1",
+          "resource_type": "complaint",
+          "observed_at": "2026-09-05T12:00:00Z"
+        }
+      },
+      {
+        "source": "opa",
+        "evidence_ref": "opa-2",
+        "content_digest": "sha256:138afd9c762e986745a4a7ae79d5dcc3c100db583064afab430d13c55e899d4f",
+        "location": null,
+        "observed_signals": {
+          "actor": "alice",
+          "action": "read",
+          "resource_id": "c1",
+          "resource_type": "complaint",
+          "observed_at": "2026-09-05T12:00:00Z"
+        }
+      },
+      {
+        "source": "journal",
+        "evidence_ref": "journal-1",
+        "content_digest": "sha256:fe669d4ebaede15cc0a0dae4922ae44de55b8264110678be3484f5de13c4b79a",
+        "location": null,
+        "observed_signals": {
+          "actor": "alice",
+          "action": "read",
+          "resource_id": "c1",
+          "resource_type": "complaint",
+          "observed_at": "2026-09-05T12:00:00Z"
+        }
+      }
+    ],
+    "signals_used": [
+      {
+        "field": "actor",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "action",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "resource_id",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "resource_type",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "observed_at",
+        "operator": "ABSOLUTE_TIME_WINDOW",
+        "role": "CANDIDATE_SELECTION"
+      }
+    ],
+    "candidate_population": {
+      "scope": "SUPPLIED_SNAPSHOT_ONLY",
+      "sources": [
+        {
+          "source": "opa",
+          "count": 2,
+          "evidence_refs": [
+            "opa-1",
+            "opa-2"
+          ]
+        },
+        {
+          "source": "journal",
+          "count": 1,
+          "evidence_refs": [
+            "journal-1"
+          ]
+        }
+      ],
+      "snapshot_digest": "sha256:db7043fe375b27ca71392506bd8d340d7c5e0af894ea1d92262ef59e2560dad7"
+    },
+    "competing_candidates": [
+      {
+        "source": "journal",
+        "evidence_ref": "journal-1",
+        "reverse_candidate_refs": [
+          {
+            "source": "opa",
+            "evidence_ref": "opa-1"
+          },
+          {
+            "source": "opa",
+            "evidence_ref": "opa-2"
+          }
+        ]
+      }
+    ],
+    "result": {
+      "state": "AMBIGUOUS",
+      "reason": "Candidate competition exists on one or both sides.",
+      "linked_evidence": [],
+      "defects": [],
+      "conflicts": []
+    },
+    "evidence_coverage": {
+      "completeness": "UNKNOWN",
+      "basis": "Only supplied evidence is available; completeness is not verified.",
+      "interval_start": null,
+      "interval_end": null
+    },
+    "time_assumptions": {
+      "used_for_matching": true,
+      "window_seconds": "2",
+      "boundary": "INCLUSIVE_ABSOLUTE_DIFFERENCE",
+      "timestamp_field": "observed_at",
+      "clock_skew_verified": false,
+      "offset_applied_ns": 0,
+      "assumptions": [
+        "OPA decision time and request observation time are comparable.",
+        "The window must accommodate latency and clock offset; neither is independently verified."
+      ]
+    },
+    "rule": {
+      "name": "exact-fields-mutually-unique-time-window-v1",
+      "version": "1",
+      "assertion_adapter_version": "1.0",
+      "parameters": {
+        "window_seconds": "2"
+      }
+    },
+    "limitations": [
+      "Evidence coverage is a caller declaration, not a completeness check.",
+      "Mutual uniqueness does not exclude missing originals or plausible impostors.",
+      "Hashes identify supplied content; they do not authenticate provenance.",
+      "No execution or control-effectiveness conclusion is implied."
+    ],
+    "method_output": {
+      "source": "opa",
+      "evidence_ref": "opa-1",
+      "state": "AMBIGUOUS",
+      "candidate_refs": [
+        "journal-1"
+      ],
+      "defects": [],
+      "method": "exact-fields-mutually-unique-time-window-v1",
+      "window_seconds": "2"
+    },
+    "assertion_id": "sha256:01117efed9f8e6599762f2eccd9db88ed71a160e05265b436e9064de8fad0689"
+  },
+  {
+    "schema_version": "1.0",
+    "relationship_type": "REQUEST_DECISION_ASSOCIATION",
+    "correlation_method": "EXACT_COMPOSITE_LINKAGE",
+    "focus": {
+      "source": "opa",
+      "evidence_ref": "opa-1"
+    },
+    "source_evidence": [
+      {
+        "source": "opa",
+        "evidence_ref": "opa-1",
+        "content_digest": "sha256:77782bdf9c4f274b36f8aff3e77bd00a7f6366171bf5c54cf3f2b0fcead33aee",
+        "location": null,
+        "observed_signals": {
+          "actor": "alice",
+          "action": "read",
+          "resource_id": "c1",
+          "resource_type": "complaint",
+          "observed_at": "2026-09-05T12:00:00Z"
+        }
+      }
+    ],
+    "signals_used": [
+      {
+        "field": "actor",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "action",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "resource_id",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "resource_type",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "observed_at",
+        "operator": "ABSOLUTE_TIME_WINDOW",
+        "role": "CANDIDATE_SELECTION"
+      }
+    ],
+    "candidate_population": {
+      "scope": "SUPPLIED_SNAPSHOT_ONLY",
+      "sources": [
+        {
+          "source": "opa",
+          "count": 1,
+          "evidence_refs": [
+            "opa-1"
+          ]
+        },
+        {
+          "source": "journal",
+          "count": 0,
+          "evidence_refs": []
+        }
+      ],
+      "snapshot_digest": "sha256:dc2a3220ecd9125f012ddab0a93047f8a62b593e841c4f97d61c835198bad460"
+    },
+    "competing_candidates": [],
+    "result": {
+      "state": "UNMATCHED",
+      "reason": "No candidate satisfies this rule within the supplied snapshot.",
+      "linked_evidence": [],
+      "defects": [],
+      "conflicts": []
+    },
+    "evidence_coverage": {
+      "completeness": "UNKNOWN",
+      "basis": "Only supplied evidence is available; completeness is not verified.",
+      "interval_start": null,
+      "interval_end": null
+    },
+    "time_assumptions": {
+      "used_for_matching": true,
+      "window_seconds": "2",
+      "boundary": "INCLUSIVE_ABSOLUTE_DIFFERENCE",
+      "timestamp_field": "observed_at",
+      "clock_skew_verified": false,
+      "offset_applied_ns": 0,
+      "assumptions": [
+        "OPA decision time and request observation time are comparable.",
+        "The window must accommodate latency and clock offset; neither is independently verified."
+      ]
+    },
+    "rule": {
+      "name": "exact-fields-mutually-unique-time-window-v1",
+      "version": "1",
+      "assertion_adapter_version": "1.0",
+      "parameters": {
+        "window_seconds": "2"
+      }
+    },
+    "limitations": [
+      "Evidence coverage is a caller declaration, not a completeness check.",
+      "Mutual uniqueness does not exclude missing originals or plausible impostors.",
+      "Hashes identify supplied content; they do not authenticate provenance.",
+      "No execution or control-effectiveness conclusion is implied."
+    ],
+    "method_output": {
+      "source": "opa",
+      "evidence_ref": "opa-1",
+      "state": "UNMATCHED",
+      "candidate_refs": [],
+      "defects": [],
+      "method": "exact-fields-mutually-unique-time-window-v1",
+      "window_seconds": "2"
+    },
+    "assertion_id": "sha256:88296f5bd5e97b05dbcfcdc73d303f741a160747ec39d4197139302f6aae60bb"
+  },
+  {
+    "schema_version": "1.0",
+    "relationship_type": "SAME_POLICY_EVALUATION",
+    "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+    "focus": {
+      "source": "left",
+      "evidence_ref": "native-left"
+    },
+    "source_evidence": [
+      {
+        "source": "left",
+        "evidence_ref": "native-left",
+        "content_digest": "sha256:742ac98185aacbc0da13ee5630e403197cf79e4f5a0076b8ee359aa3fcc73169",
+        "location": null,
+        "observed_signals": {
+          "decision_id": "native-example",
+          "actor": "alice"
+        }
+      },
+      {
+        "source": "right",
+        "evidence_ref": "native-right",
+        "content_digest": "sha256:1db07dffafd2d2ab0f011913857969f3b44996fd334d8271ca467d414eeafff0",
+        "location": null,
+        "observed_signals": {
+          "decision_id": "native-example",
+          "actor": "bob"
+        }
+      }
+    ],
+    "signals_used": [
+      {
+        "field": "decision_id",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "actor",
+        "operator": "EXACT_EQUALITY",
+        "role": "REQUIRED_INVARIANT"
+      }
+    ],
+    "candidate_population": {
+      "scope": "SUPPLIED_SNAPSHOT_ONLY",
+      "sources": [
+        {
+          "source": "left",
+          "count": 1,
+          "evidence_refs": [
+            "native-left"
+          ]
+        },
+        {
+          "source": "right",
+          "count": 1,
+          "evidence_refs": [
+            "native-right"
+          ]
+        }
+      ],
+      "snapshot_digest": "sha256:4f4f576a2fbb32e4c443ad3b49bff2cde2c9178d232e4ad49794f063cc125eb1"
+    },
+    "competing_candidates": [
+      {
+        "source": "right",
+        "evidence_ref": "native-right",
+        "reverse_candidate_refs": [
+          {
+            "source": "left",
+            "evidence_ref": "native-left"
+          }
+        ]
+      }
+    ],
+    "result": {
+      "state": "CONTRADICTED",
+      "reason": "Native identifier candidate violates an explicitly required equality invariant.",
+      "linked_evidence": [],
+      "defects": [],
+      "conflicts": [
+        {
+          "field": "actor",
+          "focus_value": "alice",
+          "candidate_value": "bob"
+        }
+      ]
+    },
+    "evidence_coverage": {
+      "completeness": "UNKNOWN",
+      "basis": "Only supplied evidence is available; completeness is not verified.",
+      "interval_start": null,
+      "interval_end": null
+    },
+    "time_assumptions": {
+      "used_for_matching": false,
+      "window_seconds": null,
+      "boundary": "NOT_APPLIED",
+      "timestamp_field": null,
+      "clock_skew_verified": false,
+      "offset_applied_ns": 0,
+      "assumptions": [
+        "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+      ]
+    },
+    "rule": {
+      "name": "native-identifier-mutual-uniqueness",
+      "version": "1",
+      "assertion_adapter_version": "1.0",
+      "parameters": {
+        "identifier_field": "decision_id",
+        "namespace": "opa.example/instance-a",
+        "issuer": "Synthetic example declaration",
+        "required_equal_fields": [
+          "actor"
+        ]
+      }
+    },
+    "limitations": [
+      "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+      "An identifier value may be copied, reused, or incorrectly recorded.",
+      "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+      "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+      "No execution or control-effectiveness conclusion is implied."
+    ],
+    "method_output": {
+      "source": "left",
+      "evidence_ref": "native-left",
+      "state": "CONTRADICTED",
+      "candidate_refs": [
+        "native-right"
+      ],
+      "defects": [],
+      "conflicts": [
+        {
+          "field": "actor",
+          "focus_value": "alice",
+          "candidate_value": "bob"
+        }
+      ]
+    },
+    "assertion_id": "sha256:745500a6d6d0132d3c7d4a9a67b6801a462dde052d9da76ae076cc567f077d17"
+  },
+  {
+    "schema_version": "1.0",
+    "relationship_type": "REQUEST_DECISION_ASSOCIATION",
+    "correlation_method": "EXACT_COMPOSITE_LINKAGE",
+    "focus": {
+      "source": "opa",
+      "evidence_ref": "opa-1"
+    },
+    "source_evidence": [
+      {
+        "source": "opa",
+        "evidence_ref": "opa-1",
+        "content_digest": "sha256:2a7a4877751255e55a1ef2fdad32edd2ffdfe409ece99d414cebd770be5b499b",
+        "location": null,
+        "observed_signals": {
+          "actor": "alice",
+          "action": "read",
+          "resource_id": "c1",
+          "resource_type": "complaint",
+          "observed_at": "invalid"
+        }
+      }
+    ],
+    "signals_used": [
+      {
+        "field": "actor",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "action",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "resource_id",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "resource_type",
+        "operator": "EXACT_EQUALITY",
+        "role": "CANDIDATE_SELECTION"
+      },
+      {
+        "field": "observed_at",
+        "operator": "ABSOLUTE_TIME_WINDOW",
+        "role": "CANDIDATE_SELECTION"
+      }
+    ],
+    "candidate_population": {
+      "scope": "SUPPLIED_SNAPSHOT_ONLY",
+      "sources": [
+        {
+          "source": "opa",
+          "count": 1,
+          "evidence_refs": [
+            "opa-1"
+          ]
+        },
+        {
+          "source": "journal",
+          "count": 0,
+          "evidence_refs": []
+        }
+      ],
+      "snapshot_digest": "sha256:6e511f7344002fca797313407ed200cfad41d93190b69413e974a052ddc1f744"
+    },
+    "competing_candidates": [],
+    "result": {
+      "state": "INSUFFICIENT_EVIDENCE",
+      "reason": "Required evidence is missing or malformed; linkage cannot be evaluated.",
+      "linked_evidence": [],
+      "defects": [
+        "timestamp must be RFC3339 with timezone and <=9 fractional digits"
+      ],
+      "conflicts": []
+    },
+    "evidence_coverage": {
+      "completeness": "UNKNOWN",
+      "basis": "Only supplied evidence is available; completeness is not verified.",
+      "interval_start": null,
+      "interval_end": null
+    },
+    "time_assumptions": {
+      "used_for_matching": true,
+      "window_seconds": "2",
+      "boundary": "INCLUSIVE_ABSOLUTE_DIFFERENCE",
+      "timestamp_field": "observed_at",
+      "clock_skew_verified": false,
+      "offset_applied_ns": 0,
+      "assumptions": [
+        "OPA decision time and request observation time are comparable.",
+        "The window must accommodate latency and clock offset; neither is independently verified."
+      ]
+    },
+    "rule": {
+      "name": "exact-fields-mutually-unique-time-window-v1",
+      "version": "1",
+      "assertion_adapter_version": "1.0",
+      "parameters": {
+        "window_seconds": "2"
+      }
+    },
+    "limitations": [
+      "Evidence coverage is a caller declaration, not a completeness check.",
+      "Mutual uniqueness does not exclude missing originals or plausible impostors.",
+      "Hashes identify supplied content; they do not authenticate provenance.",
+      "No execution or control-effectiveness conclusion is implied."
+    ],
+    "method_output": {
+      "source": "opa",
+      "evidence_ref": "opa-1",
+      "state": "EVIDENCE_DEFECT",
+      "candidate_refs": [],
+      "defects": [
+        "timestamp must be RFC3339 with timezone and <=9 fractional digits"
+      ],
+      "method": "exact-fields-mutually-unique-time-window-v1",
+      "window_seconds": "2"
+    },
+    "assertion_id": "sha256:2e0f33e1fdc1dcc373a7097f0d509c98492d1f02cb0d96393ee1deb12b33022a"
+  }
+]
