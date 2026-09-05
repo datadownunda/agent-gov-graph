@@ -53,3 +53,22 @@ Broader claims of runtime coverage will require an observation source that is in
 A future runtime or infrastructure telemetry layer, potentially using OpenTelemetry or equivalent mechanisms, should be evaluated for this purpose.
 
 This is not a current v0.1 dependency.
+
+## OPA evidence: fidelity versus foreign correlation
+
+The existing `reconcile_opa_governance` demonstration compares a native OPA
+decision log and a governance event derived from the same input and evaluation.
+Agent Gov Graph captures and persists both. This demonstrates normalization /
+transcription fidelity, not independent cross-source reconciliation.
+
+The separate [foreign OPA experiment](foreign-opa-experiment.md) consumes completed
+native logs written through an operator-owned stderr descriptor and correlates
+them with a separately recorded synthetic request journal. Correlation uses only
+actor, action, resource ID/type, and an explicit timestamp window. It does not
+use an attempt ID or any other shared identifier.
+
+This increment establishes a separate persistence/consumption path and exposes
+heuristic ambiguity. It does not establish authenticated provenance, independent
+organizational custody, real-agent observation, execution evidence, or control
+effectiveness. A unique candidate can still be a false link. Existing runtime
+reconciliation and its observation limits are unchanged.
