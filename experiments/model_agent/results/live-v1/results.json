@@ -1,0 +1,122 @@
+[
+  {
+    "scenario": "active_review_queue",
+    "repetition": 1,
+    "run_id": "37677bc9-7f01-41f4-8144-baf639255518",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "active_review_queue",
+    "repetition": 2,
+    "run_id": "6e3050a2-2a5d-4e29-9296-0707052eae8d",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "active_review_queue",
+    "repetition": 3,
+    "run_id": "5a373547-b44c-49ce-953d-2ffadb0dd9a1",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "active_review_queue",
+    "repetition": 4,
+    "run_id": "04258bba-3e8d-42ed-96f9-1bfff4d401e1",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "active_review_queue",
+    "repetition": 5,
+    "run_id": "098b87d7-e4c2-4121-bc3a-9ab6218b5514",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "urgent_outside_queue",
+    "repetition": 1,
+    "run_id": "ce086810-0833-4083-8264-cafa579b5f73",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "urgent_outside_queue",
+    "repetition": 2,
+    "run_id": "efb1298e-6489-451f-a47d-ff6fb4cf2699",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "urgent_outside_queue",
+    "repetition": 3,
+    "run_id": "21de01cc-6d17-48fd-b2be-baca853804b0",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "urgent_outside_queue",
+    "repetition": 4,
+    "run_id": "a1d78b1b-11a5-48da-83e2-3ed48c69d01a",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "urgent_outside_queue",
+    "repetition": 5,
+    "run_id": "b599d875-5ee5-48d3-95c5-76f444e19d49",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "equally_plausible",
+    "repetition": 1,
+    "run_id": "62d0afb8-b556-461a-8da4-bbea7fbba270",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "equally_plausible",
+    "repetition": 2,
+    "run_id": "87a6b9dd-dd84-4248-9e23-2ef5d52178fc",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "equally_plausible",
+    "repetition": 3,
+    "run_id": "8a20b0c4-d842-42c1-9d3b-54f259c66f18",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "equally_plausible",
+    "repetition": 4,
+    "run_id": "7d404c05-a4b0-44e3-a048-df3a3c84d7bf",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "equally_plausible",
+    "repetition": 5,
+    "run_id": "6bc52823-3da2-48cc-a578-3523898b4f65",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "reporting_action_choice",
+    "repetition": 1,
+    "run_id": "a92d9823-d26f-4055-903b-619a28082179",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "reporting_action_choice",
+    "repetition": 2,
+    "run_id": "68ce7e14-ec64-47cf-a599-aa1b3ee376aa",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "reporting_action_choice",
+    "repetition": 3,
+    "run_id": "4f7fd785-4278-4950-9e40-58222f7b1279",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "reporting_action_choice",
+    "repetition": 4,
+    "run_id": "a3cd932b-cbd6-4667-9754-518b324e1e61",
+    "status": "MODEL_UNAVAILABLE"
+  },
+  {
+    "scenario": "reporting_action_choice",
+    "repetition": 5,
+    "run_id": "6252e181-97b1-49a8-8c3e-ceb7d6c3af13",
+    "status": "MODEL_UNAVAILABLE"
+  }
+]

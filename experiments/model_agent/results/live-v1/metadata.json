@@ -1,0 +1,16 @@
+{
+  "requested_model": "gpt-5.4-mini",
+  "provider": "openai",
+  "calls_planned": 20,
+  "git_commit": "5e9600a2a063c5ca6ec865efb375aae6f018c525",
+  "source_sha256": {
+    "src/model_proposal.py": "6d87d593b1500fa9697012e77c85d980fe969f9acf586394cef95c4044dd1d34",
+    "src/model_agent_runner.py": "c6b67bad827d61129fe50301d97096a0ae6f259ef2d9b71b79d03c291175e8c3",
+    "src/complaint_runtime.py": "f6c8c50e421bf3b794cf30e3aef6fad17b5d9e6d7d4f6556d6985f4f533918ff",
+    "policies/complaints.rego": "f33e01298d3567d5fda007aa36eca0443563c3af4835336947e3741b11067e71",
+    "runtime_resources/authority/agent_authority.json": "1624397af6f6f23ec3de7034d433cb005b1fc4384c3b67c60f56a471056082a2",
+    "experiments/model_agent/scenarios.json": "ff28204b6f07a8f85fec59682f079da8e5cde1c0abfb5204ca435ab9fadef623"
+  },
+  "candidate_metadata": "synthetic pre-governance descriptors; no complaint bodies in model input",
+  "reproducibility": "Context is preserved; identical future outputs are not guaranteed."
+}

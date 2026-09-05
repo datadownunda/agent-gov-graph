@@ -1,4 +1,5 @@
 .env
+/ski.rtf
 .venv/
 venv/
 __pycache__/
