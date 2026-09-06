@@ -1,0 +1,19 @@
+{
+  "basis": "Sequential controlled idle interval, client journal active, NGINX logging active; native log flushed on graceful stop. Operator declaration, not enterprise completeness proof.",
+  "interval_end": "2026-09-06T01:08:11.288962+00:00",
+  "interval_start": "2026-09-06T01:08:11.043651+00:00",
+  "roles": {
+    "execution": "CAPTURED",
+    "outcome": "CAPTURED"
+  },
+  "schema_version": "1.0",
+  "scope": {
+    "action": "read",
+    "actor": {
+      "id": "complaint-review-agent",
+      "namespace": "agent"
+    },
+    "resource_id": "complaint-789",
+    "resource_type": "employee_complaint"
+  }
+}

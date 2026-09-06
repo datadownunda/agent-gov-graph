@@ -1,0 +1,15 @@
+{
+  "auth": "Ephemeral synthetic Basic-auth password/hash excluded from artifacts.",
+  "config_digest": "sha256:0b164386f668e281c213bc8d87fa78c0fb59acea9f9488b957b26754d1a9edb4",
+  "custody": "NGINX writes native/access.jsonl directly through a bind mount. Ingestion occurs after graceful stop.",
+  "image": "nginx@sha256:dc5069ad14f19660b141b21236140b91656bf89bbc3e2417c70ae650cd66104c",
+  "image_id": "sha256:dc5069ad14f19660b141b21236140b91656bf89bbc3e2417c70ae650cd66104c",
+  "nginx_version": "nginx version: nginx/1.30.4",
+  "repo_digests": [
+    "nginx@sha256:dc5069ad14f19660b141b21236140b91656bf89bbc3e2417c70ae650cd66104c"
+  ],
+  "static_resources": {
+    "complaint-456.json": "sha256:643c94531811ba797b2e8e09b8d2bd07ece16a31fe1e3400ef3397477f57b550",
+    "complaint-789.json": "sha256:9e2c55933fb74f6ead170a0549c9f11c6f8e8da4fea8ad285c1a44f7ab824e38"
+  }
+}

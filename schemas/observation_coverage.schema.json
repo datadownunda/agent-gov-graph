@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "observation_coverage",
+  "required": [
+    "schema_version",
+    "interval_start",
+    "interval_end",
+    "roles",
+    "scope",
+    "basis"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "interval_start": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "interval_end": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "roles": {
+      "type": "object",
+      "required": [
+        "execution",
+        "outcome"
+      ],
+      "additionalProperties": {
+        "enum": [
+          "CAPTURED",
+          "UNKNOWN",
+          "UNAVAILABLE",
+          "WITHHELD"
+        ]
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "actor",
+        "action",
+        "resource_id",
+        "resource_type"
+      ]
+    },
+    "basis": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

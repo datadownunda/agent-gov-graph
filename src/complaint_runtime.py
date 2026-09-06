@@ -119,6 +119,7 @@ def _governed_action(
     action="read",
     emit=None,
     authority_path=AUTHORITY_SOURCE_PATH,
+    executor=None,
 ):
     emit = emit or (lambda event_type, data: None)
     action_attempt_id = str(uuid.uuid4())
@@ -232,7 +233,7 @@ def _governed_action(
         emit("EXECUTION_DISPOSITION", {**identity, "status": "DISPATCHING"})
         emit("EXECUTION_ATTEMPT", identity)
         try:
-            complaint = read_complaint(
+            complaint = (executor or read_complaint)(
                 resource_id, run_id=run_id, step_id=step_id, actor_id=actor_id,
                 action_attempt_id=action_attempt_id, log_path=execution_log_path)
         except Exception as error:
@@ -255,19 +256,19 @@ def _governed_action(
 
 def governed_read(resource_id, *, run_id, step_id, actor_id, bypass_enforcement=False,
                   governance_log_path=DEFAULT_GOVERNANCE_LOG, execution_log_path=DEFAULT_EXECUTION_LOG,
-                  opa_decision_log_path=DEFAULT_OPA_DECISION_LOG):
+                  opa_decision_log_path=DEFAULT_OPA_DECISION_LOG, executor=None):
     """Compatibility path, including the existing explicit bypass test facility."""
     return _governed_action(resource_id, run_id=run_id, step_id=step_id, actor_id=actor_id,
                             bypass_enforcement=bypass_enforcement, governance_log_path=governance_log_path,
-                            execution_log_path=execution_log_path, opa_decision_log_path=opa_decision_log_path)
+                            execution_log_path=execution_log_path, opa_decision_log_path=opa_decision_log_path, executor=executor)
 
 
 def governed_action(resource_id, *, action, run_id, step_id, actor_id, emit,
                     governance_log_path=DEFAULT_GOVERNANCE_LOG, execution_log_path=DEFAULT_EXECUTION_LOG,
-                    opa_decision_log_path=DEFAULT_OPA_DECISION_LOG):
+                    opa_decision_log_path=DEFAULT_OPA_DECISION_LOG, executor=None):
     """Model proposal entry point. There is deliberately no enforcement bypass."""
     if action not in ("read", "export"):
         raise ValueError("Unsupported proposal action")
     return _governed_action(resource_id, action=action, run_id=run_id, step_id=step_id, actor_id=actor_id,
                             emit=emit, governance_log_path=governance_log_path,
-                            execution_log_path=execution_log_path, opa_decision_log_path=opa_decision_log_path)
+                            execution_log_path=execution_log_path, opa_decision_log_path=opa_decision_log_path, executor=executor)

@@ -1,0 +1,16 @@
+{
+  "basis": "Cooperative experiment operator maps one synthetic Basic-auth account to one runtime agent.",
+  "entries": [
+    {
+      "source": {
+        "id": "complaint-client",
+        "namespace": "nginx-basic:complaints-static-v1"
+      },
+      "target": {
+        "id": "complaint-review-agent",
+        "namespace": "agent"
+      }
+    }
+  ],
+  "version": "1"
+}

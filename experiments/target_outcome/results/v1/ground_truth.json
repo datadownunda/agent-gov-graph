@@ -1,0 +1,12 @@
+{
+  "scenario_design": {
+    "allow": "OPA ALLOW; HTTP read; client success recorded.",
+    "blocked-deny": "Normal runtime DENY gate; no HTTP executor call.",
+    "critical-deny": "OPA DENY; existing explicit test bypass submits HTTP GET; client receives body and server request ID then injected finalization failure leaves success null.",
+    "execution-withheld": "All execution claims intentionally omitted from analysis only. No original evidence deleted."
+  },
+  "synthetic_assumptions": [
+    "Resources, credentials, identity mapping, proposals, bypass and failure injection are operator-controlled.",
+    "NGINX and OPA are real processes; target native records are not authored by the client or AGG."
+  ]
+}

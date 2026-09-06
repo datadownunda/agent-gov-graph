@@ -1,0 +1,23 @@
+{
+  "completed_at": "2026-09-06T01:08:11.519274+00:00",
+  "files": {
+    "authority_history/601887eae502d25c9e049bd6458719785e376bb82c253a4abb656e2e387232ca.json": "sha256:601887eae502d25c9e049bd6458719785e376bb82c253a4abb656e2e387232ca",
+    "authority_resolution.jsonl": "sha256:f5ded7dc5f44e6d0e9a0b07106db41d9e4d7d8cda8c47373e3dcdd0bc577ee63",
+    "blocked_coverage.json": "sha256:51f6a26ab87134971e6fff88e6ac2ee593da263bac1ab48d84095698c174465c",
+    "correlations.json": "sha256:cbbf203451d87f52f6dee20dc0bcece01ded3d80b2ffcff771645280ba7a559d",
+    "execution.jsonl": "sha256:fc05ed3ad83d115d238a385e1e36186794a499a1f37212a88ab6383e20e58267",
+    "governance.jsonl": "sha256:9f539f5d750987c62e93b550aebb10752b5461ce05bd8df92180b9a3e2fb7e55",
+    "ground_truth.json": "sha256:569174de7c29dea2cf33f7edc5f6b6e65f9de18f4abca5ef24e8d6767a511a90",
+    "identity_mapping.json": "sha256:40f1b5f60d2c93417de535881b31e5dbcd34af495ce9ee07d8ebf2c774c2d49a",
+    "native/access.jsonl": "sha256:a513b0f6b68e39836ed883986dbb151c75df0ec14a43870cfbafa9c1943b0285",
+    "nginx.conf": "sha256:0b164386f668e281c213bc8d87fa78c0fb59acea9f9488b957b26754d1a9edb4",
+    "opa.jsonl": "sha256:ecb10a683587def23dfec3ca2e6d4be1688f102da68db4eb58af6c8461a0f4da",
+    "reconciliation.json": "sha256:e3121f25cd6a389551b45c611fb5ab7f137164e14e66bf0ecbacfe77ed02dd1a",
+    "runtime.jsonl": "sha256:43eb3dc8d90133aac108088ad11f9efd9752ac72c2a66032200d70bf819d5bff",
+    "target.json": "sha256:aba8a2d1edd6b354d56b451a129dc78b7a0175873db8abf07be0751b3d7ab360",
+    "target_runtime.json": "sha256:eea188394e2f588dd45f7e61c5e97ae5163a45b36cb99be0dc1fdcbd96cc703d"
+  },
+  "integrity_limit": "Self-authored inventory; content integrity is not authenticated provenance.",
+  "schema_version": "1.0",
+  "started_at": "2026-09-06T01:08:09.427857+00:00"
+}
