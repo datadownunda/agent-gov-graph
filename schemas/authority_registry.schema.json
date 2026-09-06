@@ -79,6 +79,11 @@
                 "type": "null"
               }
             ]
+          },
+          "delegation_permitted": {
+            "type": "boolean",
+            "default": false,
+            "description": "M5: all-or-nothing capability to delegate scopes in this complete authority state. Missing means false; no role inheritance."
           }
         },
         "required": [

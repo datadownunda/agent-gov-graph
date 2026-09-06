@@ -106,3 +106,13 @@ def test_archive_rejects_reference_path_and_source_substitution(tmp_path):
     for changed in [ref | {'file': '../registry.json'}, ref | {'source_version': 'other'}]:
         with pytest.raises(ValueError):
             load_preserved_revision(changed, tmp_path)
+
+
+def test_m5_delegation_capability_does_not_change_m4_direct_basis():
+    from src.authority_resolver import validate_revision
+    baseline = resolve(record())
+    for permitted in (False, True):
+        extended = record(delegation_permitted=permitted)
+        validate_revision(registry(extended))
+        assert resolve(extended) == baseline
+    assert resolve(record(delegation_permitted='true'))['status'] == 'EVIDENCE_DEFECT'
