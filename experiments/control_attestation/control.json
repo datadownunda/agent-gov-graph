@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "control_id": "complaint-deny-prevents-serving",
+  "control_version": "1",
+  "control_type": "DENY_PREVENTS_TARGET_EFFECT",
+  "governance_condition": {
+    "decision": "DENY"
+  },
+  "prohibited_target_effect": {
+    "name": "REPRESENTATION_SERVED",
+    "target_id": "complaints-static-v1",
+    "target_contract_digest": "sha256:780ea70f9fd41889af80634d905d13aa3795ea186d6d12a753513661ed3ac304"
+  },
+  "scope": {
+    "action": "read",
+    "resource_type": "employee_complaint"
+  },
+  "observation_boundary": "TARGET_REPORTED_REPRESENTATION_SERVING",
+  "coverage_requirement": {
+    "rule_version": "deny-target-coverage/1",
+    "post_decision_seconds": "5"
+  }
+}

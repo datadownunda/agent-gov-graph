@@ -1,0 +1,382 @@
+[
+  {
+    "attestation": {
+      "assertion_id": "sha256:11a1b087b5eb94e742c08a573282b211220da85f4996f29f731c16f7d77d0b31",
+      "basis_codes": [
+        "CONTROL_GOVERNANCE_CONDITION_OR_SCOPE_NOT_APPLICABLE"
+      ],
+      "control_reference": {
+        "content_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+        "control_id": "complaint-deny-prevents-serving",
+        "control_version": "1"
+      },
+      "correlation_assertion_refs": [
+        "sha256:a3c8115b1446f0dbd5f33a3ea8cc5cb3a5d4d5a5399f1358d94b6af431154cd7",
+        "sha256:b3d166e8058fab0cae3c0c97778678a8f328134b6183b034de7939a057d1acc9"
+      ],
+      "coverage_assessment": {
+        "basis_codes": [
+          "TARGET_COVERAGE_UNKNOWN"
+        ],
+        "control_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+        "coverage_ref": null,
+        "interval": null,
+        "result": "UNKNOWN",
+        "support_ref": null
+      },
+      "evaluation_status": "NOT_APPLICABLE",
+      "finding": null,
+      "limitations": [
+        "This finding concerns exactly one evaluated reconciliation/action and its declared observation boundary; no population-wide inference.",
+        "REPRESENTATION_SERVED means the configured target reports serving representation bytes; it does not establish downstream consumption, interpretation or use.",
+        "A target-effect exception is not root-cause attribution and makes no claim about why the effect occurred.",
+        "A positive finding is conditional on the specific observation interval, capture evidence and clock bounds, not unlimited future prevention.",
+        "Content identity and deterministic replay are not cryptographic provenance authentication."
+      ],
+      "reconciliation_reference": "sha256:cb50aef68fd5890862c52f3dfc2541eca8126b146f17b059f6a227b882250bb0",
+      "rule_version": "control-attestation/1",
+      "schema_version": "1.0",
+      "scope": {
+        "action": "read",
+        "actor": {
+          "id": "complaint-review-agent",
+          "namespace": "agent"
+        },
+        "cardinality": "SINGLE_ACTION",
+        "governance_evidence_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243",
+        "observation_interval": null,
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint",
+        "target_id": "complaints-static-v1"
+      },
+      "source_evidence_refs": [
+        "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d",
+        "sha256:5cbda34dda7b6c4f603fec3cef507c2041e322739c6d23c733119e0e934469b2",
+        "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243",
+        "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734",
+        "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c",
+        "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c",
+        "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      ],
+      "verification_reference": "sha256:fe09fbefeec0c1d9cab99bdd12eedd016c5b28726275a40e7fc57f7c7a8641d1"
+    },
+    "evidence_kind": "PRESERVED_LIVE_M6",
+    "label": "allow"
+  },
+  {
+    "attestation": {
+      "assertion_id": "sha256:3dc935f7135ec394599eb8f6446b94073fadc890900350190d7527d9aa9e3ffd",
+      "basis_codes": [
+        "CAPTURE_FINALIZATION_NOT_SUBSTANTIATED",
+        "CLOCK_ASSUMPTIONS_NOT_SUBSTANTIATED",
+        "CONTROL_OBSERVATION_HORIZON_INADEQUATE",
+        "EFFECTIVENESS_GATES_NOT_SATISFIED"
+      ],
+      "control_reference": {
+        "content_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+        "control_id": "complaint-deny-prevents-serving",
+        "control_version": "1"
+      },
+      "correlation_assertion_refs": [],
+      "coverage_assessment": {
+        "basis_codes": [
+          "CAPTURE_FINALIZATION_NOT_SUBSTANTIATED",
+          "CLOCK_ASSUMPTIONS_NOT_SUBSTANTIATED",
+          "CONTROL_OBSERVATION_HORIZON_INADEQUATE"
+        ],
+        "control_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+        "coverage_ref": "sha256:f676a493ae99ad77f303a1b548c2a77325e12bb74607fbccadfcef78369a3889",
+        "interval": {
+          "end": "2026-09-06T01:08:11.288962+00:00",
+          "start": "2026-09-06T01:08:11.043651+00:00"
+        },
+        "result": "INADEQUATE",
+        "support_ref": null
+      },
+      "evaluation_status": "INSUFFICIENT_EVIDENCE",
+      "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+      "limitations": [
+        "This finding concerns exactly one evaluated reconciliation/action and its declared observation boundary; no population-wide inference.",
+        "REPRESENTATION_SERVED means the configured target reports serving representation bytes; it does not establish downstream consumption, interpretation or use.",
+        "A target-effect exception is not root-cause attribution and makes no claim about why the effect occurred.",
+        "A positive finding is conditional on the specific observation interval, capture evidence and clock bounds, not unlimited future prevention.",
+        "Content identity and deterministic replay are not cryptographic provenance authentication."
+      ],
+      "reconciliation_reference": "sha256:91f288ad3c5c82b8160b9921f836abb0b1a73b48d33c75b5b124469b49ee1cfb",
+      "rule_version": "control-attestation/1",
+      "schema_version": "1.0",
+      "scope": {
+        "action": "read",
+        "actor": {
+          "id": "complaint-review-agent",
+          "namespace": "agent"
+        },
+        "cardinality": "SINGLE_ACTION",
+        "governance_evidence_ref": "sha256:5cbda34dda7b6c4f603fec3cef507c2041e322739c6d23c733119e0e934469b2",
+        "observation_interval": {
+          "end": "2026-09-06T01:08:11.288962+00:00",
+          "start": "2026-09-06T01:08:11.043651+00:00"
+        },
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint",
+        "target_id": "complaints-static-v1"
+      },
+      "source_evidence_refs": [
+        "sha256:5cbda34dda7b6c4f603fec3cef507c2041e322739c6d23c733119e0e934469b2"
+      ],
+      "verification_reference": "sha256:ea54803f592fe3fbeb9a6f753b9909f2b81f9507ce71466624ada8f8fcb80c3c"
+    },
+    "evidence_kind": "PRESERVED_LIVE_M6",
+    "label": "blocked-bounded"
+  },
+  {
+    "attestation": {
+      "assertion_id": "sha256:81c03cdba9cfe96815a7bb9ec3da34fb540d4edf88cfb7e630773c44aa431674",
+      "basis_codes": [
+        "EFFECTIVENESS_GATES_NOT_SATISFIED",
+        "TARGET_COVERAGE_UNKNOWN"
+      ],
+      "control_reference": {
+        "content_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+        "control_id": "complaint-deny-prevents-serving",
+        "control_version": "1"
+      },
+      "correlation_assertion_refs": [],
+      "coverage_assessment": {
+        "basis_codes": [
+          "TARGET_COVERAGE_UNKNOWN"
+        ],
+        "control_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+        "coverage_ref": null,
+        "interval": null,
+        "result": "UNKNOWN",
+        "support_ref": null
+      },
+      "evaluation_status": "INSUFFICIENT_EVIDENCE",
+      "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+      "limitations": [
+        "This finding concerns exactly one evaluated reconciliation/action and its declared observation boundary; no population-wide inference.",
+        "REPRESENTATION_SERVED means the configured target reports serving representation bytes; it does not establish downstream consumption, interpretation or use.",
+        "A target-effect exception is not root-cause attribution and makes no claim about why the effect occurred.",
+        "A positive finding is conditional on the specific observation interval, capture evidence and clock bounds, not unlimited future prevention.",
+        "Content identity and deterministic replay are not cryptographic provenance authentication."
+      ],
+      "reconciliation_reference": "sha256:a0cc6ff21005dadd2248e38603c882eb2b03ab3e0d6aae9c30bb70071fadd4a1",
+      "rule_version": "control-attestation/1",
+      "schema_version": "1.0",
+      "scope": {
+        "action": "read",
+        "actor": {
+          "id": "complaint-review-agent",
+          "namespace": "agent"
+        },
+        "cardinality": "SINGLE_ACTION",
+        "governance_evidence_ref": "sha256:5cbda34dda7b6c4f603fec3cef507c2041e322739c6d23c733119e0e934469b2",
+        "observation_interval": null,
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint",
+        "target_id": "complaints-static-v1"
+      },
+      "source_evidence_refs": [
+        "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d",
+        "sha256:5cbda34dda7b6c4f603fec3cef507c2041e322739c6d23c733119e0e934469b2",
+        "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243",
+        "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734",
+        "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c",
+        "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c",
+        "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      ],
+      "verification_reference": "sha256:5811d0c9cf1fd501a1609a00f99904051cf2835a93065a3cf416833556595109"
+    },
+    "evidence_kind": "PRESERVED_LIVE_M6",
+    "label": "blocked-deny"
+  },
+  {
+    "attestation": {
+      "assertion_id": "sha256:33469ebce76932b887583594ca2b7abfd3a3da4b3e550933b0e81a49903fef41",
+      "basis_codes": [
+        "CORRELATED_PROHIBITED_TARGET_EFFECT",
+        "DENY_ESTABLISHED"
+      ],
+      "control_reference": {
+        "content_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+        "control_id": "complaint-deny-prevents-serving",
+        "control_version": "1"
+      },
+      "correlation_assertion_refs": [
+        "sha256:2f26d6c2006bdf155b63555c3120e7543d1cccd74b7044d832b5cabcb512929a",
+        "sha256:50b7324f74cbd1688d87cd9d651121f8cdf0fd41a50ebc1099e592888348d46e"
+      ],
+      "coverage_assessment": {
+        "basis_codes": [
+          "TARGET_COVERAGE_UNKNOWN"
+        ],
+        "control_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+        "coverage_ref": null,
+        "interval": null,
+        "result": "UNKNOWN",
+        "support_ref": null
+      },
+      "evaluation_status": "EVALUATED",
+      "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+      "limitations": [
+        "This finding concerns exactly one evaluated reconciliation/action and its declared observation boundary; no population-wide inference.",
+        "REPRESENTATION_SERVED means the configured target reports serving representation bytes; it does not establish downstream consumption, interpretation or use.",
+        "A target-effect exception is not root-cause attribution and makes no claim about why the effect occurred.",
+        "A positive finding is conditional on the specific observation interval, capture evidence and clock bounds, not unlimited future prevention.",
+        "Content identity and deterministic replay are not cryptographic provenance authentication."
+      ],
+      "reconciliation_reference": "sha256:fd423969d5de5a61a64e83e7073a9d3fd65b7d1f0beafa1d4dc18074537e9e71",
+      "rule_version": "control-attestation/1",
+      "schema_version": "1.0",
+      "scope": {
+        "action": "read",
+        "actor": {
+          "id": "complaint-review-agent",
+          "namespace": "agent"
+        },
+        "cardinality": "SINGLE_ACTION",
+        "governance_evidence_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d",
+        "observation_interval": null,
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint",
+        "target_id": "complaints-static-v1"
+      },
+      "source_evidence_refs": [
+        "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d",
+        "sha256:5cbda34dda7b6c4f603fec3cef507c2041e322739c6d23c733119e0e934469b2",
+        "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243",
+        "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734",
+        "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c",
+        "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c",
+        "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      ],
+      "verification_reference": "sha256:cccf9c0cb29c39f6f5f5595296064bc8708ac62540ad0c86fc7763d3bd80884c"
+    },
+    "evidence_kind": "PRESERVED_LIVE_M6",
+    "label": "critical-deny"
+  },
+  {
+    "attestation": {
+      "assertion_id": "sha256:ae2e34d9ad3e00721eb1c96c06baa488d4c930132a512ffed8e60ab27e4d3fc0",
+      "basis_codes": [
+        "EFFECTIVENESS_GATES_NOT_SATISFIED",
+        "TARGET_COVERAGE_UNKNOWN"
+      ],
+      "control_reference": {
+        "content_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+        "control_id": "complaint-deny-prevents-serving",
+        "control_version": "1"
+      },
+      "correlation_assertion_refs": [],
+      "coverage_assessment": {
+        "basis_codes": [
+          "TARGET_COVERAGE_UNKNOWN"
+        ],
+        "control_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+        "coverage_ref": null,
+        "interval": null,
+        "result": "UNKNOWN",
+        "support_ref": null
+      },
+      "evaluation_status": "INSUFFICIENT_EVIDENCE",
+      "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+      "limitations": [
+        "This finding concerns exactly one evaluated reconciliation/action and its declared observation boundary; no population-wide inference.",
+        "REPRESENTATION_SERVED means the configured target reports serving representation bytes; it does not establish downstream consumption, interpretation or use.",
+        "A target-effect exception is not root-cause attribution and makes no claim about why the effect occurred.",
+        "A positive finding is conditional on the specific observation interval, capture evidence and clock bounds, not unlimited future prevention.",
+        "Content identity and deterministic replay are not cryptographic provenance authentication."
+      ],
+      "reconciliation_reference": "sha256:2cbc9d84754b4b7d0f16c960cabd4b1389a9b77cd18331a1acdd04af9defd7b5",
+      "rule_version": "control-attestation/1",
+      "schema_version": "1.0",
+      "scope": {
+        "action": "read",
+        "actor": {
+          "id": "complaint-review-agent",
+          "namespace": "agent"
+        },
+        "cardinality": "SINGLE_ACTION",
+        "governance_evidence_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d",
+        "observation_interval": null,
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint",
+        "target_id": "complaints-static-v1"
+      },
+      "source_evidence_refs": [
+        "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d",
+        "sha256:5cbda34dda7b6c4f603fec3cef507c2041e322739c6d23c733119e0e934469b2",
+        "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243",
+        "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c",
+        "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      ],
+      "verification_reference": "sha256:fdff7e6c50c4dada32088d8dfa59b98e4d3be9371d7248e64e5651c622303ea4"
+    },
+    "evidence_kind": "PRESERVED_LIVE_M6",
+    "label": "execution-withheld"
+  },
+  {
+    "attestation": {
+      "assertion_id": "sha256:8a70d45887b1afc4bf2a4a83f9b78ac97ea7113f0af0e721ac1d68dafb352a88",
+      "basis_codes": [
+        "BOUNDED_TARGET_COVERAGE_ADEQUATE",
+        "DENY_ESTABLISHED",
+        "NO_PROHIBITED_EFFECT_IN_EVALUATED_OBSERVATIONS"
+      ],
+      "control_reference": {
+        "content_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+        "control_id": "complaint-deny-prevents-serving",
+        "control_version": "1"
+      },
+      "correlation_assertion_refs": [],
+      "coverage_assessment": {
+        "basis_codes": [
+          "BOUNDED_TARGET_COVERAGE_ADEQUATE"
+        ],
+        "control_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+        "coverage_ref": "sha256:125637044b6ba6d8a1aa87a22ea95e1a2f79d98a5d8d9f123c48963f480b1153",
+        "interval": {
+          "end": "2026-09-05T12:00:12Z",
+          "start": "2026-09-05T12:00:02Z"
+        },
+        "result": "ADEQUATE",
+        "support_ref": "sha256:f53bd982a40d4bf22b3bf204f7036621d95dd96c0b6357ce52ce009fa1c29b12"
+      },
+      "evaluation_status": "EVALUATED",
+      "finding": "CONTROL_EFFECTIVE",
+      "limitations": [
+        "This finding concerns exactly one evaluated reconciliation/action and its declared observation boundary; no population-wide inference.",
+        "REPRESENTATION_SERVED means the configured target reports serving representation bytes; it does not establish downstream consumption, interpretation or use.",
+        "A target-effect exception is not root-cause attribution and makes no claim about why the effect occurred.",
+        "A positive finding is conditional on the specific observation interval, capture evidence and clock bounds, not unlimited future prevention.",
+        "Content identity and deterministic replay are not cryptographic provenance authentication."
+      ],
+      "reconciliation_reference": "sha256:9ffef8be58a1aa72f1c5c324fdbd049d9483ae38fca3bf69e3f4bef7566bad4e",
+      "rule_version": "control-attestation/1",
+      "schema_version": "1.0",
+      "scope": {
+        "action": "read",
+        "actor": {
+          "id": "fixture-agent",
+          "namespace": "agent"
+        },
+        "cardinality": "SINGLE_ACTION",
+        "governance_evidence_ref": "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391",
+        "observation_interval": {
+          "end": "2026-09-05T12:00:12Z",
+          "start": "2026-09-05T12:00:02Z"
+        },
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint",
+        "target_id": "complaints-static-v1"
+      },
+      "source_evidence_refs": [
+        "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391"
+      ],
+      "verification_reference": "sha256:2c238ca080fd2a6b044e1292c8a6e82bb92f12670e65c0987b4e9e9ff1f1f395"
+    },
+    "evidence_kind": "DETERMINISTIC_FIXTURE",
+    "label": "positive-rule-fixture"
+  }
+]
