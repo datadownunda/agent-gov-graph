@@ -1,0 +1,12 @@
+{
+  "protocol_sha256": "c9d6cbd538303fdab07731490ce6d986c81ae56b4919593ae8c130dbe015f501",
+  "paired_queries": 120,
+  "unchanged_measured_code_files": 12,
+  "unchanged_archive_files": 33,
+  "unchanged_preexisting_tracked_files": 291,
+  "schema_count": 17,
+  "validated_projection_nodes": 33191,
+  "validated_projection_edges": 100944,
+  "saved_query_replay": "Q1-Q4 exact equality for both arms at 100944 relationships",
+  "rescoring": "identical frozen decisions, checks, reasons and aggregates"
+}

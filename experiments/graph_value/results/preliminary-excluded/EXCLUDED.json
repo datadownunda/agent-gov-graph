@@ -1,0 +1,4 @@
+{
+  "scored": false,
+  "reason": "First reference timings overlapped regression tests. Batch was stopped before final candidate/provenance corrections. Retained only for transparency; all final measurements rerun from scratch."
+}

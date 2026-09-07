@@ -1,0 +1,53 @@
+{
+  "protocol_version": "gate-a/1",
+  "source_commit": "b585c548a3b68e6611c1f7545f63e7bcfd05d845",
+  "frozen_before_implementation": true,
+  "claim": "Test graph investigation value without changing M1-M7 evidence semantics; database value is not tested.",
+  "queries": {
+    "Q1": "Reconstruct an exception with original M6 witnesses, correlations, authority bindings, explicit M5 dependencies, limitations and evidence provenance.",
+    "Q2": "At explicit historical time and revision pair return downstream authority bases, independent alternatives, rejected candidates and connected assurance records.",
+    "Q3": "Disable one exact relationship in a query-local overlay; report lost and remaining demonstrated paths, affected agents/resources/actions and assurance connections. Do not heal conflicts or infer prevention of historical outcomes/exceptions.",
+    "Q4": "Reverse transitive conclusion-support, assessment-context and verification dependencies, retaining categories and witness paths. No conclusion recomputation."
+  },
+  "input_boundary": "Identical allowlisted canonical records, exact revision pairs and evidence views. No oracle, presentation labels, bypass flags or legacy graph builder in either query path. Raw archives are available only to verification.",
+  "semantics": {
+    "authority": "Unchanged M4 complete-state conflict rules and M5 exact-parent, full-scope/interval containment, capability and cycle semantics. PERMITTED is scope membership, not OPA ALLOW.",
+    "time": "Half-open authority validity with nanosecond precision. Preserve both M4 times; no current registry fallback.",
+    "paths": "Finite simple investigation/dependency paths; M5 reference and ancestor-identity cycles rejected. Limits explicitly incomplete, never success.",
+    "counterfactual": "Filter valid demonstrated paths using disabled exact record; retain original rejected candidates/conflicts and historical findings.",
+    "provenance": "All projected nodes/edges trace to source references/digests/pointers. Snapshot/view membership is enforced; missing evidence is explicit.",
+    "q4": "Conclusion support, assessment context and archive verification dependencies are distinct, including non-supporting inventory artifacts."
+  },
+  "tiers": ["reference", 10000, 100000, 1000000],
+  "topologies": ["chains", "fanout", "independent_alternatives", "shared_dependency", "independent_components", "population_growth"],
+  "seeds": [8, 80, 800],
+  "warm_observations_per_query": 100,
+  "cold_repetitions": 10,
+  "cold_definition": "Fresh worker and application caches; OS cache uncontrolled. Include common preparation, verification, indexing/projection, query and serialization.",
+  "required_tier_relationships": 100000,
+  "experimental_offline_thresholds_not_product_slos": {
+    "warm_p95_seconds": 5,
+    "cold_source_to_answer_seconds": 120,
+    "max_rss_bytes": 4294967296,
+    "max_physical_memory_fraction": 0.25,
+    "run_timeout_seconds": 120,
+    "minimum_free_disk_bytes": 2147483648
+  },
+  "resource_stop": "Preflight each tier; stop for insufficient memory/disk, material swapping, projected RSS beyond cap, timeout or explicit output limit. Million tier optional; skipped tiers untested.",
+  "correctness": "100% independent small-fixture oracle agreement, existing semantic tests and source replay; identical records/paths/alternatives/times/dependencies/counterfactuals/cycles. Metamorphic permutation, duplication, unrelated components, current-state mutation, label changes and rebuild. No silent truncation.",
+  "performance_measures": ["common_verification_seconds", "index_or_projection_seconds", "cold_source_to_answer_seconds", "warm_p50_seconds", "warm_p95_seconds", "user_cpu_seconds", "system_cpu_seconds", "peak_process_tree_rss_bytes", "source_bytes", "serialized_index_bytes", "result_bytes", "output_cardinality"],
+  "complexity_measures": ["logical_loc", "custom_recursion", "traversal_routines", "cycle_handling", "path_state_management", "topology_specific_lookups_joins", "inverse_query_changed_lines_functions", "variable_depth_changed_lines_functions", "total_projection_validation_shared_query_loc", "implementation_effort", "correctness_defects"],
+  "complexity_method": "AST logical executable statements plus explicit function-level inventory. Attribute generic engine and projection to graph, semantic adapters to shared; report gross and incremental totals and reused M4/M5 code. Do not shift module boundaries or optimize code for threshold. Q1-Q4 use fixed identical contracts; inverse and depth variants are direction reversal and depth 1 versus arbitrary finite depth.",
+  "success": {
+    "all_required": ["correctness", "strategic_path_dependence_in_Q2_Q3_or_Q4", "complexity_value", "evidence_preservation", "offline_acceptability_at_required_tier"],
+    "bespoke_query_topology_reduction_minimum": 0.30,
+    "non_loc_measures_improved_minimum": 2,
+    "total_engineering_cost": "Must be disclosed and justified; LOC reduction alone cannot pass. No post-hoc usefulness alternative to complexity threshold.",
+    "q3_and_q4": "Either independently eligible; neither privileged by scoring."
+  },
+  "commercial_usefulness": "Non-scoring Q1-Q4 assessment of likely enterprise user, decision supported and commercial meaningfulness; hypotheses, not market validation.",
+  "outcomes": ["DEMONSTRATED", "NOT_DEMONSTRATED"],
+  "graph_database_value": "NOT_TESTED",
+  "gate_b": "Never begin during this run; return Gate A results to user first.",
+  "exclusions": ["Neo4j installation or configuration", "M1-M7 modifications", "new producer evidence requirements", "intervention recommendation", "remediation", "learning", "UI", "generic search", "later milestones"]
+}

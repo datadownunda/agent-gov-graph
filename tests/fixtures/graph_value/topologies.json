@@ -1,0 +1,14 @@
+{
+  "description": "Hand-authored small reference topology, no generated answer labels in worker input.",
+  "records": [
+    {"id":"A","type":"Attestation","context":"v1","reference":"A","origin":"A","properties":{"finding":"CONTROL_EFFECTIVENESS_EXCEPTION","limitations":["bounded"]},"references":[{"field":"reconciliation_reference","target":"R","category":"support","origin":"A","pointer":"/reconciliation_reference"}]},
+    {"id":"R","type":"Reconciliation","context":"v1","reference":"R","origin":"R","properties":{"result":"CONTRADICTION","correlation_paths":[{"evidence_ref":"O","assertion_ids":["C"]}]},"references":[{"field":"claims","target":"G","category":"support","origin":"R","pointer":"/claims/0"},{"field":"correlation_assertions","target":"C","category":"context","origin":"R","pointer":"/correlation_assertions/0"}]},
+    {"id":"C","type":"CorrelationAssertion","context":"v1","reference":"C","origin":"C","properties":{"result":{"state":"LINKED"}},"references":[{"field":"linked_endpoint","target":"G","category":"support","origin":"C","pointer":"/focus"},{"field":"linked_endpoint","target":"O","category":"support","origin":"C","pointer":"/result/linked_evidence"}]},
+    {"id":"G","type":"EvidenceRecord","context":"v1","reference":"G","origin":"G","properties":{"role":"governance","governance_decision":"DENY"},"references":[{"field":"revision","target":"D","category":"verification","origin":"G","pointer":"/authority_binding/revision"}]},
+    {"id":"O","type":"EvidenceRecord","context":"v1","reference":"O","origin":"O","properties":{"role":"outcome","target_outcome":"REPRESENTATION_SERVED"},"references":[{"field":"support_ref","target":"D","category":"support","origin":"O","pointer":"/target_contract_digest"}]},
+    {"id":"D","type":"EvidenceArtifact","context":"artifacts","reference":"D","origin":"D","properties":{"digest":"D"},"references":[]},
+    {"id":"U","type":"Attestation","context":"withheld","reference":"U","origin":"U","properties":{"finding":"CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED"},"references":[]}
+  ],
+  "contexts": {},
+  "verification": []
+}

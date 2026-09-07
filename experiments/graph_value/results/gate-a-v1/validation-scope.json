@@ -1,0 +1,19 @@
+{
+  "gate_a": "51 passed; final focused suite",
+  "regression_subset": "316 passed, 5 skipped; includes Gate A tests available when collected",
+  "excluded_from_completed_subset": [
+    "tests/test_governance_evals.py",
+    "tests/test_governance_event_integration.py",
+    "tests/test_graph_export.py",
+    "tests/test_graph_projection.py",
+    "tests/test_investigation_runner.py",
+    "tests/test_ontology_validator.py",
+    "tests/test_runtime_reconciler.py",
+    "tests/test_trajectory_decision_events.py"
+  ],
+  "full_suite_status": "NOT_COMPLETED",
+  "initial_sandbox_attempt": "312 passed, 5 skipped, 35 Docker/Python-subprocess environment failures before final Gate A additions",
+  "escalated_attempt": "54 passed then interrupted after OPA subprocess stalled for over nine minutes",
+  "bounded_diagnostic": "Pinned OPA image exists and Docker info succeeds; docker run --rm openpolicyagent/opa:1.19.0 version timed out after 20 seconds",
+  "neo4j": "Not installed, configured, queried or changed by this task. A pre-existing unrelated Neo4j container appeared in read-only Docker inventory."
+}

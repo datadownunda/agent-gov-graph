@@ -1,0 +1,52 @@
+{
+  "status": "FULL_DOCKER_SUITE_INCOMPLETE",
+  "full_suite_command": "PATH=/private/tmp/agg-m8-venv/bin:$PATH PYTHONDONTWRITEBYTECODE=1 RUN_FOREIGN_OPA=1 python -B -m pytest -q -p no:cacheprovider --tb=short --junitxml=/private/tmp/m8-checkpoint-full.xml",
+  "full_suite_timeout_seconds": 180,
+  "full_suite_completed_cases": 54,
+  "full_suite_result": "54 passed in 180.37s; interrupted while waiting on Docker OPA exec; no completed test failed",
+  "docker_context": "desktop-linux",
+  "docker_server_version": "29.7.2",
+  "opa_image": "openpolicyagent/opa:1.19.0",
+  "opa_image_id": "sha256:8523599954435a3659954ad51ee0304d22bd97576f16cdb02e5e39f38ff3962a",
+  "opa_image_platform": "linux/amd64",
+  "minimal_diagnostic_command": "docker run --rm --pull=never openpolicyagent/opa:1.19.0 version",
+  "minimal_diagnostic_result": "Timed out after 25 seconds, with image pulls disabled",
+  "stalled_command": "docker run --rm -i -v <repository>:/workspace openpolicyagent/opa:1.19.0 exec --bundle /workspace/policies --decision /agentgov/complaints/decision --stdin-input --set=decision_logs.console=true --log-format=json",
+  "diagnosis": "Local Docker container execution failure independent of M8: server info and image inspection succeed; minimal version command stalls without repository mount or M8 code. Native matching OPA executes and all six policy tests pass. Exact internal Docker cause was not established. No full Docker integration pass claimed.",
+  "native_opa_policy_tests": {
+    "version": "1.19.0",
+    "command": "opa test policies -v",
+    "passed": 6,
+    "binary_sha256": "a6bb096502d176a23b721e023f3ca615a0e4773fec69511143093a2281118f5c",
+    "release_repository": "https://github.com/open-policy-agent/opa/releases/tag/v1.19.0"
+  },
+  "gate_a_passed": 51,
+  "broad_subset_passed": 319,
+  "broad_subset_skipped": 5,
+  "broad_subset_excluded_modules": [
+    "tests/test_governance_evals.py",
+    "tests/test_governance_event_integration.py",
+    "tests/test_graph_export.py",
+    "tests/test_graph_projection.py",
+    "tests/test_investigation_runner.py",
+    "tests/test_ontology_validator.py",
+    "tests/test_runtime_reconciler.py",
+    "tests/test_trajectory_decision_events.py"
+  ],
+  "additional_independent_passed_cases": [
+    "tests/test_governance_event_integration.py::test_build_event_includes_context_and_telemetry",
+    "tests/test_runtime_reconciler.py::test_policy_input_includes_action_attempt_id",
+    "tests/test_runtime_reconciler.py::test_missing_execution_attempt_id_is_evidence_defect"
+  ],
+  "total_distinct_regression_passed": 322,
+  "secret_scan": "No private-key, GitHub-token, AWS-access-key or API-key patterns detected in the 57 original M8 additions. Pattern scanning is not an exhaustive secret guarantee.",
+  "ignore_verification": [
+    ".env",
+    ".venv/",
+    "__pycache__/",
+    "*.pyc",
+    ".pytest_cache/",
+    "artifacts/*.jsonl"
+  ],
+  "result_or_threshold_changes": false
+}

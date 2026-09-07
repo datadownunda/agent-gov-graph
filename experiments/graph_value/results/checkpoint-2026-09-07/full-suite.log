@@ -1,0 +1,5 @@
+......................................................
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/selectors.py:398: KeyboardInterrupt
+(to show a full traceback on KeyboardInterrupt use --full-trace)
+54 passed in 180.37s (0:03:00)

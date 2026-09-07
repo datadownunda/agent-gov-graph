@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "scoring": "supplementary only",
+  "rows": [
+    {
+      "case": "root-wide-chain",
+      "depth": 8,
+      "arm": "baseline",
+      "seconds": 0.7191141666844487,
+      "complete": true,
+      "affected_actors": 8,
+      "actors_losing_all_support": 7
+    },
+    {
+      "case": "root-wide-chain",
+      "depth": 8,
+      "arm": "graph",
+      "seconds": 0.7197168078273535,
+      "complete": true,
+      "affected_actors": 8,
+      "actors_losing_all_support": 7
+    },
+    {
+      "case": "root-wide-chain",
+      "depth": 16,
+      "arm": "baseline",
+      "seconds": 2.349669205956161,
+      "complete": true,
+      "affected_actors": 16,
+      "actors_losing_all_support": 15
+    },
+    {
+      "case": "root-wide-chain",
+      "depth": 16,
+      "arm": "graph",
+      "seconds": 2.334908149205148,
+      "complete": true,
+      "affected_actors": 16,
+      "actors_losing_all_support": 15
+    },
+    {
+      "case": "root-wide-chain",
+      "depth": 32,
+      "arm": "baseline",
+      "seconds": 8.243765507824719,
+      "complete": true,
+      "affected_actors": 32,
+      "actors_losing_all_support": 31
+    },
+    {
+      "case": "root-wide-chain",
+      "depth": 32,
+      "arm": "graph",
+      "seconds": 8.239830232225358,
+      "complete": true,
+      "affected_actors": 32,
+      "actors_losing_all_support": 31
+    },
+    {
+      "case": "competing-population",
+      "population_size": 2,
+      "arm": "baseline",
+      "common_prepare_seconds": 0.02350945584475994,
+      "seconds": 0.0021887910552322865,
+      "source_bytes": 3250,
+      "assertion_bytes": 27185,
+      "complete": true,
+      "paths": 121,
+      "m6_result": "INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "case": "competing-population",
+      "population_size": 2,
+      "arm": "graph",
+      "common_prepare_seconds": 0.02350945584475994,
+      "seconds": 0.002440033946186304,
+      "source_bytes": 3250,
+      "assertion_bytes": 27185,
+      "complete": true,
+      "paths": 121,
+      "m6_result": "INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "case": "competing-population",
+      "population_size": 8,
+      "arm": "baseline",
+      "common_prepare_seconds": 0.06991602899506688,
+      "seconds": 0.008847433142364025,
+      "source_bytes": 7804,
+      "assertion_bytes": 83471,
+      "complete": true,
+      "paths": 463,
+      "m6_result": "INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "case": "competing-population",
+      "population_size": 8,
+      "arm": "graph",
+      "common_prepare_seconds": 0.06991602899506688,
+      "seconds": 0.00867126090452075,
+      "source_bytes": 7804,
+      "assertion_bytes": 83471,
+      "complete": true,
+      "paths": 463,
+      "m6_result": "INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "case": "competing-population",
+      "population_size": 32,
+      "arm": "baseline",
+      "common_prepare_seconds": 0.5566485128365457,
+      "seconds": 0.0801928541623056,
+      "source_bytes": 26041,
+      "assertion_bytes": 671531,
+      "complete": true,
+      "paths": 4711,
+      "m6_result": "INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "case": "competing-population",
+      "population_size": 32,
+      "arm": "graph",
+      "common_prepare_seconds": 0.5566485128365457,
+      "seconds": 0.09180144872516394,
+      "source_bytes": 26041,
+      "assertion_bytes": 671531,
+      "complete": true,
+      "paths": 4711,
+      "m6_result": "INSUFFICIENT_EVIDENCE"
+    }
+  ],
+  "peak_rss_bytes": 56934400,
+  "user_cpu_seconds": 23.597985,
+  "system_cpu_seconds": 0.102353
+}

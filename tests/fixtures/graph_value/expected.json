@@ -1,0 +1,12 @@
+{
+  "q1_records": ["A","C","D","G","O","R"],
+  "q1_paths": [["A","R"],["A","R","G"],["A","R","G","D"],["A","R","C"],["A","R","C","G"],["A","R","C","G","D"],["A","R","C","O"],["A","R","C","O","D"]],
+  "q4_records": ["A","C","D","G","O","R"],
+  "q4_conclusions": ["A","R"],
+  "q4_paths": [["D","G","R"],["D","G","R","A"],["D","G","C","R"],["D","G","C","R","A"],["D","O","C","R"],["D","O","C","R","A"]],
+  "authority": {
+    "middle":{"lost":[["root-authority","d1"]],"remaining":[["other-authority","d2"]]},
+    "worker":{"lost":[["root-authority","d1","d3"]],"remaining":[["other-authority","d2","d4"]]},
+    "leaf":{"lost":[["root-authority","d1","d5"]],"remaining":[]}
+  }
+}

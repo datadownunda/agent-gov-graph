@@ -1,0 +1,1731 @@
+{
+  "protocol_sha256": "c9d6cbd538303fdab07731490ce6d986c81ae56b4919593ae8c130dbe015f501",
+  "source_commit": "b585c548a3b68e6611c1f7545f63e7bcfd05d845",
+  "GRAPH_SEMANTIC_VALUE": "NOT_DEMONSTRATED",
+  "GRAPH_DATABASE_VALUE": "NOT_TESTED",
+  "checks": {
+    "correctness": true,
+    "strategic_path_dependence_in_Q2_Q3_or_Q4": true,
+    "complexity_value": false,
+    "evidence_preservation": true,
+    "offline_acceptability_at_required_tier": true
+  },
+  "reasons": [
+    "Graph-owned topology/query/projector code did not meet the frozen 30% reduction threshold; non-LOC improvements alone cannot pass."
+  ],
+  "correctness": {
+    "tests": 51,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": []
+  },
+  "regression": {
+    "tests": 321,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 5,
+    "failed_cases": []
+  },
+  "benchmark_summary": [
+    {
+      "target_relationships": "reference",
+      "components": 1,
+      "preflight": {
+        "platform": "macOS-14.6.1-x86_64-i386-64bit-Mach-O",
+        "python": "3.13.14 (v3.13.14:fd17997c386, Jun 10 2026, 08:55:00) [Clang 21.0.0 (clang-2100.1.1.101)]",
+        "physical_memory_bytes": 68719476736,
+        "logical_cpus": 6,
+        "swap": "vm.swapusage: total = 2048.00M  used = 959.00M  free = 1089.00M  (encrypted)",
+        "swap_used_bytes": 1005584384,
+        "free_disk_bytes": 1453658578944
+      },
+      "estimated_peak_bytes": 26931200,
+      "status": "MEASURED",
+      "postflight": {
+        "platform": "macOS-14.6.1-x86_64-i386-64bit-Mach-O",
+        "python": "3.13.14 (v3.13.14:fd17997c386, Jun 10 2026, 08:55:00) [Clang 21.0.0 (clang-2100.1.1.101)]",
+        "physical_memory_bytes": 68719476736,
+        "logical_cpus": 6,
+        "swap": "vm.swapusage: total = 2048.00M  used = 959.00M  free = 1089.00M  (encrypted)",
+        "swap_used_bytes": 1005584384,
+        "free_disk_bytes": 1453662441472
+      },
+      "queries": {
+        "baseline": {
+          "Q1": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.039446474984288216,
+            "warm_p95_seconds": 0.04284933488816023,
+            "cold_source_to_answer_p50_seconds": 4.091749689541757,
+            "cold_source_to_answer_p95_seconds": 4.546608224045485,
+            "cold_source_to_answer_max_seconds": 4.546608224045485,
+            "index_or_projection_p50_seconds": 0.006211608182638884,
+            "serialized_index_bytes": 1623068,
+            "result_bytes": 2850126,
+            "output_cardinality": 53,
+            "path_count": 993,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 4.875635,
+            "system_cpu_seconds_max_cumulative": 0.168103
+          },
+          "Q2": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0010336651466786861,
+            "warm_p95_seconds": 0.0019322303123772144,
+            "cold_source_to_answer_p50_seconds": 5.745924563147128,
+            "cold_source_to_answer_p95_seconds": 6.2904169471003115,
+            "cold_source_to_answer_max_seconds": 6.2904169471003115,
+            "index_or_projection_p50_seconds": 0.006028367206454277,
+            "serialized_index_bytes": 1623068,
+            "result_bytes": 19804,
+            "output_cardinality": 8,
+            "path_count": 4,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 6.696308,
+            "system_cpu_seconds_max_cumulative": 0.174649
+          },
+          "Q3": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0010893209837377071,
+            "warm_p95_seconds": 0.0012732408940792084,
+            "cold_source_to_answer_p50_seconds": 5.734924482181668,
+            "cold_source_to_answer_p95_seconds": 6.256810552906245,
+            "cold_source_to_answer_max_seconds": 6.256810552906245,
+            "index_or_projection_p50_seconds": 0.006191808730363846,
+            "serialized_index_bytes": 1623068,
+            "result_bytes": 21061,
+            "output_cardinality": 8,
+            "path_count": 4,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 8.478482,
+            "system_cpu_seconds_max_cumulative": 0.178135
+          },
+          "Q4": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0002808207646012306,
+            "warm_p95_seconds": 0.00043914327397942543,
+            "cold_source_to_answer_p50_seconds": 4.051643223967403,
+            "cold_source_to_answer_p95_seconds": 4.500315754674375,
+            "cold_source_to_answer_max_seconds": 4.500315754674375,
+            "index_or_projection_p50_seconds": 0.006000407971441746,
+            "serialized_index_bytes": 1623068,
+            "result_bytes": 15377,
+            "output_cardinality": 5,
+            "path_count": 7,
+            "conclusion_count": 1,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 8.496842,
+            "system_cpu_seconds_max_cumulative": 0.178762
+          }
+        },
+        "graph": {
+          "Q1": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.03998916316777468,
+            "warm_p95_seconds": 0.045698837377130985,
+            "cold_source_to_answer_p50_seconds": 4.146724056452513,
+            "cold_source_to_answer_p95_seconds": 4.52571583352983,
+            "cold_source_to_answer_max_seconds": 4.52571583352983,
+            "index_or_projection_p50_seconds": 0.019755495246499777,
+            "serialized_index_bytes": 3178745,
+            "result_bytes": 2850126,
+            "output_cardinality": 53,
+            "path_count": 993,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 4.880504,
+            "system_cpu_seconds_max_cumulative": 0.158655
+          },
+          "Q2": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0010753059759736061,
+            "warm_p95_seconds": 0.0021406924352049828,
+            "cold_source_to_answer_p50_seconds": 5.773933710996062,
+            "cold_source_to_answer_p95_seconds": 6.226403713226318,
+            "cold_source_to_answer_max_seconds": 6.226403713226318,
+            "index_or_projection_p50_seconds": 0.01946524064987898,
+            "serialized_index_bytes": 3178745,
+            "result_bytes": 19804,
+            "output_cardinality": 8,
+            "path_count": 4,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 6.672877,
+            "system_cpu_seconds_max_cumulative": 0.166732
+          },
+          "Q3": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.001140546053647995,
+            "warm_p95_seconds": 0.001364612951874733,
+            "cold_source_to_answer_p50_seconds": 5.769467153120786,
+            "cold_source_to_answer_p95_seconds": 6.172413533553481,
+            "cold_source_to_answer_max_seconds": 6.172413533553481,
+            "index_or_projection_p50_seconds": 0.01996145397424698,
+            "serialized_index_bytes": 3178745,
+            "result_bytes": 21061,
+            "output_cardinality": 8,
+            "path_count": 4,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 8.409731,
+            "system_cpu_seconds_max_cumulative": 0.17196699999999998
+          },
+          "Q4": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.000277011189609766,
+            "warm_p95_seconds": 0.00034316210076212883,
+            "cold_source_to_answer_p50_seconds": 4.108305830042809,
+            "cold_source_to_answer_p95_seconds": 4.4838088089600205,
+            "cold_source_to_answer_max_seconds": 4.4838088089600205,
+            "index_or_projection_p50_seconds": 0.019170572981238365,
+            "serialized_index_bytes": 3178745,
+            "result_bytes": 15377,
+            "output_cardinality": 5,
+            "path_count": 7,
+            "conclusion_count": 1,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 8.449788999999999,
+            "system_cpu_seconds_max_cumulative": 0.173232
+          }
+        }
+      },
+      "relationships": 1039,
+      "records": 331,
+      "peak_process_tree_rss_bytes": 125071360,
+      "paired_runs": 10,
+      "all_paired_results_equal": true
+    },
+    {
+      "target_relationships": 10000,
+      "components": 27,
+      "preflight": {
+        "platform": "macOS-14.6.1-x86_64-i386-64bit-Mach-O",
+        "python": "3.13.14 (v3.13.14:fd17997c386, Jun 10 2026, 08:55:00) [Clang 21.0.0 (clang-2100.1.1.101)]",
+        "physical_memory_bytes": 68719476736,
+        "logical_cpus": 6,
+        "swap": "vm.swapusage: total = 2048.00M  used = 959.00M  free = 1089.00M  (encrypted)",
+        "swap_used_bytes": 1005584384,
+        "free_disk_bytes": 1453662441472
+      },
+      "estimated_peak_bytes": 274067456,
+      "status": "MEASURED",
+      "postflight": {
+        "platform": "macOS-14.6.1-x86_64-i386-64bit-Mach-O",
+        "python": "3.13.14 (v3.13.14:fd17997c386, Jun 10 2026, 08:55:00) [Clang 21.0.0 (clang-2100.1.1.101)]",
+        "physical_memory_bytes": 68719476736,
+        "logical_cpus": 6,
+        "swap": "vm.swapusage: total = 2048.00M  used = 959.00M  free = 1089.00M  (encrypted)",
+        "swap_used_bytes": 1005584384,
+        "free_disk_bytes": 1453651210240
+      },
+      "queries": {
+        "baseline": {
+          "Q1": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.039865163154900074,
+            "warm_p95_seconds": 0.04254100099205971,
+            "cold_source_to_answer_p50_seconds": 5.081714530009776,
+            "cold_source_to_answer_p95_seconds": 5.114217550493777,
+            "cold_source_to_answer_max_seconds": 5.114217550493777,
+            "index_or_projection_p50_seconds": 0.07324567902833223,
+            "serialized_index_bytes": 19547589,
+            "result_bytes": 2850126,
+            "output_cardinality": 53,
+            "path_count": 993,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 5.53515,
+            "system_cpu_seconds_max_cumulative": 0.160822
+          },
+          "Q2": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0010368949733674526,
+            "warm_p95_seconds": 0.00180109404027462,
+            "cold_source_to_answer_p50_seconds": 6.7395432107150555,
+            "cold_source_to_answer_p95_seconds": 6.762210598681122,
+            "cold_source_to_answer_max_seconds": 6.762210598681122,
+            "index_or_projection_p50_seconds": 0.07251576194539666,
+            "serialized_index_bytes": 19547589,
+            "result_bytes": 19804,
+            "output_cardinality": 8,
+            "path_count": 4,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 7.429348,
+            "system_cpu_seconds_max_cumulative": 0.179193
+          },
+          "Q3": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0010495949536561966,
+            "warm_p95_seconds": 0.0013729976490139961,
+            "cold_source_to_answer_p50_seconds": 6.70230172527954,
+            "cold_source_to_answer_p95_seconds": 6.731610082089901,
+            "cold_source_to_answer_max_seconds": 6.731610082089901,
+            "index_or_projection_p50_seconds": 0.07517592096701264,
+            "serialized_index_bytes": 19547589,
+            "result_bytes": 21061,
+            "output_cardinality": 8,
+            "path_count": 4,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 9.290398,
+            "system_cpu_seconds_max_cumulative": 0.19325399999999998
+          },
+          "Q4": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.007392814848572016,
+            "warm_p95_seconds": 0.00874898862093687,
+            "cold_source_to_answer_p50_seconds": 5.062850632704794,
+            "cold_source_to_answer_p95_seconds": 5.09822005731985,
+            "cold_source_to_answer_max_seconds": 5.09822005731985,
+            "index_or_projection_p50_seconds": 0.09433556580916047,
+            "serialized_index_bytes": 19547589,
+            "result_bytes": 407891,
+            "output_cardinality": 109,
+            "path_count": 189,
+            "conclusion_count": 27,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 9.584893,
+            "system_cpu_seconds_max_cumulative": 0.207339
+          }
+        },
+        "graph": {
+          "Q1": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.039714252576231956,
+            "warm_p95_seconds": 0.042987318243831396,
+            "cold_source_to_answer_p50_seconds": 5.2206569369882345,
+            "cold_source_to_answer_p95_seconds": 5.34311540145427,
+            "cold_source_to_answer_max_seconds": 5.34311540145427,
+            "index_or_projection_p50_seconds": 0.2354989037849009,
+            "serialized_index_bytes": 38822497,
+            "result_bytes": 2850126,
+            "output_cardinality": 53,
+            "path_count": 993,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 5.856683,
+            "system_cpu_seconds_max_cumulative": 0.183024
+          },
+          "Q2": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0010930555872619152,
+            "warm_p95_seconds": 0.0019246172159910202,
+            "cold_source_to_answer_p50_seconds": 6.878886327147484,
+            "cold_source_to_answer_p95_seconds": 6.999044694006443,
+            "cold_source_to_answer_max_seconds": 6.999044694006443,
+            "index_or_projection_p50_seconds": 0.23323046788573265,
+            "serialized_index_bytes": 38822497,
+            "result_bytes": 19804,
+            "output_cardinality": 8,
+            "path_count": 4,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 8.00103,
+            "system_cpu_seconds_max_cumulative": 0.215832
+          },
+          "Q3": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0011405698023736477,
+            "warm_p95_seconds": 0.0014420519582927227,
+            "cold_source_to_answer_p50_seconds": 6.8760253600776196,
+            "cold_source_to_answer_p95_seconds": 7.02195137925446,
+            "cold_source_to_answer_max_seconds": 7.02195137925446,
+            "index_or_projection_p50_seconds": 0.25621140096336603,
+            "serialized_index_bytes": 38822497,
+            "result_bytes": 21061,
+            "output_cardinality": 8,
+            "path_count": 4,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 10.174534,
+            "system_cpu_seconds_max_cumulative": 0.24029899999999998
+          },
+          "Q4": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.007703240029513836,
+            "warm_p95_seconds": 0.01049003005027771,
+            "cold_source_to_answer_p50_seconds": 5.177921742200851,
+            "cold_source_to_answer_p95_seconds": 5.311168352141976,
+            "cold_source_to_answer_max_seconds": 5.311168352141976,
+            "index_or_projection_p50_seconds": 0.23170731216669083,
+            "serialized_index_bytes": 38822497,
+            "result_bytes": 407891,
+            "output_cardinality": 109,
+            "path_count": 189,
+            "conclusion_count": 27,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 10.732459,
+            "system_cpu_seconds_max_cumulative": 0.26312599999999997
+          }
+        }
+      },
+      "relationships": 10841,
+      "records": 3555,
+      "peak_process_tree_rss_bytes": 361398272,
+      "paired_runs": 10,
+      "all_paired_results_equal": true
+    },
+    {
+      "target_relationships": 100000,
+      "components": 266,
+      "preflight": {
+        "platform": "macOS-14.6.1-x86_64-i386-64bit-Mach-O",
+        "python": "3.13.14 (v3.13.14:fd17997c386, Jun 10 2026, 08:55:00) [Clang 21.0.0 (clang-2100.1.1.101)]",
+        "physical_memory_bytes": 68719476736,
+        "logical_cpus": 6,
+        "swap": "vm.swapusage: total = 2048.00M  used = 959.00M  free = 1089.00M  (encrypted)",
+        "swap_used_bytes": 1005584384,
+        "free_disk_bytes": 1453651210240
+      },
+      "estimated_peak_bytes": 2495008768,
+      "status": "MEASURED",
+      "postflight": {
+        "platform": "macOS-14.6.1-x86_64-i386-64bit-Mach-O",
+        "python": "3.13.14 (v3.13.14:fd17997c386, Jun 10 2026, 08:55:00) [Clang 21.0.0 (clang-2100.1.1.101)]",
+        "physical_memory_bytes": 68719476736,
+        "logical_cpus": 6,
+        "swap": "vm.swapusage: total = 2048.00M  used = 959.00M  free = 1089.00M  (encrypted)",
+        "swap_used_bytes": 1005584384,
+        "free_disk_bytes": 1453771091968
+      },
+      "queries": {
+        "baseline": {
+          "Q1": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.03916251892223954,
+            "warm_p95_seconds": 0.20680963713675737,
+            "cold_source_to_answer_p50_seconds": 13.566501728259027,
+            "cold_source_to_answer_p95_seconds": 14.076487797312438,
+            "cold_source_to_answer_max_seconds": 14.076487797312438,
+            "index_or_projection_p50_seconds": 0.6923932889476418,
+            "serialized_index_bytes": 184884646,
+            "result_bytes": 2850126,
+            "output_cardinality": 53,
+            "path_count": 993,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 15.428822,
+            "system_cpu_seconds_max_cumulative": 0.414883
+          },
+          "Q2": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0010221689008176327,
+            "warm_p95_seconds": 0.0019333171658217907,
+            "cold_source_to_answer_p50_seconds": 15.127265743445605,
+            "cold_source_to_answer_p95_seconds": 15.70901604462415,
+            "cold_source_to_answer_max_seconds": 15.70901604462415,
+            "index_or_projection_p50_seconds": 0.6791732390411198,
+            "serialized_index_bytes": 184884646,
+            "result_bytes": 19804,
+            "output_cardinality": 8,
+            "path_count": 4,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 18.942888,
+            "system_cpu_seconds_max_cumulative": 0.565358
+          },
+          "Q3": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0010533509775996208,
+            "warm_p95_seconds": 0.001143638975918293,
+            "cold_source_to_answer_p50_seconds": 15.329172051046044,
+            "cold_source_to_answer_p95_seconds": 15.934188870247453,
+            "cold_source_to_answer_max_seconds": 15.934188870247453,
+            "index_or_projection_p50_seconds": 0.8755668867379427,
+            "serialized_index_bytes": 184884646,
+            "result_bytes": 21061,
+            "output_cardinality": 8,
+            "path_count": 4,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 22.640256,
+            "system_cpu_seconds_max_cumulative": 0.6476339999999999
+          },
+          "Q4": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.08696636790409684,
+            "warm_p95_seconds": 0.2663137298077345,
+            "cold_source_to_answer_p50_seconds": 13.80847385013476,
+            "cold_source_to_answer_p95_seconds": 14.326315227430314,
+            "cold_source_to_answer_max_seconds": 14.326315227430314,
+            "index_or_projection_p50_seconds": 0.8858723500743508,
+            "serialized_index_bytes": 184884646,
+            "result_bytes": 4021970,
+            "output_cardinality": 1065,
+            "path_count": 1862,
+            "conclusion_count": 266,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 25.820255,
+            "system_cpu_seconds_max_cumulative": 0.83802
+          }
+        },
+        "graph": {
+          "Q1": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.03846633108332753,
+            "warm_p95_seconds": 0.2135053970851004,
+            "cold_source_to_answer_p50_seconds": 15.132308258209378,
+            "cold_source_to_answer_p95_seconds": 15.60812196880579,
+            "cold_source_to_answer_max_seconds": 15.60812196880579,
+            "index_or_projection_p50_seconds": 2.2062006099149585,
+            "serialized_index_bytes": 367527441,
+            "result_bytes": 2850126,
+            "output_cardinality": 53,
+            "path_count": 993,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 17.791774,
+            "system_cpu_seconds_max_cumulative": 0.531557
+          },
+          "Q2": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0010744337923824787,
+            "warm_p95_seconds": 0.002131260000169277,
+            "cold_source_to_answer_p50_seconds": 16.92463270155713,
+            "cold_source_to_answer_p95_seconds": 17.28926913952455,
+            "cold_source_to_answer_max_seconds": 17.28926913952455,
+            "index_or_projection_p50_seconds": 2.418199010193348,
+            "serialized_index_bytes": 367527441,
+            "result_bytes": 19804,
+            "output_cardinality": 8,
+            "path_count": 4,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 23.755456,
+            "system_cpu_seconds_max_cumulative": 0.86763
+          },
+          "Q3": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0011315904557704926,
+            "warm_p95_seconds": 0.001316756010055542,
+            "cold_source_to_answer_p50_seconds": 16.904241476673633,
+            "cold_source_to_answer_p95_seconds": 17.267365105450153,
+            "cold_source_to_answer_max_seconds": 17.267365105450153,
+            "index_or_projection_p50_seconds": 2.4029581830836833,
+            "serialized_index_bytes": 367527441,
+            "result_bytes": 21061,
+            "output_cardinality": 8,
+            "path_count": 4,
+            "conclusion_count": 0,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 29.716762,
+            "system_cpu_seconds_max_cumulative": 1.200018
+          },
+          "Q4": {
+            "warm_observations": 100,
+            "cold_repetitions": 10,
+            "warm_p50_seconds": 0.0841309642419219,
+            "warm_p95_seconds": 0.26812651893123984,
+            "cold_source_to_answer_p50_seconds": 15.357433933764696,
+            "cold_source_to_answer_p95_seconds": 15.737202714197338,
+            "cold_source_to_answer_max_seconds": 15.737202714197338,
+            "index_or_projection_p50_seconds": 2.3765940102748573,
+            "serialized_index_bytes": 367527441,
+            "result_bytes": 4021970,
+            "output_cardinality": 1065,
+            "path_count": 1862,
+            "conclusion_count": 266,
+            "all_complete": true,
+            "user_cpu_seconds_max_cumulative": 35.075687,
+            "system_cpu_seconds_max_cumulative": 1.499677
+          }
+        }
+      },
+      "relationships": 100944,
+      "records": 33191,
+      "peak_process_tree_rss_bytes": 1309396992,
+      "paired_runs": 10,
+      "all_paired_results_equal": true
+    },
+    {
+      "target_relationships": 1000000,
+      "components": 2653,
+      "preflight": {
+        "platform": "macOS-14.6.1-x86_64-i386-64bit-Mach-O",
+        "python": "3.13.14 (v3.13.14:fd17997c386, Jun 10 2026, 08:55:00) [Clang 21.0.0 (clang-2100.1.1.101)]",
+        "physical_memory_bytes": 68719476736,
+        "logical_cpus": 6,
+        "swap": "vm.swapusage: total = 2048.00M  used = 959.00M  free = 1089.00M  (encrypted)",
+        "swap_used_bytes": 1005584384,
+        "free_disk_bytes": 1453771091968
+      },
+      "estimated_peak_bytes": 24680296448,
+      "status": "SKIPPED_RESOURCE_PREFLIGHT",
+      "queries": {
+        "baseline": {},
+        "graph": {}
+      },
+      "relationships": null,
+      "records": null,
+      "peak_process_tree_rss_bytes": 0,
+      "paired_runs": 0,
+      "all_paired_results_equal": false
+    }
+  ],
+  "complexity": {
+    "method": "AST executable statement count; imports/docstrings excluded; semicolon statements counted separately",
+    "arms": {
+      "baseline": [
+        {
+          "path": "src/graph_value/baseline.py",
+          "logical_statements": 137,
+          "physical_nonblank_lines": 153,
+          "functions": {
+            "__init__": {
+              "logical_statements": 26,
+              "physical_lines": 26,
+              "loops": 3,
+              "self_recursive_calls": 0
+            },
+            "dependencies": {
+              "logical_statements": 28,
+              "physical_lines": 32,
+              "loops": 2,
+              "self_recursive_calls": 0
+            },
+            "q1": {
+              "logical_statements": 9,
+              "physical_lines": 9,
+              "loops": 0,
+              "self_recursive_calls": 0
+            },
+            "q4": {
+              "logical_statements": 8,
+              "physical_lines": 8,
+              "loops": 0,
+              "self_recursive_calls": 0
+            },
+            "q2": {
+              "logical_statements": 34,
+              "physical_lines": 41,
+              "loops": 6,
+              "self_recursive_calls": 0
+            },
+            "q3": {
+              "logical_statements": 31,
+              "physical_lines": 33,
+              "loops": 5,
+              "self_recursive_calls": 0
+            }
+          }
+        }
+      ],
+      "graph": [
+        {
+          "path": "src/graph_value/projection.py",
+          "logical_statements": 30,
+          "physical_nonblank_lines": 48,
+          "functions": {
+            "__init__": {
+              "logical_statements": 26,
+              "physical_lines": 26,
+              "loops": 5,
+              "self_recursive_calls": 0
+            },
+            "serialize": {
+              "logical_statements": 2,
+              "physical_lines": 5,
+              "loops": 0,
+              "self_recursive_calls": 0
+            }
+          }
+        },
+        {
+          "path": "src/graph_value/traversal.py",
+          "logical_statements": 30,
+          "physical_nonblank_lines": 36,
+          "functions": {
+            "walk": {
+              "logical_statements": 30,
+              "physical_lines": 34,
+              "loops": 2,
+              "self_recursive_calls": 0
+            }
+          }
+        },
+        {
+          "path": "src/graph_value/queries.py",
+          "logical_statements": 97,
+          "physical_nonblank_lines": 112,
+          "functions": {
+            "__init__": {
+              "logical_statements": 11,
+              "physical_lines": 11,
+              "loops": 1,
+              "self_recursive_calls": 0
+            },
+            "dependencies": {
+              "logical_statements": 2,
+              "physical_lines": 2,
+              "loops": 0,
+              "self_recursive_calls": 0
+            },
+            "q1": {
+              "logical_statements": 9,
+              "physical_lines": 9,
+              "loops": 0,
+              "self_recursive_calls": 0
+            },
+            "q4": {
+              "logical_statements": 8,
+              "physical_lines": 8,
+              "loops": 0,
+              "self_recursive_calls": 0
+            },
+            "q2": {
+              "logical_statements": 35,
+              "physical_lines": 44,
+              "loops": 7,
+              "self_recursive_calls": 0
+            },
+            "q3": {
+              "logical_statements": 31,
+              "physical_lines": 33,
+              "loops": 5,
+              "self_recursive_calls": 0
+            }
+          }
+        }
+      ]
+    },
+    "shared": [
+      {
+        "path": "src/graph_value/canonical.py",
+        "logical_statements": 209,
+        "physical_nonblank_lines": 251,
+        "functions": {
+          "digest_file": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "ident": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "add_reconciliation": {
+            "logical_statements": 68,
+            "physical_lines": 77,
+            "loops": 5,
+            "self_recursive_calls": 0
+          },
+          "load_reference": {
+            "logical_statements": 45,
+            "physical_lines": 48,
+            "loops": 6,
+            "self_recursive_calls": 0
+          },
+          "load_pair": {
+            "logical_statements": 16,
+            "physical_lines": 16,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "__init__": {
+            "logical_statements": 4,
+            "physical_lines": 4,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "add": {
+            "logical_statements": 9,
+            "physical_lines": 12,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "reference": {
+            "logical_statements": 4,
+            "physical_lines": 6,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "artifact": {
+            "logical_statements": 2,
+            "physical_lines": 3,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "authority_pair": {
+            "logical_statements": 51,
+            "physical_lines": 57,
+            "loops": 7,
+            "self_recursive_calls": 0
+          },
+          "freeze": {
+            "logical_statements": 4,
+            "physical_lines": 5,
+            "loops": 1,
+            "self_recursive_calls": 0
+          }
+        }
+      },
+      {
+        "path": "src/graph_value/semantics.py",
+        "logical_statements": 32,
+        "physical_nonblank_lines": 41,
+        "functions": {
+          "__init__": {
+            "logical_statements": 3,
+            "physical_lines": 3,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "assess": {
+            "logical_statements": 7,
+            "physical_lines": 10,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "requested_tuples": {
+            "logical_statements": 13,
+            "physical_lines": 14,
+            "loops": 1,
+            "self_recursive_calls": 0
+          },
+          "resolve_ref": {
+            "logical_statements": 8,
+            "physical_lines": 9,
+            "loops": 0,
+            "self_recursive_calls": 0
+          }
+        }
+      },
+      {
+        "path": "src/graph_value/results.py",
+        "logical_statements": 17,
+        "physical_nonblank_lines": 24,
+        "functions": {
+          "stable": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "result": {
+            "logical_statements": 2,
+            "physical_lines": 3,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "ref_key": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "authority_delta": {
+            "logical_statements": 6,
+            "physical_lines": 9,
+            "loops": 1,
+            "self_recursive_calls": 0
+          },
+          "record_details": {
+            "logical_statements": 5,
+            "physical_lines": 5,
+            "loops": 1,
+            "self_recursive_calls": 0
+          }
+        }
+      }
+    ],
+    "reused_unchanged": [
+      {
+        "path": "src/authority_resolver.py",
+        "logical_statements": 99,
+        "physical_nonblank_lines": 126,
+        "functions": {
+          "utc_now": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "instant": {
+            "logical_statements": 9,
+            "physical_lines": 10,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "load_authority_source": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "validate_revision": {
+            "logical_statements": 13,
+            "physical_lines": 13,
+            "loops": 1,
+            "self_recursive_calls": 0
+          },
+          "revision_bytes": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "preserve_revision": {
+            "logical_statements": 13,
+            "physical_lines": 16,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "load_preserved_revision": {
+            "logical_statements": 14,
+            "physical_lines": 14,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "authority_basis": {
+            "logical_statements": 5,
+            "physical_lines": 8,
+            "loops": 1,
+            "self_recursive_calls": 0
+          },
+          "resolve_authority": {
+            "logical_statements": 24,
+            "physical_lines": 29,
+            "loops": 1,
+            "self_recursive_calls": 0
+          },
+          "boundary_status": {
+            "logical_statements": 6,
+            "physical_lines": 7,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "policy_authority": {
+            "logical_statements": 5,
+            "physical_lines": 8,
+            "loops": 0,
+            "self_recursive_calls": 0
+          }
+        }
+      },
+      {
+        "path": "src/authority_reconstruction.py",
+        "logical_statements": 29,
+        "physical_nonblank_lines": 43,
+        "functions": {
+          "reconstruct_authority": {
+            "logical_statements": 19,
+            "physical_lines": 25,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "main": {
+            "logical_statements": 8,
+            "physical_lines": 8,
+            "loops": 1,
+            "self_recursive_calls": 0
+          }
+        }
+      },
+      {
+        "path": "src/delegation_resolver.py",
+        "logical_statements": 171,
+        "physical_nonblank_lines": 212,
+        "functions": {
+          "record_ref": {
+            "logical_statements": 4,
+            "physical_lines": 4,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "ref_key": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "tuples": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "normalized_scopes": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "eligible": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "interval_contained": {
+            "logical_statements": 2,
+            "physical_lines": 4,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "candidate": {
+            "logical_statements": 2,
+            "physical_lines": 4,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "add_issue": {
+            "logical_statements": 4,
+            "physical_lines": 4,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "finish": {
+            "logical_statements": 9,
+            "physical_lines": 11,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "resolve_delegation": {
+            "logical_statements": 136,
+            "physical_lines": 167,
+            "loops": 7,
+            "self_recursive_calls": 0
+          },
+          "check_narrowing": {
+            "logical_statements": 5,
+            "physical_lines": 5,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "root_resolution": {
+            "logical_statements": 4,
+            "physical_lines": 4,
+            "loops": 0,
+            "self_recursive_calls": 0
+          }
+        }
+      },
+      {
+        "path": "src/delegation_reconstruction.py",
+        "logical_statements": 62,
+        "physical_nonblank_lines": 103,
+        "functions": {
+          "schema": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "create_assertion": {
+            "logical_statements": 21,
+            "physical_lines": 39,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "reconstruct_delegation": {
+            "logical_statements": 17,
+            "physical_lines": 25,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "main": {
+            "logical_statements": 20,
+            "physical_lines": 26,
+            "loops": 1,
+            "self_recursive_calls": 0
+          },
+          "failure": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          }
+        }
+      },
+      {
+        "path": "src/action_reconciliation.py",
+        "logical_statements": 187,
+        "physical_nonblank_lines": 186,
+        "functions": {
+          "_stable": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "_replay": {
+            "logical_statements": 33,
+            "physical_lines": 34,
+            "loops": 3,
+            "self_recursive_calls": 0
+          },
+          "_identity": {
+            "logical_statements": 18,
+            "physical_lines": 13,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "_explain": {
+            "logical_statements": 26,
+            "physical_lines": 34,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "_coverage_captures": {
+            "logical_statements": 4,
+            "physical_lines": 6,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "reconcile": {
+            "logical_statements": 103,
+            "physical_lines": 89,
+            "loops": 6,
+            "self_recursive_calls": 0
+          },
+          "finish": {
+            "logical_statements": 5,
+            "physical_lines": 4,
+            "loops": 0,
+            "self_recursive_calls": 0
+          }
+        }
+      },
+      {
+        "path": "src/correlation_assertion.py",
+        "logical_statements": 117,
+        "physical_nonblank_lines": 193,
+        "functions": {
+          "validate_assertion": {
+            "logical_statements": 22,
+            "physical_lines": 22,
+            "loops": 2,
+            "self_recursive_calls": 0
+          },
+          "_get": {
+            "logical_statements": 5,
+            "physical_lines": 5,
+            "loops": 1,
+            "self_recursive_calls": 0
+          },
+          "_records": {
+            "logical_statements": 11,
+            "physical_lines": 11,
+            "loops": 1,
+            "self_recursive_calls": 0
+          },
+          "_coverage": {
+            "logical_statements": 4,
+            "physical_lines": 5,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "_assemble": {
+            "logical_statements": 21,
+            "physical_lines": 50,
+            "loops": 3,
+            "self_recursive_calls": 0
+          },
+          "composite_assertions": {
+            "logical_statements": 6,
+            "physical_lines": 20,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "native_assertions": {
+            "logical_statements": 37,
+            "physical_lines": 60,
+            "loops": 5,
+            "self_recursive_calls": 0
+          },
+          "main": {
+            "logical_statements": 7,
+            "physical_lines": 8,
+            "loops": 0,
+            "self_recursive_calls": 0
+          }
+        }
+      },
+      {
+        "path": "src/control_attestation.py",
+        "logical_statements": 76,
+        "physical_nonblank_lines": 113,
+        "functions": {
+          "validate_attestation": {
+            "logical_statements": 5,
+            "physical_lines": 5,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "adjudicate": {
+            "logical_statements": 54,
+            "physical_lines": 78,
+            "loops": 1,
+            "self_recursive_calls": 0
+          },
+          "attest": {
+            "logical_statements": 3,
+            "physical_lines": 3,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "reconstruct_attestation": {
+            "logical_statements": 10,
+            "physical_lines": 12,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "finish": {
+            "logical_statements": 5,
+            "physical_lines": 5,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "abstain": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          }
+        }
+      },
+      {
+        "path": "src/m6_attestation_evidence.py",
+        "logical_statements": 117,
+        "physical_nonblank_lines": 179,
+        "functions": {
+          "validate_control": {
+            "logical_statements": 6,
+            "physical_lines": 6,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "_file_digest": {
+            "logical_statements": 2,
+            "physical_lines": 2,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "_member": {
+            "logical_statements": 4,
+            "physical_lines": 4,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "_coverage": {
+            "logical_statements": 46,
+            "physical_lines": 60,
+            "loops": 0,
+            "self_recursive_calls": 0
+          },
+          "_project": {
+            "logical_statements": 20,
+            "physical_lines": 36,
+            "loops": 1,
+            "self_recursive_calls": 0
+          },
+          "verify_m6": {
+            "logical_statements": 37,
+            "physical_lines": 57,
+            "loops": 1,
+            "self_recursive_calls": 0
+          }
+        }
+      }
+    ],
+    "arm_owned_topology_logical_statements": {
+      "baseline": 137,
+      "graph": 157
+    },
+    "shared_logical_statements": 258,
+    "total_new_implementation_logical_statements": 552,
+    "standalone_total_with_shared": {
+      "baseline": 395,
+      "graph": 415
+    },
+    "graph_reduction_fraction": -0.14598540145985406,
+    "non_loc": {
+      "custom_recursion": {
+        "baseline": 0,
+        "graph": 0,
+        "basis": "Both use iterative traversal; M5 is also iterative."
+      },
+      "traversal_routines": {
+        "baseline": 2,
+        "graph": 1,
+        "baseline_locations": [
+          "Baseline.dependencies",
+          "Baseline.q2"
+        ],
+        "graph_locations": [
+          "walk"
+        ]
+      },
+      "cycle_handling": {
+        "baseline": 2,
+        "graph": 1,
+        "baseline_locations": [
+          "dependencies path membership",
+          "q2 seen set"
+        ],
+        "graph_locations": [
+          "walk visited path"
+        ]
+      },
+      "path_state_management": {
+        "baseline": 2,
+        "graph": 1,
+        "baseline_locations": [
+          "dependencies todo/path/provenance",
+          "q2 descendants/seen"
+        ],
+        "graph_locations": [
+          "walk todo/visited/provenance"
+        ]
+      },
+      "topology_specific_lookups_joins": {
+        "baseline": 2,
+        "graph": 3,
+        "baseline_locations": [
+          "Baseline.__init__ reverse/children/relationship/principal indexes",
+          "Baseline.q2 actor/tuple/assurance joins"
+        ],
+        "graph_locations": [
+          "Projection.__init__ relation/property indexes",
+          "GraphQueries.__init__ actor evidence index",
+          "GraphQueries.q2 actor/tuple/assurance joins"
+        ]
+      },
+      "inverse_query_changed_lines_functions": {
+        "baseline": 0,
+        "graph": 0,
+        "basis": "Both accept reverse=True; test covers forward and reverse."
+      },
+      "variable_depth_changed_lines_functions": {
+        "baseline": 0,
+        "graph": 0,
+        "basis": "Both accept depth=None or depth=1; no code changes."
+      }
+    },
+    "non_loc_improvement_count": 3,
+    "attribution_limit": "Q2/Q3 semantic path validation still uses the unchanged M5 resolver in both arms. Generic graph traversal does not remove that implementation cost.",
+    "effort": {
+      "measurement": "Single-agent implementation; wall-clock development duration is not controlled engineering effort. No measured productivity claim.",
+      "module_boundary_optimization_for_threshold": false,
+      "elapsed_from_frozen_protocol_to_last_core_edit_seconds": 2441.934346675873,
+      "elapsed_from_frozen_protocol_to_report_seconds": 3797.208741426468,
+      "baseline_active_development_seconds": null,
+      "graph_active_development_seconds": null,
+      "elapsed_time_limit": "Artifact timestamps give elapsed lab time including approvals, Docker stalls and benchmark execution; active per-arm implementation effort was not instrumented and no productivity conclusion follows."
+    },
+    "defects_found_during_development": [
+      {
+        "kind": "implementation",
+        "detail": "Q1 details aliased input records; permutation test exposed mutable output. Fixed with copied, normalized result details."
+      },
+      {
+        "kind": "test",
+        "detail": "Boundary fixture omitted requested tuple after adding export scope; assertion inspected export instead of read. Fixed explicit requested tuple."
+      }
+    ],
+    "query_method_logical_statements": {
+      "baseline": {
+        "q1": 9,
+        "q2": 34,
+        "q3": 31,
+        "q4": 8
+      },
+      "graph": {
+        "q1": 9,
+        "q2": 35,
+        "q3": 31,
+        "q4": 8
+      }
+    }
+  },
+  "commercial_usefulness_non_scoring": [
+    {
+      "query": "Q1",
+      "likely_enterprise_user": "Assurance investigator, internal audit or incident reviewer",
+      "decision_supported": "Determine which evidence supports an exception and whether further evidence or review is needed.",
+      "commercial_meaningfulness": "Plausibly meaningful: reduces manual evidence assembly. This experiment does not establish willingness to pay or graph-specific advantage."
+    },
+    {
+      "query": "Q2",
+      "likely_enterprise_user": "IAM architect, agent-platform owner or access reviewer",
+      "decision_supported": "Understand dependencies and alternative authority bases before reviewing a delegation relationship.",
+      "commercial_meaningfulness": "Plausibly meaningful where delegated authority is complex; value depends on usable preserved source records and revision coverage."
+    },
+    {
+      "query": "Q3",
+      "likely_enterprise_user": "Change approver, security architect or governance operations lead",
+      "decision_supported": "Review the scope and collateral authority-support loss of a proposed relationship change.",
+      "commercial_meaningfulness": "Plausibly meaningful for change-risk review. No intervention recommendation, prevention estimate or remediation-effectiveness claim is supported."
+    },
+    {
+      "query": "Q4",
+      "likely_enterprise_user": "Internal audit, evidence custodian, compliance assurance or data-governance owner",
+      "decision_supported": "Identify assurance records needing review/reverification when an evidence source, revision or artifact is questioned.",
+      "commercial_meaningfulness": "Plausibly meaningful even without intervention analysis; transitive evidence dependencies can be valuable independently. No enterprise demand validation was performed."
+    }
+  ],
+  "scope_limits": [
+    "Synthetic scale observations and preserved cooperative evidence do not establish enterprise volume, authenticity or market demand.",
+    "Q1 is the fixed preserved live exception at every tier. Synthetic scale adds M5 authority topology and M6 dependency conclusions, not arbitrary M7 attestations.",
+    "M5 semantic traversal is reused by both arms and its cost remains shared; graph discovery does not replace semantic validation.",
+    "Removing a relationship filters demonstrated support paths. Historical findings and outcomes are unchanged; prevention is never inferred.",
+    "No Neo4j installation/configuration or Gate B work. Existing legacy graph code is excluded from Gate A execution.",
+    "Warm measurements include immutable semantic caching equally in both arms; cold figures include common validation and empty query-class caches.",
+    "CPU measures are cumulative worker user/system time at query completion, not independent per-query CPU deltas."
+  ],
+  "validation_scope": {
+    "gate_a": "51 passed; final focused suite",
+    "regression_subset": "316 passed, 5 skipped; includes Gate A tests available when collected",
+    "excluded_from_completed_subset": [
+      "tests/test_governance_evals.py",
+      "tests/test_governance_event_integration.py",
+      "tests/test_graph_export.py",
+      "tests/test_graph_projection.py",
+      "tests/test_investigation_runner.py",
+      "tests/test_ontology_validator.py",
+      "tests/test_runtime_reconciler.py",
+      "tests/test_trajectory_decision_events.py"
+    ],
+    "full_suite_status": "NOT_COMPLETED",
+    "initial_sandbox_attempt": "312 passed, 5 skipped, 35 Docker/Python-subprocess environment failures before final Gate A additions",
+    "escalated_attempt": "54 passed then interrupted after OPA subprocess stalled for over nine minutes",
+    "bounded_diagnostic": "Pinned OPA image exists and Docker info succeeds; docker run --rm openpolicyagent/opa:1.19.0 version timed out after 20 seconds",
+    "neo4j": "Not installed, configured, queried or changed by this task. A pre-existing unrelated Neo4j container appeared in read-only Docker inventory."
+  },
+  "full_new_code_accounting": {
+    "groups": {
+      "core": {
+        "files": [
+          {
+            "path": "src/graph_value/__init__.py",
+            "logical_statements": 0,
+            "physical_nonblank_lines": 1
+          },
+          {
+            "path": "src/graph_value/baseline.py",
+            "logical_statements": 137,
+            "physical_nonblank_lines": 153
+          },
+          {
+            "path": "src/graph_value/canonical.py",
+            "logical_statements": 209,
+            "physical_nonblank_lines": 251
+          },
+          {
+            "path": "src/graph_value/projection.py",
+            "logical_statements": 30,
+            "physical_nonblank_lines": 48
+          },
+          {
+            "path": "src/graph_value/queries.py",
+            "logical_statements": 97,
+            "physical_nonblank_lines": 112
+          },
+          {
+            "path": "src/graph_value/results.py",
+            "logical_statements": 17,
+            "physical_nonblank_lines": 24
+          },
+          {
+            "path": "src/graph_value/semantics.py",
+            "logical_statements": 32,
+            "physical_nonblank_lines": 41
+          },
+          {
+            "path": "src/graph_value/traversal.py",
+            "logical_statements": 30,
+            "physical_nonblank_lines": 36
+          }
+        ],
+        "logical_statements": 552
+      },
+      "experiment_harness": {
+        "files": [
+          {
+            "path": "experiments/graph_value/benchmark.py",
+            "logical_statements": 138,
+            "physical_nonblank_lines": 172
+          },
+          {
+            "path": "experiments/graph_value/complexity.py",
+            "logical_statements": 23,
+            "physical_nonblank_lines": 68
+          },
+          {
+            "path": "experiments/graph_value/generate.py",
+            "logical_statements": 92,
+            "physical_nonblank_lines": 139
+          },
+          {
+            "path": "experiments/graph_value/score.py",
+            "logical_statements": 82,
+            "physical_nonblank_lines": 140
+          }
+        ],
+        "logical_statements": 335
+      },
+      "tests": {
+        "files": [
+          {
+            "path": "tests/test_graph_value_benchmark.py",
+            "logical_statements": 45,
+            "physical_nonblank_lines": 53
+          },
+          {
+            "path": "tests/test_graph_value_boundaries.py",
+            "logical_statements": 97,
+            "physical_nonblank_lines": 109
+          },
+          {
+            "path": "tests/test_graph_value_canonical.py",
+            "logical_statements": 47,
+            "physical_nonblank_lines": 52
+          },
+          {
+            "path": "tests/test_graph_value_projection.py",
+            "logical_statements": 26,
+            "physical_nonblank_lines": 31
+          },
+          {
+            "path": "tests/test_graph_value_queries.py",
+            "logical_statements": 67,
+            "physical_nonblank_lines": 88
+          }
+        ],
+        "logical_statements": 282
+      },
+      "result_reproduction_scripts": {
+        "files": [
+          {
+            "path": "experiments/graph_value/results/gate-a-v1/finalize_report.py",
+            "logical_statements": 50,
+            "physical_nonblank_lines": 69
+          },
+          {
+            "path": "experiments/graph_value/results/gate-a-v1/query_reproduction.py",
+            "logical_statements": 20,
+            "physical_nonblank_lines": 33
+          },
+          {
+            "path": "experiments/graph_value/results/gate-a-v1/stress_reproduction.py",
+            "logical_statements": 52,
+            "physical_nonblank_lines": 65
+          }
+        ],
+        "logical_statements": 122
+      }
+    },
+    "core_plus_harness_logical_statements": 887,
+    "all_new_python_including_tests_and_reproduction_logical_statements": 1291
+  },
+  "integrity": {
+    "frozen_protocol_matches": true,
+    "measured_code_unchanged": true,
+    "original_archives_unchanged": true,
+    "all_preexisting_tracked_files_unchanged": true
+  },
+  "query_summary": {
+    "Q1": {
+      "records": 53,
+      "paths": 993,
+      "affected": 0,
+      "conclusions": 0,
+      "equal": true
+    },
+    "Q2": {
+      "records": 8,
+      "paths": 4,
+      "affected": 4,
+      "conclusions": 0,
+      "equal": true
+    },
+    "Q3": {
+      "records": 8,
+      "paths": 4,
+      "affected": 4,
+      "conclusions": 0,
+      "equal": true
+    },
+    "Q4": {
+      "records": 1065,
+      "paths": 1862,
+      "affected": 0,
+      "conclusions": 266,
+      "equal": true
+    },
+    "independent_counterfactual_case": {
+      "records": 7,
+      "paths": 5,
+      "affected": 3,
+      "conclusions": 0,
+      "equal": true
+    }
+  },
+  "correctness_claim_scope": "The correctness gate reports executed Gate A oracles, preserved-source replay, available regression checks and paired benchmark results. It is not a claim that the unavailable full Docker-backed integration suite passed.",
+  "supplementary_stress": {
+    "status": "PASS",
+    "scoring": "supplementary only",
+    "rows": [
+      {
+        "case": "root-wide-chain",
+        "depth": 8,
+        "arm": "baseline",
+        "seconds": 0.7191141666844487,
+        "complete": true,
+        "affected_actors": 8,
+        "actors_losing_all_support": 7
+      },
+      {
+        "case": "root-wide-chain",
+        "depth": 8,
+        "arm": "graph",
+        "seconds": 0.7197168078273535,
+        "complete": true,
+        "affected_actors": 8,
+        "actors_losing_all_support": 7
+      },
+      {
+        "case": "root-wide-chain",
+        "depth": 16,
+        "arm": "baseline",
+        "seconds": 2.349669205956161,
+        "complete": true,
+        "affected_actors": 16,
+        "actors_losing_all_support": 15
+      },
+      {
+        "case": "root-wide-chain",
+        "depth": 16,
+        "arm": "graph",
+        "seconds": 2.334908149205148,
+        "complete": true,
+        "affected_actors": 16,
+        "actors_losing_all_support": 15
+      },
+      {
+        "case": "root-wide-chain",
+        "depth": 32,
+        "arm": "baseline",
+        "seconds": 8.243765507824719,
+        "complete": true,
+        "affected_actors": 32,
+        "actors_losing_all_support": 31
+      },
+      {
+        "case": "root-wide-chain",
+        "depth": 32,
+        "arm": "graph",
+        "seconds": 8.239830232225358,
+        "complete": true,
+        "affected_actors": 32,
+        "actors_losing_all_support": 31
+      },
+      {
+        "case": "competing-population",
+        "population_size": 2,
+        "arm": "baseline",
+        "common_prepare_seconds": 0.02350945584475994,
+        "seconds": 0.0021887910552322865,
+        "source_bytes": 3250,
+        "assertion_bytes": 27185,
+        "complete": true,
+        "paths": 121,
+        "m6_result": "INSUFFICIENT_EVIDENCE"
+      },
+      {
+        "case": "competing-population",
+        "population_size": 2,
+        "arm": "graph",
+        "common_prepare_seconds": 0.02350945584475994,
+        "seconds": 0.002440033946186304,
+        "source_bytes": 3250,
+        "assertion_bytes": 27185,
+        "complete": true,
+        "paths": 121,
+        "m6_result": "INSUFFICIENT_EVIDENCE"
+      },
+      {
+        "case": "competing-population",
+        "population_size": 8,
+        "arm": "baseline",
+        "common_prepare_seconds": 0.06991602899506688,
+        "seconds": 0.008847433142364025,
+        "source_bytes": 7804,
+        "assertion_bytes": 83471,
+        "complete": true,
+        "paths": 463,
+        "m6_result": "INSUFFICIENT_EVIDENCE"
+      },
+      {
+        "case": "competing-population",
+        "population_size": 8,
+        "arm": "graph",
+        "common_prepare_seconds": 0.06991602899506688,
+        "seconds": 0.00867126090452075,
+        "source_bytes": 7804,
+        "assertion_bytes": 83471,
+        "complete": true,
+        "paths": 463,
+        "m6_result": "INSUFFICIENT_EVIDENCE"
+      },
+      {
+        "case": "competing-population",
+        "population_size": 32,
+        "arm": "baseline",
+        "common_prepare_seconds": 0.5566485128365457,
+        "seconds": 0.0801928541623056,
+        "source_bytes": 26041,
+        "assertion_bytes": 671531,
+        "complete": true,
+        "paths": 4711,
+        "m6_result": "INSUFFICIENT_EVIDENCE"
+      },
+      {
+        "case": "competing-population",
+        "population_size": 32,
+        "arm": "graph",
+        "common_prepare_seconds": 0.5566485128365457,
+        "seconds": 0.09180144872516394,
+        "source_bytes": 26041,
+        "assertion_bytes": 671531,
+        "complete": true,
+        "paths": 4711,
+        "m6_result": "INSUFFICIENT_EVIDENCE"
+      }
+    ],
+    "peak_rss_bytes": 56934400,
+    "user_cpu_seconds": 23.597985,
+    "system_cpu_seconds": 0.102353
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "query",
+    "complete",
+    "records",
+    "paths",
+    "cycles",
+    "unresolved"
+  ],
+  "properties": {
+    "query": {
+      "enum": [
+        "DEPENDENCIES",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+      ]
+    },
+    "complete": {
+      "type": "boolean"
+    },
+    "records": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "paths": {
+      "type": "array"
+    },
+    "cycles": {
+      "type": "array"
+    },
+    "unresolved": {
+      "type": "array"
+    },
+    "details": {},
+    "interpretation": {},
+    "conclusions": {},
+    "affected": {},
+    "context": {},
+    "selected": {},
+    "otherwise_legitimate_actions_losing_support": {},
+    "historical_findings_unchanged": {},
+    "prevention_inferred": {},
+    "exception_associated_paths_lost": {
+      "type": "array"
+    },
+    "affected_assurance_conclusions": {
+      "type": "array"
+    },
+    "affected_agents_resources": {
+      "type": "array"
+    }
+  }
+}
