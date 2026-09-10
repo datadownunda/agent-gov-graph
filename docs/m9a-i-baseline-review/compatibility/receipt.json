@@ -1,0 +1,95 @@
+{
+  "assurance_abstentions": 39,
+  "claim_demonstrated": false,
+  "claim_status": "NOT_DEMONSTRATED",
+  "comparisons": {
+    "decision-inputs.json": {
+      "byte_identical": true,
+      "sha256": "928e36598c2d14df490ff7b484e4ff7d8bd0937665c12152d7cfb5c7bc67cbb2"
+    },
+    "decisions.json": {
+      "byte_identical": true,
+      "sha256": "043969aab4827dd8dcd65eaa6c3fc23f916763f32ecf4c5786c489fa01d578f9"
+    },
+    "results.json": {
+      "byte_identical": true,
+      "sha256": "b99779e32837875fcd85131bfd800b33fbb4757c5b8c8f7f2c6e0b966590ce54"
+    },
+    "scorer-only-truth.json": {
+      "byte_identical": true,
+      "sha256": "954bd362fd4f450ab5ca4a36bc2d01cfd8b46c889f53a978f9a0943c5cab35f4"
+    }
+  },
+  "current_main": "6ebdcd598eebd52507c8646378b6b134386babbe",
+  "historical_audit_on_current_main": "Preserved baseline changed: docs/control-effectiveness-attestation.md",
+  "kind": "COMPATIBILITY_ONLY_NOT_NEW_PREREGISTERED_RESULT",
+  "m6_audit": {
+    "authority_reconstructions": 3,
+    "limitations": "Manifest and digests verify preserved content, not external provenance authenticity.",
+    "raw_records": 7,
+    "results": {
+      "allow": "CONSISTENT",
+      "blocked-bounded": "CONSISTENT",
+      "blocked-deny": "INSUFFICIENT_EVIDENCE",
+      "critical-deny": "CONTRADICTION",
+      "execution-withheld": "INSUFFICIENT_EVIDENCE"
+    },
+    "status": "VERIFIED"
+  },
+  "m7_replay": {
+    "attestations": 6,
+    "deterministic_positive_rule_demonstrated": true,
+    "live_control_effective_demonstrated": false,
+    "live_findings": [
+      {
+        "evaluation_status": "NOT_APPLICABLE",
+        "finding": null
+      },
+      {
+        "evaluation_status": "INSUFFICIENT_EVIDENCE",
+        "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED"
+      },
+      {
+        "evaluation_status": "INSUFFICIENT_EVIDENCE",
+        "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED"
+      },
+      {
+        "evaluation_status": "EVALUATED",
+        "finding": "CONTROL_EFFECTIVENESS_EXCEPTION"
+      },
+      {
+        "evaluation_status": "INSUFFICIENT_EVIDENCE",
+        "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED"
+      }
+    ],
+    "status": "VERIFIED"
+  },
+  "method": "Independent verification of original manifest, frozen protocol, execution dependencies and all original result/artifact hashes; unchanged build/run_worker/score invoked separately. verify_frozen and audit are unmodified and were not monkeypatched.",
+  "metrics": {
+    "abstained_observations": 59,
+    "abstention_rate": 0.38562091503267976,
+    "accepted": 47,
+    "correct": 25,
+    "false": 22,
+    "false_link_rate": 0.46808510638297873,
+    "observable": 64,
+    "observable_recall": 0.390625,
+    "observations": 153,
+    "planned": 76,
+    "precision": 0.5319148936170213,
+    "recall": 0.32894736842105265
+  },
+  "original_baseline": "b585c548a3b68e6611c1f7545f63e7bcfd05d845",
+  "protocol_sha256": "3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224",
+  "unchanged_execution_dependencies": {
+    "experiments/identifier_withholding/run_experiment.py": "8ee97d1cb558039390e63c3e78c80fb6e69beb5fd288afdd45cd3804a7f5ef2a",
+    "experiments/identifier_withholding/worker.py": "1a985d35cf41c1aff147e92a7b9a66251a051e7bdde2ae239312bc3ec8214464",
+    "src/action_evidence.py": "ca5dfa0354f91c1af981acdead932916dd23f389de9d75618857eba7291813c0",
+    "src/authority_resolver.py": "b7a03c0c5a3bc449e3703a2cfef051644b761abd036b97a9fc70e789426da1ef",
+    "src/evidence_correlation.py": "1e89fc7276b000f29822791c57e8e8ca94904f33b374c59ed4b11457770cbdd0",
+    "src/evidence_digest.py": "8e594dc00e4dfbfaa3df4c85f3b8f1cf14c736cb2387d6a1c846fb0b363b86c5",
+    "src/foreign_opa_evidence.py": "ec13822b7be7c2a9122a1bc2c18672dc96d4e9df00e84fdedb5977c942bcd7ee",
+    "src/target_outcome_evidence.py": "5b5a357c16ff6fd04534e41abfa77cde27b3ac39d55448305a22813ada8b2951"
+  },
+  "unchanged_prior_result_artifact_files": 169
+}

@@ -1,0 +1,28 @@
+{
+  "status": "VERIFIED",
+  "attestations": 6,
+  "live_control_effective_demonstrated": false,
+  "deterministic_positive_rule_demonstrated": true,
+  "live_findings": [
+    {
+      "evaluation_status": "NOT_APPLICABLE",
+      "finding": null
+    },
+    {
+      "evaluation_status": "INSUFFICIENT_EVIDENCE",
+      "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED"
+    },
+    {
+      "evaluation_status": "INSUFFICIENT_EVIDENCE",
+      "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED"
+    },
+    {
+      "evaluation_status": "EVALUATED",
+      "finding": "CONTROL_EFFECTIVENESS_EXCEPTION"
+    },
+    {
+      "evaluation_status": "INSUFFICIENT_EVIDENCE",
+      "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED"
+    }
+  ]
+}

@@ -1,0 +1,1016 @@
+[
+  {
+    "execution": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "eb9b467ea6fb28a9e53a4e0216d84ba0",
+        "observed_at": "2026-09-06T01:08:10.986602+00:00",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "ecc04aec3578e2052ba66b7c6f484f24",
+        "observed_at": "2026-09-06T01:08:10.543682+00:00",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "governance": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "367bd397a77e43a0507c7f7960b92112",
+        "observed_at": "2026-09-06T01:08:10.429496097Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "facdacb1d764c4c69f61eada20c7add3",
+        "observed_at": "2026-09-06T01:08:10.881196514Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "f6331de3552e0c32fc06c464f355526a",
+        "observed_at": "2026-09-06T01:08:11.175841583Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "outcome": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "817480edcf1c5fd8a936a231f89fd18e",
+        "observed_at": "2026-09-06T01:08:10.985000+00:00",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "8c32b518487d97b749fb9824062c2e48",
+        "observed_at": "2026-09-06T01:08:10.556000+00:00",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ]
+  },
+  {
+    "execution": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "dde2fc22eb5606d54ea99eb047551d87",
+        "observed_at": "2026-09-06T00:00:00.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "15e17b09fb67e1acdaf476d4dcbd3317",
+        "observed_at": "2026-09-06T00:00:00.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "governance": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "eea3c5c9a9780650b4642d7aff5c0f73",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "648ba79ad17225492ca860ffb8b4b9c8",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "outcome": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "41992bec935ed9689b5a3ef1cc4f8798",
+        "observed_at": "2026-09-06T00:00:00.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "54844625ef9c52289b71f710f242b032",
+        "observed_at": "2026-09-06T00:00:00.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ]
+  },
+  {
+    "execution": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "b728129f6dc2424d18b59a02dc5e6160",
+        "observed_at": "2026-09-06T00:00:00.205405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "1bd22ae61cbc4adf8da4e9a44ecf9e1c",
+        "observed_at": "2026-09-06T00:00:00.214185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "4e81a9b2e6402a520ef239038e139fb3",
+        "observed_at": "2026-09-06T00:00:00.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "febb7132f7fd7cfbd05a2e40fa894d7e",
+        "observed_at": "2026-09-06T00:00:00.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "governance": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "91298d7102b641977f6098bbd6aa9b98",
+        "observed_at": "2026-09-06T00:00:00.100000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "f5e2c3ec2298756f416275383b966471",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "82bbef80b47e77ec19e47843df0e1f33",
+        "observed_at": "2026-09-06T00:00:00.100000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "c6958fd2c1472d1210f951aae35788f3",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "outcome": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "a6fa77f1c60ae572861d6c023f4837b4",
+        "observed_at": "2026-09-06T00:00:00.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "0e5f6dcc8f0ee046b2a1900c60cbf762",
+        "observed_at": "2026-09-06T00:00:00.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "c4849a5ead6d902000e23a7766964a0a",
+        "observed_at": "2026-09-06T00:00:00.203803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "a0a63391de9f1a02b0882b678d0a9b3e",
+        "observed_at": "2026-09-06T00:00:00.226503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ]
+  },
+  {
+    "execution": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "239a9638123f3e511dcde52d0ddeab26",
+        "observed_at": "2026-09-06T00:00:10.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "f6b705ce381cd342ed4857e90545f2aa",
+        "observed_at": "2026-09-06T00:00:15.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "0fde5738845275b03eb71bdb8b078254",
+        "observed_at": "2026-09-06T00:00:05.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "e3d38ca8459750f6d573c46d3f16dd68",
+        "observed_at": "2026-09-06T00:00:15.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "0c52ec505da46f3a0ea846a09ee10bc1",
+        "observed_at": "2026-09-06T00:00:05.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "476b14e79efd54651144c58ac1c1b5ab",
+        "observed_at": "2026-09-06T00:00:10.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "governance": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "75ffb778f8ccaa07a447c94f489c1873",
+        "observed_at": "2026-09-06T00:00:10.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "27b8e765140503c3102d98a36c0a1036",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "fc151a94dcb5624d5254dc933e15dfc2",
+        "observed_at": "2026-09-06T00:00:10.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "59e5b0e4a946eac3f65d5a5f2a151112",
+        "observed_at": "2026-09-06T00:00:05.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "acb6aa0fe81d65f276cb8ef7c2d74a58",
+        "observed_at": "2026-09-06T00:00:05.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "dfcc6ff4a9f85c945d31e6a90fa2d2fa",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "outcome": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "efe6b614aef7c8a3b69441fb18cce77f",
+        "observed_at": "2026-09-06T00:00:05.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "4fb18bb2ccfdd943bbc4ee3487c5a459",
+        "observed_at": "2026-09-06T00:00:05.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "82b9fff39fd31892ae109304c85c5f96",
+        "observed_at": "2026-09-06T00:00:00.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "c73e1777c823023c78d144fe37b09943",
+        "observed_at": "2026-09-06T00:00:10.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "9c14667a465d1c942057bcc2eb29823a",
+        "observed_at": "2026-09-06T00:00:10.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "2872bd7703987fb2bdb3d4f29a2aaa9f",
+        "observed_at": "2026-09-06T00:00:00.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ]
+  },
+  {
+    "execution": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "45e3f03b678433a97eb1d6aad1b0d99b",
+        "observed_at": "2026-09-06T00:00:00.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "8eb0e1c9de8a3ade5cad766180f8360e",
+        "observed_at": "2026-09-06T00:00:05.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "470b9802abf85f48aed5cbbb2f76ed88",
+        "observed_at": "2026-09-06T00:00:05.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "3777e0b2b33593b53c3700f8f0827aef",
+        "observed_at": "2026-09-06T00:00:10.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "0dd5b24515f9784e0ae6c486d485131b",
+        "observed_at": "2026-09-06T00:00:00.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "73602f562df9f8a266b7f117bebab626",
+        "observed_at": "2026-09-06T00:00:10.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "governance": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "96c1558ab5bef9b9085aad46105feb6a",
+        "observed_at": "2026-09-06T00:00:10.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "72f6f8864979e33fabde241e4972f531",
+        "observed_at": "2026-09-06T00:00:05.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "9c977f09fee5854f84cab5e06c897241",
+        "observed_at": "2026-09-06T00:00:05.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "fba5a0b9eb303977f6e39a79928c4968",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "27d78bb1f66ddaca39786ae186b0feec",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "8905966bbc420bed9856a7b5c9ec036c",
+        "observed_at": "2026-09-06T00:00:10.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "outcome": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "18719bfe09f48d5eae0a6e2b68c09324",
+        "observed_at": "2026-09-06T00:00:15.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "936d2ee4e8a434b373ea01231d2364c1",
+        "observed_at": "2026-09-06T00:00:10.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "783542f74d972472eed9feefaa945c4a",
+        "observed_at": "2026-09-06T00:00:10.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "8a23fc380e271bbd5d7d74f3b2e64cc3",
+        "observed_at": "2026-09-06T00:00:05.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "c3643924fe9f67295b16f74b06ab4deb",
+        "observed_at": "2026-09-06T00:00:15.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "9fa1aa6c042ce0d5715366ced1e79f58",
+        "observed_at": "2026-09-06T00:00:05.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ]
+  },
+  {
+    "execution": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "da47215e0726eab7a01aa1dcb775e68d",
+        "observed_at": "2026-09-06T00:00:10.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "cf7a3d4fb75df847ea4c8f25238db1ae",
+        "observed_at": "2026-09-06T00:00:05.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "e79b7700a99b0c02fb785a455c4ebb83",
+        "observed_at": "2026-09-06T00:00:05.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "d543cbd47796b716343292d4df6d62e9",
+        "observed_at": "2026-09-06T00:00:10.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "a2d02b5a840456a5fd398e21b410d9e0",
+        "observed_at": "2026-09-06T00:00:00.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "a240301aa14dbc6aa37f7710a35568a6",
+        "observed_at": "2026-09-06T00:00:00.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "governance": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "e0d32a96c500a33de48f1387cf3fb85b",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "5d52b49f2e44077198b36c9c684bb211",
+        "observed_at": "2026-09-06T00:00:10.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "9d3d3f195e5154408fd573f207e437f3",
+        "observed_at": "2026-09-06T00:00:05.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "acf8a4e340b7ec8c244007dd9ae86c67",
+        "observed_at": "2026-09-06T00:00:05.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "a9b40abb6954d79961a799eff00775ba",
+        "observed_at": "2026-09-06T00:00:10.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "660c9a1a6db563eb6b481efe7fc565f8",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "outcome": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "bb0ac3f9d202c5849c93a1a5366a3fc7",
+        "observed_at": "2026-09-06T00:00:00.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "aa63830430297891ab2ce411ecb2c43b",
+        "observed_at": "2026-09-06T00:00:05.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "3c6d5ccfc576c281e0ba6fea26b97783",
+        "observed_at": "2026-09-06T00:00:05.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "837eb1e8c3c9f96137c6e251c23562df",
+        "observed_at": "2026-09-05T23:59:55.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "d38dcec79739d01744821ef370ffb2aa",
+        "observed_at": "2026-09-06T00:00:00.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "0e89f2245b05f25df7b8e4773a3052c6",
+        "observed_at": "2026-09-05T23:59:55.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ]
+  },
+  {
+    "execution": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "3c9bfc6c63497b8d1b5ccb85a7e7a4e9",
+        "observed_at": "2026-09-06T00:00:00.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "ef7eacecda67f9619ccf23cefc1124af",
+        "observed_at": "2026-09-06T00:00:00.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "governance": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "f5f13ac931874b9fa1c5dea240b79bb7",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "5c1c5bf2584d66c3a007c706579a2f86",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "outcome": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "d7d90b2a0ddb0aba12f3fb2ff316cab3",
+        "observed_at": "2026-09-06T00:00:00.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "8fb21f6ec36d8647b83e68213786c860",
+        "observed_at": "2026-09-06T00:00:00.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ]
+  },
+  {
+    "execution": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "82a4f2fd2af02afd8bff9347e24cbaeb",
+        "observed_at": "2026-09-06T00:00:00.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "8293ba99f8bf1e458af7ff3685b05b8b",
+        "observed_at": "2026-09-06T00:00:00.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "governance": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "bcd6dc09d6c468b8d65d0da5bc905084",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "0f610853df5babd6b635437dd76b8452",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "outcome": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "3fd60e4a46c5bfb2a8cc6ef97b2d8f36",
+        "observed_at": "2026-09-06T00:00:00.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "afd75d906cf3dd1fcd8c43fe62a75c78",
+        "observed_at": "2026-09-06T00:00:00.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ]
+  },
+  {
+    "execution": [],
+    "governance": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "3d476fb30124db2651bc66dc808186dc",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "49cb2acf2383fcbe2f6bf5a2c8193e64",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "outcome": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "589bb6b5e6d11a33fd620d420160adaf",
+        "observed_at": "2026-09-06T00:00:00.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "9206c986717fa1d9300d3b16b3ea66bc",
+        "observed_at": "2026-09-06T00:00:00.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ]
+  },
+  {
+    "execution": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "27802904c78a4f04568bdfa08db84e28",
+        "observed_at": "2026-09-06T00:00:00.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "d4e3243c5f7dec7f5c95c6c82c64a5e3",
+        "observed_at": "2026-09-06T00:00:00.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "governance": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "8b96f6d6d60a563e8db7dd1e544cfdcd",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "8d0640d058b670de2a1c98aed695d7e1",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "outcome": []
+  },
+  {
+    "execution": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "3002b12ef6821c442846da8eac775f7a",
+        "observed_at": "2026-09-06T00:00:00.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "6aeb16697272802911a37a8202265ec0",
+        "observed_at": "2026-09-06T00:00:00.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "8d138d6de418089b4e9a501a85dd1be5",
+        "observed_at": "2026-09-06T00:00:00.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "79d81ef2fff9d6bf22b0f95a5b7466b1",
+        "observed_at": "2026-09-06T00:00:00.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "governance": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "bd7f1258e37514d1666f4107faaeb1a7",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "88db49ca6d090196307907aa3a2f0b93",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "outcome": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "b186499d5c11cbee4d2c94661249d537",
+        "observed_at": "2026-09-06T00:00:00.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "b7ddb833509552e75748005ab91ee012",
+        "observed_at": "2026-09-06T00:00:00.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ]
+  },
+  {
+    "execution": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "132e9e633ef2f5f61ffed01db2b40d29",
+        "observed_at": "2026-09-06T00:00:00.114185903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "88743b84f2d52d9c3fc882296c97461e",
+        "observed_at": "2026-09-06T00:00:00.105405486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "governance": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "4df777e2371bf130fad896bb4c644236",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "d33f28eeb6f6f0fad385c1390febde38",
+        "observed_at": "2026-09-06T00:00:00.000000000Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      }
+    ],
+    "outcome": [
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "585b968cb1dbdcde50114a40abec2051",
+        "observed_at": "2026-09-06T00:00:00.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "532dfd02ebcf498cf4809898cd55ce5a",
+        "observed_at": "2026-09-06T00:00:00.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "526d97aecd712d8cf7156dfb1745bd9d",
+        "observed_at": "2026-09-06T00:00:00.126503903Z",
+        "resource_id": "complaint-456",
+        "resource_type": "employee_complaint"
+      },
+      {
+        "action": "read",
+        "actor": "{\"id\":\"complaint-review-agent\",\"namespace\":\"agent\"}",
+        "evidence_ref": "6179d817085efd0ce19609d69c8b2151",
+        "observed_at": "2026-09-06T00:00:00.103803486Z",
+        "resource_id": "complaint-789",
+        "resource_type": "employee_complaint"
+      }
+    ]
+  }
+]

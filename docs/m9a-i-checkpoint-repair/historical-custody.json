@@ -1,0 +1,10 @@
+{
+  "audit": {
+    "claim_demonstrated": false,
+    "protocol_sha256": "3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224",
+    "scenarios": 12,
+    "status": "VERIFIED"
+  },
+  "source_baseline": "b585c548a3b68e6611c1f7545f63e7bcfd05d845",
+  "verification_kind": "HISTORICAL_CUSTODY"
+}

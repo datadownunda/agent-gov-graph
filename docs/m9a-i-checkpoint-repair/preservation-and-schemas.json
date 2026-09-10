@@ -1,0 +1,13 @@
+{
+  "current_main": "6ebdcd598eebd52507c8646378b6b134386babbe",
+  "current_main_tracked_files_byte_identical": 360,
+  "current_main_result_artifact_files_byte_identical": 211,
+  "frozen_m9_files_byte_identical": 14,
+  "original_clone_baseline_inventory_byte_identical": 292,
+  "protocol_sha256": "3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224",
+  "historical_source_baseline": "b585c548a3b68e6611c1f7545f63e7bcfd05d845",
+  "valid_schema_definitions": 17,
+  "saved_m7_attestations_valid": 6,
+  "incidental_current_root_save_exists": false,
+  "claim": "CLAIM_NOT_DEMONSTRATED"
+}

@@ -1,0 +1,1164 @@
+[
+  {
+    "evidence_kind": "PRESERVED_LIVE_PROJECTION",
+    "pairs": {
+      "execution-outcome": [
+        [
+          "ecc04aec3578e2052ba66b7c6f484f24",
+          "8c32b518487d97b749fb9824062c2e48"
+        ],
+        [
+          "eb9b467ea6fb28a9e53a4e0216d84ba0",
+          "817480edcf1c5fd8a936a231f89fd18e"
+        ]
+      ],
+      "governance-execution": [
+        [
+          "367bd397a77e43a0507c7f7960b92112",
+          "ecc04aec3578e2052ba66b7c6f484f24"
+        ],
+        [
+          "facdacb1d764c4c69f61eada20c7add3",
+          "eb9b467ea6fb28a9e53a4e0216d84ba0"
+        ]
+      ]
+    },
+    "provenance": {
+      "367bd397a77e43a0507c7f7960b92112": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "817480edcf1c5fd8a936a231f89fd18e": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "8c32b518487d97b749fb9824062c2e48": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "eb9b467ea6fb28a9e53a4e0216d84ba0": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "ecc04aec3578e2052ba66b7c6f484f24": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "f6331de3552e0c32fc06c464f355526a": {
+        "role": "governance",
+        "source_ref": "sha256:5cbda34dda7b6c4f603fec3cef507c2041e322739c6d23c733119e0e934469b2"
+      },
+      "facdacb1d764c4c69f61eada20c7add3": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      }
+    },
+    "scenario": "preserved_population",
+    "triples": [
+      [
+        "367bd397a77e43a0507c7f7960b92112",
+        "ecc04aec3578e2052ba66b7c6f484f24",
+        "8c32b518487d97b749fb9824062c2e48"
+      ],
+      [
+        "facdacb1d764c4c69f61eada20c7add3",
+        "eb9b467ea6fb28a9e53a4e0216d84ba0",
+        "817480edcf1c5fd8a936a231f89fd18e"
+      ]
+    ]
+  },
+  {
+    "evidence_kind": "SYNTHETIC_PERTURBATION",
+    "pairs": {
+      "execution-outcome": [
+        [
+          "dde2fc22eb5606d54ea99eb047551d87",
+          "41992bec935ed9689b5a3ef1cc4f8798"
+        ],
+        [
+          "15e17b09fb67e1acdaf476d4dcbd3317",
+          "54844625ef9c52289b71f710f242b032"
+        ]
+      ],
+      "governance-execution": [
+        [
+          "eea3c5c9a9780650b4642d7aff5c0f73",
+          "dde2fc22eb5606d54ea99eb047551d87"
+        ],
+        [
+          "648ba79ad17225492ca860ffb8b4b9c8",
+          "15e17b09fb67e1acdaf476d4dcbd3317"
+        ]
+      ]
+    },
+    "provenance": {
+      "15e17b09fb67e1acdaf476d4dcbd3317": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "41992bec935ed9689b5a3ef1cc4f8798": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "54844625ef9c52289b71f710f242b032": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "648ba79ad17225492ca860ffb8b4b9c8": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "dde2fc22eb5606d54ea99eb047551d87": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "eea3c5c9a9780650b4642d7aff5c0f73": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      }
+    },
+    "scenario": "isolated",
+    "triples": [
+      [
+        "eea3c5c9a9780650b4642d7aff5c0f73",
+        "dde2fc22eb5606d54ea99eb047551d87",
+        "41992bec935ed9689b5a3ef1cc4f8798"
+      ],
+      [
+        "648ba79ad17225492ca860ffb8b4b9c8",
+        "15e17b09fb67e1acdaf476d4dcbd3317",
+        "54844625ef9c52289b71f710f242b032"
+      ]
+    ]
+  },
+  {
+    "evidence_kind": "SYNTHETIC_PERTURBATION",
+    "pairs": {
+      "execution-outcome": [
+        [
+          "4e81a9b2e6402a520ef239038e139fb3",
+          "0e5f6dcc8f0ee046b2a1900c60cbf762"
+        ],
+        [
+          "1bd22ae61cbc4adf8da4e9a44ecf9e1c",
+          "a0a63391de9f1a02b0882b678d0a9b3e"
+        ],
+        [
+          "febb7132f7fd7cfbd05a2e40fa894d7e",
+          "a6fa77f1c60ae572861d6c023f4837b4"
+        ],
+        [
+          "b728129f6dc2424d18b59a02dc5e6160",
+          "c4849a5ead6d902000e23a7766964a0a"
+        ]
+      ],
+      "governance-execution": [
+        [
+          "c6958fd2c1472d1210f951aae35788f3",
+          "4e81a9b2e6402a520ef239038e139fb3"
+        ],
+        [
+          "82bbef80b47e77ec19e47843df0e1f33",
+          "1bd22ae61cbc4adf8da4e9a44ecf9e1c"
+        ],
+        [
+          "f5e2c3ec2298756f416275383b966471",
+          "febb7132f7fd7cfbd05a2e40fa894d7e"
+        ],
+        [
+          "91298d7102b641977f6098bbd6aa9b98",
+          "b728129f6dc2424d18b59a02dc5e6160"
+        ]
+      ]
+    },
+    "provenance": {
+      "0e5f6dcc8f0ee046b2a1900c60cbf762": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "1bd22ae61cbc4adf8da4e9a44ecf9e1c": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "4e81a9b2e6402a520ef239038e139fb3": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "82bbef80b47e77ec19e47843df0e1f33": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "91298d7102b641977f6098bbd6aa9b98": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "a0a63391de9f1a02b0882b678d0a9b3e": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "a6fa77f1c60ae572861d6c023f4837b4": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "b728129f6dc2424d18b59a02dc5e6160": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "c4849a5ead6d902000e23a7766964a0a": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "c6958fd2c1472d1210f951aae35788f3": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "f5e2c3ec2298756f416275383b966471": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "febb7132f7fd7cfbd05a2e40fa894d7e": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      }
+    },
+    "scenario": "repetition",
+    "triples": [
+      [
+        "c6958fd2c1472d1210f951aae35788f3",
+        "4e81a9b2e6402a520ef239038e139fb3",
+        "0e5f6dcc8f0ee046b2a1900c60cbf762"
+      ],
+      [
+        "82bbef80b47e77ec19e47843df0e1f33",
+        "1bd22ae61cbc4adf8da4e9a44ecf9e1c",
+        "a0a63391de9f1a02b0882b678d0a9b3e"
+      ],
+      [
+        "f5e2c3ec2298756f416275383b966471",
+        "febb7132f7fd7cfbd05a2e40fa894d7e",
+        "a6fa77f1c60ae572861d6c023f4837b4"
+      ],
+      [
+        "91298d7102b641977f6098bbd6aa9b98",
+        "b728129f6dc2424d18b59a02dc5e6160",
+        "c4849a5ead6d902000e23a7766964a0a"
+      ]
+    ]
+  },
+  {
+    "evidence_kind": "SYNTHETIC_PERTURBATION",
+    "pairs": {
+      "execution-outcome": [
+        [
+          "0fde5738845275b03eb71bdb8b078254",
+          "2872bd7703987fb2bdb3d4f29a2aaa9f"
+        ],
+        [
+          "476b14e79efd54651144c58ac1c1b5ab",
+          "efe6b614aef7c8a3b69441fb18cce77f"
+        ],
+        [
+          "e3d38ca8459750f6d573c46d3f16dd68",
+          "9c14667a465d1c942057bcc2eb29823a"
+        ],
+        [
+          "0c52ec505da46f3a0ea846a09ee10bc1",
+          "82b9fff39fd31892ae109304c85c5f96"
+        ],
+        [
+          "239a9638123f3e511dcde52d0ddeab26",
+          "4fb18bb2ccfdd943bbc4ee3487c5a459"
+        ],
+        [
+          "f6b705ce381cd342ed4857e90545f2aa",
+          "c73e1777c823023c78d144fe37b09943"
+        ]
+      ],
+      "governance-execution": [
+        [
+          "dfcc6ff4a9f85c945d31e6a90fa2d2fa",
+          "0fde5738845275b03eb71bdb8b078254"
+        ],
+        [
+          "59e5b0e4a946eac3f65d5a5f2a151112",
+          "476b14e79efd54651144c58ac1c1b5ab"
+        ],
+        [
+          "75ffb778f8ccaa07a447c94f489c1873",
+          "e3d38ca8459750f6d573c46d3f16dd68"
+        ],
+        [
+          "27b8e765140503c3102d98a36c0a1036",
+          "0c52ec505da46f3a0ea846a09ee10bc1"
+        ],
+        [
+          "acb6aa0fe81d65f276cb8ef7c2d74a58",
+          "239a9638123f3e511dcde52d0ddeab26"
+        ],
+        [
+          "fc151a94dcb5624d5254dc933e15dfc2",
+          "f6b705ce381cd342ed4857e90545f2aa"
+        ]
+      ]
+    },
+    "provenance": {
+      "0c52ec505da46f3a0ea846a09ee10bc1": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "0fde5738845275b03eb71bdb8b078254": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "239a9638123f3e511dcde52d0ddeab26": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "27b8e765140503c3102d98a36c0a1036": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "2872bd7703987fb2bdb3d4f29a2aaa9f": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "476b14e79efd54651144c58ac1c1b5ab": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "4fb18bb2ccfdd943bbc4ee3487c5a459": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "59e5b0e4a946eac3f65d5a5f2a151112": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "75ffb778f8ccaa07a447c94f489c1873": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "82b9fff39fd31892ae109304c85c5f96": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "9c14667a465d1c942057bcc2eb29823a": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "acb6aa0fe81d65f276cb8ef7c2d74a58": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "c73e1777c823023c78d144fe37b09943": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "dfcc6ff4a9f85c945d31e6a90fa2d2fa": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "e3d38ca8459750f6d573c46d3f16dd68": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "efe6b614aef7c8a3b69441fb18cce77f": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "f6b705ce381cd342ed4857e90545f2aa": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "fc151a94dcb5624d5254dc933e15dfc2": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      }
+    },
+    "scenario": "clock_skew_execution",
+    "triples": [
+      [
+        "dfcc6ff4a9f85c945d31e6a90fa2d2fa",
+        "0fde5738845275b03eb71bdb8b078254",
+        "2872bd7703987fb2bdb3d4f29a2aaa9f"
+      ],
+      [
+        "59e5b0e4a946eac3f65d5a5f2a151112",
+        "476b14e79efd54651144c58ac1c1b5ab",
+        "efe6b614aef7c8a3b69441fb18cce77f"
+      ],
+      [
+        "75ffb778f8ccaa07a447c94f489c1873",
+        "e3d38ca8459750f6d573c46d3f16dd68",
+        "9c14667a465d1c942057bcc2eb29823a"
+      ],
+      [
+        "27b8e765140503c3102d98a36c0a1036",
+        "0c52ec505da46f3a0ea846a09ee10bc1",
+        "82b9fff39fd31892ae109304c85c5f96"
+      ],
+      [
+        "acb6aa0fe81d65f276cb8ef7c2d74a58",
+        "239a9638123f3e511dcde52d0ddeab26",
+        "4fb18bb2ccfdd943bbc4ee3487c5a459"
+      ],
+      [
+        "fc151a94dcb5624d5254dc933e15dfc2",
+        "f6b705ce381cd342ed4857e90545f2aa",
+        "c73e1777c823023c78d144fe37b09943"
+      ]
+    ]
+  },
+  {
+    "evidence_kind": "SYNTHETIC_PERTURBATION",
+    "pairs": {
+      "execution-outcome": [
+        [
+          "0dd5b24515f9784e0ae6c486d485131b",
+          "8a23fc380e271bbd5d7d74f3b2e64cc3"
+        ],
+        [
+          "470b9802abf85f48aed5cbbb2f76ed88",
+          "936d2ee4e8a434b373ea01231d2364c1"
+        ],
+        [
+          "3777e0b2b33593b53c3700f8f0827aef",
+          "c3643924fe9f67295b16f74b06ab4deb"
+        ],
+        [
+          "45e3f03b678433a97eb1d6aad1b0d99b",
+          "9fa1aa6c042ce0d5715366ced1e79f58"
+        ],
+        [
+          "8eb0e1c9de8a3ade5cad766180f8360e",
+          "783542f74d972472eed9feefaa945c4a"
+        ],
+        [
+          "73602f562df9f8a266b7f117bebab626",
+          "18719bfe09f48d5eae0a6e2b68c09324"
+        ]
+      ],
+      "governance-execution": [
+        [
+          "fba5a0b9eb303977f6e39a79928c4968",
+          "0dd5b24515f9784e0ae6c486d485131b"
+        ],
+        [
+          "72f6f8864979e33fabde241e4972f531",
+          "470b9802abf85f48aed5cbbb2f76ed88"
+        ],
+        [
+          "8905966bbc420bed9856a7b5c9ec036c",
+          "3777e0b2b33593b53c3700f8f0827aef"
+        ],
+        [
+          "27d78bb1f66ddaca39786ae186b0feec",
+          "45e3f03b678433a97eb1d6aad1b0d99b"
+        ],
+        [
+          "9c977f09fee5854f84cab5e06c897241",
+          "8eb0e1c9de8a3ade5cad766180f8360e"
+        ],
+        [
+          "96c1558ab5bef9b9085aad46105feb6a",
+          "73602f562df9f8a266b7f117bebab626"
+        ]
+      ]
+    },
+    "provenance": {
+      "0dd5b24515f9784e0ae6c486d485131b": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "18719bfe09f48d5eae0a6e2b68c09324": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "27d78bb1f66ddaca39786ae186b0feec": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "3777e0b2b33593b53c3700f8f0827aef": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "45e3f03b678433a97eb1d6aad1b0d99b": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "470b9802abf85f48aed5cbbb2f76ed88": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "72f6f8864979e33fabde241e4972f531": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "73602f562df9f8a266b7f117bebab626": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "783542f74d972472eed9feefaa945c4a": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "8905966bbc420bed9856a7b5c9ec036c": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "8a23fc380e271bbd5d7d74f3b2e64cc3": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "8eb0e1c9de8a3ade5cad766180f8360e": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "936d2ee4e8a434b373ea01231d2364c1": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "96c1558ab5bef9b9085aad46105feb6a": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "9c977f09fee5854f84cab5e06c897241": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "9fa1aa6c042ce0d5715366ced1e79f58": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "c3643924fe9f67295b16f74b06ab4deb": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "fba5a0b9eb303977f6e39a79928c4968": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      }
+    },
+    "scenario": "clock_skew_outcome",
+    "triples": [
+      [
+        "fba5a0b9eb303977f6e39a79928c4968",
+        "0dd5b24515f9784e0ae6c486d485131b",
+        "8a23fc380e271bbd5d7d74f3b2e64cc3"
+      ],
+      [
+        "72f6f8864979e33fabde241e4972f531",
+        "470b9802abf85f48aed5cbbb2f76ed88",
+        "936d2ee4e8a434b373ea01231d2364c1"
+      ],
+      [
+        "8905966bbc420bed9856a7b5c9ec036c",
+        "3777e0b2b33593b53c3700f8f0827aef",
+        "c3643924fe9f67295b16f74b06ab4deb"
+      ],
+      [
+        "27d78bb1f66ddaca39786ae186b0feec",
+        "45e3f03b678433a97eb1d6aad1b0d99b",
+        "9fa1aa6c042ce0d5715366ced1e79f58"
+      ],
+      [
+        "9c977f09fee5854f84cab5e06c897241",
+        "8eb0e1c9de8a3ade5cad766180f8360e",
+        "783542f74d972472eed9feefaa945c4a"
+      ],
+      [
+        "96c1558ab5bef9b9085aad46105feb6a",
+        "73602f562df9f8a266b7f117bebab626",
+        "18719bfe09f48d5eae0a6e2b68c09324"
+      ]
+    ]
+  },
+  {
+    "evidence_kind": "SYNTHETIC_PERTURBATION",
+    "pairs": {
+      "execution-outcome": [
+        [
+          "a2d02b5a840456a5fd398e21b410d9e0",
+          "837eb1e8c3c9f96137c6e251c23562df"
+        ],
+        [
+          "e79b7700a99b0c02fb785a455c4ebb83",
+          "bb0ac3f9d202c5849c93a1a5366a3fc7"
+        ],
+        [
+          "da47215e0726eab7a01aa1dcb775e68d",
+          "aa63830430297891ab2ce411ecb2c43b"
+        ],
+        [
+          "a240301aa14dbc6aa37f7710a35568a6",
+          "0e89f2245b05f25df7b8e4773a3052c6"
+        ],
+        [
+          "cf7a3d4fb75df847ea4c8f25238db1ae",
+          "d38dcec79739d01744821ef370ffb2aa"
+        ],
+        [
+          "d543cbd47796b716343292d4df6d62e9",
+          "3c6d5ccfc576c281e0ba6fea26b97783"
+        ]
+      ],
+      "governance-execution": [
+        [
+          "660c9a1a6db563eb6b481efe7fc565f8",
+          "a2d02b5a840456a5fd398e21b410d9e0"
+        ],
+        [
+          "9d3d3f195e5154408fd573f207e437f3",
+          "e79b7700a99b0c02fb785a455c4ebb83"
+        ],
+        [
+          "5d52b49f2e44077198b36c9c684bb211",
+          "da47215e0726eab7a01aa1dcb775e68d"
+        ],
+        [
+          "e0d32a96c500a33de48f1387cf3fb85b",
+          "a240301aa14dbc6aa37f7710a35568a6"
+        ],
+        [
+          "acf8a4e340b7ec8c244007dd9ae86c67",
+          "cf7a3d4fb75df847ea4c8f25238db1ae"
+        ],
+        [
+          "a9b40abb6954d79961a799eff00775ba",
+          "d543cbd47796b716343292d4df6d62e9"
+        ]
+      ]
+    },
+    "provenance": {
+      "0e89f2245b05f25df7b8e4773a3052c6": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "3c6d5ccfc576c281e0ba6fea26b97783": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "5d52b49f2e44077198b36c9c684bb211": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "660c9a1a6db563eb6b481efe7fc565f8": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "837eb1e8c3c9f96137c6e251c23562df": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "9d3d3f195e5154408fd573f207e437f3": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "a240301aa14dbc6aa37f7710a35568a6": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "a2d02b5a840456a5fd398e21b410d9e0": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "a9b40abb6954d79961a799eff00775ba": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "aa63830430297891ab2ce411ecb2c43b": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "acf8a4e340b7ec8c244007dd9ae86c67": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "bb0ac3f9d202c5849c93a1a5366a3fc7": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "cf7a3d4fb75df847ea4c8f25238db1ae": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "d38dcec79739d01744821ef370ffb2aa": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "d543cbd47796b716343292d4df6d62e9": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "da47215e0726eab7a01aa1dcb775e68d": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "e0d32a96c500a33de48f1387cf3fb85b": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "e79b7700a99b0c02fb785a455c4ebb83": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      }
+    },
+    "scenario": "clock_skew_outcome_negative",
+    "triples": [
+      [
+        "660c9a1a6db563eb6b481efe7fc565f8",
+        "a2d02b5a840456a5fd398e21b410d9e0",
+        "837eb1e8c3c9f96137c6e251c23562df"
+      ],
+      [
+        "9d3d3f195e5154408fd573f207e437f3",
+        "e79b7700a99b0c02fb785a455c4ebb83",
+        "bb0ac3f9d202c5849c93a1a5366a3fc7"
+      ],
+      [
+        "5d52b49f2e44077198b36c9c684bb211",
+        "da47215e0726eab7a01aa1dcb775e68d",
+        "aa63830430297891ab2ce411ecb2c43b"
+      ],
+      [
+        "e0d32a96c500a33de48f1387cf3fb85b",
+        "a240301aa14dbc6aa37f7710a35568a6",
+        "0e89f2245b05f25df7b8e4773a3052c6"
+      ],
+      [
+        "acf8a4e340b7ec8c244007dd9ae86c67",
+        "cf7a3d4fb75df847ea4c8f25238db1ae",
+        "d38dcec79739d01744821ef370ffb2aa"
+      ],
+      [
+        "a9b40abb6954d79961a799eff00775ba",
+        "d543cbd47796b716343292d4df6d62e9",
+        "3c6d5ccfc576c281e0ba6fea26b97783"
+      ]
+    ]
+  },
+  {
+    "evidence_kind": "SYNTHETIC_PERTURBATION",
+    "pairs": {
+      "execution-outcome": [
+        [
+          "18ae0c5c28694b69fa8cbd8ca609c768",
+          "8fb21f6ec36d8647b83e68213786c860"
+        ],
+        [
+          "71fa1eac490b4d14b63337659a82656e",
+          "d7d90b2a0ddb0aba12f3fb2ff316cab3"
+        ]
+      ],
+      "governance-execution": [
+        [
+          "5c1c5bf2584d66c3a007c706579a2f86",
+          "18ae0c5c28694b69fa8cbd8ca609c768"
+        ],
+        [
+          "f5f13ac931874b9fa1c5dea240b79bb7",
+          "71fa1eac490b4d14b63337659a82656e"
+        ]
+      ]
+    },
+    "provenance": {
+      "18ae0c5c28694b69fa8cbd8ca609c768": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "3c9bfc6c63497b8d1b5ccb85a7e7a4e9": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734",
+        "transformation": "impostor"
+      },
+      "5c1c5bf2584d66c3a007c706579a2f86": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "71fa1eac490b4d14b63337659a82656e": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "8fb21f6ec36d8647b83e68213786c860": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "d7d90b2a0ddb0aba12f3fb2ff316cab3": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "ef7eacecda67f9619ccf23cefc1124af": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5",
+        "transformation": "impostor"
+      },
+      "f5f13ac931874b9fa1c5dea240b79bb7": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      }
+    },
+    "scenario": "impostor_execution",
+    "triples": [
+      [
+        "5c1c5bf2584d66c3a007c706579a2f86",
+        "18ae0c5c28694b69fa8cbd8ca609c768",
+        "8fb21f6ec36d8647b83e68213786c860"
+      ],
+      [
+        "f5f13ac931874b9fa1c5dea240b79bb7",
+        "71fa1eac490b4d14b63337659a82656e",
+        "d7d90b2a0ddb0aba12f3fb2ff316cab3"
+      ]
+    ]
+  },
+  {
+    "evidence_kind": "SYNTHETIC_PERTURBATION",
+    "pairs": {
+      "execution-outcome": [
+        [
+          "8293ba99f8bf1e458af7ff3685b05b8b",
+          "497d828624f076ba4f8165c7dd05903b"
+        ],
+        [
+          "82a4f2fd2af02afd8bff9347e24cbaeb",
+          "d366a98161b3716c981509ac3a8b748f"
+        ]
+      ],
+      "governance-execution": [
+        [
+          "0f610853df5babd6b635437dd76b8452",
+          "8293ba99f8bf1e458af7ff3685b05b8b"
+        ],
+        [
+          "bcd6dc09d6c468b8d65d0da5bc905084",
+          "82a4f2fd2af02afd8bff9347e24cbaeb"
+        ]
+      ]
+    },
+    "provenance": {
+      "0f610853df5babd6b635437dd76b8452": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "3fd60e4a46c5bfb2a8cc6ef97b2d8f36": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c",
+        "transformation": "impostor"
+      },
+      "497d828624f076ba4f8165c7dd05903b": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "8293ba99f8bf1e458af7ff3685b05b8b": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "82a4f2fd2af02afd8bff9347e24cbaeb": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "afd75d906cf3dd1fcd8c43fe62a75c78": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c",
+        "transformation": "impostor"
+      },
+      "bcd6dc09d6c468b8d65d0da5bc905084": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "d366a98161b3716c981509ac3a8b748f": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      }
+    },
+    "scenario": "impostor_outcome",
+    "triples": [
+      [
+        "0f610853df5babd6b635437dd76b8452",
+        "8293ba99f8bf1e458af7ff3685b05b8b",
+        "497d828624f076ba4f8165c7dd05903b"
+      ],
+      [
+        "bcd6dc09d6c468b8d65d0da5bc905084",
+        "82a4f2fd2af02afd8bff9347e24cbaeb",
+        "d366a98161b3716c981509ac3a8b748f"
+      ]
+    ]
+  },
+  {
+    "evidence_kind": "SYNTHETIC_PERTURBATION",
+    "pairs": {
+      "execution-outcome": [
+        [
+          "c78f604347217284b69e4e4bb3100b2e",
+          "9206c986717fa1d9300d3b16b3ea66bc"
+        ],
+        [
+          "994d89316e6977875420b00db835ce7c",
+          "589bb6b5e6d11a33fd620d420160adaf"
+        ]
+      ],
+      "governance-execution": [
+        [
+          "3d476fb30124db2651bc66dc808186dc",
+          "c78f604347217284b69e4e4bb3100b2e"
+        ],
+        [
+          "49cb2acf2383fcbe2f6bf5a2c8193e64",
+          "994d89316e6977875420b00db835ce7c"
+        ]
+      ]
+    },
+    "provenance": {
+      "3d476fb30124db2651bc66dc808186dc": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "49cb2acf2383fcbe2f6bf5a2c8193e64": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "589bb6b5e6d11a33fd620d420160adaf": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "9206c986717fa1d9300d3b16b3ea66bc": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "994d89316e6977875420b00db835ce7c": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "c78f604347217284b69e4e4bb3100b2e": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      }
+    },
+    "scenario": "missing_execution",
+    "triples": [
+      [
+        "3d476fb30124db2651bc66dc808186dc",
+        "c78f604347217284b69e4e4bb3100b2e",
+        "9206c986717fa1d9300d3b16b3ea66bc"
+      ],
+      [
+        "49cb2acf2383fcbe2f6bf5a2c8193e64",
+        "994d89316e6977875420b00db835ce7c",
+        "589bb6b5e6d11a33fd620d420160adaf"
+      ]
+    ]
+  },
+  {
+    "evidence_kind": "SYNTHETIC_PERTURBATION",
+    "pairs": {
+      "execution-outcome": [
+        [
+          "27802904c78a4f04568bdfa08db84e28",
+          "ba3a76a6d76d2b546a658cccaa902daf"
+        ],
+        [
+          "d4e3243c5f7dec7f5c95c6c82c64a5e3",
+          "2161ac1a9ec4c2e1d6ca22e453174ebd"
+        ]
+      ],
+      "governance-execution": [
+        [
+          "8b96f6d6d60a563e8db7dd1e544cfdcd",
+          "27802904c78a4f04568bdfa08db84e28"
+        ],
+        [
+          "8d0640d058b670de2a1c98aed695d7e1",
+          "d4e3243c5f7dec7f5c95c6c82c64a5e3"
+        ]
+      ]
+    },
+    "provenance": {
+      "2161ac1a9ec4c2e1d6ca22e453174ebd": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "27802904c78a4f04568bdfa08db84e28": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "8b96f6d6d60a563e8db7dd1e544cfdcd": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "8d0640d058b670de2a1c98aed695d7e1": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "ba3a76a6d76d2b546a658cccaa902daf": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "d4e3243c5f7dec7f5c95c6c82c64a5e3": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      }
+    },
+    "scenario": "missing_outcome",
+    "triples": [
+      [
+        "8b96f6d6d60a563e8db7dd1e544cfdcd",
+        "27802904c78a4f04568bdfa08db84e28",
+        "ba3a76a6d76d2b546a658cccaa902daf"
+      ],
+      [
+        "8d0640d058b670de2a1c98aed695d7e1",
+        "d4e3243c5f7dec7f5c95c6c82c64a5e3",
+        "2161ac1a9ec4c2e1d6ca22e453174ebd"
+      ]
+    ]
+  },
+  {
+    "evidence_kind": "SYNTHETIC_PERTURBATION",
+    "pairs": {
+      "execution-outcome": [
+        [
+          "6aeb16697272802911a37a8202265ec0",
+          "b186499d5c11cbee4d2c94661249d537"
+        ],
+        [
+          "79d81ef2fff9d6bf22b0f95a5b7466b1",
+          "b7ddb833509552e75748005ab91ee012"
+        ]
+      ],
+      "governance-execution": [
+        [
+          "88db49ca6d090196307907aa3a2f0b93",
+          "6aeb16697272802911a37a8202265ec0"
+        ],
+        [
+          "bd7f1258e37514d1666f4107faaeb1a7",
+          "79d81ef2fff9d6bf22b0f95a5b7466b1"
+        ]
+      ]
+    },
+    "provenance": {
+      "3002b12ef6821c442846da8eac775f7a": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734",
+        "transformation": "impostor"
+      },
+      "6aeb16697272802911a37a8202265ec0": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "79d81ef2fff9d6bf22b0f95a5b7466b1": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "88db49ca6d090196307907aa3a2f0b93": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      },
+      "8d138d6de418089b4e9a501a85dd1be5": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5",
+        "transformation": "impostor"
+      },
+      "b186499d5c11cbee4d2c94661249d537": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "b7ddb833509552e75748005ab91ee012": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "bd7f1258e37514d1666f4107faaeb1a7": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      }
+    },
+    "scenario": "ambiguous_execution",
+    "triples": [
+      [
+        "88db49ca6d090196307907aa3a2f0b93",
+        "6aeb16697272802911a37a8202265ec0",
+        "b186499d5c11cbee4d2c94661249d537"
+      ],
+      [
+        "bd7f1258e37514d1666f4107faaeb1a7",
+        "79d81ef2fff9d6bf22b0f95a5b7466b1",
+        "b7ddb833509552e75748005ab91ee012"
+      ]
+    ]
+  },
+  {
+    "evidence_kind": "SYNTHETIC_PERTURBATION",
+    "pairs": {
+      "execution-outcome": [
+        [
+          "132e9e633ef2f5f61ffed01db2b40d29",
+          "532dfd02ebcf498cf4809898cd55ce5a"
+        ],
+        [
+          "88743b84f2d52d9c3fc882296c97461e",
+          "585b968cb1dbdcde50114a40abec2051"
+        ]
+      ],
+      "governance-execution": [
+        [
+          "d33f28eeb6f6f0fad385c1390febde38",
+          "132e9e633ef2f5f61ffed01db2b40d29"
+        ],
+        [
+          "4df777e2371bf130fad896bb4c644236",
+          "88743b84f2d52d9c3fc882296c97461e"
+        ]
+      ]
+    },
+    "provenance": {
+      "132e9e633ef2f5f61ffed01db2b40d29": {
+        "role": "execution",
+        "source_ref": "sha256:63ff36f5bebb2f84f2da398e3869ff1ee83f8d12f9c96c8e64ab6d3f26270734"
+      },
+      "4df777e2371bf130fad896bb4c644236": {
+        "role": "governance",
+        "source_ref": "sha256:31e2df8e36779872bf7cdb178ff321ca613aa65375a4fb0c98bfe8c0310d3d6d"
+      },
+      "526d97aecd712d8cf7156dfb1745bd9d": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c",
+        "transformation": "impostor"
+      },
+      "532dfd02ebcf498cf4809898cd55ce5a": {
+        "role": "outcome",
+        "source_ref": "sha256:70d870e06dbd4e4da3fde56e0d1bd6ad15b4c4f90ecfb54d3928f360f4851f0c"
+      },
+      "585b968cb1dbdcde50114a40abec2051": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c"
+      },
+      "6179d817085efd0ce19609d69c8b2151": {
+        "role": "outcome",
+        "source_ref": "sha256:ab6ea18aa905fe80c57510b23951b2b5d64f7ef8873dd93e895002cb25e91a1c",
+        "transformation": "impostor"
+      },
+      "88743b84f2d52d9c3fc882296c97461e": {
+        "role": "execution",
+        "source_ref": "sha256:d7d0377765d9e073012d2f2ba91416c2e60b86ae32b632e26f21bf1f8c3dd4d5"
+      },
+      "d33f28eeb6f6f0fad385c1390febde38": {
+        "role": "governance",
+        "source_ref": "sha256:6371258e934ceb6e2c56270984f3fc5161512e5c8b340dff8134bae71e1cf243"
+      }
+    },
+    "scenario": "ambiguous_outcome",
+    "triples": [
+      [
+        "d33f28eeb6f6f0fad385c1390febde38",
+        "132e9e633ef2f5f61ffed01db2b40d29",
+        "532dfd02ebcf498cf4809898cd55ce5a"
+      ],
+      [
+        "4df777e2371bf130fad896bb4c644236",
+        "88743b84f2d52d9c3fc882296c97461e",
+        "585b968cb1dbdcde50114a40abec2051"
+      ]
+    ]
+  }
+]

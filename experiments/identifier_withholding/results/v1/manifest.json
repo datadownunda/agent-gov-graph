@@ -1,0 +1,10 @@
+{
+  "files": {
+    "PROTOCOL.md": "3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224",
+    "decision-inputs.json": "928e36598c2d14df490ff7b484e4ff7d8bd0937665c12152d7cfb5c7bc67cbb2",
+    "decisions.json": "043969aab4827dd8dcd65eaa6c3fc23f916763f32ecf4c5786c489fa01d578f9",
+    "execution-lock.json": "47813d7925eda51421f8f10fde6f58b76afa3e2a14472537373bd31c63b930e8",
+    "results.json": "b99779e32837875fcd85131bfd800b33fbb4757c5b8c8f7f2c6e0b966590ce54",
+    "scorer-only-truth.json": "954bd362fd4f450ab5ca4a36bc2d01cfd8b46c889f53a978f9a0943c5cab35f4"
+  }
+}

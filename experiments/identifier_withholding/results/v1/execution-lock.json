@@ -1,0 +1,16 @@
+{
+  "freeze_sha256": "2d218f21a5e3c209821cc02f523d2350070ebd8d214686452ba2824bac87e95a",
+  "implementation": {
+    "experiments/identifier_withholding/run_experiment.py": "8ee97d1cb558039390e63c3e78c80fb6e69beb5fd288afdd45cd3804a7f5ef2a",
+    "experiments/identifier_withholding/worker.py": "1a985d35cf41c1aff147e92a7b9a66251a051e7bdde2ae239312bc3ec8214464",
+    "src/action_evidence.py": "ca5dfa0354f91c1af981acdead932916dd23f389de9d75618857eba7291813c0",
+    "src/authority_resolver.py": "b7a03c0c5a3bc449e3703a2cfef051644b761abd036b97a9fc70e789426da1ef",
+    "src/evidence_correlation.py": "1e89fc7276b000f29822791c57e8e8ca94904f33b374c59ed4b11457770cbdd0",
+    "src/evidence_digest.py": "8e594dc00e4dfbfaa3df4c85f3b8f1cf14c736cb2387d6a1c846fb0b363b86c5",
+    "src/foreign_opa_evidence.py": "ec13822b7be7c2a9122a1bc2c18672dc96d4e9df00e84fdedb5977c942bcd7ee",
+    "src/target_outcome_evidence.py": "5b5a357c16ff6fd04534e41abfa77cde27b3ac39d55448305a22813ada8b2951"
+  },
+  "protocol_sha256": "3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224",
+  "python": "3.13.14 (v3.13.14:fd17997c386, Jun 10 2026, 08:55:00) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "worker_transport": "stdin unlabelled observation arrays"
+}

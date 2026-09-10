@@ -1,0 +1,13 @@
+{
+  "byte_identical_files": {
+    "decision-inputs.json": "928e36598c2d14df490ff7b484e4ff7d8bd0937665c12152d7cfb5c7bc67cbb2",
+    "decisions.json": "043969aab4827dd8dcd65eaa6c3fc23f916763f32ecf4c5786c489fa01d578f9",
+    "results.json": "b99779e32837875fcd85131bfd800b33fbb4757c5b8c8f7f2c6e0b966590ce54",
+    "scorer-only-truth.json": "954bd362fd4f450ab5ca4a36bc2d01cfd8b46c889f53a978f9a0943c5cab35f4"
+  },
+  "claim_demonstrated": false,
+  "claim_status": "NOT_DEMONSTRATED",
+  "historical_source_baseline": "b585c548a3b68e6611c1f7545f63e7bcfd05d845",
+  "protocol_sha256": "3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224",
+  "verification_kind": "CURRENT_CHECKOUT_COMPATIBILITY_ONLY"
+}

@@ -1,0 +1,28 @@
+{
+  "source_main": "6ebdcd598eebd52507c8646378b6b134386babbe",
+  "historical_baseline": "b585c548a3b68e6611c1f7545f63e7bcfd05d845",
+  "protocol_sha256": "3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224",
+  "accepted_claim": "CLAIM_NOT_DEMONSTRATED",
+  "focused": {
+    "tests": 42,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "full_regression": {
+    "tests": 429,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "focused_command": "python -B -m pytest -q -p no:cacheprovider tests/test_identifier_withholding.py tests/test_identifier_withholding_verification.py --tb=short",
+  "full_command": "RUN_FOREIGN_OPA=1 python -B -m pytest -q -p no:cacheprovider --tb=short",
+  "environment": "Existing /private/tmp/agg-m8-venv activated through PATH; PYTHONDONTWRITEBYTECODE=1; existing Docker OPA 1.19.0; no new packages installed",
+  "opa": "6/6 passed",
+  "historical_custody": "VERIFIED in reconstructed baseline with original whole-checkout checks",
+  "compatibility": "All four serialized output files byte-identical; separate current-checkout claim",
+  "frozen_files_unchanged": 14,
+  "tracked_current_main_files_unchanged": 360,
+  "committed": false,
+  "pushed": false
+}

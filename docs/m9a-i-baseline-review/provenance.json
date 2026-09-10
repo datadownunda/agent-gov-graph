@@ -1,0 +1,44 @@
+{
+  "source_task_id": "01a08d46-6737-79a3-8db5-6f49d7ff8c2f",
+  "source_task_title": "Implement M9a-i correlation test",
+  "task_launch_directory": "/Users/jamesnanscawen/.codex/.chatgpt-projects/g-p-6a79e6b00b408191ae661342e0da9c7a",
+  "commands": [
+    {
+      "id": "exec-41d66691-c727-4ce3-aea6-24b4d2e12980",
+      "cwd": "/Users/jamesnanscawen/agent-gov-graph",
+      "command": "/bin/zsh -lc '/Users/jamesnanscawen/agent-gov-graph/.venv/bin/python /private/tmp/agg-m9-prep/freeze.py'",
+      "status": "completed",
+      "output": "{\n  \"protocol_sha256\": \"3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224\",\n  \"frozen_at\": \"2026-09-10T21:46:15.273094+00:00\",\n  \"baseline_head\": \"b585c548a3b68e6611c1f7545f63e7bcfd05d845\"\n}\nPreserved files: 292\n"
+    },
+    {
+      "id": "exec-e84fe6a1-2706-475c-9c19-c3c978cc23ba",
+      "cwd": "/Users/jamesnanscawen/agent-gov-graph",
+      "command": "/bin/zsh -lc '.venv/bin/python -B -m experiments.identifier_withholding.run_experiment run experiments/identifier_withholding/results/v1 > /private/tmp/agg-m9-prep/first-run.json'",
+      "status": "failed",
+      "output": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/jamesnanscawen/agent-gov-graph/experiments/identifier_withholding/run_experiment.py\", line 12, in <module>\n    from src.action_evidence import ingest_governance, ingest_execution\n  File \"/Users/jamesnanscawen/agent-gov-graph/src/action_evidence.py\", line 8, in <module>\n    from src.evidence_digest import evidence_digest\n  File \"/Users/jamesnanscawen/agent-gov-graph/src/evidence_digest.py\", line 3, in <module>\n    import rfc8785\nModuleNotFoundError: No module named 'rfc8785'\n"
+    },
+    {
+      "id": "exec-a08f0264-99e5-4d04-b204-2c638073d564",
+      "cwd": "/Users/jamesnanscawen/agent-gov-graph",
+      "command": "/bin/zsh -lc '.venv/bin/python -B -m experiments.identifier_withholding.run_experiment run experiments/identifier_withholding/results/v1 > /private/tmp/agg-m9-prep/first-run.json'",
+      "status": "completed",
+      "output": null
+    },
+    {
+      "id": "exec-40f00a3a-d22e-4930-b8db-583b44bdcb68",
+      "cwd": "/Users/jamesnanscawen/agent-gov-graph",
+      "command": "/bin/zsh -lc '.venv/bin/python -B -m experiments.identifier_withholding.run_experiment audit experiments/identifier_withholding/results/v1'",
+      "status": "completed",
+      "output": "{\n  \"status\": \"VERIFIED\",\n  \"protocol_sha256\": \"3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224\",\n  \"claim_demonstrated\": false,\n  \"scenarios\": 12\n}\n"
+    }
+  ],
+  "limitation": "Local task history and artifact timestamps corroborate chronology; they are not an independently authenticated timestamp or a committed M9 implementation snapshot.",
+  "frozen_at": "2026-09-10T21:46:15.273094+00:00",
+  "freeze_baseline_head": "b585c548a3b68e6611c1f7545f63e7bcfd05d845",
+  "protocol_and_execution_worktree": "/Users/jamesnanscawen/agent-gov-graph",
+  "execution_lock_mtime_utc": "2026-09-10T21:51:32.180685+00:00",
+  "result_mtime_utc": "2026-09-10T21:51:32.315993+00:00",
+  "old_checkout_last_head_reflog": "2026-09-06 19:30:24 -0400 pull: Fast-forward to b585c54",
+  "current_main": "6ebdcd598eebd52507c8646378b6b134386babbe",
+  "compatibility_worktree": "/private/tmp/m9-baseline-investigation-20260910/current-main"
+}

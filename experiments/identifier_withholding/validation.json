@@ -1,0 +1,86 @@
+{
+  "baseline_head": "b585c548a3b68e6611c1f7545f63e7bcfd05d845",
+  "committed": false,
+  "environment_attempts": [
+    {
+      "result": "missing existing pinned rfc8785==0.1.4; restored; no experiment output created",
+      "stage": "initial import"
+    },
+    {
+      "failed": 35,
+      "passed": 306,
+      "reason": "Docker unavailable and python not on PATH",
+      "skipped": 5,
+      "stage": "sandboxed full suite"
+    },
+    {
+      "failed": 1,
+      "passed": 340,
+      "reason": "existing integration test invokes python; executable not on PATH",
+      "skipped": 5,
+      "stage": "Docker available, environment not activated"
+    }
+  ],
+  "focused": {
+    "new_boundary_tests": 35,
+    "output": "........................................................................ [ 58%]\n....................................................                     [100%]\n124 passed in 40.79s",
+    "status": "PASSED",
+    "tests": 124
+  },
+  "full_regression": {
+    "environment": "activated repository .venv; RUN_FOREIGN_OPA=1; Docker available",
+    "output": "........................................................................ [ 20%]\n........................................................................ [ 41%]\n........................................................................ [ 62%]\n........................................................................ [ 83%]\n..........................................................               [100%]\n346 passed in 158.40s (0:02:38)",
+    "skipped": 0,
+    "status": "PASSED",
+    "tests": 346
+  },
+  "git_diff_check": "PASSED; includes no-index whitespace checks for untracked additions",
+  "git_status": [
+    "?? experiments/identifier_withholding/",
+    "?? tests/test_identifier_withholding.py",
+    "?? tests/test_runtime_reconciler.py.save"
+  ],
+  "m6_audit": {
+    "authority_reconstructions": 3,
+    "raw_records": 7,
+    "results": {
+      "allow": "CONSISTENT",
+      "blocked-bounded": "CONSISTENT",
+      "blocked-deny": "INSUFFICIENT_EVIDENCE",
+      "critical-deny": "CONTRADICTION",
+      "execution-withheld": "INSUFFICIENT_EVIDENCE"
+    },
+    "status": "VERIFIED"
+  },
+  "m7_replay": {
+    "attestations": 6,
+    "deterministic_positive_rule_demonstrated": true,
+    "live_control_effective_demonstrated": false,
+    "saved_findings_receipts_and_identities": "unchanged",
+    "status": "VERIFIED"
+  },
+  "m9_replay": {
+    "claim_demonstrated": false,
+    "scenarios": 12,
+    "status": "VERIFIED"
+  },
+  "matcher_changed_after_results": false,
+  "new_dependencies": [],
+  "opa": {
+    "command": "docker run --rm -v /Users/jamesnanscawen/agent-gov-graph/policies:/workspace/policies:ro openpolicyagent/opa:1.19.0 test /workspace/policies -v",
+    "image": "openpolicyagent/opa:1.19.0",
+    "passed": 6,
+    "status": "PASSED",
+    "total": 6
+  },
+  "preservation": {
+    "baseline_files_byte_identical": 292,
+    "original_schemas_valid": 15,
+    "original_tracked_files_byte_identical": 291,
+    "result_and_artifact_files_byte_identical": 169,
+    "untracked_save_file": "byte-identical"
+  },
+  "protocol_sha256": "3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224",
+  "pushed": false,
+  "recorded_at": "2026-09-10T21:59:12.632150+00:00"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "VERIFIED",
+  "raw_records": 7,
+  "authority_reconstructions": 3,
+  "results": {
+    "allow": "CONSISTENT",
+    "critical-deny": "CONTRADICTION",
+    "blocked-deny": "INSUFFICIENT_EVIDENCE",
+    "execution-withheld": "INSUFFICIENT_EVIDENCE",
+    "blocked-bounded": "CONSISTENT"
+  },
+  "limitations": "Manifest and digests verify preserved content, not external provenance authenticity."
+}

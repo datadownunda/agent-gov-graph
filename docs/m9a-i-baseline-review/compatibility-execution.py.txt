@@ -1,0 +1,34 @@
+"""Separate compatibility replay; never relax or replace the frozen verifier."""
+from pathlib import Path
+import sys,json,hashlib,subprocess
+root=Path('/private/tmp/m9-baseline-investigation-20260910/current-main')
+sys.path.insert(0,str(root))
+from experiments.identifier_withholding import run_experiment as exp
+out=root.parent/'compatibility';out.mkdir(exist_ok=False)
+original=exp.HERE/'results/v1'
+freeze=json.loads((exp.HERE/'freeze.json').read_text());lock=json.loads((original/'execution-lock.json').read_text())
+assert exp.digest(exp.HERE/'PROTOCOL.md')==exp.digest(original/'PROTOCOL.md')==exp.PROTOCOL_SHA256
+assert exp.digest(exp.HERE/'freeze.json')==lock['freeze_sha256']
+assert exp.inventory(original)==json.loads((original/'manifest.json').read_text())['files']
+assert lock['implementation']=={p:exp.digest(root/p) for p in exp.DEPENDENCIES}
+source_files={p:h for p,h in freeze['baseline_files'].items() if '/results/' in p or p.startswith('artifacts/')}
+assert all(exp.digest(root/p)==h for p,h in source_files.items())
+try:exp.audit(original)
+except ValueError as error:guard=str(error)
+else:raise AssertionError('Historical whole-checkout guard unexpectedly accepted current main')
+# Evaluate unchanged functions only after independent dependency/source custody checks.
+inputs,truth=exp.build()
+assert inputs==json.loads((original/'decision-inputs.json').read_text())
+assert truth==json.loads((original/'scorer-only-truth.json').read_text())
+decisions=exp.run_worker(inputs)
+result=exp.score(inputs,decisions,truth)
+comparison={}
+for name,data in [('decision-inputs.json',inputs),('scorer-only-truth.json',truth),('decisions.json',decisions),('results.json',result)]:
+ exp.write(out/name,data)
+ comparison[name]={'byte_identical':(out/name).read_bytes()==(original/name).read_bytes(),'sha256':exp.digest(out/name)}
+ assert comparison[name]['byte_identical']
+from experiments.target_outcome.run_experiment import audit as m6audit
+from experiments.control_attestation.run_experiment import audit_results as m7audit
+receipt={'kind':'COMPATIBILITY_ONLY_NOT_NEW_PREREGISTERED_RESULT','original_baseline':freeze['baseline_head'],'current_main':subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip(),'protocol_sha256':exp.PROTOCOL_SHA256,'unchanged_execution_dependencies':lock['implementation'],'unchanged_prior_result_artifact_files':len(source_files),'historical_audit_on_current_main':guard,'method':'Independent verification of original manifest, frozen protocol, execution dependencies and all original result/artifact hashes; unchanged build/run_worker/score invoked separately. verify_frozen and audit are unmodified and were not monkeypatched.','comparisons':comparison,'claim_status':result['claim_status'],'claim_demonstrated':result['claim_demonstrated'],'metrics':result['pooled_stress_diagnostic'],'assurance_abstentions':sum(x['assurance_abstentions'] for x in result['scenarios']),'m6_audit':m6audit(root/'experiments/target_outcome/results/v1'),'m7_replay':m7audit(root/'experiments/control_attestation/results/v1')}
+exp.write(out/'receipt.json',receipt)
+print(json.dumps(receipt,indent=2))

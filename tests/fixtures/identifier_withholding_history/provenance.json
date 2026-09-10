@@ -1,0 +1,28 @@
+{
+  "archive_sha256": "cec75ff2a36c01ac4c24d7e356d6e06ad054a5a783f0b14e89c194f8766d2b1f",
+  "baseline_commit": "b585c548a3b68e6611c1f7545f63e7bcfd05d845",
+  "frozen_m9_files": {
+    "experiments/identifier_withholding/PROTOCOL.md": "3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224",
+    "experiments/identifier_withholding/README.md": "9407a602b537522bd6e705fa4dbc48c19c26e8e7e656a507fab0c5d61b9c50bc",
+    "experiments/identifier_withholding/freeze.json": "2d218f21a5e3c209821cc02f523d2350070ebd8d214686452ba2824bac87e95a",
+    "experiments/identifier_withholding/results/v1/PROTOCOL.md": "3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224",
+    "experiments/identifier_withholding/results/v1/decision-inputs.json": "928e36598c2d14df490ff7b484e4ff7d8bd0937665c12152d7cfb5c7bc67cbb2",
+    "experiments/identifier_withholding/results/v1/decisions.json": "043969aab4827dd8dcd65eaa6c3fc23f916763f32ecf4c5786c489fa01d578f9",
+    "experiments/identifier_withholding/results/v1/execution-lock.json": "47813d7925eda51421f8f10fde6f58b76afa3e2a14472537373bd31c63b930e8",
+    "experiments/identifier_withholding/results/v1/manifest.json": "0699a541b8d3d33476dd654b73ad5c61ae049fa430d71943dcc9b97d15674211",
+    "experiments/identifier_withholding/results/v1/results.json": "b99779e32837875fcd85131bfd800b33fbb4757c5b8c8f7f2c6e0b966590ce54",
+    "experiments/identifier_withholding/results/v1/scorer-only-truth.json": "954bd362fd4f450ab5ca4a36bc2d01cfd8b46c889f53a978f9a0943c5cab35f4",
+    "experiments/identifier_withholding/run_experiment.py": "8ee97d1cb558039390e63c3e78c80fb6e69beb5fd288afdd45cd3804a7f5ef2a",
+    "experiments/identifier_withholding/validation.json": "538dc4aa089a6e71869fffbd7614dfce48a81b4bf50a14857f2674f57e855e61",
+    "experiments/identifier_withholding/worker.py": "1a985d35cf41c1aff147e92a7b9a66251a051e7bdde2ae239312bc3ec8214464",
+    "tests/test_identifier_withholding.py": "575bf8059366b515b7cdf8a07de0e7913865b8681ce33cf17f6ee2cad7813e48"
+  },
+  "git_tree": "ddce4e65f032b20cac4a886ca61000d7a4537107",
+  "historical_untracked": {
+    "destination": "tests/test_runtime_reconciler.py.save",
+    "sha256": "fd46238207bc649b3cff95a706733cb22e42cff97cec1f46760bb9992d73de58",
+    "source": "test_runtime_reconciler.py.save"
+  },
+  "purpose": "Portable historical custody fixture; not current-main source or new experimental evidence.",
+  "tracked_file_count": 291
+}

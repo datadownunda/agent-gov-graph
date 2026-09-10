@@ -1,0 +1,14 @@
+/workspace/policies/complaints_test.rego:31:
+data.agentgov.complaints.test_unknown_role_is_denied: PASS (715.605µs)
+/workspace/policies/complaints_test.rego:43:
+data.agentgov.complaints.test_wrong_action_is_denied: PASS (1.345492ms)
+/workspace/policies/complaints_test.rego:17:
+data.agentgov.complaints.test_hr_investigator_restricted_complaint_is_allowed: PASS (986.6µs)
+/workspace/policies/complaints_test.rego:5:
+data.agentgov.complaints.test_manager_restricted_complaint_is_denied: PASS (2.511548ms)
+/workspace/policies/complaints_test.rego:55:
+data.agentgov.complaints.test_denied_decision_contains_status_and_reason: PASS (2.659551ms)
+/workspace/policies/complaints_test.rego:73:
+data.agentgov.complaints.test_hr_investigator_cannot_read_out_of_scope_complaint: PASS (2.919568ms)
+--------------------------------------------------------------------------------
+PASS: 6/6

@@ -1,0 +1,42 @@
+{
+  "totals": {
+    "original": 346,
+    "current": 422
+  },
+  "changed_test_module_counts": {
+    "tests/test_control_attestation.py": {
+      "original": 13,
+      "current": 24
+    },
+    "tests/test_control_attestation_experiment.py": {
+      "original": 4,
+      "current": 7
+    },
+    "tests/test_graph_value_benchmark.py": {
+      "original": 0,
+      "current": 5
+    },
+    "tests/test_graph_value_boundaries.py": {
+      "original": 0,
+      "current": 26
+    },
+    "tests/test_graph_value_canonical.py": {
+      "original": 0,
+      "current": 4
+    },
+    "tests/test_graph_value_projection.py": {
+      "original": 0,
+      "current": 3
+    },
+    "tests/test_graph_value_queries.py": {
+      "original": 0,
+      "current": 13
+    },
+    "tests/test_m6_attestation_evidence.py": {
+      "original": 11,
+      "current": 22
+    }
+  },
+  "original_baseline_without_m9": 311,
+  "current_main_without_m9": 387
+}

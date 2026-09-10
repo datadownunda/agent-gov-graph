@@ -1,0 +1,102 @@
+from src.complaint_runtime import governed_read
+from src.complaint_store import read_complaint
+from src.runtime_reconciler import (
+    load_json,
+    load_jsonl,
+    reconcile_runtime,
+    COVERAGE_CONTRACT_PATH,
+)
+
+
+def run_reconciliation(
+    governance_log,
+    execution_log,
+):
+    return reconcile_runtime(
+        load_jsonl(governance_log),
+        load_jsonl(execution_log),
+        load_json(COVERAGE_CONTRACT_PATH),
+    )
+
+
+def classifications_by_run(results):
+    return {
+        result["run_id"]:
+            result["classification"]
+        for result in results
+    }
+
+
+def test_runtime_reconciliation_detects_four_cases(
+    tmp_path,
+):
+    governance_log = (
+        tmp_path
+        / "governance.jsonl"
+    )
+
+    execution_log = (
+        tmp_path
+        / "execution.jsonl"
+    )
+
+    governed_read(
+        "complaint-456",
+        run_id="run-a-allow",
+        step_id="step-001",
+        actor_id="complaint-review-agent",
+        governance_log_path=governance_log,
+        execution_log_path=execution_log,
+    )
+
+    governed_read(
+        "complaint-789",
+        run_id="run-b-deny-block",
+        step_id="step-001",
+        actor_id="complaint-review-agent",
+        governance_log_path=governance_log,
+        execution_log_path=execution_log,
+    )
+
+    governed_read(
+        "complaint-789",
+        run_id="run-c-deny-bypass",
+        step_id="step-001",
+        actor_id="complaint-review-agent",
+        bypass_enforcement=True,
+        governance_log_path=governance_log,
+        execution_log_path=execution_log,
+    )
+
+    read_complaint(
+        "complaint-789",
+        run_id="run-d-no-governance",
+        step_id="step-001",
+        actor_id="complaint-review-agent",
+        log_path=execution_log,
+    )
+
+    results = run_reconciliation(
+        governance_log,
+        execution_log,
+    )
+
+    classifications = (
+        classifications_by_run(results)
+    )
+
+    assert classifications[
+        "run-a-allow"
+    ] == "GOVERNED_ALLOWED_EXECUTION"
+
+    assert classifications[
+        "run-b-deny-block"
+    ] == "DENY_EFFECT_NOT_OBSERVED"
+
+    assert classifications[
+        "run-c-deny-bypass"
+    ] == "ENFORCEMENT_FAILURE"
+
+    assert classifications[
+        "run-d-no-governance"
+    ] == "COVERAGE_FAILURE"
