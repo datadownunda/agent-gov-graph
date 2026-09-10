@@ -1,6 +1,6 @@
 # M7: bounded single-action control-effectiveness attestation
 
-M7 derives an attestation from a verified M6 reconciliation. It does not add correlation, reconciliation, policy enforcement, root-cause analysis or graph behavior. All M1–M6 implementation and preserved evidence remain unchanged.
+M7 derives an attestation from a verified M6 reconciliation. It does not add correlation, reconciliation, policy enforcement, root-cause analysis or graph behavior. All M1–M6 semantics and preserved evidence remain unchanged; the hardening section describes the limited M6 audit exception typing.
 
 ## What is demonstrated
 
@@ -97,3 +97,21 @@ No legacy FAILED, ENFORCEMENT_FAILURE or NO_EFFECT_OBSERVED labels are imported 
 The claim fails if a finding depends on experimental labels; an unverified or rehashed forged reconciliation is accepted; target effects come from runtime claims; required linkage is bypassed; incomplete or mis-scoped capture yields effectiveness; changed current authority replaces preserved evidence; or a synthetic positive is represented as live empirical effectiveness.
 
 The implementation remains conditional on the authenticity of supplied source/capture evidence and the declared issuer namespaces. The manifest and verification receipt prove deterministic agreement with supplied content, not adversarial provenance authenticity. Native IDs may be copied/reused, observations may be incomplete, clocks may violate their bounds and capture assurances may be false. Those are explicit limitations, not population-wide guarantees.
+
+## M7 processing-error hardening
+
+`INTERNAL_ERROR` means only that Agent Gov Graph failed to complete processing. It is categorically separate from evidence weakness, `EVIDENCE_DEFECT`, missing evidence, inadequate coverage and any conclusion about a control. Its finding is always `null`; its coverage assessment is also `null`, not `UNKNOWN` or `INADEQUATE`.
+
+The local exception boundary distinguishes explicit rejection of supplied evidence (`EvidenceValidationError`) and unavailable referenced evidence (`EvidenceUnavailableError`) from unexpected processing failures (`InternalProcessingError`). Schema loading is a local processing dependency, not historical evidence retrieval. Returned schema-validation errors about supplied inputs remain evidentiary; unexpected validator exceptions and failures constructing or validating Agent Gov Graph-generated receipts/attestations are internal. The M6 archive audit's explicit rejection sites use the local evidence exception subtype; its correlation, reconstruction and reconciliation semantics are unchanged.
+
+Unexpected failures are logged with their exception chain through the module's standard Python logger, without deliberately dumping inputs. These operational logs can contain diagnostic paths or exception messages and should remain restricted debugging material. Assurance artifacts contain fixed basis codes only: `ADJUDICATOR_INTERNAL_ERROR`, `M6_VERIFICATION_INTERNAL_ERROR`, or, for the replay report, `ATTESTATION_REPLAY_INTERNAL_ERROR`. They contain no traceback, raw exception message, scenario label or inferred evidence defect. No finding is inferred from an exception type.
+
+Internal-error artifacts are built from fresh state, with no partial evidence references, scope expansion or coverage conclusion. If even that fresh result cannot be safely hashed or validated, processing raises `InternalProcessingError` with a chained cause rather than returning an invented attestation. The experiment audit reports an internal processing failure separately from a deterministic replay disagreement.
+
+The additive internal-error representation uses `schema_version: "1.1"`. All successful and evidentiary attestations and verification receipts retain v1.0, existing rule versions and their original content identities. The attestation schema accepts v1.1 only for `INTERNAL_ERROR`, requires a null finding/coverage assessment, and disallows attaching an evidence-defect basis to that state. Consumers must recognize this additional operational state or reject it as unsupported; it must never be mapped to a control finding. No control definition, decision precedence, coverage rule, correlation rule or finding meaning changes.
+
+All six saved M7 cases are replayed against their original complete assertions and receipts, including their content IDs. Preserved live evidence still demonstrates an exception, abstention and non-applicability; the only positive effectiveness result remains the deterministic adequate-coverage fixture. No new live claim is made.
+
+This boundary does not retroactively diagnose failures that older M4/M6 adapters have already reduced to serialized evidentiary states. It distinguishes unexpected exceptions reaching M7 and failures in M7's own computations. It is not a repository-wide exception framework.
+
+Deferred, separately bounded M6 cleanup: `src/target_outcome_evidence.py` contains semicolon-chained normalization updates and compressed native-field/target-effect predicates. These merit a readability and semantic-boundary review, but that module is intentionally unchanged in this patch. No M9 work is included.

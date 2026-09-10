@@ -1,66 +1,129 @@
 import json
 from pathlib import Path
 
-from experiments.control_attestation.run_experiment import create_positive_fixture, run, audit_results
+from experiments.control_attestation.run_experiment import (
+    create_positive_fixture,
+    run,
+    audit_results,
+)
 from src.control_attestation import attest
 
-ROOT=Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_positive_fixture_and_saved_replay(tmp_path):
-    c=json.loads((ROOT/'experiments/control_attestation/control.json').read_text())
-    fixture=tmp_path/'fixture'
-    ref=create_positive_fixture(fixture,c)
-    a,r=attest(fixture,ref,c,coverage_support='coverage_observations.json')
-    assert r['coverage_assessment']['result']=='ADEQUATE'
-    assert a['finding']=='CONTROL_EFFECTIVE'
-    assert attest(fixture,ref,c)[0]['finding']=='CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED'
+    c = json.loads((ROOT / "experiments/control_attestation/control.json").read_text())
+    fixture = tmp_path / "fixture"
+    ref = create_positive_fixture(fixture, c)
+    a, r = attest(fixture, ref, c, coverage_support="coverage_observations.json")
+    assert r["coverage_assessment"]["result"] == "ADEQUATE"
+    assert a["finding"] == "CONTROL_EFFECTIVE"
+    assert (
+        attest(fixture, ref, c)[0]["finding"]
+        == "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED"
+    )
 
 
 def test_experiment_does_not_manufacture_live_positive(tmp_path):
-    result=run(tmp_path/'result')
-    assert result['live_control_effective_demonstrated'] is False
-    assert result['deterministic_positive_rule_demonstrated'] is True
-    assert audit_results(tmp_path/'result')==result
+    result = run(tmp_path / "result")
+    assert result["live_control_effective_demonstrated"] is False
+    assert result["deterministic_positive_rule_demonstrated"] is True
+    assert audit_results(tmp_path / "result") == result
 
 
-def revise_fixture_support(directory,change):
+def revise_fixture_support(directory, change):
     import hashlib
-    p=directory/'coverage_observations.json'
-    data=json.loads(p.read_text())
+
+    p = directory / "coverage_observations.json"
+    data = json.loads(p.read_text())
     change(data)
     p.write_text(json.dumps(data))
-    manifest=json.loads((directory/'manifest.json').read_text())
-    manifest['files']['coverage_observations.json']='sha256:'+hashlib.sha256(p.read_bytes()).hexdigest()
-    (directory/'manifest.json').write_text(json.dumps(manifest))
+    manifest = json.loads((directory / "manifest.json").read_text())
+    manifest["files"]["coverage_observations.json"] = (
+        "sha256:" + hashlib.sha256(p.read_bytes()).hexdigest()
+    )
+    (directory / "manifest.json").write_text(json.dumps(manifest))
 
 
 def test_control_specific_scope_capture_clocks_and_candidates(tmp_path):
-    c=json.loads((ROOT/'experiments/control_attestation/control.json').read_text())
-    mutations=[lambda s:s.update(target_id='different-target'),
-               lambda s:s['scope'].update(resource_id='another-resource'),
-               lambda s:s['scope'].update(action='export'),
-               lambda s:s.update(identity_scope='GOVERNED_ACTOR_ONLY'),
-               lambda s:s['capture'].update(available=False),
-               lambda s:s['capture'].update(finalized=False),
-               lambda s:s['capture'].update(through='2026-09-05T12:00:04Z'),
-               lambda s:s['clocks'].update(maximum_offset_seconds='10'),
-               lambda s:s['clocks'].update(basis=''),
-               lambda s:s.update(unresolved_gaps=True),
-               lambda s:s.update(candidate_ambiguity=True)]
-    for index,mutation in enumerate(mutations):
-        fixture=tmp_path/str(index)
-        ref=create_positive_fixture(fixture,c)
-        revise_fixture_support(fixture,mutation)
-        a,r=attest(fixture,ref,c,coverage_support='coverage_observations.json')
-        assert r['status']=='VERIFIED'
-        assert r['coverage_assessment']['result'] in ('INADEQUATE','UNKNOWN')
-        assert a['finding']=='CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED'
+    c = json.loads((ROOT / "experiments/control_attestation/control.json").read_text())
+    mutations = [
+        lambda s: s.update(target_id="different-target"),
+        lambda s: s["scope"].update(resource_id="another-resource"),
+        lambda s: s["scope"].update(action="export"),
+        lambda s: s.update(identity_scope="GOVERNED_ACTOR_ONLY"),
+        lambda s: s["capture"].update(available=False),
+        lambda s: s["capture"].update(finalized=False),
+        lambda s: s["capture"].update(through="2026-09-05T12:00:04Z"),
+        lambda s: s["clocks"].update(maximum_offset_seconds="10"),
+        lambda s: s["clocks"].update(basis=""),
+        lambda s: s.update(unresolved_gaps=True),
+        lambda s: s.update(candidate_ambiguity=True),
+    ]
+    for index, mutation in enumerate(mutations):
+        fixture = tmp_path / str(index)
+        ref = create_positive_fixture(fixture, c)
+        revise_fixture_support(fixture, mutation)
+        a, r = attest(fixture, ref, c, coverage_support="coverage_observations.json")
+        assert r["status"] == "VERIFIED"
+        assert r["coverage_assessment"]["result"] in ("INADEQUATE", "UNKNOWN")
+        assert a["finding"] == "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED"
 
 
 def test_fixture_generation_is_deterministic(tmp_path):
-    c=json.loads((ROOT/'experiments/control_attestation/control.json').read_text())
-    a,b=tmp_path/'a',tmp_path/'b'
-    assert create_positive_fixture(a,c)==create_positive_fixture(b,c)
-    assert {p.relative_to(a):p.read_bytes() for p in a.rglob('*') if p.is_file()}=={
-           p.relative_to(b):p.read_bytes() for p in b.rglob('*') if p.is_file()}
+    c = json.loads((ROOT / "experiments/control_attestation/control.json").read_text())
+    a, b = tmp_path / "a", tmp_path / "b"
+    assert create_positive_fixture(a, c) == create_positive_fixture(b, c)
+    assert {p.relative_to(a): p.read_bytes() for p in a.rglob("*") if p.is_file()} == {
+        p.relative_to(b): p.read_bytes() for p in b.rglob("*") if p.is_file()
+    }
+
+
+def test_all_six_saved_findings_and_content_identities_are_unchanged():
+    directory = ROOT / "experiments/control_attestation/results/v1"
+    before = {p: p.read_bytes() for p in directory.rglob("*") if p.is_file()}
+    result = audit_results(directory)
+    assert result["attestations"] == 6
+    assert result["live_control_effective_demonstrated"] is False
+    assert result["deterministic_positive_rule_demonstrated"] is True
+    assert all(p.read_bytes() == content for p, content in before.items())
+
+
+def test_replay_audit_does_not_mislabel_internal_error(monkeypatch):
+    import pytest
+    import experiments.control_attestation.run_experiment as module
+    from src.evidence_errors import InternalProcessingError
+
+    def fail(*args, **kwargs):
+        return (
+            {"evaluation_status": "INTERNAL_ERROR", "finding": None},
+            {"status": "INTERNAL_ERROR"},
+        )
+
+    monkeypatch.setattr(module, "attest", fail)
+    with pytest.raises(InternalProcessingError):
+        module.audit_results(ROOT / "experiments/control_attestation/results/v1")
+
+
+def test_malformed_clock_support_remains_evidentiary(tmp_path):
+    c = json.loads((ROOT / "experiments/control_attestation/control.json").read_text())
+    for index, mutation in enumerate(
+        [
+            lambda s: s["clocks"].update(maximum_offset_seconds="not-a-number"),
+            lambda s: s["capture"].update(finalized_at="not-a-timestamp"),
+            lambda s: s["clocks"].pop("maximum_offset_seconds"),
+        ]
+    ):
+        fixture = tmp_path / str(index)
+        ref = create_positive_fixture(fixture, c)
+        revise_fixture_support(fixture, mutation)
+        assertion, receipt = attest(
+            fixture, ref, c, coverage_support="coverage_observations.json"
+        )
+        assert receipt["status"] == "VERIFIED"
+        assert receipt["coverage_assessment"]["result"] == "UNKNOWN"
+        assert receipt["coverage_assessment"]["basis_codes"] == [
+            "CONTROL_COVERAGE_SUPPORT_INSUFFICIENT"
+        ]
+        assert assertion["evaluation_status"] == "INSUFFICIENT_EVIDENCE"
+        assert assertion["finding"] == "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED"

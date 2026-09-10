@@ -14,6 +14,7 @@ from experiments.target_outcome.run_experiment import derive, TARGET
 from src.authority_resolver import preserve_revision, resolve_authority, boundary_status
 from src.control_attestation import attest, reconstruct_attestation
 from src.evidence_digest import evidence_digest
+from src.evidence_errors import InternalProcessingError
 from src.governance_event import build_event
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -117,6 +118,7 @@ def run(directory):
     for request in requests:
         archive = fixture if request['evidence_kind']=='DETERMINISTIC_FIXTURE' else LIVE
         attestation, receipt = attest(archive,request['assertion_ref'],control,coverage_support=request['coverage_support'])
+        _require_completed(attestation, receipt)
         # Labels never enter attest() or adjudicate(). Metadata stays outside assertions.
         attestations.append({'evidence_kind':request['evidence_kind'],'label':request['label'],'attestation':attestation})
         verifications.append({'request':request,'receipt':receipt})
@@ -127,41 +129,84 @@ def run(directory):
     return audit_results(directory)
 
 
+def _require_completed(attestation, receipt):
+    if (
+        attestation["evaluation_status"] == "INTERNAL_ERROR"
+        or receipt["status"] == "INTERNAL_ERROR"
+    ):
+        raise InternalProcessingError(
+            "M7 processing could not complete; replay agreement is undetermined"
+        )
+
+
 def audit_results(directory):
     directory = Path(directory)
-    manifest = json.loads((directory/'manifest.json').read_text())
-    if manifest['files'] != inventory(directory):
-        raise ValueError('M7 results inventory or content changed')
-    control = json.loads((directory/'control.json').read_text())
-    assertions = json.loads((directory/'attestations.json').read_text())
-    verifications = json.loads((directory/'verification.json').read_text())
+    manifest = json.loads((directory / "manifest.json").read_text())
+    if manifest["files"] != inventory(directory):
+        raise ValueError("M7 results inventory or content changed")
+    control = json.loads((directory / "control.json").read_text())
+    assertions = json.loads((directory / "attestations.json").read_text())
+    verifications = json.loads((directory / "verification.json").read_text())
     if len(assertions) != len(verifications):
-        raise ValueError('Verification/attestation count mismatch')
-    for wrapped, verification in zip(assertions,verifications):
-        request = verification['request']
-        reference = request['archive_reference']
-        if reference == 'repository:experiments/target_outcome/results/v1':
+        raise ValueError("Verification/attestation count mismatch")
+    for wrapped, verification in zip(assertions, verifications):
+        request = verification["request"]
+        reference = request["archive_reference"]
+        if reference == "repository:experiments/target_outcome/results/v1":
             archive = LIVE
-            if request['evidence_kind'] != 'PRESERVED_LIVE_M6':
-                raise ValueError('Live evidence kind misrepresented')
-        elif reference == 'local:deterministic_fixture':
-            archive = directory/'deterministic_fixture'
-            if request['evidence_kind'] != 'DETERMINISTIC_FIXTURE':
-                raise ValueError('Fixture must not be represented as live evidence')
+            if request["evidence_kind"] != "PRESERVED_LIVE_M6":
+                raise ValueError("Live evidence kind misrepresented")
+        elif reference == "local:deterministic_fixture":
+            archive = directory / "deterministic_fixture"
+            if request["evidence_kind"] != "DETERMINISTIC_FIXTURE":
+                raise ValueError("Fixture must not be represented as live evidence")
         else:
-            raise ValueError('Unsupported archive reference')
-        expected, receipt = attest(archive,request['assertion_ref'],control,coverage_support=request['coverage_support'])
-        if (receipt != verification['receipt'] or expected != wrapped['attestation']
-                or wrapped['evidence_kind'] != request['evidence_kind'] or wrapped['label'] != request['label']):
-            raise ValueError('M7 deterministic replay disagrees')
-        if reconstruct_attestation(expected,archive,control,coverage_support=request['coverage_support'])['status'] != 'VERIFIED':
-            raise ValueError('M7 reconstruction failed')
-    live = [a['attestation'] for a in assertions if a['evidence_kind']=='PRESERVED_LIVE_M6']
-    synthetic = [a['attestation'] for a in assertions if a['evidence_kind']=='DETERMINISTIC_FIXTURE']
-    return {'status':'VERIFIED','attestations':len(assertions),
-            'live_control_effective_demonstrated':any(a['finding']=='CONTROL_EFFECTIVE' for a in live),
-            'deterministic_positive_rule_demonstrated':any(a['finding']=='CONTROL_EFFECTIVE' for a in synthetic),
-            'live_findings':[{'evaluation_status':a['evaluation_status'],'finding':a['finding']} for a in live]}
+            raise ValueError("Unsupported archive reference")
+        expected, receipt = attest(
+            archive,
+            request["assertion_ref"],
+            control,
+            coverage_support=request["coverage_support"],
+        )
+        _require_completed(expected, receipt)
+        if (
+            receipt != verification["receipt"]
+            or expected != wrapped["attestation"]
+            or wrapped["evidence_kind"] != request["evidence_kind"]
+            or wrapped["label"] != request["label"]
+        ):
+            raise ValueError("M7 deterministic replay disagrees")
+        reconstruction = reconstruct_attestation(
+            expected, archive, control, coverage_support=request["coverage_support"]
+        )
+        if reconstruction["status"] == "INTERNAL_ERROR":
+            raise InternalProcessingError("M7 reconstruction could not complete")
+        if reconstruction["status"] != "VERIFIED":
+            raise ValueError("M7 reconstruction failed")
+    live = [
+        a["attestation"]
+        for a in assertions
+        if a["evidence_kind"] == "PRESERVED_LIVE_M6"
+    ]
+    synthetic = [
+        a["attestation"]
+        for a in assertions
+        if a["evidence_kind"] == "DETERMINISTIC_FIXTURE"
+    ]
+    return {
+        "status": "VERIFIED",
+        "attestations": len(assertions),
+        "live_control_effective_demonstrated": any(
+            a["finding"] == "CONTROL_EFFECTIVE" for a in live
+        ),
+        "deterministic_positive_rule_demonstrated": any(
+            a["finding"] == "CONTROL_EFFECTIVE" for a in synthetic
+        ),
+        "live_findings": [
+            {"evaluation_status": a["evaluation_status"], "finding": a["finding"]}
+            for a in live
+        ],
+    }
 
 
 def main():

@@ -17,6 +17,7 @@ from src.authority_reconstruction import reconstruct_authority
 from src.complaint_runtime import _governed_action
 from src.correlation_assertion import native_assertions
 from src.evidence_digest import evidence_digest
+from src.evidence_errors import EvidenceValidationError
 from src.target_outcome_evidence import ingest_nginx
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -80,13 +81,13 @@ def audit(directory):
     manifest=json.loads((directory/'manifest.json').read_text())
     for member,digest in manifest['files'].items():
         p=(directory/member).resolve();p.relative_to(directory.resolve())
-        if 'sha256:'+hashlib.sha256(p.read_bytes()).hexdigest()!=digest: raise ValueError('Changed evidence: '+member)
+        if 'sha256:'+hashlib.sha256(p.read_bytes()).hexdigest()!=digest: raise EvidenceValidationError('Changed evidence: '+member)
     records,correlations,views=derive(directory)
-    if not all(verify_location(r,directory) for r in records): raise ValueError('Source location integrity failed')
-    if json.loads((directory/'correlations.json').read_text())!=correlations: raise ValueError('Correlation replay differs')
-    if json.loads((directory/'reconciliation.json').read_text())!=views: raise ValueError('Reconciliation replay differs')
+    if not all(verify_location(r,directory) for r in records): raise EvidenceValidationError('Source location integrity failed')
+    if json.loads((directory/'correlations.json').read_text())!=correlations: raise EvidenceValidationError('Correlation replay differs')
+    if json.loads((directory/'reconciliation.json').read_text())!=views: raise EvidenceValidationError('Reconciliation replay differs')
     authority=[reconstruct_authority(r['raw'],directory/'authority_history') for r in records if r['role']=='governance']
-    if any(a['status']!='VERIFIED' for a in authority): raise ValueError('M4 reconstruction failed')
+    if any(a['status']!='VERIFIED' for a in authority): raise EvidenceValidationError('M4 reconstruction failed')
     for r in records:
         validate('action_evidence',r)
     for v in views.values(): validate('reconciliation_assertion',v)

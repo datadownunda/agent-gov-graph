@@ -20,7 +20,10 @@
   "additionalProperties": false,
   "properties": {
     "schema_version": {
-      "const": "1.0"
+      "enum": [
+        "1.0",
+        "1.1"
+      ]
     },
     "rule_version": {
       "const": "control-attestation/1"
@@ -92,7 +95,8 @@
         "EVALUATED",
         "INSUFFICIENT_EVIDENCE",
         "NOT_EVALUABLE",
-        "NOT_APPLICABLE"
+        "NOT_APPLICABLE",
+        "INTERNAL_ERROR"
       ]
     },
     "finding": {
@@ -190,6 +194,40 @@
             "enum": [
               null
             ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evaluation_status": {
+            "const": "INTERNAL_ERROR"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "schema_version": {
+            "const": "1.1"
+          },
+          "finding": {
+            "const": null
+          },
+          "coverage_assessment": {
+            "const": null
+          },
+          "basis_codes": {
+            "const": [
+              "ADJUDICATOR_INTERNAL_ERROR"
+            ]
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "schema_version": {
+            "const": "1.0"
           }
         }
       }
