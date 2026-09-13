@@ -1,0 +1,1430 @@
+[
+  {
+    "assertions": [
+      {
+        "assertion_id": "sha256:d5b59cbf97cffd7ff6b04ae3ff23efac2a50ecc2a779e4f315c42246fcc61cb0",
+        "candidate_population": {
+          "scope": "SUPPLIED_SNAPSHOT_ONLY",
+          "snapshot_digest": "sha256:14211dc1375a56c5ec68ea3662ee35a2b9eb769a16d0e73c2cc2a992267a631d",
+          "sources": [
+            {
+              "count": 3,
+              "evidence_refs": [
+                "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+                "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+                "sha256:e49e113d2d4ba987326149ab14c30095c6679e06a58800c71e51b1df5441c973"
+              ],
+              "source": "left"
+            },
+            {
+              "count": 2,
+              "evidence_refs": [
+                "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+                "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05"
+              ],
+              "source": "right"
+            }
+          ]
+        },
+        "competing_candidates": [
+          {
+            "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+            "reverse_candidate_refs": [
+              {
+                "evidence_ref": "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+                "source": "left"
+              }
+            ],
+            "source": "right"
+          }
+        ],
+        "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+        "evidence_coverage": {
+          "basis": "Only supplied evidence is available; completeness is not verified.",
+          "completeness": "UNKNOWN",
+          "interval_end": null,
+          "interval_start": null
+        },
+        "focus": {
+          "evidence_ref": "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+          "source": "left"
+        },
+        "limitations": [
+          "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+          "An identifier value may be copied, reused, or incorrectly recorded.",
+          "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+          "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+          "No execution or control-effectiveness conclusion is implied."
+        ],
+        "method_output": {
+          "candidate_refs": [
+            "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8"
+          ],
+          "conflicts": [],
+          "defects": [],
+          "evidence_ref": "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+          "source": "left",
+          "state": "LINKED"
+        },
+        "relationship_type": "SAME_ACTION",
+        "result": {
+          "conflicts": [],
+          "defects": [],
+          "linked_evidence": [
+            {
+              "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+              "source": "right"
+            }
+          ],
+          "reason": "Mutually unique candidate under the declared rule; conditional linkage, not proven identity.",
+          "state": "LINKED"
+        },
+        "rule": {
+          "assertion_adapter_version": "1.0",
+          "name": "native-identifier-mutual-uniqueness",
+          "parameters": {
+            "identifier_field": "action_attempt_id",
+            "issuer": "Agent Gov Graph runtime",
+            "namespace": "runtime action attempts",
+            "required_equal_fields": []
+          },
+          "version": "1"
+        },
+        "schema_version": "1.0",
+        "signals_used": [
+          {
+            "field": "action_attempt_id",
+            "operator": "EXACT_EQUALITY",
+            "role": "CANDIDATE_SELECTION"
+          }
+        ],
+        "source_evidence": [
+          {
+            "content_digest": "sha256:14bb4cdb6253379d99145672ec2cb5bc40cca1d938884a4c8f468bd9d7e0c66a",
+            "evidence_ref": "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+            "location": {
+              "byte_length": 1989,
+              "byte_offset": 1981,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 2,
+              "line_digest": "sha256:342b9d034e2c03b7d7619b041da8e3543ccf3b40759df91d3a35f9d975226c3a",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:fa3953ed163c003e0c7afe9d1f8595449b63dad765a2d0583dd5de5d63c35b26",
+            "evidence_ref": "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+            "location": {
+              "byte_length": 1981,
+              "byte_offset": 0,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 1,
+              "line_digest": "sha256:105712fd5b1a578e29839fda6c37950b816fde30bb8b9d92a2bc917301f9d2f2",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:93db9dd577df5a149bddb7e23b65f61d612127165d517929e7500e01ed15b6f6",
+            "evidence_ref": "sha256:e49e113d2d4ba987326149ab14c30095c6679e06a58800c71e51b1df5441c973",
+            "location": {
+              "byte_length": 1988,
+              "byte_offset": 3970,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 3,
+              "line_digest": "sha256:78851b3d1c98745924877929491ee50d5af66a37b9d8ff38c061a012bd7297ed",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000003"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:750531e627d4b94ca26e075d2028712046770538113b4cc331ef1e7babca3619",
+            "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 0,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 1,
+              "line_digest": "sha256:a97ba42deee1e0fac941fad570aed09d09f9a0b2fbe22c9019b3041ebc2093a7",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "right"
+          },
+          {
+            "content_digest": "sha256:e11dd7a168013382639d43a55c5e8d11382d89fa87457e62a3cffacf7dcd791c",
+            "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 393,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 2,
+              "line_digest": "sha256:1e4e69138bcefb8fc45aa228dc17d4201725b406d2ea5b7788a6a1793c26665f",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "right"
+          }
+        ],
+        "time_assumptions": {
+          "assumptions": [
+            "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+          ],
+          "boundary": "NOT_APPLIED",
+          "clock_skew_verified": false,
+          "offset_applied_ns": 0,
+          "timestamp_field": null,
+          "used_for_matching": false,
+          "window_seconds": null
+        }
+      },
+      {
+        "assertion_id": "sha256:a300c5573777b3e5d8c3123c24da8f6b8fe74c5105edc0f61afab5fa22f31ab6",
+        "candidate_population": {
+          "scope": "SUPPLIED_SNAPSHOT_ONLY",
+          "snapshot_digest": "sha256:14211dc1375a56c5ec68ea3662ee35a2b9eb769a16d0e73c2cc2a992267a631d",
+          "sources": [
+            {
+              "count": 3,
+              "evidence_refs": [
+                "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+                "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+                "sha256:e49e113d2d4ba987326149ab14c30095c6679e06a58800c71e51b1df5441c973"
+              ],
+              "source": "left"
+            },
+            {
+              "count": 2,
+              "evidence_refs": [
+                "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+                "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05"
+              ],
+              "source": "right"
+            }
+          ]
+        },
+        "competing_candidates": [
+          {
+            "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+            "reverse_candidate_refs": [
+              {
+                "evidence_ref": "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+                "source": "left"
+              }
+            ],
+            "source": "right"
+          }
+        ],
+        "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+        "evidence_coverage": {
+          "basis": "Only supplied evidence is available; completeness is not verified.",
+          "completeness": "UNKNOWN",
+          "interval_end": null,
+          "interval_start": null
+        },
+        "focus": {
+          "evidence_ref": "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+          "source": "left"
+        },
+        "limitations": [
+          "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+          "An identifier value may be copied, reused, or incorrectly recorded.",
+          "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+          "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+          "No execution or control-effectiveness conclusion is implied."
+        ],
+        "method_output": {
+          "candidate_refs": [
+            "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05"
+          ],
+          "conflicts": [],
+          "defects": [],
+          "evidence_ref": "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+          "source": "left",
+          "state": "LINKED"
+        },
+        "relationship_type": "SAME_ACTION",
+        "result": {
+          "conflicts": [],
+          "defects": [],
+          "linked_evidence": [
+            {
+              "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+              "source": "right"
+            }
+          ],
+          "reason": "Mutually unique candidate under the declared rule; conditional linkage, not proven identity.",
+          "state": "LINKED"
+        },
+        "rule": {
+          "assertion_adapter_version": "1.0",
+          "name": "native-identifier-mutual-uniqueness",
+          "parameters": {
+            "identifier_field": "action_attempt_id",
+            "issuer": "Agent Gov Graph runtime",
+            "namespace": "runtime action attempts",
+            "required_equal_fields": []
+          },
+          "version": "1"
+        },
+        "schema_version": "1.0",
+        "signals_used": [
+          {
+            "field": "action_attempt_id",
+            "operator": "EXACT_EQUALITY",
+            "role": "CANDIDATE_SELECTION"
+          }
+        ],
+        "source_evidence": [
+          {
+            "content_digest": "sha256:14bb4cdb6253379d99145672ec2cb5bc40cca1d938884a4c8f468bd9d7e0c66a",
+            "evidence_ref": "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+            "location": {
+              "byte_length": 1989,
+              "byte_offset": 1981,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 2,
+              "line_digest": "sha256:342b9d034e2c03b7d7619b041da8e3543ccf3b40759df91d3a35f9d975226c3a",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:fa3953ed163c003e0c7afe9d1f8595449b63dad765a2d0583dd5de5d63c35b26",
+            "evidence_ref": "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+            "location": {
+              "byte_length": 1981,
+              "byte_offset": 0,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 1,
+              "line_digest": "sha256:105712fd5b1a578e29839fda6c37950b816fde30bb8b9d92a2bc917301f9d2f2",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:93db9dd577df5a149bddb7e23b65f61d612127165d517929e7500e01ed15b6f6",
+            "evidence_ref": "sha256:e49e113d2d4ba987326149ab14c30095c6679e06a58800c71e51b1df5441c973",
+            "location": {
+              "byte_length": 1988,
+              "byte_offset": 3970,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 3,
+              "line_digest": "sha256:78851b3d1c98745924877929491ee50d5af66a37b9d8ff38c061a012bd7297ed",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000003"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:750531e627d4b94ca26e075d2028712046770538113b4cc331ef1e7babca3619",
+            "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 0,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 1,
+              "line_digest": "sha256:a97ba42deee1e0fac941fad570aed09d09f9a0b2fbe22c9019b3041ebc2093a7",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "right"
+          },
+          {
+            "content_digest": "sha256:e11dd7a168013382639d43a55c5e8d11382d89fa87457e62a3cffacf7dcd791c",
+            "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 393,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 2,
+              "line_digest": "sha256:1e4e69138bcefb8fc45aa228dc17d4201725b406d2ea5b7788a6a1793c26665f",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "right"
+          }
+        ],
+        "time_assumptions": {
+          "assumptions": [
+            "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+          ],
+          "boundary": "NOT_APPLIED",
+          "clock_skew_verified": false,
+          "offset_applied_ns": 0,
+          "timestamp_field": null,
+          "used_for_matching": false,
+          "window_seconds": null
+        }
+      },
+      {
+        "assertion_id": "sha256:340050c26cb290ffb99f5a57e8e841b42e4787c91e53752e2d5e67649515ff73",
+        "candidate_population": {
+          "scope": "SUPPLIED_SNAPSHOT_ONLY",
+          "snapshot_digest": "sha256:14211dc1375a56c5ec68ea3662ee35a2b9eb769a16d0e73c2cc2a992267a631d",
+          "sources": [
+            {
+              "count": 3,
+              "evidence_refs": [
+                "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+                "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+                "sha256:e49e113d2d4ba987326149ab14c30095c6679e06a58800c71e51b1df5441c973"
+              ],
+              "source": "left"
+            },
+            {
+              "count": 2,
+              "evidence_refs": [
+                "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+                "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05"
+              ],
+              "source": "right"
+            }
+          ]
+        },
+        "competing_candidates": [],
+        "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+        "evidence_coverage": {
+          "basis": "Only supplied evidence is available; completeness is not verified.",
+          "completeness": "UNKNOWN",
+          "interval_end": null,
+          "interval_start": null
+        },
+        "focus": {
+          "evidence_ref": "sha256:e49e113d2d4ba987326149ab14c30095c6679e06a58800c71e51b1df5441c973",
+          "source": "left"
+        },
+        "limitations": [
+          "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+          "An identifier value may be copied, reused, or incorrectly recorded.",
+          "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+          "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+          "No execution or control-effectiveness conclusion is implied."
+        ],
+        "method_output": {
+          "candidate_refs": [],
+          "conflicts": [],
+          "defects": [],
+          "evidence_ref": "sha256:e49e113d2d4ba987326149ab14c30095c6679e06a58800c71e51b1df5441c973",
+          "source": "left",
+          "state": "UNMATCHED"
+        },
+        "relationship_type": "SAME_ACTION",
+        "result": {
+          "conflicts": [],
+          "defects": [],
+          "linked_evidence": [],
+          "reason": "No candidate satisfies this rule within the supplied snapshot.",
+          "state": "UNMATCHED"
+        },
+        "rule": {
+          "assertion_adapter_version": "1.0",
+          "name": "native-identifier-mutual-uniqueness",
+          "parameters": {
+            "identifier_field": "action_attempt_id",
+            "issuer": "Agent Gov Graph runtime",
+            "namespace": "runtime action attempts",
+            "required_equal_fields": []
+          },
+          "version": "1"
+        },
+        "schema_version": "1.0",
+        "signals_used": [
+          {
+            "field": "action_attempt_id",
+            "operator": "EXACT_EQUALITY",
+            "role": "CANDIDATE_SELECTION"
+          }
+        ],
+        "source_evidence": [
+          {
+            "content_digest": "sha256:14bb4cdb6253379d99145672ec2cb5bc40cca1d938884a4c8f468bd9d7e0c66a",
+            "evidence_ref": "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+            "location": {
+              "byte_length": 1989,
+              "byte_offset": 1981,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 2,
+              "line_digest": "sha256:342b9d034e2c03b7d7619b041da8e3543ccf3b40759df91d3a35f9d975226c3a",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:fa3953ed163c003e0c7afe9d1f8595449b63dad765a2d0583dd5de5d63c35b26",
+            "evidence_ref": "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+            "location": {
+              "byte_length": 1981,
+              "byte_offset": 0,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 1,
+              "line_digest": "sha256:105712fd5b1a578e29839fda6c37950b816fde30bb8b9d92a2bc917301f9d2f2",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:93db9dd577df5a149bddb7e23b65f61d612127165d517929e7500e01ed15b6f6",
+            "evidence_ref": "sha256:e49e113d2d4ba987326149ab14c30095c6679e06a58800c71e51b1df5441c973",
+            "location": {
+              "byte_length": 1988,
+              "byte_offset": 3970,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 3,
+              "line_digest": "sha256:78851b3d1c98745924877929491ee50d5af66a37b9d8ff38c061a012bd7297ed",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000003"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:750531e627d4b94ca26e075d2028712046770538113b4cc331ef1e7babca3619",
+            "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 0,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 1,
+              "line_digest": "sha256:a97ba42deee1e0fac941fad570aed09d09f9a0b2fbe22c9019b3041ebc2093a7",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "right"
+          },
+          {
+            "content_digest": "sha256:e11dd7a168013382639d43a55c5e8d11382d89fa87457e62a3cffacf7dcd791c",
+            "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 393,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 2,
+              "line_digest": "sha256:1e4e69138bcefb8fc45aa228dc17d4201725b406d2ea5b7788a6a1793c26665f",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "right"
+          }
+        ],
+        "time_assumptions": {
+          "assumptions": [
+            "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+          ],
+          "boundary": "NOT_APPLIED",
+          "clock_skew_verified": false,
+          "offset_applied_ns": 0,
+          "timestamp_field": null,
+          "used_for_matching": false,
+          "window_seconds": null
+        }
+      },
+      {
+        "assertion_id": "sha256:8d46d4a12f818015c55aabd33c1094c7a3a7382b112d0c62c69e7349af9eaad1",
+        "candidate_population": {
+          "scope": "SUPPLIED_SNAPSHOT_ONLY",
+          "snapshot_digest": "sha256:14211dc1375a56c5ec68ea3662ee35a2b9eb769a16d0e73c2cc2a992267a631d",
+          "sources": [
+            {
+              "count": 3,
+              "evidence_refs": [
+                "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+                "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+                "sha256:e49e113d2d4ba987326149ab14c30095c6679e06a58800c71e51b1df5441c973"
+              ],
+              "source": "left"
+            },
+            {
+              "count": 2,
+              "evidence_refs": [
+                "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+                "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05"
+              ],
+              "source": "right"
+            }
+          ]
+        },
+        "competing_candidates": [
+          {
+            "evidence_ref": "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+            "reverse_candidate_refs": [
+              {
+                "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+                "source": "right"
+              }
+            ],
+            "source": "left"
+          }
+        ],
+        "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+        "evidence_coverage": {
+          "basis": "Only supplied evidence is available; completeness is not verified.",
+          "completeness": "UNKNOWN",
+          "interval_end": null,
+          "interval_start": null
+        },
+        "focus": {
+          "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+          "source": "right"
+        },
+        "limitations": [
+          "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+          "An identifier value may be copied, reused, or incorrectly recorded.",
+          "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+          "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+          "No execution or control-effectiveness conclusion is implied."
+        ],
+        "method_output": {
+          "candidate_refs": [
+            "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38"
+          ],
+          "conflicts": [],
+          "defects": [],
+          "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+          "source": "right",
+          "state": "LINKED"
+        },
+        "relationship_type": "SAME_ACTION",
+        "result": {
+          "conflicts": [],
+          "defects": [],
+          "linked_evidence": [
+            {
+              "evidence_ref": "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+              "source": "left"
+            }
+          ],
+          "reason": "Mutually unique candidate under the declared rule; conditional linkage, not proven identity.",
+          "state": "LINKED"
+        },
+        "rule": {
+          "assertion_adapter_version": "1.0",
+          "name": "native-identifier-mutual-uniqueness",
+          "parameters": {
+            "identifier_field": "action_attempt_id",
+            "issuer": "Agent Gov Graph runtime",
+            "namespace": "runtime action attempts",
+            "required_equal_fields": []
+          },
+          "version": "1"
+        },
+        "schema_version": "1.0",
+        "signals_used": [
+          {
+            "field": "action_attempt_id",
+            "operator": "EXACT_EQUALITY",
+            "role": "CANDIDATE_SELECTION"
+          }
+        ],
+        "source_evidence": [
+          {
+            "content_digest": "sha256:14bb4cdb6253379d99145672ec2cb5bc40cca1d938884a4c8f468bd9d7e0c66a",
+            "evidence_ref": "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+            "location": {
+              "byte_length": 1989,
+              "byte_offset": 1981,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 2,
+              "line_digest": "sha256:342b9d034e2c03b7d7619b041da8e3543ccf3b40759df91d3a35f9d975226c3a",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:fa3953ed163c003e0c7afe9d1f8595449b63dad765a2d0583dd5de5d63c35b26",
+            "evidence_ref": "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+            "location": {
+              "byte_length": 1981,
+              "byte_offset": 0,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 1,
+              "line_digest": "sha256:105712fd5b1a578e29839fda6c37950b816fde30bb8b9d92a2bc917301f9d2f2",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:93db9dd577df5a149bddb7e23b65f61d612127165d517929e7500e01ed15b6f6",
+            "evidence_ref": "sha256:e49e113d2d4ba987326149ab14c30095c6679e06a58800c71e51b1df5441c973",
+            "location": {
+              "byte_length": 1988,
+              "byte_offset": 3970,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 3,
+              "line_digest": "sha256:78851b3d1c98745924877929491ee50d5af66a37b9d8ff38c061a012bd7297ed",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000003"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:750531e627d4b94ca26e075d2028712046770538113b4cc331ef1e7babca3619",
+            "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 0,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 1,
+              "line_digest": "sha256:a97ba42deee1e0fac941fad570aed09d09f9a0b2fbe22c9019b3041ebc2093a7",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "right"
+          },
+          {
+            "content_digest": "sha256:e11dd7a168013382639d43a55c5e8d11382d89fa87457e62a3cffacf7dcd791c",
+            "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 393,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 2,
+              "line_digest": "sha256:1e4e69138bcefb8fc45aa228dc17d4201725b406d2ea5b7788a6a1793c26665f",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "right"
+          }
+        ],
+        "time_assumptions": {
+          "assumptions": [
+            "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+          ],
+          "boundary": "NOT_APPLIED",
+          "clock_skew_verified": false,
+          "offset_applied_ns": 0,
+          "timestamp_field": null,
+          "used_for_matching": false,
+          "window_seconds": null
+        }
+      },
+      {
+        "assertion_id": "sha256:da5553368613f8b33253a733f689e8553683526521a00d64b29ff50ea9c57aba",
+        "candidate_population": {
+          "scope": "SUPPLIED_SNAPSHOT_ONLY",
+          "snapshot_digest": "sha256:14211dc1375a56c5ec68ea3662ee35a2b9eb769a16d0e73c2cc2a992267a631d",
+          "sources": [
+            {
+              "count": 3,
+              "evidence_refs": [
+                "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+                "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+                "sha256:e49e113d2d4ba987326149ab14c30095c6679e06a58800c71e51b1df5441c973"
+              ],
+              "source": "left"
+            },
+            {
+              "count": 2,
+              "evidence_refs": [
+                "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+                "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05"
+              ],
+              "source": "right"
+            }
+          ]
+        },
+        "competing_candidates": [
+          {
+            "evidence_ref": "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+            "reverse_candidate_refs": [
+              {
+                "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+                "source": "right"
+              }
+            ],
+            "source": "left"
+          }
+        ],
+        "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+        "evidence_coverage": {
+          "basis": "Only supplied evidence is available; completeness is not verified.",
+          "completeness": "UNKNOWN",
+          "interval_end": null,
+          "interval_start": null
+        },
+        "focus": {
+          "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+          "source": "right"
+        },
+        "limitations": [
+          "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+          "An identifier value may be copied, reused, or incorrectly recorded.",
+          "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+          "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+          "No execution or control-effectiveness conclusion is implied."
+        ],
+        "method_output": {
+          "candidate_refs": [
+            "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969"
+          ],
+          "conflicts": [],
+          "defects": [],
+          "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+          "source": "right",
+          "state": "LINKED"
+        },
+        "relationship_type": "SAME_ACTION",
+        "result": {
+          "conflicts": [],
+          "defects": [],
+          "linked_evidence": [
+            {
+              "evidence_ref": "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+              "source": "left"
+            }
+          ],
+          "reason": "Mutually unique candidate under the declared rule; conditional linkage, not proven identity.",
+          "state": "LINKED"
+        },
+        "rule": {
+          "assertion_adapter_version": "1.0",
+          "name": "native-identifier-mutual-uniqueness",
+          "parameters": {
+            "identifier_field": "action_attempt_id",
+            "issuer": "Agent Gov Graph runtime",
+            "namespace": "runtime action attempts",
+            "required_equal_fields": []
+          },
+          "version": "1"
+        },
+        "schema_version": "1.0",
+        "signals_used": [
+          {
+            "field": "action_attempt_id",
+            "operator": "EXACT_EQUALITY",
+            "role": "CANDIDATE_SELECTION"
+          }
+        ],
+        "source_evidence": [
+          {
+            "content_digest": "sha256:14bb4cdb6253379d99145672ec2cb5bc40cca1d938884a4c8f468bd9d7e0c66a",
+            "evidence_ref": "sha256:98def6c4844c1ed61fb63919c9305b7a4cede7304be9e9b9ef9972549c3cba38",
+            "location": {
+              "byte_length": 1989,
+              "byte_offset": 1981,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 2,
+              "line_digest": "sha256:342b9d034e2c03b7d7619b041da8e3543ccf3b40759df91d3a35f9d975226c3a",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:fa3953ed163c003e0c7afe9d1f8595449b63dad765a2d0583dd5de5d63c35b26",
+            "evidence_ref": "sha256:b9e472edf8b3b710b57f187f63af9e471a69be75a9228de61f39d02ba7692969",
+            "location": {
+              "byte_length": 1981,
+              "byte_offset": 0,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 1,
+              "line_digest": "sha256:105712fd5b1a578e29839fda6c37950b816fde30bb8b9d92a2bc917301f9d2f2",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:93db9dd577df5a149bddb7e23b65f61d612127165d517929e7500e01ed15b6f6",
+            "evidence_ref": "sha256:e49e113d2d4ba987326149ab14c30095c6679e06a58800c71e51b1df5441c973",
+            "location": {
+              "byte_length": 1988,
+              "byte_offset": 3970,
+              "file_digest": "sha256:1ecebbb107df25075700ccd68c50d7771f446ae8055098590707a521259eb281",
+              "line": 3,
+              "line_digest": "sha256:78851b3d1c98745924877929491ee50d5af66a37b9d8ff38c061a012bd7297ed",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000003"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:750531e627d4b94ca26e075d2028712046770538113b4cc331ef1e7babca3619",
+            "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 0,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 1,
+              "line_digest": "sha256:a97ba42deee1e0fac941fad570aed09d09f9a0b2fbe22c9019b3041ebc2093a7",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "right"
+          },
+          {
+            "content_digest": "sha256:e11dd7a168013382639d43a55c5e8d11382d89fa87457e62a3cffacf7dcd791c",
+            "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 393,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 2,
+              "line_digest": "sha256:1e4e69138bcefb8fc45aa228dc17d4201725b406d2ea5b7788a6a1793c26665f",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "right"
+          }
+        ],
+        "time_assumptions": {
+          "assumptions": [
+            "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+          ],
+          "boundary": "NOT_APPLIED",
+          "clock_skew_verified": false,
+          "offset_applied_ns": 0,
+          "timestamp_field": null,
+          "used_for_matching": false,
+          "window_seconds": null
+        }
+      }
+    ],
+    "roles": {
+      "left": "governance",
+      "right": "execution"
+    }
+  },
+  {
+    "assertions": [
+      {
+        "assertion_id": "sha256:6e77c7977eed29c53655c6b35f590478ffe3c3846f27e69734e5088e854f767e",
+        "candidate_population": {
+          "scope": "SUPPLIED_SNAPSHOT_ONLY",
+          "snapshot_digest": "sha256:8b549565df62983e6affb92aa353a90da87a8df990eedf89c44047467caefe74",
+          "sources": [
+            {
+              "count": 2,
+              "evidence_refs": [
+                "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+                "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05"
+              ],
+              "source": "left"
+            },
+            {
+              "count": 1,
+              "evidence_refs": [
+                "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369"
+              ],
+              "source": "right"
+            }
+          ]
+        },
+        "competing_candidates": [
+          {
+            "evidence_ref": "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369",
+            "reverse_candidate_refs": [
+              {
+                "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+                "source": "left"
+              },
+              {
+                "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+                "source": "left"
+              }
+            ],
+            "source": "right"
+          }
+        ],
+        "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+        "evidence_coverage": {
+          "basis": "Only supplied evidence is available; completeness is not verified.",
+          "completeness": "UNKNOWN",
+          "interval_end": null,
+          "interval_start": null
+        },
+        "focus": {
+          "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+          "source": "left"
+        },
+        "limitations": [
+          "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+          "An identifier value may be copied, reused, or incorrectly recorded.",
+          "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+          "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+          "No execution or control-effectiveness conclusion is implied."
+        ],
+        "method_output": {
+          "candidate_refs": [
+            "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369"
+          ],
+          "conflicts": [],
+          "defects": [],
+          "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+          "source": "left",
+          "state": "AMBIGUOUS"
+        },
+        "relationship_type": "SAME_ACTION",
+        "result": {
+          "conflicts": [],
+          "defects": [],
+          "linked_evidence": [],
+          "reason": "Candidate competition exists on one or both sides.",
+          "state": "AMBIGUOUS"
+        },
+        "rule": {
+          "assertion_adapter_version": "1.0",
+          "name": "native-identifier-mutual-uniqueness",
+          "parameters": {
+            "identifier_field": "request_id",
+            "issuer": "NGINX",
+            "namespace": "complaints-static-v1 request IDs",
+            "required_equal_fields": []
+          },
+          "version": "1"
+        },
+        "schema_version": "1.0",
+        "signals_used": [
+          {
+            "field": "request_id",
+            "operator": "EXACT_EQUALITY",
+            "role": "CANDIDATE_SELECTION"
+          }
+        ],
+        "source_evidence": [
+          {
+            "content_digest": "sha256:750531e627d4b94ca26e075d2028712046770538113b4cc331ef1e7babca3619",
+            "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 0,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 1,
+              "line_digest": "sha256:a97ba42deee1e0fac941fad570aed09d09f9a0b2fbe22c9019b3041ebc2093a7",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "request_id": "native-1"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:e11dd7a168013382639d43a55c5e8d11382d89fa87457e62a3cffacf7dcd791c",
+            "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 393,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 2,
+              "line_digest": "sha256:1e4e69138bcefb8fc45aa228dc17d4201725b406d2ea5b7788a6a1793c26665f",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "request_id": "native-1"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:70414be61c025783e4b29fca1423d7e5cd92e7040a5bdadaa6ec4455ce60c6a7",
+            "evidence_ref": "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369",
+            "location": {
+              "byte_length": 252,
+              "byte_offset": 0,
+              "file_digest": "sha256:5835b8dd039492673b638d14d9ad0c50398e26c2a916d7dec4c5b783de11021b",
+              "line": 1,
+              "line_digest": "sha256:5835b8dd039492673b638d14d9ad0c50398e26c2a916d7dec4c5b783de11021b",
+              "member": "native/access.jsonl"
+            },
+            "observed_signals": {
+              "request_id": "native-1"
+            },
+            "source": "right"
+          }
+        ],
+        "time_assumptions": {
+          "assumptions": [
+            "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+          ],
+          "boundary": "NOT_APPLIED",
+          "clock_skew_verified": false,
+          "offset_applied_ns": 0,
+          "timestamp_field": null,
+          "used_for_matching": false,
+          "window_seconds": null
+        }
+      },
+      {
+        "assertion_id": "sha256:bb6992cc443e520f4f380deb4fcff87626f64668b2832e5bed40e9b7a735b369",
+        "candidate_population": {
+          "scope": "SUPPLIED_SNAPSHOT_ONLY",
+          "snapshot_digest": "sha256:8b549565df62983e6affb92aa353a90da87a8df990eedf89c44047467caefe74",
+          "sources": [
+            {
+              "count": 2,
+              "evidence_refs": [
+                "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+                "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05"
+              ],
+              "source": "left"
+            },
+            {
+              "count": 1,
+              "evidence_refs": [
+                "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369"
+              ],
+              "source": "right"
+            }
+          ]
+        },
+        "competing_candidates": [
+          {
+            "evidence_ref": "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369",
+            "reverse_candidate_refs": [
+              {
+                "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+                "source": "left"
+              },
+              {
+                "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+                "source": "left"
+              }
+            ],
+            "source": "right"
+          }
+        ],
+        "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+        "evidence_coverage": {
+          "basis": "Only supplied evidence is available; completeness is not verified.",
+          "completeness": "UNKNOWN",
+          "interval_end": null,
+          "interval_start": null
+        },
+        "focus": {
+          "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+          "source": "left"
+        },
+        "limitations": [
+          "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+          "An identifier value may be copied, reused, or incorrectly recorded.",
+          "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+          "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+          "No execution or control-effectiveness conclusion is implied."
+        ],
+        "method_output": {
+          "candidate_refs": [
+            "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369"
+          ],
+          "conflicts": [],
+          "defects": [],
+          "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+          "source": "left",
+          "state": "AMBIGUOUS"
+        },
+        "relationship_type": "SAME_ACTION",
+        "result": {
+          "conflicts": [],
+          "defects": [],
+          "linked_evidence": [],
+          "reason": "Candidate competition exists on one or both sides.",
+          "state": "AMBIGUOUS"
+        },
+        "rule": {
+          "assertion_adapter_version": "1.0",
+          "name": "native-identifier-mutual-uniqueness",
+          "parameters": {
+            "identifier_field": "request_id",
+            "issuer": "NGINX",
+            "namespace": "complaints-static-v1 request IDs",
+            "required_equal_fields": []
+          },
+          "version": "1"
+        },
+        "schema_version": "1.0",
+        "signals_used": [
+          {
+            "field": "request_id",
+            "operator": "EXACT_EQUALITY",
+            "role": "CANDIDATE_SELECTION"
+          }
+        ],
+        "source_evidence": [
+          {
+            "content_digest": "sha256:750531e627d4b94ca26e075d2028712046770538113b4cc331ef1e7babca3619",
+            "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 0,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 1,
+              "line_digest": "sha256:a97ba42deee1e0fac941fad570aed09d09f9a0b2fbe22c9019b3041ebc2093a7",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "request_id": "native-1"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:e11dd7a168013382639d43a55c5e8d11382d89fa87457e62a3cffacf7dcd791c",
+            "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 393,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 2,
+              "line_digest": "sha256:1e4e69138bcefb8fc45aa228dc17d4201725b406d2ea5b7788a6a1793c26665f",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "request_id": "native-1"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:70414be61c025783e4b29fca1423d7e5cd92e7040a5bdadaa6ec4455ce60c6a7",
+            "evidence_ref": "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369",
+            "location": {
+              "byte_length": 252,
+              "byte_offset": 0,
+              "file_digest": "sha256:5835b8dd039492673b638d14d9ad0c50398e26c2a916d7dec4c5b783de11021b",
+              "line": 1,
+              "line_digest": "sha256:5835b8dd039492673b638d14d9ad0c50398e26c2a916d7dec4c5b783de11021b",
+              "member": "native/access.jsonl"
+            },
+            "observed_signals": {
+              "request_id": "native-1"
+            },
+            "source": "right"
+          }
+        ],
+        "time_assumptions": {
+          "assumptions": [
+            "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+          ],
+          "boundary": "NOT_APPLIED",
+          "clock_skew_verified": false,
+          "offset_applied_ns": 0,
+          "timestamp_field": null,
+          "used_for_matching": false,
+          "window_seconds": null
+        }
+      },
+      {
+        "assertion_id": "sha256:fe9f560534fb39561d8b8a5003d73c9cc133aa674b2ee76851b7f25a86f7b8c5",
+        "candidate_population": {
+          "scope": "SUPPLIED_SNAPSHOT_ONLY",
+          "snapshot_digest": "sha256:8b549565df62983e6affb92aa353a90da87a8df990eedf89c44047467caefe74",
+          "sources": [
+            {
+              "count": 2,
+              "evidence_refs": [
+                "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+                "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05"
+              ],
+              "source": "left"
+            },
+            {
+              "count": 1,
+              "evidence_refs": [
+                "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369"
+              ],
+              "source": "right"
+            }
+          ]
+        },
+        "competing_candidates": [
+          {
+            "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+            "reverse_candidate_refs": [
+              {
+                "evidence_ref": "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369",
+                "source": "right"
+              }
+            ],
+            "source": "left"
+          },
+          {
+            "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+            "reverse_candidate_refs": [
+              {
+                "evidence_ref": "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369",
+                "source": "right"
+              }
+            ],
+            "source": "left"
+          }
+        ],
+        "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+        "evidence_coverage": {
+          "basis": "Only supplied evidence is available; completeness is not verified.",
+          "completeness": "UNKNOWN",
+          "interval_end": null,
+          "interval_start": null
+        },
+        "focus": {
+          "evidence_ref": "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369",
+          "source": "right"
+        },
+        "limitations": [
+          "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+          "An identifier value may be copied, reused, or incorrectly recorded.",
+          "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+          "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+          "No execution or control-effectiveness conclusion is implied."
+        ],
+        "method_output": {
+          "candidate_refs": [
+            "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+            "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05"
+          ],
+          "conflicts": [],
+          "defects": [],
+          "evidence_ref": "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369",
+          "source": "right",
+          "state": "AMBIGUOUS"
+        },
+        "relationship_type": "SAME_ACTION",
+        "result": {
+          "conflicts": [],
+          "defects": [],
+          "linked_evidence": [],
+          "reason": "Candidate competition exists on one or both sides.",
+          "state": "AMBIGUOUS"
+        },
+        "rule": {
+          "assertion_adapter_version": "1.0",
+          "name": "native-identifier-mutual-uniqueness",
+          "parameters": {
+            "identifier_field": "request_id",
+            "issuer": "NGINX",
+            "namespace": "complaints-static-v1 request IDs",
+            "required_equal_fields": []
+          },
+          "version": "1"
+        },
+        "schema_version": "1.0",
+        "signals_used": [
+          {
+            "field": "request_id",
+            "operator": "EXACT_EQUALITY",
+            "role": "CANDIDATE_SELECTION"
+          }
+        ],
+        "source_evidence": [
+          {
+            "content_digest": "sha256:750531e627d4b94ca26e075d2028712046770538113b4cc331ef1e7babca3619",
+            "evidence_ref": "sha256:7ebd96de9684b01935a201e61735a6bf7120992124449329cdb6642659796ac8",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 0,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 1,
+              "line_digest": "sha256:a97ba42deee1e0fac941fad570aed09d09f9a0b2fbe22c9019b3041ebc2093a7",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "request_id": "native-1"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:e11dd7a168013382639d43a55c5e8d11382d89fa87457e62a3cffacf7dcd791c",
+            "evidence_ref": "sha256:a24e7d35db3bf6176dabd7c98446402734cb3b247ebb846dc4bdb16ddf3b3e05",
+            "location": {
+              "byte_length": 393,
+              "byte_offset": 393,
+              "file_digest": "sha256:1db9123cacfa89293c6b982bd02dbd96b2fbb6efd84f1fbe1d9c1e9a64d1742e",
+              "line": 2,
+              "line_digest": "sha256:1e4e69138bcefb8fc45aa228dc17d4201725b406d2ea5b7788a6a1793c26665f",
+              "member": "execution.jsonl"
+            },
+            "observed_signals": {
+              "request_id": "native-1"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:70414be61c025783e4b29fca1423d7e5cd92e7040a5bdadaa6ec4455ce60c6a7",
+            "evidence_ref": "sha256:be95991b631d07b49d2a1181fb08503be1f5d85ee74a2187aef7018b2f68f369",
+            "location": {
+              "byte_length": 252,
+              "byte_offset": 0,
+              "file_digest": "sha256:5835b8dd039492673b638d14d9ad0c50398e26c2a916d7dec4c5b783de11021b",
+              "line": 1,
+              "line_digest": "sha256:5835b8dd039492673b638d14d9ad0c50398e26c2a916d7dec4c5b783de11021b",
+              "member": "native/access.jsonl"
+            },
+            "observed_signals": {
+              "request_id": "native-1"
+            },
+            "source": "right"
+          }
+        ],
+        "time_assumptions": {
+          "assumptions": [
+            "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+          ],
+          "boundary": "NOT_APPLIED",
+          "clock_skew_verified": false,
+          "offset_applied_ns": 0,
+          "timestamp_field": null,
+          "used_for_matching": false,
+          "window_seconds": null
+        }
+      }
+    ],
+    "roles": {
+      "left": "execution",
+      "right": "outcome"
+    }
+  }
+]

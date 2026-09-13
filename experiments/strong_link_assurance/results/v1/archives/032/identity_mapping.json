@@ -1,0 +1,15 @@
+{
+  "entries": [
+    {
+      "source": {
+        "id": "complaint-client",
+        "namespace": "nginx-basic:complaints-static-v1"
+      },
+      "target": {
+        "id": "fixture-agent",
+        "namespace": "agent"
+      }
+    }
+  ],
+  "version": "1"
+}

@@ -1,0 +1,23 @@
+{
+  "status": "VERIFIED",
+  "baseline_files_unchanged": 410,
+  "production_schemas_unchanged": 17,
+  "valid_schema_definitions_including_local": 18,
+  "generated_m7_assertions_validated": 381,
+  "evaluations": 78,
+  "implementation_unchanged_since_execution": true,
+  "protocol_digest": "sha256:d757aab85e95c2d427f4768f3de59bae71cf850272e17165d307075258e22d12",
+  "baseline_commit": "fde27cbbb59a043f7f303bd0b71174dd976c6919",
+  "full_regression": {
+    "passed": 468,
+    "skipped": 0
+  },
+  "experiment_tests": {
+    "passed": 39
+  },
+  "opa_tests": {
+    "passed": 6,
+    "total": 6
+  },
+  "initial_development_test_failure": "One overbroad assertion about auxiliary duplicate-content M6 views; selected genuine control receipt verification now checked. 38 passes/1 failure before correction; no campaign run occurred before correction."
+}

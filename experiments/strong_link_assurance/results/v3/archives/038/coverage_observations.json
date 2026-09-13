@@ -1,0 +1,28 @@
+{
+  "candidate_ambiguity": false,
+  "capture": {
+    "available": true,
+    "finalized": true,
+    "finalized_at": "2026-09-05T12:00:14Z",
+    "from": "2026-09-05T12:00:01Z",
+    "native_file_digest": "sha256:e83c23bb71001a59dd79209037294bbccb888e81425635c72a26af16e7471b7e",
+    "through": "2026-09-05T12:00:13Z"
+  },
+  "clocks": {
+    "basis": "Single deterministic fixture clock; not measured live synchronization.",
+    "maximum_offset_seconds": "0"
+  },
+  "control_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+  "identity_scope": "ALL_TARGET_IDENTITIES",
+  "provenance": "SYNTHETIC_CONTROL_SPECIFIC_OBSERVATIONS; proves only the positive adjudication rule.",
+  "reconciliation_ref": "sha256:baebce5c61edd43105ac6c1919028547b76fbf21be6f7910233977b6957980c5",
+  "schema_version": "1.0",
+  "scope": {
+    "action": "read",
+    "resource_id": "complaint-789",
+    "resource_type": "employee_complaint"
+  },
+  "target_contract_digest": "sha256:780ea70f9fd41889af80634d905d13aa3795ea186d6d12a753513661ed3ac304",
+  "target_id": "complaints-static-v1",
+  "unresolved_gaps": false
+}

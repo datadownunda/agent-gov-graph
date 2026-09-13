@@ -1,0 +1,20 @@
+{
+  "baseline_commit": "fde27cbbb59a043f7f303bd0b71174dd976c6919",
+  "freeze_digest": "sha256:a2495e845669bdeb6c44bd3aa38df926183e738745034a7c316dbd23fae94091",
+  "implementation": {
+    "experiments/strong_link_assurance/PROTOCOL.md": "sha256:d757aab85e95c2d427f4768f3de59bae71cf850272e17165d307075258e22d12",
+    "experiments/strong_link_assurance/README.md": "sha256:a40f5c7a8c568d084b2de22fb4880548424a0d47f7225ba99bac7842baa0940f",
+    "experiments/strong_link_assurance/contracts.schema.json": "sha256:1a0e7e9c0d711f4ab190663f05355994c045c68e16451a18fda60b256abdb831",
+    "experiments/strong_link_assurance/freeze.json": "sha256:a2495e845669bdeb6c44bd3aa38df926183e738745034a7c316dbd23fae94091",
+    "experiments/strong_link_assurance/generate.py": "sha256:44aa7d8e662d9e77ae6c1d9ac1fc803859772105d4d5f3939e32670ac8dba37b",
+    "experiments/strong_link_assurance/run_experiment.py": "sha256:811643aa39a4f1de5ed40b94d2e007004c5417f2d09e268f0f36a2a5211b3dc7",
+    "experiments/strong_link_assurance/scope.py": "sha256:54ccbe1d7788ed4316c15eaaffe9806df453a7e6f0872ef0ec09c50fd95e78b5",
+    "experiments/strong_link_assurance/score.py": "sha256:719dbdb5d0f826c8056b52d0276facd25d72761ec74c3002fb54e4661b4e20dc",
+    "experiments/strong_link_assurance/worker.py": "sha256:dfdae36e29fbee511083f984f558f30cbc863904b3ef84e8092cca3c148838bb",
+    "tests/test_strong_link_assurance.py": "sha256:593f7bcdac3e9287062910667b37bbe8a21c6d24101a11421065968141b8b9d5",
+    "tests/test_strong_link_assurance_boundaries.py": "sha256:124574a0011e3147a07f6c4d019185bceaac40edcbd67375741398a298263ef5"
+  },
+  "protocol_digest": "sha256:d757aab85e95c2d427f4768f3de59bae71cf850272e17165d307075258e22d12",
+  "schema_version": "1.0",
+  "started_at": "2026-09-12T17:54:20.295750+00:00"
+}
