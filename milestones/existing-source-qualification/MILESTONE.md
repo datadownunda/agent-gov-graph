@@ -2,7 +2,7 @@
 
 [Canonical roadmap](../../ROADMAP.md)
 
-**Status: APPROVED — awaiting named deployment/export.** The owner approved publication of feasibility checkpoint 285893e and this bounded next step. Approval does not supply missing evidence or accept unspecified trust assumptions.
+**Status: RESEARCH ONLY — acquisition pending by owner instruction.** No external deployment/export/contact exists. The owner approved the feasibility publication and directed ordinary-source research using the local M9b evidence limits. No live capture or new deployment is requested; unspecified trust assumptions remain unaccepted.
 
 ## Objective and proposed claim
 
@@ -10,9 +10,9 @@ Qualify one already-operated deployment's existing evidence export for interval 
 
 The [offline falsification proposal](../coverage-evidence-feasibility/FALSIFICATION_PROPOSAL.md) supplies the method. Before execution, freeze the actual deployment, versions, clock domains, action population, historical interval, numerical timing bounds/expiry rules, logging path, finalization semantics and source-native evidence inventory. The deployment-specific claim is not yet frozen because the source is not identified.
 
-## Required source handoff
+## Conditional future source requirements
 
-Identify an existing deployment and export location or responsible evidence owner. Request only the relevant interval and scope:
+These are prerequisites only if an existing source becomes available later, not a current request for an enterprise handoff. Any future review would be limited to the relevant interval and scope:
 
 - OPA and target process/host placement and lifecycle records;
 - already-retained clock configuration and measurement/update/disruption history;
@@ -30,7 +30,7 @@ No live fault injection, source changes, adapter expansion, new technology, rela
 
 ## Decisions, result and checkpoint
 
-Owner approved this next step after the scoped feasibility review remained NOT_DEMONSTRATED. **Result:** pending source identification; no qualification test executed. **Evidence baseline:** 285893e47d2f8281503791b9039cac6206ef4b42. Approval/roadmap record is included in the subsequent publication checkpoint; final SHA and CI are recorded in the PR/owner briefing. **Uncertainty:** actual source availability, timing applicability, full-path completeness and acquisition cost. At close update this record and ROADMAP.md together when warranted.
+Owner approved this next step after the scoped feasibility review remained NOT_DEMONSTRATED. **Result:** research assessment remains NOT_DEMONSTRATED; no qualification test or acquisition executed. **Evidence baseline:** 285893e47d2f8281503791b9039cac6206ef4b42. Approval/roadmap record is included in the subsequent publication checkpoint; final SHA and CI are recorded in the PR/owner briefing. **Uncertainty:** actual source availability, timing applicability, full-path completeness and acquisition cost. At close update this record and ROADMAP.md together when warranted.
 
 
 ## Owner source-availability clarification
