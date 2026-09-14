@@ -1,0 +1,63 @@
+[
+  {
+    "path": "/var/log",
+    "status": "listed",
+    "matching_entries": [
+      {
+        "name": "system.log.3.gz",
+        "is_file": true
+      },
+      {
+        "name": "system.log.6.gz",
+        "is_file": true
+      },
+      {
+        "name": "system.log.2.gz",
+        "is_file": true
+      },
+      {
+        "name": "system.log.5.gz",
+        "is_file": true
+      },
+      {
+        "name": "system.log.1.gz",
+        "is_file": true
+      },
+      {
+        "name": "system.log.0.gz",
+        "is_file": true
+      },
+      {
+        "name": "system.log",
+        "is_file": true
+      },
+      {
+        "name": "system.log.4.gz",
+        "is_file": true
+      }
+    ],
+    "scope": "immediate names only; no unrelated log content read"
+  },
+  {
+    "path": "/Library/Logs",
+    "status": "listed",
+    "matching_entries": [],
+    "scope": "immediate names only; no unrelated log content read"
+  },
+  {
+    "path": "/Users/jamesnanscawen/Library/Containers/com.docker.docker/Data/log/vm",
+    "status": "listed",
+    "matching_entries": [],
+    "scope": "immediate names only; no unrelated log content read"
+  },
+  {
+    "path": "/Users/jamesnanscawen/Library/Containers/com.docker.docker/Data/log/host",
+    "status": "listed",
+    "matching_entries": [],
+    "scope": "immediate names only; no unrelated log content read"
+  },
+  {
+    "path": "/Users/jamesnanscawen/.docker/desktop/log",
+    "status": "FileNotFoundError"
+  }
+]

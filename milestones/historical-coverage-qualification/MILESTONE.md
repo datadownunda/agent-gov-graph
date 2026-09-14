@@ -2,7 +2,7 @@
 
 [Canonical roadmap](../../ROADMAP.md)
 
-Status: IN_PROGRESS. Owner approved a retained-record-only test after checkpoint 8dbf542d9dcd053506f0dca3850acf105f82f33a. No new telemetry, live acquisition, fault injection or historical repair.
+Status: CLOSED — NOT_DEMONSTRATED (timing stop); publication pending. Owner approved a retained-record-only test after checkpoint 8dbf542d9dcd053506f0dca3850acf105f82f33a. No new telemetry, live acquisition, fault injection or historical repair.
 
 ## Frozen objective and sequence
 
@@ -19,3 +19,8 @@ If timing is supported, assess logging next: scoped applicable configuration, na
 For each dimension report exact evidence references, producer/custody, direct observations, assumptions, inferences, independence and estimated enterprise acquisition/integration effort (judgment, not measured pricing). Preserve M9b CLAIM_NOT_DEMONSTRATED. Existing signatures/hashes establish only their documented scope. Use existing researched source semantics; this is qualification of records, not new source research.
 
 At close record result and stop reason, evidence inventory/digests and validation; update ROADMAP.md in the same checkpoint. New consequential public conclusion requires owner approval. Prior baseline CI is not validation of this later checkpoint. No production files or prior artifacts may change.
+
+
+## Close record
+
+[Result and dimension-by-dimension evidence account](RESULT.md). Timing support was not demonstrated; qualification stopped and logging remained NOT_TESTED_AFTER_TIMING_STOP. All 185 M9b archive hashes matched. The historical timed query completed after the user-authorized usage-reset retry, with zero records in its narrow scope. No live acquisition or synthetic fault/omission test. Missing interval-wide timing history and OPA/target clock applicability remain the next evidence dependency. No next capture is proposed. Tests/CI: documentation and receipt validation only; new public CI pending. Final commit supplied in the owner briefing.
