@@ -1,6 +1,6 @@
 # Agent Gov Graph — canonical technical roadmap
 
-Decision baseline: approved M9b checkpoint [`54b18b6`](https://github.com/datadownunda/agent-gov-graph/pull/4), CI #39 green. Updated 2026-09-14 from the owner's roadmap/sequence instructions. Closed means the bounded milestone is resolved; it does not imply a positive claim or a merged PR. Historical verdicts and evidence remain authoritative at their recorded scope.
+Decision baseline: approved M9b checkpoint [`54b18b6`](https://github.com/datadownunda/agent-gov-graph/pull/4), CI #39 green. Updated 2026-09-14 from the owner's roadmap/sequence instructions and the subsequent scoped feasibility review (local result; publication pending). Closed means the bounded milestone is resolved; it does not imply a positive claim or a merged PR. Historical verdicts and evidence remain authoritative at their recorded scope.
 
 ## Closed milestones
 
@@ -25,10 +25,11 @@ Decision baseline: approved M9b checkpoint [`54b18b6`](https://github.com/datado
 | Identifier-provenance necessity decision | CLOSED — CONTEXT_NEEDED_PRODUCTION_DEFERRED | Producer/observation semantics matter; no operation demonstrated that requires a new production representation beyond existing evidence plus explicit notes. [Decision](docs/identifier-provenance-decision/README.md) |
 | M9b — source eligibility and declared-input diagnostic | CLOSED — NOT_DEMONSTRATED | Four prior source families do not substantiate real five-second coverage. Seven-case synthetic API diagnostic exposes reliance on declared support, not empirical coverage. [Record](experiments/m9b_coverage_substantiation/README.md) |
 | M9b — bounded live acquisition | CLOSED — CLAIM_NOT_DEMONSTRATED | ACQUISITION_COMPLETED; coverage NOT_DEMONSTRATED. 185 files, >10-second hold and 12 successful samples do not establish continuous timing applicability or uninterrupted logging completeness. No live CONTROL_EFFECTIVE. [Milestone](milestones/m9b-coverage-substantiation/MILESTONE.md) |
+| Coverage-evidence feasibility review | CLOSED REVIEW — NOT_DEMONSTRATED; owner decision pending | Ordinary source candidates identified, but no available applicable package substantiates both dimensions. Not evidence of universal unavailability. [Findings](milestones/coverage-evidence-feasibility/FINDINGS.md) |
 
 ## Current protected sequence
 
-1. **Next: coverage-evidence feasibility decision following M9b.** Determine whether ordinary existing sources plus an explicit trust contract can substantiate timing applicability/continuity and evidence-channel completeness over a bounded interval. Inventory sources, permissions, integration/operational cost and the smallest falsification test. This is a feasibility decision before implementation. [Milestone record](milestones/coverage-evidence-feasibility/MILESTONE.md)
+1. **Current gate: owner evidence-boundary/source decision following the NOT_DEMONSTRATED feasibility review.** No next execution milestone is approved by this result. Recommendation pending approval: qualify one already-operated deployment/export with explicit timing and logging trust assumptions using the [proposed offline test](milestones/coverage-evidence-feasibility/FALSIFICATION_PROPOSAL.md). If no such source is obtainable, request a claim-boundary/product decision. [Milestone record](milestones/coverage-evidence-feasibility/MILESTONE.md)
 2. **Conditional M9b positive coverage demonstration:** only if feasibility identifies a credible existing source. Preregister a real bounded episode using it; retain the prior standard and negative results.
 3. **Conditional M9a-ii:** only after the coverage prerequisite is demonstrated. Candidate OPA → runtime → AWS API → CloudTrail; naturally available adjacent-system links, qualified producer semantics, no universal end-to-end ID requirement.
 4. **Conditional population assurance coverage:** only after action-level prerequisites. For a defined population/period, distinguish evaluability, effectiveness, exceptions and reasons for insufficiency. Assurance coverage and control performance are separate denominators.
@@ -56,6 +57,8 @@ GTM validation remains parallel: AI Agent Assurance; recurring control-effective
 - Identifier withholding retained weak linkage as investigation-grade candidate leads under tested conditions, without validating investigation utility. Producer qualification narrowed the historical strong-link interpretation without changing FAILED or its metrics.
 - NGINX + OPA review established context necessity, but deferred a production provenance extension; M9b remained the next proof.
 - M9b source review and live acquisition failed to substantiate coverage. Owner instructions of 2026-09-14 now place **coverage-evidence feasibility before any further capture or M9a-ii**. Longer collection/probes cannot substitute for substantiated coverage. Population/period reporting stays conditional on action-level proof.
+
+- Subsequent scoped feasibility review found useful prospective time/logging/audit sources but no substantiated combined arrangement. The current step is an owner decision gate; the recommended existing-source qualification is **not** silently promoted into the protected sequence. Prior M9b results and conditional later milestones are unchanged.
 
 ## Maintenance rule
 

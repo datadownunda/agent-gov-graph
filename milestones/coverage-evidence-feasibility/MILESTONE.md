@@ -2,7 +2,7 @@
 
 [Canonical roadmap](../../ROADMAP.md)
 
-**Status: NEXT — owner-directed feasibility work; no feasibility verdict yet.** This record establishes the decision scope from the owner's 2026-09-14 instructions. Candidate-specific falsification plans must be recorded before acquisition/testing; this is not a claim that such tests have already been frozen or run.
+**Status: CLOSED REVIEW — NOT_DEMONSTRATED; owner decision/publication pending.** This record establishes the decision scope from the owner's 2026-09-14 instructions. Candidate-specific falsification plans must be recorded before acquisition/testing; this is not a claim that such tests have already been frozen or run.
 
 ## Objective, claim and significance
 
@@ -36,4 +36,11 @@ A source that cannot expose or bound the relevant failure does not substantiate 
 
 No new technology, observability platform, producer-specific telemetry requirement, generic scope engine, production adapter change or historical rescue. Preserve all frozen M9b evidence. No public/enterprise effectiveness or commercial validation claim follows from this feasibility record.
 
-**Consequential decision:** owner selected this milestone after M9b; population coverage and periodic attestation remain conditional on action-level evidence prerequisites. **Final result:** pending. **Checkpoint:** planning record added with the canonical roadmap; evidence baseline `54b18b6`. **Remaining uncertainty:** which ordinary source can support the two dimensions, under what trust boundary, and at what acquisition and operational cost. At close, record evidence, decision, final commit, tests/CI and update the roadmap in the same checkpoint.
+**Consequential decision:** owner selected this milestone after M9b; population coverage and periodic attestation remain conditional on action-level evidence prerequisites. **Final result:** [scoped source review](FINDINGS.md) found ordinary candidates but no available, applicable package substantiating both dimensions. Not a universal unavailability claim. **Checkpoint:** review baseline `af980b9`, review protocol `a7bcd7c`; result checkpoint recorded in the owner briefing. No new native campaign or production change. **Remaining uncertainty:** which ordinary source can support the two dimensions, under what trust boundary, and at what acquisition and operational cost. At close, record evidence, decision, final commit, tests/CI and update the roadmap in the same checkpoint.
+
+
+## Close record
+
+[Review protocol](REVIEW_PROTOCOL.md) · [Findings and cost/trust matrix](FINDINGS.md) · [Proposed falsification test](FALSIFICATION_PROPOSAL.md) · [Validation](VALIDATION.md)
+
+The roadmap now records this negative feasibility review and the owner decision gate; it does not promote a new protected milestone without approval. Recommended next decision: identify one already-operated deployment/export for bounded source qualification under explicit trust assumptions. No enterprise export was acquired, no new capture ran and no coverage standard changed. Public checkpoint CI is pending owner-approved publication; baseline CI is not a substitute.
