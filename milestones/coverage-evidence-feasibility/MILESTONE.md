@@ -49,3 +49,8 @@ The roadmap now records this negative feasibility review and the owner decision 
 ## Subsequent owner approval
 
 The owner approved publishing result checkpoint 285893e and the bounded [existing-source qualification](../existing-source-qualification/MILESTONE.md) next step. Earlier pending-review statements describe the result-preparation checkpoint. The finding remains NOT_DEMONSTRATED. ROADMAP.md now records the approved step, awaiting an identified deployment/export; consequential unspecified trust assumptions remain unapproved.
+
+
+## Source-availability clarification and expanded research
+
+The owner confirms only the local same-operator environment exists; acquisition remains pending. [Expanded ordinary-source qualification](SOURCE_QUALIFICATION_ADDENDUM.md) adds retention/independence and collector/platform evidence analysis. NOT_DEMONSTRATED is unchanged. A conditional combination is worth an existing-history eligibility test, but no currently available package meets both requirements. No new capture requested.

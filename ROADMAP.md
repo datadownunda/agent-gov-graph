@@ -29,7 +29,7 @@ Decision baseline: approved M9b checkpoint [`54b18b6`](https://github.com/datado
 
 ## Current protected sequence
 
-1. **Next: existing-deployment evidence qualification — owner approved; awaiting named source.** Qualify one already-operated deployment/export with explicit timing and logging trust assumptions using the proposed offline test. Freeze deployment-specific criteria before execution; approval does not establish source availability or accept unspecified assumptions. If no such source is obtainable, return for a claim-boundary/product decision. [Milestone record](milestones/existing-source-qualification/MILESTONE.md)
+1. **Next: existing-evidence research/qualification — owner approved; acquisition pending.** Owner confirms only local same-operator M9b evidence is available. Compare ordinary enterprise source combinations and return the smallest real-source test first; no external deployment or live capture is requested. See the [expanded assessment](milestones/coverage-evidence-feasibility/SOURCE_QUALIFICATION_ADDENDUM.md). Freeze deployment-specific criteria before execution; approval does not establish source availability or accept unspecified assumptions. If no such source is obtainable, return for a claim-boundary/product decision. [Milestone record](milestones/existing-source-qualification/MILESTONE.md)
 2. **Conditional M9b positive coverage demonstration:** only if feasibility identifies a credible existing source. Preregister a real bounded episode using it; retain the prior standard and negative results.
 3. **Conditional M9a-ii:** only after the coverage prerequisite is demonstrated. Candidate OPA → runtime → AWS API → CloudTrail; naturally available adjacent-system links, qualified producer semantics, no universal end-to-end ID requirement.
 4. **Conditional population assurance coverage:** only after action-level prerequisites. For a defined population/period, distinguish evaluability, effectiveness, exceptions and reasons for insufficiency. Assurance coverage and control performance are separate denominators.
@@ -61,6 +61,8 @@ GTM validation remains parallel: AI Agent Assurance; recurring control-effective
 - Subsequent scoped feasibility review found useful prospective time/logging/audit sources but no substantiated combined arrangement. The current step is an owner decision gate; the recommended existing-source qualification is **not** silently promoted into the protected sequence. Prior M9b results and conditional later milestones are unchanged.
 
 - Owner subsequently approved publication of the feasibility checkpoint and bounded existing-deployment evidence qualification. That step is now protected, with execution awaiting a named existing source; no coverage claim or trust standard changed.
+
+- Owner clarified that no enterprise export/contact exists and directed continued source research, with acquisition pending. The ordinary-source assessment is expanded; a hypothetical combination does not qualify the local environment or change NOT_DEMONSTRATED.
 
 ## Maintenance rule
 

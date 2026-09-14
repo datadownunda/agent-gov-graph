@@ -31,3 +31,8 @@ No live fault injection, source changes, adapter expansion, new technology, rela
 ## Decisions, result and checkpoint
 
 Owner approved this next step after the scoped feasibility review remained NOT_DEMONSTRATED. **Result:** pending source identification; no qualification test executed. **Evidence baseline:** 285893e47d2f8281503791b9039cac6206ef4b42. Approval/roadmap record is included in the subsequent publication checkpoint; final SHA and CI are recorded in the PR/owner briefing. **Uncertainty:** actual source availability, timing applicability, full-path completeness and acquisition cost. At close update this record and ROADMAP.md together when warranted.
+
+
+## Owner source-availability clarification
+
+The owner confirms no external enterprise/design-partner source or contact exists. Only local same-operator M9b evidence is available. **Current status: research/qualification only; new acquisition pending by instruction.** Do not request a live capture or manufacture telemetry/deployment. The [expanded assessment](../coverage-evidence-feasibility/SOURCE_QUALIFICATION_ADDENDUM.md) compares ordinary source roles, retention, independence and cost, and proposes the smallest existing-history test. No test was executed. Prior requests for a named external source are superseded by this clarification.
