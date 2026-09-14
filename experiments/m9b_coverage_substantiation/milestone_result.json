@@ -1,0 +1,17 @@
+{
+  "verdict": "NOT_DEMONSTRATED",
+  "scope": "AVAILABLE_EVIDENCE_SOURCE_GATE",
+  "eligible_real_episodes": 0,
+  "diagnostic_status": "COMPLETED",
+  "required_negative_cases_prevented_effectiveness": [
+    "missing_support",
+    "short_capture",
+    "identity_scope",
+    "snapshot_mismatch",
+    "unresolved_gaps"
+  ],
+  "unmeasured_clock_basis_accepted": true,
+  "empirical_coverage_substantiated": false,
+  "source_review": "EVIDENCE_REVIEW.md",
+  "diagnostic_summary": "results/v1/summary.json"
+}

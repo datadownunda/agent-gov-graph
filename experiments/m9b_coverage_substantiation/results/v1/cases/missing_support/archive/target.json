@@ -1,0 +1,15 @@
+{
+  "basic_auth_required": true,
+  "identity_namespace": "nginx-basic:complaints-static-v1",
+  "resources": {
+    "/complaints/complaint-456.json": {
+      "id": "complaint-456",
+      "type": "employee_complaint"
+    },
+    "/complaints/complaint-789.json": {
+      "id": "complaint-789",
+      "type": "employee_complaint"
+    }
+  },
+  "target_id": "complaints-static-v1"
+}

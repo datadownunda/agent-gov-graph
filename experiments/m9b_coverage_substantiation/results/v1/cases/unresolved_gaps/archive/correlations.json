@@ -1,0 +1,431 @@
+[
+  {
+    "assertions": [
+      {
+        "assertion_id": "sha256:d16ef3f802dad1ed227cfaf20d5a594dca11392fa972e3b61e55235e3da5c029",
+        "candidate_population": {
+          "scope": "SUPPLIED_SNAPSHOT_ONLY",
+          "snapshot_digest": "sha256:426f74e2b4c75dab2fee2f6555de02f59dff1ad299c4d3a5947c4e1c5c1be3bc",
+          "sources": [
+            {
+              "count": 3,
+              "evidence_refs": [
+                "sha256:864e2309139362924c1b0e350333c316111f1df2b89efb1755cf6db8d1bd52cb",
+                "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391",
+                "sha256:f3f9590978442a1dfc365ac0d0cb1ff257f558712e51ffa5e8d2e17336e392f3"
+              ],
+              "source": "left"
+            },
+            {
+              "count": 0,
+              "evidence_refs": [],
+              "source": "right"
+            }
+          ]
+        },
+        "competing_candidates": [],
+        "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+        "evidence_coverage": {
+          "basis": "Only supplied evidence is available; completeness is not verified.",
+          "completeness": "UNKNOWN",
+          "interval_end": null,
+          "interval_start": null
+        },
+        "focus": {
+          "evidence_ref": "sha256:864e2309139362924c1b0e350333c316111f1df2b89efb1755cf6db8d1bd52cb",
+          "source": "left"
+        },
+        "limitations": [
+          "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+          "An identifier value may be copied, reused, or incorrectly recorded.",
+          "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+          "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+          "No execution or control-effectiveness conclusion is implied."
+        ],
+        "method_output": {
+          "candidate_refs": [],
+          "conflicts": [],
+          "defects": [],
+          "evidence_ref": "sha256:864e2309139362924c1b0e350333c316111f1df2b89efb1755cf6db8d1bd52cb",
+          "source": "left",
+          "state": "UNMATCHED"
+        },
+        "relationship_type": "SAME_ACTION",
+        "result": {
+          "conflicts": [],
+          "defects": [],
+          "linked_evidence": [],
+          "reason": "No candidate satisfies this rule within the supplied snapshot.",
+          "state": "UNMATCHED"
+        },
+        "rule": {
+          "assertion_adapter_version": "1.0",
+          "name": "native-identifier-mutual-uniqueness",
+          "parameters": {
+            "identifier_field": "action_attempt_id",
+            "issuer": "Agent Gov Graph runtime",
+            "namespace": "runtime action attempts",
+            "required_equal_fields": []
+          },
+          "version": "1"
+        },
+        "schema_version": "1.0",
+        "signals_used": [
+          {
+            "field": "action_attempt_id",
+            "operator": "EXACT_EQUALITY",
+            "role": "CANDIDATE_SELECTION"
+          }
+        ],
+        "source_evidence": [
+          {
+            "content_digest": "sha256:7fce54a615b5b6c694b4e89f65ed340c537134a070fc7231c98b891347edd97e",
+            "evidence_ref": "sha256:864e2309139362924c1b0e350333c316111f1df2b89efb1755cf6db8d1bd52cb",
+            "location": {
+              "byte_length": 1981,
+              "byte_offset": 0,
+              "file_digest": "sha256:e50812cead9282236de81f40664b3144585325ac8c3e65558d330db17dfb38ce",
+              "line": 1,
+              "line_digest": "sha256:a9755563d4daf4b9329741dc3660e98b95a86bca0dfb3ab2a12e78338f82912a",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:7a721b886f78985f1fbf9e1e58703a7bb20b1f103da4b1bc1f1064d7c24300be",
+            "evidence_ref": "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391",
+            "location": {
+              "byte_length": 1988,
+              "byte_offset": 3970,
+              "file_digest": "sha256:e50812cead9282236de81f40664b3144585325ac8c3e65558d330db17dfb38ce",
+              "line": 3,
+              "line_digest": "sha256:99150d4f7b907c16994db65e567e35007cd907321dae8c6baffc1b9e55c352e4",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000003"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:ed6ceb852c9faa6db161d65dc591526101a4339d98e54869abd90e861c50b811",
+            "evidence_ref": "sha256:f3f9590978442a1dfc365ac0d0cb1ff257f558712e51ffa5e8d2e17336e392f3",
+            "location": {
+              "byte_length": 1989,
+              "byte_offset": 1981,
+              "file_digest": "sha256:e50812cead9282236de81f40664b3144585325ac8c3e65558d330db17dfb38ce",
+              "line": 2,
+              "line_digest": "sha256:79a59eb976663140f3897ad09955249092958ff42530c847df9e2c45009dbee6",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "left"
+          }
+        ],
+        "time_assumptions": {
+          "assumptions": [
+            "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+          ],
+          "boundary": "NOT_APPLIED",
+          "clock_skew_verified": false,
+          "offset_applied_ns": 0,
+          "timestamp_field": null,
+          "used_for_matching": false,
+          "window_seconds": null
+        }
+      },
+      {
+        "assertion_id": "sha256:5d6877efd912609996e44ae1938b421d1061689b8d7ff96827cd2464717d42ee",
+        "candidate_population": {
+          "scope": "SUPPLIED_SNAPSHOT_ONLY",
+          "snapshot_digest": "sha256:426f74e2b4c75dab2fee2f6555de02f59dff1ad299c4d3a5947c4e1c5c1be3bc",
+          "sources": [
+            {
+              "count": 3,
+              "evidence_refs": [
+                "sha256:864e2309139362924c1b0e350333c316111f1df2b89efb1755cf6db8d1bd52cb",
+                "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391",
+                "sha256:f3f9590978442a1dfc365ac0d0cb1ff257f558712e51ffa5e8d2e17336e392f3"
+              ],
+              "source": "left"
+            },
+            {
+              "count": 0,
+              "evidence_refs": [],
+              "source": "right"
+            }
+          ]
+        },
+        "competing_candidates": [],
+        "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+        "evidence_coverage": {
+          "basis": "Only supplied evidence is available; completeness is not verified.",
+          "completeness": "UNKNOWN",
+          "interval_end": null,
+          "interval_start": null
+        },
+        "focus": {
+          "evidence_ref": "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391",
+          "source": "left"
+        },
+        "limitations": [
+          "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+          "An identifier value may be copied, reused, or incorrectly recorded.",
+          "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+          "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+          "No execution or control-effectiveness conclusion is implied."
+        ],
+        "method_output": {
+          "candidate_refs": [],
+          "conflicts": [],
+          "defects": [],
+          "evidence_ref": "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391",
+          "source": "left",
+          "state": "UNMATCHED"
+        },
+        "relationship_type": "SAME_ACTION",
+        "result": {
+          "conflicts": [],
+          "defects": [],
+          "linked_evidence": [],
+          "reason": "No candidate satisfies this rule within the supplied snapshot.",
+          "state": "UNMATCHED"
+        },
+        "rule": {
+          "assertion_adapter_version": "1.0",
+          "name": "native-identifier-mutual-uniqueness",
+          "parameters": {
+            "identifier_field": "action_attempt_id",
+            "issuer": "Agent Gov Graph runtime",
+            "namespace": "runtime action attempts",
+            "required_equal_fields": []
+          },
+          "version": "1"
+        },
+        "schema_version": "1.0",
+        "signals_used": [
+          {
+            "field": "action_attempt_id",
+            "operator": "EXACT_EQUALITY",
+            "role": "CANDIDATE_SELECTION"
+          }
+        ],
+        "source_evidence": [
+          {
+            "content_digest": "sha256:7fce54a615b5b6c694b4e89f65ed340c537134a070fc7231c98b891347edd97e",
+            "evidence_ref": "sha256:864e2309139362924c1b0e350333c316111f1df2b89efb1755cf6db8d1bd52cb",
+            "location": {
+              "byte_length": 1981,
+              "byte_offset": 0,
+              "file_digest": "sha256:e50812cead9282236de81f40664b3144585325ac8c3e65558d330db17dfb38ce",
+              "line": 1,
+              "line_digest": "sha256:a9755563d4daf4b9329741dc3660e98b95a86bca0dfb3ab2a12e78338f82912a",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:7a721b886f78985f1fbf9e1e58703a7bb20b1f103da4b1bc1f1064d7c24300be",
+            "evidence_ref": "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391",
+            "location": {
+              "byte_length": 1988,
+              "byte_offset": 3970,
+              "file_digest": "sha256:e50812cead9282236de81f40664b3144585325ac8c3e65558d330db17dfb38ce",
+              "line": 3,
+              "line_digest": "sha256:99150d4f7b907c16994db65e567e35007cd907321dae8c6baffc1b9e55c352e4",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000003"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:ed6ceb852c9faa6db161d65dc591526101a4339d98e54869abd90e861c50b811",
+            "evidence_ref": "sha256:f3f9590978442a1dfc365ac0d0cb1ff257f558712e51ffa5e8d2e17336e392f3",
+            "location": {
+              "byte_length": 1989,
+              "byte_offset": 1981,
+              "file_digest": "sha256:e50812cead9282236de81f40664b3144585325ac8c3e65558d330db17dfb38ce",
+              "line": 2,
+              "line_digest": "sha256:79a59eb976663140f3897ad09955249092958ff42530c847df9e2c45009dbee6",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "left"
+          }
+        ],
+        "time_assumptions": {
+          "assumptions": [
+            "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+          ],
+          "boundary": "NOT_APPLIED",
+          "clock_skew_verified": false,
+          "offset_applied_ns": 0,
+          "timestamp_field": null,
+          "used_for_matching": false,
+          "window_seconds": null
+        }
+      },
+      {
+        "assertion_id": "sha256:433c7cd945d66932f0a162872d0cf4b161fb87b473b03d236c7e0594cebe851e",
+        "candidate_population": {
+          "scope": "SUPPLIED_SNAPSHOT_ONLY",
+          "snapshot_digest": "sha256:426f74e2b4c75dab2fee2f6555de02f59dff1ad299c4d3a5947c4e1c5c1be3bc",
+          "sources": [
+            {
+              "count": 3,
+              "evidence_refs": [
+                "sha256:864e2309139362924c1b0e350333c316111f1df2b89efb1755cf6db8d1bd52cb",
+                "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391",
+                "sha256:f3f9590978442a1dfc365ac0d0cb1ff257f558712e51ffa5e8d2e17336e392f3"
+              ],
+              "source": "left"
+            },
+            {
+              "count": 0,
+              "evidence_refs": [],
+              "source": "right"
+            }
+          ]
+        },
+        "competing_candidates": [],
+        "correlation_method": "NATIVE_IDENTIFIER_LINKAGE",
+        "evidence_coverage": {
+          "basis": "Only supplied evidence is available; completeness is not verified.",
+          "completeness": "UNKNOWN",
+          "interval_end": null,
+          "interval_start": null
+        },
+        "focus": {
+          "evidence_ref": "sha256:f3f9590978442a1dfc365ac0d0cb1ff257f558712e51ffa5e8d2e17336e392f3",
+          "source": "left"
+        },
+        "limitations": [
+          "Issuer, shared namespace, and identifier non-reuse are declared, not authenticated.",
+          "An identifier value may be copied, reused, or incorrectly recorded.",
+          "Contradiction refers to declared invariants; it does not independently establish causal truth.",
+          "Population is limited to supplied evidence; omitted duplicates may change linkage.",
+          "No execution or control-effectiveness conclusion is implied."
+        ],
+        "method_output": {
+          "candidate_refs": [],
+          "conflicts": [],
+          "defects": [],
+          "evidence_ref": "sha256:f3f9590978442a1dfc365ac0d0cb1ff257f558712e51ffa5e8d2e17336e392f3",
+          "source": "left",
+          "state": "UNMATCHED"
+        },
+        "relationship_type": "SAME_ACTION",
+        "result": {
+          "conflicts": [],
+          "defects": [],
+          "linked_evidence": [],
+          "reason": "No candidate satisfies this rule within the supplied snapshot.",
+          "state": "UNMATCHED"
+        },
+        "rule": {
+          "assertion_adapter_version": "1.0",
+          "name": "native-identifier-mutual-uniqueness",
+          "parameters": {
+            "identifier_field": "action_attempt_id",
+            "issuer": "Agent Gov Graph runtime",
+            "namespace": "runtime action attempts",
+            "required_equal_fields": []
+          },
+          "version": "1"
+        },
+        "schema_version": "1.0",
+        "signals_used": [
+          {
+            "field": "action_attempt_id",
+            "operator": "EXACT_EQUALITY",
+            "role": "CANDIDATE_SELECTION"
+          }
+        ],
+        "source_evidence": [
+          {
+            "content_digest": "sha256:7fce54a615b5b6c694b4e89f65ed340c537134a070fc7231c98b891347edd97e",
+            "evidence_ref": "sha256:864e2309139362924c1b0e350333c316111f1df2b89efb1755cf6db8d1bd52cb",
+            "location": {
+              "byte_length": 1981,
+              "byte_offset": 0,
+              "file_digest": "sha256:e50812cead9282236de81f40664b3144585325ac8c3e65558d330db17dfb38ce",
+              "line": 1,
+              "line_digest": "sha256:a9755563d4daf4b9329741dc3660e98b95a86bca0dfb3ab2a12e78338f82912a",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000001"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:7a721b886f78985f1fbf9e1e58703a7bb20b1f103da4b1bc1f1064d7c24300be",
+            "evidence_ref": "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391",
+            "location": {
+              "byte_length": 1988,
+              "byte_offset": 3970,
+              "file_digest": "sha256:e50812cead9282236de81f40664b3144585325ac8c3e65558d330db17dfb38ce",
+              "line": 3,
+              "line_digest": "sha256:99150d4f7b907c16994db65e567e35007cd907321dae8c6baffc1b9e55c352e4",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000003"
+            },
+            "source": "left"
+          },
+          {
+            "content_digest": "sha256:ed6ceb852c9faa6db161d65dc591526101a4339d98e54869abd90e861c50b811",
+            "evidence_ref": "sha256:f3f9590978442a1dfc365ac0d0cb1ff257f558712e51ffa5e8d2e17336e392f3",
+            "location": {
+              "byte_length": 1989,
+              "byte_offset": 1981,
+              "file_digest": "sha256:e50812cead9282236de81f40664b3144585325ac8c3e65558d330db17dfb38ce",
+              "line": 2,
+              "line_digest": "sha256:79a59eb976663140f3897ad09955249092958ff42530c847df9e2c45009dbee6",
+              "member": "governance.jsonl"
+            },
+            "observed_signals": {
+              "action_attempt_id": "00000000-0000-0000-0000-000000000002"
+            },
+            "source": "left"
+          }
+        ],
+        "time_assumptions": {
+          "assumptions": [
+            "No time constraint is applied; identifier scope and non-reuse are caller assumptions."
+          ],
+          "boundary": "NOT_APPLIED",
+          "clock_skew_verified": false,
+          "offset_applied_ns": 0,
+          "timestamp_field": null,
+          "used_for_matching": false,
+          "window_seconds": null
+        }
+      }
+    ],
+    "roles": {
+      "left": "governance",
+      "right": "execution"
+    }
+  },
+  {
+    "assertions": [],
+    "roles": {
+      "left": "execution",
+      "right": "outcome"
+    }
+  }
+]
