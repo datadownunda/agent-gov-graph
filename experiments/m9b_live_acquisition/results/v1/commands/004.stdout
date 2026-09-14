@@ -1,0 +1,63 @@
+[
+    {
+        "Id": "sha256:8523599954435a3659954ad51ee0304d22bd97576f16cdb02e5e39f38ff3962a",
+        "RepoTags": [
+            "openpolicyagent/opa:1.19.0"
+        ],
+        "RepoDigests": [
+            "openpolicyagent/opa@sha256:8523599954435a3659954ad51ee0304d22bd97576f16cdb02e5e39f38ff3962a"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-07-30T20:20:42.678970143Z",
+        "Author": "github.com/chainguard-dev/apko",
+        "Config": {
+            "User": "1000:1000",
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:/",
+                "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+            ],
+            "Entrypoint": [
+                "/opa"
+            ],
+            "Cmd": [
+                "run"
+            ],
+            "Labels": {
+                "dev.chainguard.image.title": "static",
+                "dev.chainguard.package.main": "",
+                "org.opencontainers.image.authors": "Torin Sandall <torinsandall@gmail.com>",
+                "org.opencontainers.image.created": "2026-07-08T23:06:13Z",
+                "org.opencontainers.image.source": "https://github.com/open-policy-agent/opa",
+                "org.opencontainers.image.title": "static",
+                "org.opencontainers.image.url": "https://images.chainguard.dev/directory/image/static/overview",
+                "org.opencontainers.image.vendor": "Chainguard"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 28453316,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:a2abc00e2ef97ece20c684c7b4d0023b682bd22b0e7f72ebfc2a43de593ba269",
+                "sha256:781028f27b89e1ebd7bd40aaa9f70ceaf086aa53ad90d5eb42c2594befeba85e"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-08-18T20:01:01.88558007Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:8523599954435a3659954ad51ee0304d22bd97576f16cdb02e5e39f38ff3962a",
+            "size": 645
+        },
+        "Identity": {
+            "Pull": [
+                {
+                    "Repository": "docker.io/openpolicyagent/opa"
+                }
+            ]
+        }
+    }
+]

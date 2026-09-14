@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "docker",
+    "logs",
+    "--timestamps",
+    "agg-m9b-a63386469ff2"
+  ],
+  "end": {
+    "monotonic_ns": 3784020097711732,
+    "wall_ns": 1789407733813636000
+  },
+  "returncode": 0,
+  "start": {
+    "monotonic_ns": 3784020047837107,
+    "wall_ns": 1789407733763761000
+  },
+  "timeout_seconds": 30
+}

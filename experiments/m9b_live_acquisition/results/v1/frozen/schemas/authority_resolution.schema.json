@@ -1,0 +1,358 @@
+{
+  "type": "object",
+  "properties": {
+    "rule_version": {
+      "const": "temporal-authority/1"
+    },
+    "authority_resolution_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "opa_decision_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "RESOLVED",
+        "CONFLICT",
+        "INSUFFICIENT_EVIDENCE",
+        "EVIDENCE_DEFECT",
+        "TEMPORAL_BOUNDARY_AMBIGUITY"
+      ]
+    },
+    "revision": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "file": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}\\.json$"
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            },
+            "source_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_version": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "file",
+            "digest",
+            "source_id",
+            "source_version"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "at_resolution": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "RESOLVED",
+            "CONFLICT",
+            "INSUFFICIENT_EVIDENCE",
+            "EVIDENCE_DEFECT"
+          ]
+        },
+        "principal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effective_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rule_version": {
+          "const": "temporal-authority/1"
+        },
+        "record_refs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "authority_record_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "authority_version": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "authority_record_id",
+              "authority_version"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "authority_record_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "authority_version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "eligibility": {
+                "enum": [
+                  "FUTURE",
+                  "EXPIRED",
+                  "EFFECTIVE"
+                ]
+              }
+            },
+            "required": [
+              "authority_record_id",
+              "authority_version",
+              "eligibility"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "roles": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "permitted_scopes": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "resource_type": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "resource_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "resource_type",
+                      "resource_ids"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "roles",
+                "permitted_scopes"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "principal",
+        "effective_at",
+        "rule_version",
+        "record_refs",
+        "candidates",
+        "basis"
+      ],
+      "additionalProperties": false
+    },
+    "at_opa_decision": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "RESOLVED",
+                "CONFLICT",
+                "INSUFFICIENT_EVIDENCE",
+                "EVIDENCE_DEFECT"
+              ]
+            },
+            "principal": {
+              "type": "string",
+              "minLength": 1
+            },
+            "effective_at": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "rule_version": {
+              "const": "temporal-authority/1"
+            },
+            "record_refs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "authority_record_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "authority_version": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "authority_record_id",
+                  "authority_version"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "authority_record_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "authority_version": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "eligibility": {
+                    "enum": [
+                      "FUTURE",
+                      "EXPIRED",
+                      "EFFECTIVE"
+                    ]
+                  }
+                },
+                "required": [
+                  "authority_record_id",
+                  "authority_version",
+                  "eligibility"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "basis": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "roles": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "permitted_scopes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "action": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "resource_type": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "resource_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          }
+                        },
+                        "required": [
+                          "action",
+                          "resource_type",
+                          "resource_ids"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "roles",
+                    "permitted_scopes"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "principal",
+            "effective_at",
+            "rule_version",
+            "record_refs",
+            "candidates",
+            "basis"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "rule_version",
+    "authority_resolution_at",
+    "opa_decision_at",
+    "status",
+    "revision",
+    "at_resolution",
+    "at_opa_decision"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

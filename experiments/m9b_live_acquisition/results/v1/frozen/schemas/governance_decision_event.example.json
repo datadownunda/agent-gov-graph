@@ -1,0 +1,36 @@
+{
+  "event_id": "evt-001",
+  "timestamp": "2026-08-18T15:30:00Z",
+  "subject": {
+    "id": "user-123",
+    "roles": ["manager"]
+  },
+  "action": "read",
+  "resource": {
+    "id": "complaint-456",
+    "type": "employee_complaint",
+    "classification": "restricted"
+  },
+  "policy": {
+    "name": "employee_complaint_access",
+    "version": "1.0"
+  },
+  "context": {
+  "workflow_id": "workflow-123",
+  "agent_id": "agent-research-01",
+  "tool": "document_search",
+  "run_id": "run-complaint-multiagent-001",
+"step_id": "step-004"
+},
+  "telemetry": {
+  "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+  "span_id": "00f067aa0ba902b7"
+},
+  "decision": {
+    "allowed": false,
+    "status": "DENY",
+    "reasons": [
+      "Restricted employee complaint data requires HR Investigator role"
+    ]
+  }
+}

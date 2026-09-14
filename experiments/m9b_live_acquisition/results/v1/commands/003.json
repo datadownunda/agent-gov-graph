@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "docker",
+    "image",
+    "inspect",
+    "nginx@sha256:dc5069ad14f19660b141b21236140b91656bf89bbc3e2417c70ae650cd66104c"
+  ],
+  "end": {
+    "monotonic_ns": 3783996901242504,
+    "wall_ns": 1789407710616899000
+  },
+  "returncode": 0,
+  "start": {
+    "monotonic_ns": 3783996819517074,
+    "wall_ns": 1789407710535173000
+  },
+  "timeout_seconds": 30
+}

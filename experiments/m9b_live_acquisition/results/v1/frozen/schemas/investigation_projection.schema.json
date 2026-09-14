@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type",
+          "context",
+          "reference",
+          "properties",
+          "origin",
+          "rule",
+          "references"
+        ],
+        "properties": {
+          "reference": {},
+          "properties": {},
+          "origin": {},
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          },
+          "rule": {
+            "type": "string"
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "field",
+                "target",
+                "category",
+                "origin",
+                "pointer"
+              ],
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "target": {
+                  "type": "string"
+                },
+                "category": {
+                  "enum": [
+                    "support",
+                    "context",
+                    "verification"
+                  ]
+                },
+                "origin": {},
+                "pointer": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source",
+          "target",
+          "relation",
+          "field",
+          "category",
+          "origin",
+          "pointer"
+        ],
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "support",
+              "context",
+              "verification"
+            ]
+          },
+          "origin": {},
+          "pointer": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "description": "Derived investigation index. Edge pointer is an adapter field selector; origin carries the authoritative source reference/digest. Normalized scope selectors are not claims that source documents use a scopes field."
+}

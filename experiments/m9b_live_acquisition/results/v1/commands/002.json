@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "docker",
+    "version"
+  ],
+  "end": {
+    "monotonic_ns": 3783996818331247,
+    "wall_ns": 1789407710533987000
+  },
+  "returncode": 0,
+  "start": {
+    "monotonic_ns": 3783996148226468,
+    "wall_ns": 1789407709863875000
+  },
+  "timeout_seconds": 30
+}

@@ -1,0 +1,245 @@
+{
+  "completed": {
+    "monotonic_ns": 3784020317000747,
+    "wall_ns": 1789407734032928000
+  },
+  "container_name": "agg-m9b-a63386469ff2",
+  "decision_return": {
+    "monotonic_ns": 3784008140425107,
+    "wall_ns": 1789407721856211000
+  },
+  "decision_start": {
+    "monotonic_ns": 3784007431589057,
+    "wall_ns": 1789407721147367000
+  },
+  "errors": [],
+  "events": {
+    "alive_before_termination": true,
+    "argv": [
+      "docker",
+      "events",
+      "--filter",
+      "container=agg-m9b-a63386469ff2",
+      "--format",
+      "{{json .}}"
+    ],
+    "end": {
+      "monotonic_ns": 3784020316756805,
+      "wall_ns": 1789407734032684000
+    },
+    "returncode": 143,
+    "start": {
+      "monotonic_ns": 3784005751028481,
+      "wall_ns": 1789407719466787000
+    }
+  },
+  "executor_calls": 0,
+  "forced_cleanup": false,
+  "hold_end": {
+    "monotonic_ns": 3784018144155243,
+    "wall_ns": 1789407731860056000
+  },
+  "probes": [
+    {
+      "body_bytes": 150,
+      "body_sha256": "643c94531811ba797b2e8e09b8d2bd07ece16a31fe1e3400ef3397477f57b550",
+      "receipt": {
+        "monotonic_ns": 3784007155649612,
+        "wall_ns": 1789407720871425000
+      },
+      "request_id": "796fda75356528a6b6c29c2c7a7000de",
+      "resource_id": "complaint-456",
+      "status": 200
+    },
+    {
+      "body_bytes": 150,
+      "body_sha256": "643c94531811ba797b2e8e09b8d2bd07ece16a31fe1e3400ef3397477f57b550",
+      "receipt": {
+        "monotonic_ns": 3784018151130028,
+        "wall_ns": 1789407731867032000
+      },
+      "request_id": "e2e534d7ed24bba265fdce94ce815418",
+      "resource_id": "complaint-456",
+      "status": 200
+    }
+  ],
+  "returned_result": {
+    "authority_status": "RESOLVED",
+    "policy_decision": "DENY",
+    "resource_returned": false,
+    "run_id": "blocked-deny"
+  },
+  "samples": [
+    {
+      "date_command": "commands/010",
+      "end": {
+        "monotonic_ns": 3784007252220783,
+        "wall_ns": 1789407720967997000
+      },
+      "index": 0,
+      "kernel_commands": [
+        "commands/011",
+        "commands/012"
+      ],
+      "start": {
+        "monotonic_ns": 3784007155695150,
+        "wall_ns": 1789407720871471000
+      }
+    },
+    {
+      "date_command": "commands/013",
+      "end": {
+        "monotonic_ns": 3784008268932346,
+        "wall_ns": 1789407721984721000
+      },
+      "index": 1,
+      "start": {
+        "monotonic_ns": 3784008140444573,
+        "wall_ns": 1789407721856232000
+      }
+    },
+    {
+      "date_command": "commands/014",
+      "end": {
+        "monotonic_ns": 3784009309475801,
+        "wall_ns": 1789407723025276000
+      },
+      "index": 2,
+      "start": {
+        "monotonic_ns": 3784009141605550,
+        "wall_ns": 1789407722857403000
+      }
+    },
+    {
+      "date_command": "commands/015",
+      "end": {
+        "monotonic_ns": 3784010237039602,
+        "wall_ns": 1789407723952850000
+      },
+      "index": 3,
+      "start": {
+        "monotonic_ns": 3784010144461789,
+        "wall_ns": 1789407723860271000
+      }
+    },
+    {
+      "date_command": "commands/016",
+      "end": {
+        "monotonic_ns": 3784011240682240,
+        "wall_ns": 1789407724956505000
+      },
+      "index": 4,
+      "start": {
+        "monotonic_ns": 3784011144724856,
+        "wall_ns": 1789407724860545000
+      }
+    },
+    {
+      "date_command": "commands/017",
+      "end": {
+        "monotonic_ns": 3784012249986372,
+        "wall_ns": 1789407725965820000
+      },
+      "index": 5,
+      "start": {
+        "monotonic_ns": 3784012143818584,
+        "wall_ns": 1789407725859651000
+      }
+    },
+    {
+      "date_command": "commands/018",
+      "end": {
+        "monotonic_ns": 3784013234744033,
+        "wall_ns": 1789407726950590000
+      },
+      "index": 6,
+      "start": {
+        "monotonic_ns": 3784013140559199,
+        "wall_ns": 1789407726856403000
+      }
+    },
+    {
+      "date_command": "commands/019",
+      "end": {
+        "monotonic_ns": 3784014262120575,
+        "wall_ns": 1789407727977978000
+      },
+      "index": 7,
+      "start": {
+        "monotonic_ns": 3784014145269756,
+        "wall_ns": 1789407727861124000
+      }
+    },
+    {
+      "date_command": "commands/020",
+      "end": {
+        "monotonic_ns": 3784015259883339,
+        "wall_ns": 1789407728975752000
+      },
+      "index": 8,
+      "start": {
+        "monotonic_ns": 3784015140598769,
+        "wall_ns": 1789407728856466000
+      }
+    },
+    {
+      "date_command": "commands/021",
+      "end": {
+        "monotonic_ns": 3784016242965966,
+        "wall_ns": 1789407729958846000
+      },
+      "index": 9,
+      "start": {
+        "monotonic_ns": 3784016145366003,
+        "wall_ns": 1789407729861244000
+      }
+    },
+    {
+      "date_command": "commands/022",
+      "end": {
+        "monotonic_ns": 3784017264205097,
+        "wall_ns": 1789407730980097000
+      },
+      "index": 10,
+      "start": {
+        "monotonic_ns": 3784017143150530,
+        "wall_ns": 1789407730859039000
+      }
+    },
+    {
+      "date_command": "commands/023",
+      "end": {
+        "monotonic_ns": 3784018380466294,
+        "wall_ns": 1789407732096370000
+      },
+      "index": 11,
+      "kernel_commands": [
+        "commands/024",
+        "commands/025"
+      ],
+      "start": {
+        "monotonic_ns": 3784018151184505,
+        "wall_ns": 1789407731867087000
+      }
+    }
+  ],
+  "snapshot_after_exit": {
+    "monotonic_ns": 3784020098937745,
+    "wall_ns": 1789407733814862000
+  },
+  "sources": {
+    "config_after": "commands/026",
+    "config_before": "commands/008",
+    "inspect_before": "commands/007",
+    "inspect_final": "commands/030",
+    "inspect_running_end": "commands/027",
+    "native_logs": "commands/031",
+    "nginx_version": "commands/009",
+    "quit": "commands/028",
+    "wait": "commands/029"
+  },
+  "started": {
+    "monotonic_ns": 3783994447444642,
+    "wall_ns": 1789407708163070000
+  }
+}

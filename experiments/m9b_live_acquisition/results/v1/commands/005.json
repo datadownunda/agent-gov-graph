@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "-d",
+    "--name",
+    "agg-m9b-a63386469ff2",
+    "--restart=no",
+    "-p",
+    "127.0.0.1::8080",
+    "-v",
+    "/Users/jamesnanscawen/.codex/.chatgpt-projects/g-p-6a79e6b00b408191ae661342e0da9c7a/opa-producer-conformance/experiments/m9b_live_acquisition/results/v1/nginx.conf:/etc/nginx/nginx.conf:ro",
+    "-v",
+    "/Users/jamesnanscawen/.codex/.chatgpt-projects/g-p-6a79e6b00b408191ae661342e0da9c7a/opa-producer-conformance/experiments/m9b_live_acquisition/results/v1/native:/evidence",
+    "-v",
+    "/Users/jamesnanscawen/.codex/.chatgpt-projects/g-p-6a79e6b00b408191ae661342e0da9c7a/opa-producer-conformance/runtime_resources:/target:ro",
+    "-v",
+    "/var/folders/2w/bnqmp33d2d7c_z70x2x6hgvw0000gn/T/agg-m9b-auth-1sj20urx/auth:/run/target-auth:ro",
+    "nginx@sha256:dc5069ad14f19660b141b21236140b91656bf89bbc3e2417c70ae650cd66104c"
+  ],
+  "end": {
+    "monotonic_ns": 3784006272989891,
+    "wall_ns": 1789407719988755000
+  },
+  "returncode": 0,
+  "start": {
+    "monotonic_ns": 3784005959536876,
+    "wall_ns": 1789407719675298000
+  },
+  "timeout_seconds": 30
+}

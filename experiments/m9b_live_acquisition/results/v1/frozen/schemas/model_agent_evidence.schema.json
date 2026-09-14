@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Model agent experiment evidence",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event_id",
+    "timestamp",
+    "run_id",
+    "event_type",
+    "data",
+    "data_digest"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_type": {
+      "enum": [
+        "MODEL_REQUEST",
+        "MODEL_PROPOSAL",
+        "PROPOSAL_ACCEPTED",
+        "PROPOSAL_REJECTED",
+        "MODEL_UNAVAILABLE",
+        "GOVERNANCE_DECISION",
+        "EXECUTION_DISPOSITION",
+        "EXECUTION_ATTEMPT",
+        "OBSERVED_OUTCOME",
+        "RUNTIME_ERROR",
+        "AUTHORITY_RESOLUTION"
+      ]
+    },
+    "data": {
+      "type": "object"
+    },
+    "data_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,148 @@
+{
+  "ontology_version": "1.0",
+  "name": "Agent Gov Graph Ontology",
+  "description": "Semantic definitions for runtime agent governance, investigation, and evidence relationships.",
+
+  "node_types": {
+    "Actor": {
+      "description": "An entity that performs actions in an agent workflow, such as an AI agent or human."
+    },
+    "Run": {
+      "description": "A single execution of an agent workflow."
+    },
+    "Step": {
+      "description": "An observed action or event within a run."
+    },
+    "Resource": {
+      "description": "A data object or protected resource accessed during a step."
+    },
+    "Tool": {
+      "description": "A tool, service, or capability invoked during a step."
+    },
+    "Decision": {
+      "description": "A runtime governance decision produced for a governed action."
+    },
+     "ApprovalRequest": {
+        "description": "A proposed agent action or payload presented for approval before execution."
+    },
+    "Approval": {
+        "description": "A human or system approval decision bound to a proposed action."
+    },
+    "Policy": {
+      "description": "A versioned executable governance policy applied to a decision."
+    },
+    "Finding": {
+      "description": "A governance-relevant condition identified from observed behavior."
+    },
+    "Investigation": {
+      "description": "A selected inquiry into a governance finding."
+    },
+    "Hypothesis": {
+      "description": "A testable possible explanation for an observed finding."
+    },
+    "Experiment": {
+      "description": "A controlled intervention designed to test a hypothesis."
+    },
+    "Evidence": {
+      "description": "Observed experimental or runtime evidence relevant to a hypothesis."
+    }
+  },
+
+  "relationship_types": {
+    "CONTAINS_STEP": {
+      "source": ["Run"],
+      "target": ["Step"],
+      "description": "Connects a workflow run to a step observed within that run."
+    },
+    "PERFORMED": {
+      "source": ["Actor"],
+      "target": ["Step"],
+      "description": "Indicates which actor performed a step."
+    },
+    "PRECEDES": {
+      "source": ["Step"],
+      "target": ["Step"],
+      "description": "Represents an observed parent or predecessor relationship between steps."
+    },
+    "ACCESSED": {
+      "source": ["Step"],
+      "target": ["Resource"],
+      "description": "Indicates that a step attempted to access or use a resource."
+    },
+    "CALLED": {
+      "source": ["Step"],
+      "target": ["Tool"],
+      "description": "Indicates that a step invoked a tool."
+    },
+    "DELEGATED_TO": {
+      "source": ["Actor"],
+      "target": ["Actor"],
+      "description": "Indicates an observed delegation relationship between actors."
+    },
+    "REQUESTED_APPROVAL": {
+  "source": ["Actor"],
+  "target": ["ApprovalRequest"],
+  "description": "Indicates that an actor submitted a proposed action for approval."
+},
+"ISSUED_APPROVAL": {
+  "source": ["Actor"],
+  "target": ["Approval"],
+  "description": "Indicates that an actor issued an approval decision."
+},
+"APPROVED_REQUEST": {
+  "source": ["Approval"],
+  "target": ["ApprovalRequest"],
+  "description": "Links an approval decision to the exact proposed action or payload that was approved."
+},
+"EXECUTED_FROM": {
+  "source": ["Step"],
+  "target": ["ApprovalRequest"],
+  "description": "Links an executed runtime step to the proposed action or payload from which it originated."
+},
+    "PRODUCED_DECISION": {
+      "source": ["Step"],
+      "target": ["Decision"],
+      "description": "Links a governed runtime step to its governance decision evidence."
+    },
+    "APPLIED_POLICY": {
+      "source": ["Decision"],
+      "target": ["Policy"],
+      "description": "Identifies the versioned policy applied to produce a governance decision."
+    },
+    "PRODUCED_FINDING": {
+      "source": ["Step"],
+      "target": ["Finding"],
+      "description": "Links observed runtime behavior to a governance finding."
+    },
+    "INVESTIGATED_BY": {
+      "source": ["Finding"],
+      "target": ["Investigation"],
+      "description": "Indicates that a finding was selected for investigation."
+    },
+    "HAS_HYPOTHESIS": {
+      "source": ["Investigation"],
+      "target": ["Hypothesis"],
+      "description": "Connects an investigation to a candidate explanation being tested."
+    },
+    "TESTED_BY": {
+      "source": ["Hypothesis"],
+      "target": ["Experiment"],
+      "description": "Connects a hypothesis to a controlled experiment designed to test it."
+    },
+    "PRODUCED_EVIDENCE": {
+      "source": ["Experiment"],
+      "target": ["Evidence"],
+      "description": "Indicates that an experiment produced evidence."
+    },
+    "SUPPORTS": {
+      "source": ["Evidence"],
+      "target": ["Hypothesis"],
+      "description": "Indicates that evidence supports, but does not by itself prove, a hypothesis."
+    },
+    "CONTRADICTS": {
+      "source": ["Evidence"],
+      "target": ["Hypothesis"],
+      "description": "Indicates that evidence contradicts a hypothesis."
+    }
+  }
+}

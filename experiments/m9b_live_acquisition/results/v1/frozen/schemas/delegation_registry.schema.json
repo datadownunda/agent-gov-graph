@@ -1,0 +1,165 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority_revision": {
+      "type": "object",
+      "properties": {
+        "file": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}\\.json$"
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "file",
+        "digest",
+        "source_id",
+        "source_version"
+      ],
+      "additionalProperties": false
+    },
+    "records": {
+      "type": "array",
+      "items": {},
+      "description": "Raw evidence. Each entry is assessed against $defs.record independently; malformed candidates are retained."
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_id",
+    "source_version",
+    "authority_revision",
+    "records"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "record": {
+      "type": "object",
+      "properties": {
+        "delegation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "delegation_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "delegator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "delegate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parent": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "enum": [
+                "authority",
+                "delegation"
+              ]
+            },
+            "record_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "version": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "kind",
+            "record_id",
+            "version"
+          ],
+          "additionalProperties": false
+        },
+        "delegated_scopes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "minLength": 1
+              },
+              "resource_type": {
+                "type": "string",
+                "minLength": 1
+              },
+              "resource_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "action",
+              "resource_type",
+              "resource_ids"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "valid_from": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "valid_to": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "onward_delegation": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "delegation_id",
+        "delegation_version",
+        "delegator",
+        "delegate",
+        "parent",
+        "delegated_scopes",
+        "valid_from",
+        "valid_to",
+        "onward_delegation"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "docker",
+    "port",
+    "agg-m9b-a63386469ff2",
+    "8080/tcp"
+  ],
+  "end": {
+    "monotonic_ns": 3784006334193571,
+    "wall_ns": 1789407720049959000
+  },
+  "returncode": 0,
+  "start": {
+    "monotonic_ns": 3784006274063138,
+    "wall_ns": 1789407719989828000
+  },
+  "timeout_seconds": 30
+}

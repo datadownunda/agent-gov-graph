@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "docker",
+    "kill",
+    "--signal=QUIT",
+    "agg-m9b-a63386469ff2"
+  ],
+  "end": {
+    "monotonic_ns": 3784019178492157,
+    "wall_ns": 1789407732894406000
+  },
+  "returncode": 0,
+  "start": {
+    "monotonic_ns": 3784019047844351,
+    "wall_ns": 1789407732763757000
+  },
+  "timeout_seconds": 30
+}

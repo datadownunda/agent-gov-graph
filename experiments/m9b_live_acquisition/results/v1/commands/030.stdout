@@ -1,0 +1,266 @@
+[
+    {
+        "Id": "5b2e78f600d1560ce8b8f8f4de2cf50b137edc6692a96218966077ec76b83f63",
+        "Created": "2026-09-14T17:41:59.753742946Z",
+        "Path": "/docker-entrypoint.sh",
+        "Args": [
+            "nginx",
+            "-g",
+            "daemon off;"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-14T17:41:59.834473939Z",
+            "FinishedAt": "2026-09-14T17:42:12.930065871Z"
+        },
+        "Image": "sha256:dc5069ad14f19660b141b21236140b91656bf89bbc3e2417c70ae650cd66104c",
+        "ResolvConfPath": "/var/lib/docker/containers/5b2e78f600d1560ce8b8f8f4de2cf50b137edc6692a96218966077ec76b83f63/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/5b2e78f600d1560ce8b8f8f4de2cf50b137edc6692a96218966077ec76b83f63/hostname",
+        "HostsPath": "/var/lib/docker/containers/5b2e78f600d1560ce8b8f8f4de2cf50b137edc6692a96218966077ec76b83f63/hosts",
+        "LogPath": "/var/lib/docker/containers/5b2e78f600d1560ce8b8f8f4de2cf50b137edc6692a96218966077ec76b83f63/5b2e78f600d1560ce8b8f8f4de2cf50b137edc6692a96218966077ec76b83f63-json.log",
+        "Name": "/agg-m9b-a63386469ff2",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/jamesnanscawen/.codex/.chatgpt-projects/g-p-6a79e6b00b408191ae661342e0da9c7a/opa-producer-conformance/experiments/m9b_live_acquisition/results/v1/native:/evidence",
+                "/Users/jamesnanscawen/.codex/.chatgpt-projects/g-p-6a79e6b00b408191ae661342e0da9c7a/opa-producer-conformance/runtime_resources:/target:ro",
+                "/var/folders/2w/bnqmp33d2d7c_z70x2x6hgvw0000gn/T/agg-m9b-auth-1sj20urx/auth:/run/target-auth:ro",
+                "/Users/jamesnanscawen/.codex/.chatgpt-projects/g-p-6a79e6b00b408191ae661342e0da9c7a/opa-producer-conformance/experiments/m9b_live_acquisition/results/v1/nginx.conf:/etc/nginx/nginx.conf:ro"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": ""
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/jamesnanscawen/.codex/.chatgpt-projects/g-p-6a79e6b00b408191ae661342e0da9c7a/opa-producer-conformance/experiments/m9b_live_acquisition/results/v1/native",
+                "Destination": "/evidence",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/jamesnanscawen/.codex/.chatgpt-projects/g-p-6a79e6b00b408191ae661342e0da9c7a/opa-producer-conformance/runtime_resources",
+                "Destination": "/target",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/var/folders/2w/bnqmp33d2d7c_z70x2x6hgvw0000gn/T/agg-m9b-auth-1sj20urx/auth",
+                "Destination": "/run/target-auth",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/jamesnanscawen/.codex/.chatgpt-projects/g-p-6a79e6b00b408191ae661342e0da9c7a/opa-producer-conformance/experiments/m9b_live_acquisition/results/v1/nginx.conf",
+                "Destination": "/etc/nginx/nginx.conf",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "5b2e78f600d1",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {},
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.30.4",
+                "PKG_RELEASE=1",
+                "DYNPKG_RELEASE=1",
+                "NJS_VERSION=1.0.1",
+                "NJS_RELEASE=1",
+                "ACME_VERSION=0.4.1"
+            ],
+            "Cmd": [
+                "nginx",
+                "-g",
+                "daemon off;"
+            ],
+            "Image": "nginx@sha256:dc5069ad14f19660b141b21236140b91656bf89bbc3e2417c70ae650cd66104c",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "Labels": {
+                "maintainer": "NGINX Docker Maintainers \u003cdocker-maint@nginx.com\u003e"
+            },
+            "StopSignal": "SIGQUIT"
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "7eb7a3faf07dea616f18ab07690455daa8c110b4fca1c509e8ae8e691d08b506",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:862dc06c359bfe5d3211e4106269f040d261e269e58ebf17060d8328c45067c0",
+            "size": 2493,
+            "annotations": {
+                "com.docker.official-images.bashbrew.arch": "amd64",
+                "org.opencontainers.image.base.digest": "sha256:d6d5b2985faade9971eb1bec34c3f778b800f872f236969b3fd1ba65f4692b54",
+                "org.opencontainers.image.base.name": "nginx:1.30.4-alpine-slim",
+                "org.opencontainers.image.created": "2026-09-02T21:07:21Z",
+                "org.opencontainers.image.revision": "c5b3ce398e37067d93ab1edf803e9b96a1116092",
+                "org.opencontainers.image.source": "https://github.com/nginx/docker-nginx.git#c5b3ce398e37067d93ab1edf803e9b96a1116092:stable/alpine",
+                "org.opencontainers.image.url": "https://hub.docker.com/_/nginx",
+                "org.opencontainers.image.version": "1.30.4-alpine"
+            },
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

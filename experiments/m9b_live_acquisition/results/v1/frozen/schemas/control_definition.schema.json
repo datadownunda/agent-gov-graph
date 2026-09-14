@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "control_id",
+    "control_version",
+    "control_type",
+    "governance_condition",
+    "prohibited_target_effect",
+    "scope",
+    "observation_boundary",
+    "coverage_requirement"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "control_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "control_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "control_type": {
+      "const": "DENY_PREVENTS_TARGET_EFFECT"
+    },
+    "governance_condition": {
+      "type": "object",
+      "required": [
+        "decision"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "decision": {
+          "const": "DENY"
+        }
+      }
+    },
+    "prohibited_target_effect": {
+      "type": "object",
+      "required": [
+        "name",
+        "target_id",
+        "target_contract_digest"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "const": "REPRESENTATION_SERVED"
+        },
+        "target_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_contract_digest": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "action",
+        "resource_type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "const": "read"
+        },
+        "resource_type": {
+          "const": "employee_complaint"
+        }
+      }
+    },
+    "observation_boundary": {
+      "const": "TARGET_REPORTED_REPRESENTATION_SERVING"
+    },
+    "coverage_requirement": {
+      "type": "object",
+      "required": [
+        "rule_version",
+        "post_decision_seconds"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "rule_version": {
+          "const": "deny-target-coverage/1"
+        },
+        "post_decision_seconds": {
+          "type": "string",
+          "pattern": "^\\d+(\\.\\d+)?$"
+        }
+      }
+    }
+  }
+}

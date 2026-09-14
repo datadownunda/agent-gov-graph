@@ -1,0 +1,322 @@
+{
+  "acquisition": "ACQUISITION_COMPLETED",
+  "coverage": "NOT_DEMONSTRATED",
+  "missing_dimensions": [
+    "interval_clock_bound",
+    "logging_continuity"
+  ],
+  "source_view": {
+    "available_sources": [
+      "native_snapshot",
+      "clock_samples",
+      "lifecycle",
+      "closed_snapshot",
+      "effective_configuration"
+    ],
+    "identity_filter": null,
+    "capture_through_ns": 3784018144155243,
+    "required_through_ns": 3784013140425107
+  },
+  "failures": [],
+  "sampled_alignment": {
+    "all_accepted": true,
+    "samples": [
+      {
+        "accepted": true,
+        "offset_interval_ns": [
+          -967997000,
+          128529000
+        ],
+        "latency_ns": 96525633,
+        "wall_monotonic_discrepancy_ns": 367
+      },
+      {
+        "accepted": true,
+        "offset_interval_ns": [
+          -984721000,
+          143768000
+        ],
+        "latency_ns": 128487773,
+        "wall_monotonic_discrepancy_ns": 1227
+      },
+      {
+        "accepted": true,
+        "offset_interval_ns": [
+          -25276000,
+          1142597000
+        ],
+        "latency_ns": 167870251,
+        "wall_monotonic_discrepancy_ns": 2749
+      },
+      {
+        "accepted": true,
+        "offset_interval_ns": [
+          -952850000,
+          139729000
+        ],
+        "latency_ns": 92577813,
+        "wall_monotonic_discrepancy_ns": 1187
+      },
+      {
+        "accepted": true,
+        "offset_interval_ns": [
+          -956505000,
+          139455000
+        ],
+        "latency_ns": 95957384,
+        "wall_monotonic_discrepancy_ns": 2616
+      },
+      {
+        "accepted": true,
+        "offset_interval_ns": [
+          -965820000,
+          140349000
+        ],
+        "latency_ns": 106167788,
+        "wall_monotonic_discrepancy_ns": 1212
+      },
+      {
+        "accepted": true,
+        "offset_interval_ns": [
+          -950590000,
+          143597000
+        ],
+        "latency_ns": 94184834,
+        "wall_monotonic_discrepancy_ns": 2166
+      },
+      {
+        "accepted": true,
+        "offset_interval_ns": [
+          -977978000,
+          138876000
+        ],
+        "latency_ns": 116850819,
+        "wall_monotonic_discrepancy_ns": 3181
+      },
+      {
+        "accepted": true,
+        "offset_interval_ns": [
+          -975752000,
+          143534000
+        ],
+        "latency_ns": 119284570,
+        "wall_monotonic_discrepancy_ns": 1430
+      },
+      {
+        "accepted": true,
+        "offset_interval_ns": [
+          -958846000,
+          138756000
+        ],
+        "latency_ns": 97599963,
+        "wall_monotonic_discrepancy_ns": 2037
+      },
+      {
+        "accepted": true,
+        "offset_interval_ns": [
+          -980097000,
+          140961000
+        ],
+        "latency_ns": 121054567,
+        "wall_monotonic_discrepancy_ns": 3433
+      },
+      {
+        "accepted": true,
+        "offset_interval_ns": [
+          -96370000,
+          1132913000
+        ],
+        "latency_ns": 229281789,
+        "wall_monotonic_discrepancy_ns": 1211
+      }
+    ],
+    "between_samples": [
+      {
+        "from_index": 0,
+        "to_index": 1,
+        "wall_monotonic_discrepancy_ns": 11210,
+        "accepted": true
+      },
+      {
+        "from_index": 1,
+        "to_index": 2,
+        "wall_monotonic_discrepancy_ns": 8796,
+        "accepted": true
+      },
+      {
+        "from_index": 2,
+        "to_index": 3,
+        "wall_monotonic_discrepancy_ns": 9012,
+        "accepted": true
+      },
+      {
+        "from_index": 3,
+        "to_index": 4,
+        "wall_monotonic_discrepancy_ns": 9746,
+        "accepted": true
+      },
+      {
+        "from_index": 4,
+        "to_index": 5,
+        "wall_monotonic_discrepancy_ns": 9656,
+        "accepted": true
+      },
+      {
+        "from_index": 5,
+        "to_index": 6,
+        "wall_monotonic_discrepancy_ns": 10173,
+        "accepted": true
+      },
+      {
+        "from_index": 6,
+        "to_index": 7,
+        "wall_monotonic_discrepancy_ns": 8277,
+        "accepted": true
+      },
+      {
+        "from_index": 7,
+        "to_index": 8,
+        "wall_monotonic_discrepancy_ns": 9806,
+        "accepted": true
+      },
+      {
+        "from_index": 8,
+        "to_index": 9,
+        "wall_monotonic_discrepancy_ns": 9336,
+        "accepted": true
+      },
+      {
+        "from_index": 9,
+        "to_index": 10,
+        "wall_monotonic_discrepancy_ns": 8436,
+        "accepted": true
+      },
+      {
+        "from_index": 10,
+        "to_index": 11,
+        "wall_monotonic_discrepancy_ns": 10592,
+        "accepted": true
+      }
+    ]
+  },
+  "in_scope_served_rows": [],
+  "challenges": {
+    "withhold_native_snapshot": {
+      "coverage": "NOT_DEMONSTRATED",
+      "missing_dimensions": [
+        "interval_clock_bound",
+        "logging_continuity",
+        "snapshot_binding"
+      ],
+      "independently_missing": "snapshot_binding",
+      "source_view": {
+        "available_sources": [
+          "clock_samples",
+          "lifecycle",
+          "closed_snapshot",
+          "effective_configuration"
+        ],
+        "identity_filter": null,
+        "capture_through_ns": 3784018144155243,
+        "required_through_ns": 3784013140425107
+      },
+      "kind": "SYNTHETIC_THOUGHT_CHALLENGE_VIEW; original native evidence unmodified",
+      "omission_detected": true
+    },
+    "withhold_clock_observations": {
+      "coverage": "NOT_DEMONSTRATED",
+      "missing_dimensions": [
+        "clock_observations",
+        "interval_clock_bound",
+        "logging_continuity"
+      ],
+      "independently_missing": "clock_observations",
+      "source_view": {
+        "available_sources": [
+          "native_snapshot",
+          "lifecycle",
+          "closed_snapshot",
+          "effective_configuration"
+        ],
+        "identity_filter": null,
+        "capture_through_ns": 3784018144155243,
+        "required_through_ns": 3784013140425107
+      },
+      "kind": "SYNTHETIC_THOUGHT_CHALLENGE_VIEW; original native evidence unmodified",
+      "omission_detected": true
+    },
+    "withhold_closure_lifecycle": {
+      "coverage": "NOT_DEMONSTRATED",
+      "missing_dimensions": [
+        "finalization",
+        "interval_clock_bound",
+        "logging_continuity"
+      ],
+      "independently_missing": "finalization",
+      "source_view": {
+        "available_sources": [
+          "native_snapshot",
+          "clock_samples",
+          "effective_configuration"
+        ],
+        "identity_filter": null,
+        "capture_through_ns": 3784018144155243,
+        "required_through_ns": 3784013140425107
+      },
+      "kind": "SYNTHETIC_THOUGHT_CHALLENGE_VIEW; original native evidence unmodified",
+      "omission_detected": true
+    },
+    "truncate_capture_through_before_horizon": {
+      "coverage": "NOT_DEMONSTRATED",
+      "missing_dimensions": [
+        "five_second_horizon",
+        "interval_clock_bound",
+        "logging_continuity"
+      ],
+      "independently_missing": "five_second_horizon",
+      "source_view": {
+        "available_sources": [
+          "native_snapshot",
+          "clock_samples",
+          "lifecycle",
+          "closed_snapshot",
+          "effective_configuration"
+        ],
+        "identity_filter": null,
+        "capture_through_ns": 3784013140425106,
+        "required_through_ns": 3784013140425107
+      },
+      "kind": "SYNTHETIC_THOUGHT_CHALLENGE_VIEW; original native evidence unmodified",
+      "omission_detected": true
+    },
+    "identity_restricted_view": {
+      "coverage": "NOT_DEMONSTRATED",
+      "missing_dimensions": [
+        "all_identity_scope",
+        "interval_clock_bound",
+        "logging_continuity"
+      ],
+      "independently_missing": "all_identity_scope",
+      "source_view": {
+        "available_sources": [
+          "native_snapshot",
+          "clock_samples",
+          "lifecycle",
+          "closed_snapshot",
+          "effective_configuration"
+        ],
+        "identity_filter": "complaint-client",
+        "capture_through_ns": 3784018144155243,
+        "required_through_ns": 3784013140425107
+      },
+      "kind": "SYNTHETIC_THOUGHT_CHALLENGE_VIEW; original native evidence unmodified",
+      "omission_detected": true
+    }
+  },
+  "public_api": "PUBLIC_API_NOT_RUN_SINGLE_EPISODE_LAYOUT",
+  "limits": [
+    "No interval-wide no-step/rate evidence or proven OPA clock applicability.",
+    "Configuration endpoints, probes and absence of errors do not prove uninterrupted logging.",
+    "Single operator controls producer and custody; no independent administration."
+  ]
+}

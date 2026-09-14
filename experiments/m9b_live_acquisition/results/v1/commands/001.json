@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/Users/jamesnanscawen/agent-gov-graph/.venv/bin/python",
+    "-m",
+    "pip",
+    "freeze"
+  ],
+  "end": {
+    "monotonic_ns": 3783996147291409,
+    "wall_ns": 1789407709862940000
+  },
+  "returncode": 0,
+  "start": {
+    "monotonic_ns": 3783994995239751,
+    "wall_ns": 1789407708710874000
+  },
+  "timeout_seconds": 30
+}

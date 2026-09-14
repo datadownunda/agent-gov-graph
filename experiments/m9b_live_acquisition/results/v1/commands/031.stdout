@@ -1,0 +1,9 @@
+2026-09-14T17:41:59.983250958Z /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+2026-09-14T17:41:59.983276937Z /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+2026-09-14T17:41:59.983279567Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+2026-09-14T17:42:00.000454834Z 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+2026-09-14T17:42:00.025034140Z 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+2026-09-14T17:42:00.025545696Z /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+2026-09-14T17:42:00.025555893Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+2026-09-14T17:42:00.029130727Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+2026-09-14T17:42:00.031037401Z /docker-entrypoint.sh: Configuration complete; ready for start up

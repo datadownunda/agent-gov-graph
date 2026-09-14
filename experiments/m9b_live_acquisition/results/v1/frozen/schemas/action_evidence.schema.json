@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "action_evidence",
+  "required": [
+    "schema_version",
+    "evidence_ref",
+    "role",
+    "location",
+    "raw",
+    "ingested_at",
+    "defects"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "role": {
+      "enum": [
+        "governance",
+        "execution",
+        "outcome"
+      ]
+    },
+    "evidence_ref": {
+      "type": "string"
+    },
+    "location": {
+      "type": "object",
+      "required": [
+        "member",
+        "file_digest",
+        "line",
+        "byte_offset",
+        "byte_length",
+        "line_digest"
+      ],
+      "properties": {
+        "member": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*\\.\\.)"
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "byte_offset": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "byte_length": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "raw": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "ingested_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "defects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "governance_decision": {
+      "enum": [
+        "ALLOW",
+        "DENY",
+        null
+      ]
+    },
+    "execution_disposition": {
+      "enum": [
+        "SUBMITTED",
+        "NOT_SUBMITTED",
+        "SUBMISSION_UNKNOWN",
+        null
+      ]
+    },
+    "target_outcome": {
+      "enum": [
+        "REPRESENTATION_SERVED",
+        "NO_REPRESENTATION_ESTABLISHED"
+      ]
+    },
+    "client_success": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    }
+  }
+}
