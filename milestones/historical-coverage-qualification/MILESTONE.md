@@ -24,3 +24,8 @@ At close record result and stop reason, evidence inventory/digests and validatio
 ## Close record
 
 [Result and dimension-by-dimension evidence account](RESULT.md). Timing support was not demonstrated; qualification stopped and logging remained NOT_TESTED_AFTER_TIMING_STOP. All 185 M9b archive hashes matched. The historical timed query completed after the user-authorized usage-reset retry, with zero records in its narrow scope. No live acquisition or synthetic fault/omission test. Missing interval-wide timing history and OPA/target clock applicability remain the next evidence dependency. No next capture is proposed. Tests/CI: documentation and receipt validation only; new public CI pending. Final commit supplied in the owner briefing.
+
+
+## Subsequent common-clock lineage review
+
+[Retained lineage matrix and conditional timing requirements](CLOCK_LINEAGE_REVIEW.md) distinguish established container observations from assumed host routing and missing OPA clock-domain binding. Common clocks are plausible but not demonstrated; distinct clocks are not established either. No new source was queried or acquired. Timing remains NOT_DEMONSTRATED, logging remains NOT_TESTED_AFTER_TIMING_STOP, and M9b is unchanged. No roadmap sequence/status change is warranted.
