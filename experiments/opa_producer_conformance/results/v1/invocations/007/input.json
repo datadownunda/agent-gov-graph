@@ -1,0 +1,18 @@
+{
+  "action": "read",
+  "authorized_resource_ids": [],
+  "decision_id": "CALLER-DENY",
+  "resource": {
+    "classification": "restricted",
+    "contains_pii": true,
+    "id": "complaint-456",
+    "type": "employee_complaint"
+  },
+  "user": {
+    "id": "E1042",
+    "name": "Jane Investigator",
+    "roles": [
+      "hr_investigator"
+    ]
+  }
+}

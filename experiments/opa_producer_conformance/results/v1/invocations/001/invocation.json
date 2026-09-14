@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "-i",
+    "-v",
+    "/Users/jamesnanscawen/.codex/.chatgpt-projects/g-p-6a79e6b00b408191ae661342e0da9c7a/opa-producer-conformance/experiments/opa_producer_conformance/results/v1/frozen/policies:/policies:ro",
+    "sha256:8523599954435a3659954ad51ee0304d22bd97576f16cdb02e5e39f38ff3962a",
+    "exec",
+    "--stdin-input",
+    "--bundle",
+    "/policies",
+    "--decision",
+    "/agentgov/complaints/decision",
+    "--set=decision_logs.console=true",
+    "--log-format=json"
+  ],
+  "error": null,
+  "finished_at": "2026-09-14T16:40:37.706484+00:00",
+  "returncode": 0,
+  "started_at": "2026-09-14T16:40:37.340792+00:00"
+}

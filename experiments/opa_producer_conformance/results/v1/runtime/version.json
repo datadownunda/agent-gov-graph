@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "sha256:8523599954435a3659954ad51ee0304d22bd97576f16cdb02e5e39f38ff3962a",
+    "version"
+  ],
+  "error": null,
+  "finished_at": "2026-09-14T16:40:37.326970+00:00",
+  "returncode": 0,
+  "started_at": "2026-09-14T16:40:36.901001+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "action": "read",
+  "authorized_resource_ids": [
+    "complaint-456"
+  ],
+  "decision_id": "CALLER-SAME",
+  "resource": {
+    "classification": "restricted",
+    "contains_pii": true,
+    "id": "complaint-456",
+    "type": "employee_complaint"
+  },
+  "user": {
+    "id": "E1042",
+    "name": "Jane Investigator",
+    "roles": [
+      "hr_investigator"
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "verdict": "PRODUCER_CONTRACT_SUPPORTED",
+  "checks": {
+    "source_review": true,
+    "runtime_identity": true,
+    "preflight_exit": true,
+    "capture_complete": true,
+    "baseline_preserved": true,
+    "protocol_unchanged": true,
+    "frozen_files": true,
+    "1:custody": true,
+    "1:cardinality": true,
+    "1:ids_present": true,
+    "1:uuid": true,
+    "1:id_agreement": true,
+    "1:caller_ids_differ": true,
+    "1:logged_input": true,
+    "1:policy_result": true,
+    "2:custody": true,
+    "2:cardinality": true,
+    "2:ids_present": true,
+    "2:uuid": true,
+    "2:id_agreement": true,
+    "2:caller_ids_differ": true,
+    "2:logged_input": true,
+    "2:policy_result": true,
+    "3:custody": true,
+    "3:cardinality": true,
+    "3:ids_present": true,
+    "3:uuid": true,
+    "3:id_agreement": true,
+    "3:caller_ids_differ": true,
+    "3:logged_input": true,
+    "3:policy_result": true,
+    "4:custody": true,
+    "4:cardinality": true,
+    "4:ids_present": true,
+    "4:uuid": true,
+    "4:id_agreement": true,
+    "4:caller_ids_differ": true,
+    "4:logged_input": true,
+    "4:policy_result": true,
+    "5:custody": true,
+    "5:cardinality": true,
+    "5:ids_present": true,
+    "5:uuid": true,
+    "5:id_agreement": true,
+    "5:caller_ids_differ": true,
+    "5:logged_input": true,
+    "5:policy_result": true,
+    "6:custody": true,
+    "6:cardinality": true,
+    "6:ids_present": true,
+    "6:uuid": true,
+    "6:id_agreement": true,
+    "6:caller_ids_differ": true,
+    "6:logged_input": true,
+    "6:policy_result": true,
+    "7:custody": true,
+    "7:cardinality": true,
+    "7:ids_present": true,
+    "7:uuid": true,
+    "7:id_agreement": true,
+    "7:caller_ids_differ": true,
+    "7:logged_input": true,
+    "7:policy_result": true,
+    "8:custody": true,
+    "8:cardinality": true,
+    "8:ids_present": true,
+    "8:uuid": true,
+    "8:id_agreement": true,
+    "8:caller_ids_differ": true,
+    "8:logged_input": true,
+    "8:policy_result": true,
+    "distinct_native_ids": true,
+    "exact_pair_inputs": true
+  },
+  "observations": [
+    {
+      "case": 1,
+      "output_id": "ba745148-8494-4c5f-9c41-eaef347028f5",
+      "native_id": "ba745148-8494-4c5f-9c41-eaef347028f5"
+    },
+    {
+      "case": 2,
+      "output_id": "5817d56e-8377-4902-b762-e225df186cb3",
+      "native_id": "5817d56e-8377-4902-b762-e225df186cb3"
+    },
+    {
+      "case": 3,
+      "output_id": "dc9a8849-6fd2-4f0f-a3d5-d048a56d6484",
+      "native_id": "dc9a8849-6fd2-4f0f-a3d5-d048a56d6484"
+    },
+    {
+      "case": 4,
+      "output_id": "547be8c2-5f4f-4f26-8b2d-98e98fd2dabe",
+      "native_id": "547be8c2-5f4f-4f26-8b2d-98e98fd2dabe"
+    },
+    {
+      "case": 5,
+      "output_id": "fe381614-a8bb-4df4-afbd-12bbf4d396fa",
+      "native_id": "fe381614-a8bb-4df4-afbd-12bbf4d396fa"
+    },
+    {
+      "case": 6,
+      "output_id": "96ab332b-6a3b-4d85-ab4c-3cccc11ac559",
+      "native_id": "96ab332b-6a3b-4d85-ab4c-3cccc11ac559"
+    },
+    {
+      "case": 7,
+      "output_id": "11e8da4f-c1b4-4df2-a887-6b22e924849e",
+      "native_id": "11e8da4f-c1b4-4df2-a887-6b22e924849e"
+    },
+    {
+      "case": 8,
+      "output_id": "5b803c32-6bb9-4268-9a97-bf64a9897b35",
+      "native_id": "5b803c32-6bb9-4268-9a97-bf64a9897b35"
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Eight finite evaluations of the archived stock exec configuration only.",
+    "Output and log are two representations of one evaluation, not independent corroborations.",
+    "Hashes establish custody consistency, not authentication.",
+    "IDs alone establish neither execution, authenticated caller, enforcement nor target outcome."
+  ]
+}

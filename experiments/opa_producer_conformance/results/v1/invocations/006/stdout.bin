@@ -1,0 +1,15 @@
+{
+  "result": [
+    {
+      "decision_id": "96ab332b-6a3b-4d85-ab4c-3cccc11ac559",
+      "path": "--stdin-input",
+      "result": {
+        "allowed": true,
+        "decision": "ALLOW",
+        "policy": "employee_complaint_access",
+        "policy_version": "1.0",
+        "reasons": []
+      }
+    }
+  ]
+}

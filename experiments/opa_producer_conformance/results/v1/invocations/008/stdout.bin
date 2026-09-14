@@ -1,0 +1,17 @@
+{
+  "result": [
+    {
+      "decision_id": "5b803c32-6bb9-4268-9a97-bf64a9897b35",
+      "path": "--stdin-input",
+      "result": {
+        "allowed": false,
+        "decision": "DENY",
+        "policy": "employee_complaint_access",
+        "policy_version": "1.0",
+        "reasons": [
+          "Requested complaint is outside the authorized workflow scope"
+        ]
+      }
+    }
+  ]
+}
