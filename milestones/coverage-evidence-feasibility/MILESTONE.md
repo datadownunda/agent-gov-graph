@@ -44,3 +44,8 @@ No new technology, observability platform, producer-specific telemetry requireme
 [Review protocol](REVIEW_PROTOCOL.md) · [Findings and cost/trust matrix](FINDINGS.md) · [Proposed falsification test](FALSIFICATION_PROPOSAL.md) · [Validation](VALIDATION.md)
 
 The roadmap now records this negative feasibility review and the owner decision gate; it does not promote a new protected milestone without approval. Recommended next decision: identify one already-operated deployment/export for bounded source qualification under explicit trust assumptions. No enterprise export was acquired, no new capture ran and no coverage standard changed. Public checkpoint CI is pending owner-approved publication; baseline CI is not a substitute.
+
+
+## Subsequent owner approval
+
+The owner approved publishing result checkpoint 285893e and the bounded [existing-source qualification](../existing-source-qualification/MILESTONE.md) next step. Earlier pending-review statements describe the result-preparation checkpoint. The finding remains NOT_DEMONSTRATED. ROADMAP.md now records the approved step, awaiting an identified deployment/export; consequential unspecified trust assumptions remain unapproved.
