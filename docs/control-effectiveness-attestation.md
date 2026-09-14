@@ -115,3 +115,74 @@ All six saved M7 cases are replayed against their original complete assertions a
 This boundary does not retroactively diagnose failures that older M4/M6 adapters have already reduced to serialized evidentiary states. It distinguishes unexpected exceptions reaching M7 and failures in M7's own computations. It is not a repository-wide exception framework.
 
 Deferred, separately bounded M6 cleanup: `src/target_outcome_evidence.py` contains semicolon-chained normalization updates and compressed native-field/target-effect predicates. These merit a readability and semantic-boundary review, but that module is intentionally unchanged in this patch. No M9 work is included.
+
+## M7 v2 exception scope gate
+
+New `attest()` calls use `control-attestation/2` and schema `1.2`, paired with
+`m6-attestation-verification/2` receipts. The positive `CONTROL_EFFECTIVE` rule
+is unchanged. A prohibited target effect produces an exception only when at
+least one actual cited governance–execution–outcome path has established scope
+and compatible scoped identifier declarations. Other correlations remain visible;
+a qualified path does not qualify unrelated paths.
+
+Scope evidence stays in preserved source rows. The version-2 receipt and
+attestation carry `exception_paths`, with exact governance, execution, outcome
+and correlation references, scope kind, predicate result, declaration-check
+result and structured basis codes. There is no separate support schema or caller
+supplied “verified scope” flag. Scope is recomputed after manifest verification
+and unchanged M6 reconstruction.
+
+A governance row may declare `context.governance_scope`. Absence means
+`{"kind":"SINGLE_ACTION"}`. The three fixed cases are:
+
+- `SINGLE_ACTION`: the execution carries the governed `action_attempt_id` or
+  `authorizing_decision_id` matching the governance event's `event_id`. Actor,
+  action and resource must not contradict the governed action.
+- `BOUNDED_ENVELOPE`: the decision itself declares exactly `kind`, `actor`
+  (`namespace`, `id`), literal `action`, literal `resource_type`, a nonempty finite
+  distinct `resource_ids` list, `valid_from`, and `valid_to`. Execution must match
+  every value and lie in the half-open interval `[valid_from, valid_to)`.
+  No classes, wildcard matching, resource groups, hierarchy, expressions or
+  authority-registry-to-envelope inference exists.
+- `RETRY_OF`: execution producer evidence supplies `retry_of`, naming the governed
+  attempt, and a scoped identifier declaration for that field. This explicit
+  binding may identify a retry under the default single-action declaration;
+  actor/action/resource consistency is still required. A shared parent or timing
+  proximity cannot identify a retry.
+
+Raw producer `identifier_declarations` map an exact identifier field to exactly
+`issuer` and `namespace`, both nonblank. On governance rows this map is inside
+`context`; on execution/outcome rows it is at the top level. Each declaration is
+therefore scoped to one preserved source record and one identifier field. Both
+ends of each native edge used by an exception must have mutually compatible
+declarations. A separate decision/retry identity binding must also be qualified.
+The native assertion's generic caller-supplied namespace string is insufficient.
+
+The conformance adapter preserves existing `namespace_observations` in a
+manifest-covered `namespace_observations.json` member, positionally bound to the
+complete source populations. Execution/outcome observations describe the request
+identifier namespace only; they cannot establish the runtime attempt namespace
+or supply a missing issuer. Missing or conflicting observations cannot upgrade
+a link. A malformed/unbound observation inventory is an evidence defect.
+
+`namespace_declared_compatible` means only that issuer/namespace declarations
+are present, scoped and compatible. It does not establish independent producer
+authentication, non-reuse, truthfulness, or actual producer enforcement.
+
+A missing scope predicate produces `GOVERNANCE_SCOPE_NOT_ESTABLISHED`. Namespace
+failures produce `NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED` or
+`NATIVE_IDENTIFIER_NAMESPACE_CONFLICT`. The result is evidentiary abstention,
+not a finding that the effect was prevented. Unexpected failures retain a fresh
+`INTERNAL_ERROR` result with null finding and coverage, and empty path assessments.
+
+M6 matching and reconciliation are unchanged. Envelope/retry predicates qualify
+an already supported path; they do not manufacture links or resolve M6 candidate
+ambiguity. Predicate tests cover multiple literal envelope members without
+per-execution authorization; archive tests additionally exercise actual v2
+verification for each scope form. Broader M6 relationship support is outside this
+patch.
+
+Historical version-1 replay explicitly dispatches by the saved rule version.
+Saved schema-1.0 findings and schema-1.1 internal-error artifacts retain their
+original semantics and identities. Fresh v2 evaluation of an old archive may
+abstain because declarations are missing; replay is not silent re-adjudication.

@@ -26,7 +26,7 @@ def assertion_ref(name):
     return json.loads((LIVE / "reconciliation.json").read_text())[name]["assertion_id"]
 
 
-def test_live_exception_and_abstention_and_not_applicable():
+def test_saved_v1_live_exception_and_abstention_and_not_applicable():
     expected = {
         "critical-deny": "CONTROL_EFFECTIVENESS_EXCEPTION",
         "blocked-bounded": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
@@ -35,7 +35,7 @@ def test_live_exception_and_abstention_and_not_applicable():
         "allow": None,
     }
     for name, finding in expected.items():
-        a, r = attest(LIVE, assertion_ref(name), control())
+        a, r = attest(LIVE, assertion_ref(name), control(), rule_version="control-attestation/1")
         assert r["status"] == "VERIFIED"
         assert a["finding"] == finding
         if name == "allow":

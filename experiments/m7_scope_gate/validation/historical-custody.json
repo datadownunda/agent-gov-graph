@@ -1,0 +1,14 @@
+{
+  "historical_commit": "b8093786311fb2bd3a7c6ef45faefe5d64c69852",
+  "command": [
+    "/private/tmp/agg-m8-venv/bin/python",
+    "-B",
+    "-m",
+    "experiments.strong_link_assurance.run_experiment",
+    "audit",
+    "<exact historical checkout>/experiments/strong_link_assurance/results/v4"
+  ],
+  "returncode": 0,
+  "stdout": "{\n  \"status\": \"VERIFIED\",\n  \"evaluations\": 78,\n  \"verdict\": \"FAILED\"\n}\n",
+  "stderr": ""
+}

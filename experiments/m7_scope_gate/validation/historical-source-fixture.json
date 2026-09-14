@@ -1,0 +1,15 @@
+{
+  "status": "VERIFIED",
+  "source_commit": "b8093786311fb2bd3a7c6ef45faefe5d64c69852",
+  "exact_original_source_files": [
+    "docs/control-effectiveness-attestation.md",
+    "experiments/control_attestation/run_experiment.py",
+    "src/control_attestation.py",
+    "src/m6_attestation_evidence.py",
+    "tests/conftest.py",
+    "tests/test_m6_attestation_evidence.py",
+    "src/graph_value/canonical.py"
+  ],
+  "fixture_sha256": "69fd89eaffdefcbeea716536733e01afc7cabda4e3273a5bdd42c47733c574ea",
+  "network_or_git_history_needed_for_reconstruction": false
+}

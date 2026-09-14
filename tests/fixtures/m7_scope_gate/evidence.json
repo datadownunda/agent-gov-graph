@@ -1,0 +1,14 @@
+{
+  "description": "Synthetic producer declarations for conformance tests only; not empirical provenance.",
+  "attempt_declaration": {"issuer": "fixture-runtime", "namespace": "runtime-attempts"},
+  "request_declaration": {"issuer": "fixture-nginx", "namespace": "nginx-A"},
+  "envelope": {
+    "kind": "BOUNDED_ENVELOPE",
+    "actor": {"namespace": "agent", "id": "fixture-agent"},
+    "action": "read",
+    "resource_type": "employee_complaint",
+    "resource_ids": ["complaint-789", "complaint-456"],
+    "valid_from": "2026-09-05T12:00:00Z",
+    "valid_to": "2026-09-05T12:00:10Z"
+  }
+}

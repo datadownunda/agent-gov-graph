@@ -167,6 +167,7 @@ def audit_results(directory):
             request["assertion_ref"],
             control,
             coverage_support=request["coverage_support"],
+            rule_version=wrapped["attestation"]["rule_version"],
         )
         _require_completed(expected, receipt)
         if (

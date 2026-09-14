@@ -1,0 +1,1568 @@
+{
+  "campaign_kind": "POST_PATCH_REGRESSION_CONFORMANCE",
+  "cases": [
+    {
+      "changes": [],
+      "evaluation_id": "000",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "controls/allow",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "001",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "controls/allow",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "002",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "controls/allow",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "003",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": true,
+      "namespace_abstentions": 1,
+      "presentation": "canonical",
+      "scenario": "controls/deny_effect",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "004",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": true,
+      "namespace_abstentions": 1,
+      "presentation": "reversed",
+      "scenario": "controls/deny_effect",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "005",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": true,
+      "namespace_abstentions": 1,
+      "presentation": "renamed",
+      "scenario": "controls/deny_effect",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "006",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "controls/blocked",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "007",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "controls/blocked",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "008",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "controls/blocked",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "009",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "reuse/visible",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "010",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "reuse/visible",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "011",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "reuse/visible",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "012",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "canonical",
+      "scenario": "reuse/replacement",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "013",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "reversed",
+      "scenario": "reuse/replacement",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "014",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "renamed",
+      "scenario": "reuse/replacement",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "015",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "canonical",
+      "scenario": "reuse/period",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "016",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "reversed",
+      "scenario": "reuse/period",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "017",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "renamed",
+      "scenario": "reuse/period",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "018",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "namespace/explicit",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "019",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "namespace/explicit",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "020",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "namespace/explicit",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_CONFLICT",
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "021",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "canonical",
+      "scenario": "namespace/pooled",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_CONFLICT",
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "022",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "reversed",
+      "scenario": "namespace/pooled",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_CONFLICT",
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "023",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "renamed",
+      "scenario": "namespace/pooled",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "024",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "canonical",
+      "scenario": "namespace/missing",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "025",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "reversed",
+      "scenario": "namespace/missing",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "026",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "renamed",
+      "scenario": "namespace/missing",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "027",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "copied/different",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "028",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "copied/different",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "029",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "copied/different",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "030",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "copied/identical",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "031",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "copied/identical",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "032",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "copied/identical",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "033",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "canonical",
+      "scenario": "copied/removed",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "034",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "reversed",
+      "scenario": "copied/removed",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "035",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "renamed",
+      "scenario": "copied/removed",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "036",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "retry/repeated",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "037",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "retry/repeated",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "038",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "retry/repeated",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "039",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "retry/distinct",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "040",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "retry/distinct",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "041",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "retry/distinct",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "042",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": true,
+      "namespace_abstentions": 1,
+      "presentation": "canonical",
+      "scenario": "retry/governed",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "043",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": true,
+      "namespace_abstentions": 1,
+      "presentation": "reversed",
+      "scenario": "retry/governed",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "044",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": true,
+      "namespace_abstentions": 1,
+      "presentation": "renamed",
+      "scenario": "retry/governed",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "045",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "fanout/same_tuple",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "046",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "fanout/same_tuple",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "047",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "fanout/same_tuple",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "048",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "fanout/changed_tuple",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "049",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "fanout/changed_tuple",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "050",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "fanout/changed_tuple",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "051",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": true,
+      "namespace_abstentions": 1,
+      "presentation": "canonical",
+      "scenario": "fanout/governed",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "052",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": true,
+      "namespace_abstentions": 1,
+      "presentation": "reversed",
+      "scenario": "fanout/governed",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "053",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": true,
+      "namespace_abstentions": 1,
+      "presentation": "renamed",
+      "scenario": "fanout/governed",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "054",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "fanin/competing",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "055",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "fanin/competing",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "056",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "fanin/competing",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "057",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "fanin/converged",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "058",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "fanin/converged",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "059",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "fanin/converged",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "060",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "canonical",
+      "scenario": "fanin/withheld",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "061",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "reversed",
+      "scenario": "fanin/withheld",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "062",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 1,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 1,
+      "presentation": "renamed",
+      "scenario": "fanin/withheld",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "063",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "parent/children",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "064",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "parent/children",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "065",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "parent/children",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "066",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "parent/context_only",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "067",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "parent/context_only",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "068",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "parent/context_only",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "069",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": true,
+      "namespace_abstentions": 1,
+      "presentation": "canonical",
+      "scenario": "parent/governed",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "070",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": true,
+      "namespace_abstentions": 1,
+      "presentation": "reversed",
+      "scenario": "parent/governed",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [
+        {
+          "after": {
+            "basis_codes": [
+              "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"
+            ],
+            "evaluation_status": "INSUFFICIENT_EVIDENCE",
+            "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          },
+          "before": {
+            "basis_codes": [
+              "CORRELATED_PROHIBITED_TARGET_EFFECT",
+              "DENY_ESTABLISHED"
+            ],
+            "evaluation_status": "EVALUATED",
+            "finding": "CONTROL_EFFECTIVENESS_EXCEPTION",
+            "governance": "governance:1",
+            "reconciliation_result": "CONTRADICTION"
+          }
+        }
+      ],
+      "evaluation_id": "071",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": true,
+      "namespace_abstentions": 1,
+      "presentation": "renamed",
+      "scenario": "parent/governed",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "072",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "bridge/missing",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "073",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "bridge/missing",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "074",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "bridge/missing",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "075",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "canonical",
+      "scenario": "bridge/equal_text",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "076",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "reversed",
+      "scenario": "bridge/equal_text",
+      "scope_abstentions": 0
+    },
+    {
+      "changes": [],
+      "evaluation_id": "077",
+      "false_exceptions_after": 0,
+      "false_exceptions_before": 0,
+      "legitimate_exception_lost": false,
+      "namespace_abstentions": 0,
+      "presentation": "renamed",
+      "scenario": "bridge/equal_text",
+      "scope_abstentions": 0
+    }
+  ],
+  "false_exceptions_after": 0,
+  "false_exceptions_before": 18,
+  "historical_result": "FAILED",
+  "internal_errors": 0,
+  "legitimate_exception_evaluations_lost": [
+    "003",
+    "004",
+    "005",
+    "042",
+    "043",
+    "044",
+    "051",
+    "052",
+    "053",
+    "069",
+    "070",
+    "071"
+  ],
+  "namespace_abstentions": 30,
+  "previously_false_now_abstaining": [
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "033",
+    "034",
+    "035",
+    "060",
+    "061",
+    "062"
+  ],
+  "scope_abstentions": 0,
+  "unchanged_false_links": 21,
+  "unchanged_false_merges": 21
+}

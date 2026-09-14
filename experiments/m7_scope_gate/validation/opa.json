@@ -1,0 +1,9 @@
+{
+  "command": "docker run --rm -v /Users/jamesnanscawen/Documents/ChatGPT/agent_gov_graph:/workspace openpolicyagent/opa:1.19.0 test /workspace/policies -v",
+  "result": "PASS",
+  "passed": 6,
+  "failed": 0,
+  "docker_server": "29.7.2",
+  "limitation": null,
+  "environment_note": "Sandbox access to the Docker socket was denied. The same command completed successfully with authorized local Docker access."
+}

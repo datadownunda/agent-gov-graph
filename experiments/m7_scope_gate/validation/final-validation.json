@@ -1,0 +1,54 @@
+{
+  "checkpoint_replay_receipts": "checkpoint-replays.json",
+  "checkpoint_test_receipts": "checkpoint-test-results.json",
+  "commit_or_push_performed": false,
+  "current_conformance_replay": {
+    "evaluations": 78,
+    "status": "VERIFIED"
+  },
+  "focused_historical_strong_link": {
+    "passed": 39
+  },
+  "focused_m7_and_current_conformance": {
+    "passed": 144,
+    "scope": "M7, current conformance, and historical strong-link focused suites",
+    "skipped": 0
+  },
+  "full_regression": {
+    "docker_opa_integration_enabled": true,
+    "failed": 0,
+    "passed": 520,
+    "skipped": 0
+  },
+  "gate_attribution": {
+    "independent_false_exception_reduction_by_scope": 0,
+    "legitimate_losses": "12 legacy-fixture incompatibilities with v2 declarations; no inference about real enterprise evidence availability.",
+    "namespace_caused_abstentions": 30,
+    "scope_evaluated_and_passed": 30,
+    "scope_rejection_evidence": "Focused synthetic tests only; not the frozen strong-link corpus."
+  },
+  "generation_provenance_reanalysis_started": false,
+  "git_diff_check": "PASS",
+  "graph_reference_compatibility": {
+    "passed": 17
+  },
+  "head": "b8093786311fb2bd3a7c6ef45faefe5d64c69852",
+  "historical_result_files_preserved": 4306,
+  "historical_strong_link_replay": {
+    "evaluations": 78,
+    "status": "VERIFIED",
+    "verdict": "FAILED"
+  },
+  "m9b_started": false,
+  "new_work_scope": "M7 v2 gate, accounting, conformance and historical replay compatibility only",
+  "opa_policy_tests": {
+    "passed": 6,
+    "total": 6
+  },
+  "origin_main_local_ref": "b8093786311fb2bd3a7c6ef45faefe5d64c69852",
+  "original_other_files_preserved": 4509,
+  "production_schemas": 18,
+  "record_kind": "PRE_COMMIT_SNAPSHOT",
+  "staged_files": 0,
+  "status": "VALIDATED_PRE_COMMIT"
+}

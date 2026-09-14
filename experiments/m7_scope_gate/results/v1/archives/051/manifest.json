@@ -1,0 +1,19 @@
+{
+  "files": {
+    "authority_history/faae2c92a411bbc334d909c7f1f36bc43c9a14ef303c22564f915a4c7b2a3aed.json": "sha256:faae2c92a411bbc334d909c7f1f36bc43c9a14ef303c22564f915a4c7b2a3aed",
+    "blocked_coverage.json": "sha256:be709c9380c880afcbf7c195ccae12c6f78e64150fdcafc1eaaf4d50ac06ee07",
+    "correlations.json": "sha256:a0618ba93045d397bf981b78ad0198d285f2b8df8fc0fd48f83db79ad1b1cff8",
+    "coverage_observations.json": "sha256:c371819d0598602ebbee6fdf0efb465fa9cdcfc97b4484a08dd37601ebe5f2b9",
+    "execution.jsonl": "sha256:797d4de085269669b3ba6c38ed5450d04ca857535246c17de6802ce4d0c5eaec",
+    "governance.jsonl": "sha256:9d189e11e4426099ce22b1fe7f9642d9ff67721678880a4f272cbfa62b946cf1",
+    "identity_mapping.json": "sha256:d906e8d5d6ecff1fded63d03d8a155c133047fe48f8684282dd0c81bd612d6b9",
+    "namespace_observations.json": "sha256:9352d357d60474d387eafa09320abea2f5532198f70d5e3eea44d5e7c9842975",
+    "native/access.jsonl": "sha256:7af2828cddbf6ae8c882fc3d70646c01e0b8df01a8a47f8d6de2522a006e4562",
+    "nginx.conf": "sha256:0b164386f668e281c213bc8d87fa78c0fb59acea9f9488b957b26754d1a9edb4",
+    "reconciliation.json": "sha256:817e31a0ec1018f3f67e4a8ceafd81be15d736184bb0921e18582fd409be6723",
+    "target.json": "sha256:aba8a2d1edd6b354d56b451a129dc78b7a0175873db8abf07be0751b3d7ab360",
+    "target_runtime.json": "sha256:6aa6426c294bc443c6db6aad4b30c599af2d4cf5e7aaab0828c84ecdbb9c28b8"
+  },
+  "provenance": "DETERMINISTIC_SYNTHETIC_FIXTURE_NO_TARGET_PROCESS",
+  "schema_version": "1.0"
+}

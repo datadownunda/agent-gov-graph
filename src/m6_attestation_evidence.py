@@ -52,7 +52,7 @@ def _validate_receipt_structure(receipt):
         raise EvidenceValidationError("Invalid receipt basis")
     if receipt["status"] == "INTERNAL_ERROR":
         if (
-            receipt.get("schema_version") != "1.1"
+            receipt.get("schema_version") != ("1.2" if receipt.get("rule_version") == "m6-attestation-verification/2" else "1.1")
             or receipt.get("facts") is not None
             or receipt.get("coverage_assessment") is not None
         ):
@@ -61,8 +61,24 @@ def _validate_receipt_structure(receipt):
 
 def _validate_verified_facts(receipt):
     facts = receipt.get("facts")
-    if not isinstance(facts, dict) or set(facts) != FACT_FIELDS:
+    expected_fields = FACT_FIELDS | ({"exception_paths"} if receipt.get("rule_version") == "m6-attestation-verification/2" else set())
+    if not isinstance(facts, dict) or set(facts) != expected_fields:
         raise EvidenceValidationError("Non-allowlisted adjudication input")
+    if "exception_paths" in facts:
+        schema = json.loads((ROOT / "schemas/control_attestation_v2.schema.json").read_text())
+        validator = jsonschema.Draft202012Validator(schema["$defs"]["exception_paths"])
+        if next(validator.iter_errors(facts["exception_paths"]), None) is not None:
+            raise EvidenceValidationError("Invalid exception path assessment")
+        for path in facts["exception_paths"]:
+            codes = path["basis_codes"]
+            if (path["scope_established"] == ("GOVERNANCE_SCOPE_NOT_ESTABLISHED" in codes)
+                    or path["namespace_declared_compatible"] == any(c.startswith("NATIVE_IDENTIFIER_NAMESPACE_") for c in codes)):
+                raise EvidenceValidationError("Inconsistent exception path assessment")
+            if (path["outcome_ref"] not in facts["supporting_effect_refs"]
+                    or path["governance_ref"] != facts["governance"]["evidence_ref"]
+                    or not set(path["correlation_refs"]) <= set(facts["supporting_correlation_refs"])
+                    or path["execution_ref"] not in facts["source_refs"]):
+                raise EvidenceValidationError("Unbound exception path assessment")
     governance = facts["governance"]
     if not isinstance(governance, dict) or set(governance) != {
         "evidence_ref",
@@ -217,7 +233,7 @@ def _validate_archive_inputs(root):
         raise EvidenceValidationError("Malformed supplied observation coverage")
 
 
-def _internal_receipt():
+def _internal_receipt(rule_version=RULE):
     # Never reuse a partly populated receipt after a processing failure.
     receipt = {
         "schema_version": "1.1",
@@ -234,6 +250,8 @@ def _internal_receipt():
             "Agent Gov Graph failed to complete verification; no evidentiary or coverage conclusion."
         ],
     }
+    if rule_version == "m6-attestation-verification/2":
+        receipt.update(schema_version="1.2", rule_version=rule_version)
     receipt["receipt_id"] = evidence_digest(receipt)
     _validate_receipt_structure(receipt)
     body = {key: value for key, value in receipt.items() if key != "receipt_id"}
@@ -242,15 +260,15 @@ def _internal_receipt():
     return receipt
 
 
-def verify_m6(archive, assertion_id, control, *, coverage_support=None):
+def verify_m6(archive, assertion_id, control, *, coverage_support=None, rule_version=RULE):
     try:
         return _verify_m6(
-            archive, assertion_id, control, coverage_support=coverage_support
+            archive, assertion_id, control, coverage_support=coverage_support, rule_version=rule_version
         )
     except Exception:
         LOGGER.exception("M7 evidence verification processing failed")
         try:
-            return _internal_receipt()
+            return _internal_receipt(rule_version)
         except Exception as error:
             raise InternalProcessingError(
                 "Cannot construct internal-error verification receipt"
@@ -435,7 +453,7 @@ def _project(assertion, control, target, target_verified):
     }
 
 
-def _verify_m6(archive, assertion_id, control, *, coverage_support=None):
+def _verify_m6(archive, assertion_id, control, *, coverage_support=None, rule_version=RULE):
     """Verify a stored assertion by opaque ID against the unchanged M6 adapter.
 
     coverage_support is an optional archive member containing affirmative,
@@ -460,6 +478,10 @@ def _verify_m6(archive, assertion_id, control, *, coverage_support=None):
         ],
     }
     try:
+        if rule_version not in (RULE, "m6-attestation-verification/2"):
+            raise EvidenceValidationError("Unsupported verification rule")
+        if rule_version.endswith("/2"):
+            receipt.update(schema_version="1.2", rule_version=rule_version)
         validate_control(control)
         root = Path(archive).resolve()
         manifest = _read_json(root / "manifest.json")
@@ -471,7 +493,7 @@ def _verify_m6(archive, assertion_id, control, *, coverage_support=None):
                 raise EvidenceValidationError("Archive integrity defect")
         _validate_archive_inputs(root)
         audit(root)  # Existing M6 source ingestion, correlation and reconstruction.
-        _, _, replayed = derive(root)
+        records, _, replayed = derive(root)
         matches = [a for a in replayed.values() if a["assertion_id"] == assertion_id]
         if len(matches) != 1:
             raise EvidenceValidationError(
@@ -506,6 +528,20 @@ def _verify_m6(archive, assertion_id, control, *, coverage_support=None):
                     "Coverage describes a different target snapshot"
                 )
         facts = _project(assertion, control, target, target_verified)
+        if rule_version.endswith("/2") and "namespace_observations.json" in manifest["files"]:
+            observations = _read_json(root / "namespace_observations.json")
+            if not isinstance(observations, dict) or set(observations) != {"governance", "execution", "outcome"}:
+                raise EvidenceValidationError("Invalid namespace observations")
+            for role, values in observations.items():
+                members = [r for r in records if r["role"] == role]
+                if (not isinstance(values, list) or len(values) != len(members)
+                        or not all(v is None or _nonblank(v) for v in values)):
+                    raise EvidenceValidationError("Unbound namespace observations")
+                if role in ("execution", "outcome"):
+                    for record, value in zip(members, values):
+                        record["request_namespace_observation"] = value
+        if rule_version.endswith("/2"):
+            facts["exception_paths"] = _exception_paths(assertion, records, facts)
         assessment = _coverage(control, assertion, support, evidence_digest(target))
         receipt.update(
             status="VERIFIED",
@@ -528,3 +564,134 @@ def _verify_m6(archive, assertion_id, control, *, coverage_support=None):
     if receipt["status"] == "VERIFIED":
         _validate_verified_facts(receipt)
     return receipt
+
+
+def _nonblank(value):
+    return isinstance(value, str) and bool(value.strip())
+
+
+def _producer(record):
+    raw = record.get("raw") or {}
+    return raw.get("context", {}) if record["role"] == "governance" else raw
+
+
+def _declaration(record, field):
+    """A declaration scoped to this exact record and identifier field, not authentication."""
+    producer = _producer(record)
+    declarations = producer.get("identifier_declarations", {}) if isinstance(producer, dict) else {}
+    value = declarations.get(field) if isinstance(declarations, dict) else None
+    if (not isinstance(value, dict) or set(value) != {"issuer", "namespace"}
+            or not all(_nonblank(value[k]) and "*" not in value[k] for k in ("issuer", "namespace"))):
+        return None
+    return value
+
+
+def _namespace_codes(left, left_field, right, right_field):
+    a, b = _declaration(left, left_field), _declaration(right, right_field)
+    codes = [] if a is not None and b is not None else ["NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED"]
+    namespaces = []
+    for record, field, declaration in ((left, left_field, a), (right, right_field, b)):
+        ns = declaration["namespace"] if declaration else None
+        if field == "request_id" and "request_namespace_observation" in record:
+            observed = record["request_namespace_observation"]
+            if observed is None:
+                codes.append("NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED")
+            elif ns is not None and observed != ns:
+                codes.append("NATIVE_IDENTIFIER_NAMESPACE_CONFLICT")
+            ns = observed
+        namespaces.append(ns)
+    if ((a is not None and b is not None and a != b)
+            or (all(n is not None for n in namespaces) and namespaces[0] != namespaces[1])):
+        codes.append("NATIVE_IDENTIFIER_NAMESPACE_CONFLICT")
+    return sorted(set(codes))
+
+
+def _scope_predicate(governance, execution):
+    """Three literal cases; evaluates preserved producer fields, never a caller verdict."""
+    g, e = _producer(governance), _producer(execution)
+    if not isinstance(g, dict) or not isinstance(e, dict):
+        return "SINGLE_ACTION", False, []
+    scope = g.get("governance_scope", {"kind": "SINGLE_ACTION"})
+    if not isinstance(scope, dict) or scope.get("kind") not in ("SINGLE_ACTION", "BOUNDED_ENVELOPE", "RETRY_OF"):
+        return "SINGLE_ACTION", False, []
+    kind = scope["kind"]
+    if governance.get("defects") or execution.get("defects"):
+        return kind, False, []
+    if kind == "SINGLE_ACTION" and "retry_of" in e:
+        kind = "RETRY_OF"
+    if kind == "BOUNDED_ENVELOPE":
+        required = {"kind", "actor", "action", "resource_type", "resource_ids", "valid_from", "valid_to"}
+        if set(scope) != required:
+            return kind, False, []
+        resources = scope["resource_ids"]
+        actor = scope["actor"]
+        if (not isinstance(resources, list) or not resources
+                or not all(_nonblank(r) and "*" not in r for r in resources)
+                or len(set(resources)) != len(resources)
+                or not isinstance(actor, dict) or set(actor) != {"namespace", "id"}
+                or not all(_nonblank(v) and "*" not in v for v in actor.values())
+                or not all(_nonblank(scope[k]) and "*" not in scope[k] for k in ("action", "resource_type"))):
+            return kind, False, []
+        try:
+            start, end, observed = (instant(scope["valid_from"]), instant(scope["valid_to"]), instant(execution["observed_at"]))
+        except (ValueError, TypeError):
+            return kind, False, []
+        return kind, (start < end and start <= observed < end
+                      and all(execution[k] == scope[k] for k in ("actor", "action", "resource_type"))
+                      and execution["resource_id"] in resources), []
+    if set(scope) != {"kind"}:
+        return kind, False, []
+    # Identity alone is insufficient if the execution contradicts the governed action.
+    if any(governance[k] != execution[k] for k in ("actor", "action", "resource_id", "resource_type")):
+        return kind, False, []
+    if kind == "RETRY_OF":
+        retry = e.get("retry_of")
+        matched = _nonblank(retry) and retry == governance.get("action_attempt_id")
+        return kind, matched, _namespace_codes(governance, "action_attempt_id", execution, "retry_of") if matched else []
+    bindings = [(governance.get("action_attempt_id"), execution.get("action_attempt_id"), "action_attempt_id", "action_attempt_id"),
+                ((governance.get("raw") or {}).get("event_id"), e.get("authorizing_decision_id"), "event_id", "authorizing_decision_id")]
+    failures = []
+    for left, right, lf, rf in bindings:
+        if _nonblank(left) and left == right:
+            codes = _namespace_codes(governance, lf, execution, rf)
+            if not codes:
+                return kind, True, []
+            failures.extend(codes)
+    return kind, any(_nonblank(left) and left == right for left, right, _, _ in bindings), sorted(set(failures))
+
+
+def _exception_paths(assertion, records, facts):
+    """Qualify actual cited G-E-O paths. No matching, new edges, or scope inference."""
+    lookup = {r["evidence_ref"]: r for r in records}
+    governance = lookup[facts["governance"]["evidence_ref"]]
+    correlations = {a["assertion_id"]: a for a in assertion["correlation_assertions"]}
+    paths = {p["evidence_ref"]: p["assertion_ids"] for p in assertion["correlation_paths"]}
+    assessments = []
+    for outcome_ref in facts["supporting_effect_refs"]:
+        refs = paths[outcome_ref]
+        edges = []
+        namespace_codes = []
+        for ref in refs:
+            a = correlations[ref]
+            endpoints = [a["focus"]["evidence_ref"], *[r["evidence_ref"] for r in a["result"]["linked_evidence"]]]
+            if len(endpoints) != 2 or a["result"]["state"] != "LINKED":
+                raise EvidenceValidationError("Invalid supporting path")
+            left, right = (lookup[r] for r in endpoints)
+            parameters = a["rule"]["parameters"]
+            field = parameters.get("identifier_field")
+            if a["correlation_method"] != "NATIVE_IDENTIFIER_LINKAGE" or not _nonblank(field):
+                raise EvidenceValidationError("Unsupported assurance path method")
+            namespace_codes.extend(_namespace_codes(left, field, right, field))
+            edges.append(set(endpoints))
+        for execution in records:
+            er = execution["evidence_ref"]
+            if (execution["role"] != "execution" or {governance["evidence_ref"], er} not in edges
+                    or {er, outcome_ref} not in edges):
+                continue
+            kind, scoped, binding_codes = _scope_predicate(governance, execution)
+            codes = sorted(set(namespace_codes + binding_codes))
+            assessments.append(dict(governance_ref=governance["evidence_ref"], execution_ref=er,
+                outcome_ref=outcome_ref, correlation_refs=sorted(refs), scope_kind=kind,
+                scope_established=scoped, namespace_declared_compatible=not codes,
+                basis_codes=sorted(set(codes + ([] if scoped else ["GOVERNANCE_SCOPE_NOT_ESTABLISHED"])))))
+    return sorted(assessments, key=lambda p: (p["execution_ref"], p["outcome_ref"]))

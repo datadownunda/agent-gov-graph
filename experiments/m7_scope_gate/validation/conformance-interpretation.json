@@ -1,0 +1,58 @@
+{
+  "kind": "POST_PATCH_CONFORMANCE_INTERPRETATION",
+  "original_verdict": "FAILED",
+  "evaluations": 78,
+  "base_cases": 26,
+  "false_exceptions_before": 18,
+  "false_exceptions_after": 0,
+  "namespace_abstentions": 30,
+  "scope_abstentions": 0,
+  "legitimate_exception_evaluations_lost": [
+    "003",
+    "004",
+    "005",
+    "042",
+    "043",
+    "044",
+    "051",
+    "052",
+    "053",
+    "069",
+    "070",
+    "071"
+  ],
+  "legitimate_control_evaluations_lost": [
+    "003",
+    "004",
+    "005"
+  ],
+  "additional_legitimate_stress_evaluations_lost": [
+    "042",
+    "043",
+    "044",
+    "051",
+    "052",
+    "053",
+    "069",
+    "070",
+    "071"
+  ],
+  "new_missed_legitimate_exceptions_via_abstention": 12,
+  "new_false_CONTROL_EFFECTIVE_findings": 0,
+  "unchanged_CONTROL_EFFECTIVE_findings": 78,
+  "informationally_irreducible_evaluations": [
+    "012",
+    "013",
+    "014",
+    "033",
+    "034",
+    "035",
+    "060",
+    "061",
+    "062"
+  ],
+  "false_links_unchanged": 21,
+  "false_merges_unchanged": 21,
+  "v2_attestations_validated": 381,
+  "namespace_check": "Present/scoped/compatible declarations only; no independent authentication or producer-enforcement claim."
+}

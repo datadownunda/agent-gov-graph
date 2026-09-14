@@ -1,0 +1,59 @@
+[
+  {
+    "name": "checkpoint-opa",
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "-v",
+      "/Users/jamesnanscawen/Documents/ChatGPT/agent_gov_graph:/workspace",
+      "openpolicyagent/opa:1.19.0",
+      "test",
+      "/workspace/policies",
+      "-v"
+    ],
+    "returncode": 0,
+    "seconds": 1.1,
+    "summary": "PASS: 6/6",
+    "RUN_FOREIGN_OPA": "1"
+  },
+  {
+    "name": "checkpoint-focused",
+    "command": [
+      "/private/tmp/agg-m8-venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-p",
+      "no:cacheprovider",
+      "-q",
+      "tests/test_m7_scope_gate.py",
+      "tests/test_m7_scope_gate_conformance.py",
+      "tests/test_control_attestation.py",
+      "tests/test_m6_attestation_evidence.py",
+      "tests/test_control_attestation_experiment.py",
+      "tests/test_strong_link_assurance.py",
+      "tests/test_strong_link_assurance_boundaries.py"
+    ],
+    "returncode": 0,
+    "seconds": 109.76,
+    "summary": "144 passed in 108.76s (0:01:48)",
+    "RUN_FOREIGN_OPA": "1"
+  },
+  {
+    "name": "checkpoint-full",
+    "command": [
+      "/private/tmp/agg-m8-venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-p",
+      "no:cacheprovider",
+      "-q"
+    ],
+    "returncode": 0,
+    "seconds": 184.3,
+    "summary": "520 passed in 183.64s (0:03:03)",
+    "RUN_FOREIGN_OPA": "1"
+  }
+]

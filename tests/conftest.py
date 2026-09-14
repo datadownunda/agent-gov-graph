@@ -29,3 +29,24 @@ def m9_historical_test_context(request, monkeypatch):
     monkeypatch.setattr(exp, 'ROOT', root)
     monkeypatch.setattr(exp, 'HERE', root / 'experiments/identifier_withholding')
     monkeypatch.setattr(exp, 'LIVE', root / 'experiments/target_outcome/results/v1')
+
+
+@pytest.fixture(scope='session')
+def strong_link_historical_root(tmp_path_factory):
+    from experiments.m7_scope_gate.run_conformance import historical_checkout
+    return historical_checkout(tmp_path_factory.mktemp('strong-link-custody') / 'baseline')
+
+
+@pytest.fixture(autouse=True)
+def strong_link_historical_test_context(request, monkeypatch):
+    historical_tests = {'test_frozen_protocol_and_exact_population',
+                        'test_actual_m7_control_paths', 'test_scoring_truth_does_not_enter_worker'}
+    if (Path(str(request.node.path)) != Path(__file__).parent / 'test_strong_link_assurance.py'
+            or request.node.originalname not in historical_tests):
+        return
+    from experiments.strong_link_assurance import run_experiment as exp
+    root = request.getfixturevalue('strong_link_historical_root')
+    # Original baseline hash checks and worker execute in exact b809378 context.
+    # Current v2 behavior is tested separately by test_m7_scope_gate_conformance.
+    monkeypatch.setattr(exp, 'ROOT', root)
+    monkeypatch.setattr(exp, 'HERE', root / 'experiments/strong_link_assurance')

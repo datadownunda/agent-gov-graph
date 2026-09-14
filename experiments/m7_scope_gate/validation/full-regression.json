@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/private/tmp/agg-m8-venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q"
+  ],
+  "RUN_FOREIGN_OPA": "1",
+  "PYTHONDONTWRITEBYTECODE": "1",
+  "returncode": 0,
+  "elapsed_seconds": 193.74,
+  "summary": "520 passed in 193.39s (0:03:13)"
+}

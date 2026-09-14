@@ -226,7 +226,8 @@ def load_reference(root):
             archive = saved/'deterministic_fixture'
         else:
             raise ValueError('Unsupported archive layout')
-        a, receipt = attest(archive, request['assertion_ref'], control, coverage_support=request['coverage_support'])
+        a, receipt = attest(archive, request['assertion_ref'], control, coverage_support=request['coverage_support'],
+                            rule_version=wrapper['attestation']['rule_version'])
         if a != wrapper['attestation'] or receipt != recorded['receipt'] or receipt['status'] != 'VERIFIED':
             raise ValueError('M7 replay disagrees or evidence unavailable')
         context = a['reconciliation_reference']

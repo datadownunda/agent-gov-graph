@@ -30,7 +30,8 @@ LIMITATIONS = [
 
 
 def validate_attestation(assertion):
-    schema = json.loads((ROOT / "schemas/control_attestation.schema.json").read_text())
+    schema_name = "control_attestation_v2.schema.json" if isinstance(assertion, dict) and assertion.get("rule_version") == "control-attestation/2" else "control_attestation.schema.json"
+    schema = json.loads((ROOT / "schemas" / schema_name).read_text())
     validator = jsonschema.Draft202012Validator(
         schema, format_checker=jsonschema.FormatChecker()
     )
@@ -42,7 +43,7 @@ def validate_attestation(assertion):
         raise EvidenceValidationError("Attestation content identity mismatch")
 
 
-def _internal_attestation():
+def _internal_attestation(rule_version=RULE):
     """Fresh operational result: no partial facts, coverage conclusion or finding."""
     result = {
         "schema_version": "1.1",
@@ -61,6 +62,8 @@ def _internal_attestation():
             "Agent Gov Graph failed to complete processing; no conclusion about evidence, coverage or control effectiveness."
         ],
     }
+    if rule_version == "control-attestation/2":
+        result.update(schema_version="1.2", rule_version=rule_version, exception_paths=[])
     result["assertion_id"] = evidence_digest(result)
     validate_attestation(result)
     return result
@@ -73,7 +76,7 @@ def adjudicate(control, receipt):
     except Exception:
         LOGGER.exception("M7 adjudicator processing failed")
         try:
-            return _internal_attestation()
+            return _internal_attestation("control-attestation/2" if isinstance(receipt, dict) and receipt.get("rule_version") == "m6-attestation-verification/2" else RULE)
         except Exception as error:
             raise InternalProcessingError(
                 "Cannot construct internal-error attestation"
@@ -110,6 +113,11 @@ def _adjudicate(control, receipt):
         "limitations": list(LIMITATIONS),
     }
 
+    v2 = isinstance(receipt, dict) and receipt.get("rule_version") == "m6-attestation-verification/2"
+    if v2:
+        out.update(schema_version="1.2", rule_version="control-attestation/2", exception_paths=[])
+        out["limitations"].append("Issuer/namespace qualification checks declarations only; neither independent authentication nor producer enforcement is established.")
+
     def finish(status, finding, codes):
         # Generated output is a processing boundary, never supplied evidence.
         try:
@@ -140,7 +148,7 @@ def _adjudicate(control, receipt):
                 receipt["status"] != "INTERNAL_ERROR"
                 and receipt["control_digest"] != evidence_digest(control)
             )
-            or receipt["rule_version"] != "m6-attestation-verification/1"
+            or receipt["rule_version"] not in ("m6-attestation-verification/1", "m6-attestation-verification/2")
         ):
             raise EvidenceValidationError("Receipt/control mismatch")
         out["control_reference"].update(
@@ -160,6 +168,8 @@ def _adjudicate(control, receipt):
             raise EvidenceValidationError("Invalid verification state")
         _validate_verified_facts(receipt)
         facts = receipt["facts"]
+        if v2:
+            out["exception_paths"] = deepcopy(facts["exception_paths"])
         g = facts["governance"]
         assessment = receipt["coverage_assessment"]
         if assessment["control_digest"] != evidence_digest(control):
@@ -204,6 +214,11 @@ def _adjudicate(control, receipt):
                 or not facts["supporting_correlation_refs"]
             ):
                 return abstain(["TARGET_EFFECT_LINKAGE_NOT_ESTABLISHED"])
+            if v2:
+                paths = facts["exception_paths"]
+                if not any(p["scope_established"] and p["namespace_declared_compatible"] for p in paths):
+                    codes = [code for p in paths for code in p["basis_codes"]]
+                    return abstain(codes or ["GOVERNANCE_SCOPE_NOT_ESTABLISHED"])
             return finish(
                 "EVALUATED",
                 "CONTROL_EFFECTIVENESS_EXCEPTION",
@@ -233,9 +248,12 @@ def _adjudicate(control, receipt):
         )
 
 
-def attest(archive, assertion_id, control, *, coverage_support=None):
+def attest(archive, assertion_id, control, *, coverage_support=None, rule_version="control-attestation/2"):
+    if rule_version not in (RULE, "control-attestation/2"):
+        raise EvidenceValidationError("Unsupported attestation rule")
     receipt = verify_m6(
-        archive, assertion_id, control, coverage_support=coverage_support
+        archive, assertion_id, control, coverage_support=coverage_support,
+        rule_version="m6-attestation-verification/" + rule_version.rsplit("/", 1)[1],
     )
     return adjudicate(control, receipt), receipt
 
@@ -252,6 +270,7 @@ def reconstruct_attestation(saved, archive, control, *, coverage_support=None):
             saved["reconciliation_reference"],
             control,
             coverage_support=coverage_support,
+            rule_version=saved["rule_version"],
         )
         if (
             receipt["status"] == "INTERNAL_ERROR"

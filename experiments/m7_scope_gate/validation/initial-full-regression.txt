@@ -1,0 +1,96 @@
+........................................................................ [ 13%]
+........................................................................ [ 27%]
+........................................................................ [ 41%]
+........................................................................ [ 55%]
+....F...............F................................................... [ 69%]
+........................................................................ [ 83%]
+........................................................................ [ 96%]
+................                                                         [100%]
+=================================== FAILURES ===================================
+__________ test_reference_read_only_and_labels_not_in_canonical_input __________
+
+    def test_reference_read_only_and_labels_not_in_canonical_input():
+        root=Path(__file__).resolve().parents[1]
+        files=[p for p in (root/'experiments/control_attestation/results/v1').rglob('*') if p.is_file()]
+        before={str(p):digest_file(p) for p in files}
+>       bundle=load_reference(root)
+               ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_graph_value_canonical.py:54:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = PosixPath('/Users/jamesnanscawen/Documents/ChatGPT/agent_gov_graph')
+
+    def load_reference(root):
+        """Verify every saved M7 assertion through unchanged M6/M7 adapters."""
+        root = Path(root)
+        saved = root/'experiments/control_attestation/results/v1'
+        wrappers = json.loads((saved/'attestations.json').read_text())
+        receipts = json.loads((saved/'verification.json').read_text())
+        control = json.loads((saved/'control.json').read_text())
+        catalog = Catalog()
+        manifest = json.loads((saved/'manifest.json').read_text())
+        for name, digest in manifest['files'].items():
+            path = (saved/name).resolve()
+            path.relative_to(saved.resolve())
+            if digest_file(path) != digest:
+                raise ValueError('M7 archive inventory mismatch')
+        for wrapper, recorded in zip(wrappers, receipts, strict=True):
+            request = recorded['request']
+            archive_ref = request['archive_reference']
+            if archive_ref == 'repository:experiments/target_outcome/results/v1':
+                archive = root/'experiments/target_outcome/results/v1'
+            elif archive_ref == 'local:deterministic_fixture':
+                archive = saved/'deterministic_fixture'
+            else:
+                raise ValueError('Unsupported archive layout')
+            a, receipt = attest(archive, request['assertion_ref'], control, coverage_support=request['coverage_support'])
+            if a != wrapper['attestation'] or receipt != recorded['receipt'] or receipt['status'] != 'VERIFIED':
+>               raise ValueError('M7 replay disagrees or evidence unavailable')
+E               ValueError: M7 replay disagrees or evidence unavailable
+
+src/graph_value/canonical.py:231: ValueError
+__________________ test_reference_exception_and_withheld_view __________________
+
+    def test_reference_exception_and_withheld_view():
+>       bundle=load_reference(Path(__file__).resolve().parents[1])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_graph_value_queries.py:96:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = PosixPath('/Users/jamesnanscawen/Documents/ChatGPT/agent_gov_graph')
+
+    def load_reference(root):
+        """Verify every saved M7 assertion through unchanged M6/M7 adapters."""
+        root = Path(root)
+        saved = root/'experiments/control_attestation/results/v1'
+        wrappers = json.loads((saved/'attestations.json').read_text())
+        receipts = json.loads((saved/'verification.json').read_text())
+        control = json.loads((saved/'control.json').read_text())
+        catalog = Catalog()
+        manifest = json.loads((saved/'manifest.json').read_text())
+        for name, digest in manifest['files'].items():
+            path = (saved/name).resolve()
+            path.relative_to(saved.resolve())
+            if digest_file(path) != digest:
+                raise ValueError('M7 archive inventory mismatch')
+        for wrapper, recorded in zip(wrappers, receipts, strict=True):
+            request = recorded['request']
+            archive_ref = request['archive_reference']
+            if archive_ref == 'repository:experiments/target_outcome/results/v1':
+                archive = root/'experiments/target_outcome/results/v1'
+            elif archive_ref == 'local:deterministic_fixture':
+                archive = saved/'deterministic_fixture'
+            else:
+                raise ValueError('Unsupported archive layout')
+            a, receipt = attest(archive, request['assertion_ref'], control, coverage_support=request['coverage_support'])
+            if a != wrapper['attestation'] or receipt != recorded['receipt'] or receipt['status'] != 'VERIFIED':
+>               raise ValueError('M7 replay disagrees or evidence unavailable')
+E               ValueError: M7 replay disagrees or evidence unavailable
+
+src/graph_value/canonical.py:231: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_graph_value_canonical.py::test_reference_read_only_and_labels_not_in_canonical_input
+FAILED tests/test_graph_value_queries.py::test_reference_exception_and_withheld_view
+2 failed, 518 passed in 171.53s (0:02:51)

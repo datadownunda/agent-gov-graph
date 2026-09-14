@@ -1,0 +1,15 @@
+{
+  "execution": [
+    "nginx-B",
+    "nginx-A"
+  ],
+  "governance": [
+    "runtime",
+    "runtime",
+    "runtime"
+  ],
+  "outcome": [
+    "nginx-B",
+    "nginx-A"
+  ]
+}

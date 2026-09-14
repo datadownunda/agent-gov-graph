@@ -1,0 +1,25 @@
+{
+  "status": "VALID",
+  "count": 18,
+  "files": [
+    "schemas/action_evidence.schema.json",
+    "schemas/agent_governance_graph.schema.json",
+    "schemas/authority_registry.schema.json",
+    "schemas/authority_resolution.schema.json",
+    "schemas/control_attestation.schema.json",
+    "schemas/control_attestation_v2.schema.json",
+    "schemas/control_definition.schema.json",
+    "schemas/correlation_assertion.schema.json",
+    "schemas/delegation_registry.schema.json",
+    "schemas/delegation_resolution.schema.json",
+    "schemas/execution_evidence_event.schema.json",
+    "schemas/governance_decision_event.schema.json",
+    "schemas/investigation_projection.schema.json",
+    "schemas/investigation_query_result.schema.json",
+    "schemas/model_agent_evidence.schema.json",
+    "schemas/model_proposal.schema.json",
+    "schemas/observation_coverage.schema.json",
+    "schemas/reconciliation_assertion.schema.json"
+  ],
+  "selection": "Production *.schema.json files; sample payload JSON files are instances, not schemas."
+}

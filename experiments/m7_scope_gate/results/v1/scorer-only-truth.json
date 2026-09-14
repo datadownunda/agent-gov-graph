@@ -1,0 +1,3137 @@
+{
+  "000": {
+    "attempts": {
+      "execution:0": "s0",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "s0"
+    },
+    "covered": [
+      [
+        "governance:0",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "controls",
+    "focus": "governance:0",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "s0",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "s0"
+    },
+    "true_edges": [
+      [
+        "governance:0",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "allow"
+  },
+  "001": {
+    "attempts": {
+      "execution:0": "s0",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "s0"
+    },
+    "covered": [
+      [
+        "governance:2",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "controls",
+    "focus": "governance:2",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "s0",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "s0"
+    },
+    "true_edges": [
+      [
+        "governance:2",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "allow"
+  },
+  "002": {
+    "attempts": {
+      "execution:0": "s0",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "s0"
+    },
+    "covered": [
+      [
+        "governance:0",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "controls",
+    "focus": "governance:0",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "s0",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "s0"
+    },
+    "true_edges": [
+      [
+        "governance:0",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "allow"
+  },
+  "003": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": "CONTROL_EFFECTIVENESS_EXCEPTION",
+    "family": "controls",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "deny_effect"
+  },
+  "004": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": "CONTROL_EFFECTIVENESS_EXCEPTION",
+    "family": "controls",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "deny_effect"
+  },
+  "005": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": "CONTROL_EFFECTIVENESS_EXCEPTION",
+    "family": "controls",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "deny_effect"
+  },
+  "006": {
+    "attempts": {
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2"
+    },
+    "covered": [],
+    "expected_control": "CONTROL_EFFECTIVE",
+    "family": "controls",
+    "focus": "governance:2",
+    "presentation": "canonical",
+    "transactions": {
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2"
+    },
+    "true_edges": [],
+    "variant": "blocked"
+  },
+  "007": {
+    "attempts": {
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0"
+    },
+    "covered": [],
+    "expected_control": "CONTROL_EFFECTIVE",
+    "family": "controls",
+    "focus": "governance:0",
+    "presentation": "reversed",
+    "transactions": {
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0"
+    },
+    "true_edges": [],
+    "variant": "blocked"
+  },
+  "008": {
+    "attempts": {
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2"
+    },
+    "covered": [],
+    "expected_control": "CONTROL_EFFECTIVE",
+    "family": "controls",
+    "focus": "governance:2",
+    "presentation": "renamed",
+    "transactions": {
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2"
+    },
+    "true_edges": [],
+    "variant": "blocked"
+  },
+  "009": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "reuse",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "u",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "visible"
+  },
+  "010": {
+    "attempts": {
+      "execution:0": "b",
+      "execution:1": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b",
+      "outcome:1": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "reuse",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "u",
+      "execution:1": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "u",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "visible"
+  },
+  "011": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "reuse",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "u",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "visible"
+  },
+  "012": {
+    "attempts": {
+      "execution:0": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "b"
+    },
+    "covered": [],
+    "expected_control": null,
+    "family": "reuse",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "u",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "governance:1",
+        "absent:execution-a"
+      ]
+    ],
+    "variant": "replacement"
+  },
+  "013": {
+    "attempts": {
+      "execution:0": "b",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b"
+    },
+    "covered": [],
+    "expected_control": null,
+    "family": "reuse",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "u",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "governance:1",
+        "absent:execution-a"
+      ]
+    ],
+    "variant": "replacement"
+  },
+  "014": {
+    "attempts": {
+      "execution:0": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "b"
+    },
+    "covered": [],
+    "expected_control": null,
+    "family": "reuse",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "u",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "governance:1",
+        "absent:execution-a"
+      ]
+    ],
+    "variant": "replacement"
+  },
+  "015": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "reuse",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "period"
+  },
+  "016": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "reuse",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "period"
+  },
+  "017": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "reuse",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "period"
+  },
+  "018": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "namespace",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "u",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "explicit"
+  },
+  "019": {
+    "attempts": {
+      "execution:0": "b",
+      "execution:1": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b",
+      "outcome:1": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "namespace",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "u",
+      "execution:1": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "u",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "explicit"
+  },
+  "020": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "namespace",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "u",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "explicit"
+  },
+  "021": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "namespace",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "pooled"
+  },
+  "022": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "namespace",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "pooled"
+  },
+  "023": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "namespace",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "pooled"
+  },
+  "024": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "namespace",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "missing"
+  },
+  "025": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "namespace",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "missing"
+  },
+  "026": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "namespace",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "missing"
+  },
+  "027": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "copied",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "different"
+  },
+  "028": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "copied",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "different"
+  },
+  "029": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "copied",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "different"
+  },
+  "030": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "copied",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "identical"
+  },
+  "031": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b",
+      "outcome:1": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "copied",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "u",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:1"
+      ]
+    ],
+    "variant": "identical"
+  },
+  "032": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "copied",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "identical"
+  },
+  "033": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "copied",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "removed"
+  },
+  "034": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "copied",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "removed"
+  },
+  "035": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "copied",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "u"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "removed"
+  },
+  "036": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "retry",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "repeated"
+  },
+  "037": {
+    "attempts": {
+      "execution:0": "b",
+      "execution:1": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b",
+      "outcome:1": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "retry",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "repeated"
+  },
+  "038": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "retry",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "repeated"
+  },
+  "039": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "retry",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "distinct"
+  },
+  "040": {
+    "attempts": {
+      "execution:0": "b",
+      "execution:1": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b",
+      "outcome:1": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "retry",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "distinct"
+  },
+  "041": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "retry",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "distinct"
+  },
+  "042": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "s0",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "s0"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "governance:0",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "retry",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "t",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:0",
+        "execution:1"
+      ],
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "governed"
+  },
+  "043": {
+    "attempts": {
+      "execution:0": "s0",
+      "execution:1": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "s0",
+      "outcome:1": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "governance:2",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "retry",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "t",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:2",
+        "execution:0"
+      ],
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "governed"
+  },
+  "044": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "s0",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "s0"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "governance:0",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "retry",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "t",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:0",
+        "execution:1"
+      ],
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "governed"
+  },
+  "045": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanout",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "same_tuple"
+  },
+  "046": {
+    "attempts": {
+      "execution:0": "b",
+      "execution:1": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b",
+      "outcome:1": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanout",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "same_tuple"
+  },
+  "047": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanout",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "same_tuple"
+  },
+  "048": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanout",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "changed_tuple"
+  },
+  "049": {
+    "attempts": {
+      "execution:0": "b",
+      "execution:1": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b",
+      "outcome:1": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanout",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "changed_tuple"
+  },
+  "050": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanout",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "changed_tuple"
+  },
+  "051": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "s0",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "s0"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "governance:0",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanout",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "t",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:0",
+        "execution:1"
+      ],
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "governed"
+  },
+  "052": {
+    "attempts": {
+      "execution:0": "s0",
+      "execution:1": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "s0",
+      "outcome:1": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "governance:2",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanout",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "t",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:2",
+        "execution:0"
+      ],
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "governed"
+  },
+  "053": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "s0",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "s0"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "governance:0",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanout",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "t",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:0",
+        "execution:1"
+      ],
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "governed"
+  },
+  "054": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanin",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "competing"
+  },
+  "055": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanin",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "competing"
+  },
+  "056": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanin",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "competing"
+  },
+  "057": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "s0",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "aggregate"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "governance:0",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanin",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "t",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:0",
+        "execution:1"
+      ],
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "variant": "converged"
+  },
+  "058": {
+    "attempts": {
+      "execution:0": "s0",
+      "execution:1": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "aggregate"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "governance:2",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanin",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "t",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:2",
+        "execution:0"
+      ],
+      [
+        "governance:1",
+        "execution:1"
+      ]
+    ],
+    "variant": "converged"
+  },
+  "059": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "s0",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "aggregate"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "governance:0",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanin",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "t",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:0",
+        "execution:1"
+      ],
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "variant": "converged"
+  },
+  "060": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "aggregate"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanin",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "withheld"
+  },
+  "061": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "aggregate"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanin",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "withheld"
+  },
+  "062": {
+    "attempts": {
+      "execution:0": "a",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "aggregate"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "fanin",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "absent:outcome-a"
+      ]
+    ],
+    "variant": "withheld"
+  },
+  "063": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "parent",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "children"
+  },
+  "064": {
+    "attempts": {
+      "execution:0": "b",
+      "execution:1": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b",
+      "outcome:1": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "parent",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "children"
+  },
+  "065": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "parent",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "children"
+  },
+  "066": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "parent",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "context_only"
+  },
+  "067": {
+    "attempts": {
+      "execution:0": "b",
+      "execution:1": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "b",
+      "outcome:1": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "parent",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "context_only"
+  },
+  "068": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "b",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "b"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "parent",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "context_only"
+  },
+  "069": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "s0",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "s0"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "governance:0",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "parent",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "t",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:0",
+        "execution:1"
+      ],
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "governed"
+  },
+  "070": {
+    "attempts": {
+      "execution:0": "s0",
+      "execution:1": "a",
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "s0",
+      "outcome:1": "a"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "governance:2",
+        "execution:0"
+      ]
+    ],
+    "expected_control": null,
+    "family": "parent",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "t",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:2",
+        "execution:0"
+      ],
+      [
+        "governance:1",
+        "execution:1"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ]
+    ],
+    "variant": "governed"
+  },
+  "071": {
+    "attempts": {
+      "execution:0": "a",
+      "execution:1": "s0",
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a",
+      "outcome:1": "s0"
+    },
+    "covered": [
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "governance:0",
+        "execution:1"
+      ]
+    ],
+    "expected_control": null,
+    "family": "parent",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "execution:0": "t",
+      "execution:1": "t",
+      "governance:0": "t",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t",
+      "outcome:1": "t"
+    },
+    "true_edges": [
+      [
+        "governance:0",
+        "execution:1"
+      ],
+      [
+        "governance:1",
+        "execution:0"
+      ],
+      [
+        "execution:0",
+        "outcome:0"
+      ],
+      [
+        "execution:1",
+        "outcome:1"
+      ]
+    ],
+    "variant": "governed"
+  },
+  "072": {
+    "attempts": {
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a"
+    },
+    "covered": [],
+    "expected_control": null,
+    "family": "bridge",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "absent:execution-a"
+      ],
+      [
+        "absent:execution-a",
+        "outcome:0"
+      ]
+    ],
+    "variant": "missing"
+  },
+  "073": {
+    "attempts": {
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "a"
+    },
+    "covered": [],
+    "expected_control": null,
+    "family": "bridge",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "absent:execution-a"
+      ],
+      [
+        "absent:execution-a",
+        "outcome:0"
+      ]
+    ],
+    "variant": "missing"
+  },
+  "074": {
+    "attempts": {
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a"
+    },
+    "covered": [],
+    "expected_control": null,
+    "family": "bridge",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "absent:execution-a"
+      ],
+      [
+        "absent:execution-a",
+        "outcome:0"
+      ]
+    ],
+    "variant": "missing"
+  },
+  "075": {
+    "attempts": {
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a"
+    },
+    "covered": [],
+    "expected_control": null,
+    "family": "bridge",
+    "focus": "governance:1",
+    "presentation": "canonical",
+    "transactions": {
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "absent:execution-a"
+      ],
+      [
+        "absent:execution-a",
+        "outcome:0"
+      ]
+    ],
+    "variant": "equal_text"
+  },
+  "076": {
+    "attempts": {
+      "governance:0": "s2",
+      "governance:1": "a",
+      "governance:2": "s0",
+      "outcome:0": "a"
+    },
+    "covered": [],
+    "expected_control": null,
+    "family": "bridge",
+    "focus": "governance:1",
+    "presentation": "reversed",
+    "transactions": {
+      "governance:0": "s2",
+      "governance:1": "t",
+      "governance:2": "s0",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "absent:execution-a"
+      ],
+      [
+        "absent:execution-a",
+        "outcome:0"
+      ]
+    ],
+    "variant": "equal_text"
+  },
+  "077": {
+    "attempts": {
+      "governance:0": "s0",
+      "governance:1": "a",
+      "governance:2": "s2",
+      "outcome:0": "a"
+    },
+    "covered": [],
+    "expected_control": null,
+    "family": "bridge",
+    "focus": "governance:1",
+    "presentation": "renamed",
+    "transactions": {
+      "governance:0": "s0",
+      "governance:1": "t",
+      "governance:2": "s2",
+      "outcome:0": "t"
+    },
+    "true_edges": [
+      [
+        "governance:1",
+        "absent:execution-a"
+      ],
+      [
+        "absent:execution-a",
+        "outcome:0"
+      ]
+    ],
+    "variant": "equal_text"
+  }
+}

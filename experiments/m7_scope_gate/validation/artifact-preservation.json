@@ -1,0 +1,19 @@
+{
+  "approved_modified_files": [
+    "docs/control-effectiveness-attestation.md",
+    "experiments/control_attestation/run_experiment.py",
+    "src/control_attestation.py",
+    "src/graph_value/canonical.py",
+    "src/m6_attestation_evidence.py",
+    "tests/conftest.py",
+    "tests/test_m6_attestation_evidence.py"
+  ],
+  "compatibility_adjustment": "Graph reference reader explicitly selects the saved M7 rule; existing regression tests exposed this necessary historical replay dispatch.",
+  "historical_result_files_unchanged": 4306,
+  "m9_protocol_sha256": "3c166973460fe8111d4aa7fec411f32989eb1dde8458cf60dcdaa69e36807224",
+  "original_strong_link_verdict": "FAILED",
+  "original_tracked_files": 4516,
+  "preserved_original_files": 4509,
+  "reconstructed_original_files_verified": 4516,
+  "status": "VERIFIED"
+}
