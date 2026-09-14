@@ -1,0 +1,16 @@
+HTTP/1.1 200 OK
+Server: nginx/1.30.4
+Date: Mon, 14 Sep 2026 15:58:40 GMT
+Content-Type: application/json
+Content-Length: 150
+Last-Modified: Sun, 06 Sep 2026 23:46:08 GMT
+Connection: close
+ETag: "6a9dfb40-96"
+X-Request-ID: 7e43f8968beefa9853fb1fbd1242677c
+
+{
+  "id": "complaint-456",
+  "type": "employee_complaint",
+  "classification": "restricted",
+  "summary": "Synthetic authorized employee complaint."
+}

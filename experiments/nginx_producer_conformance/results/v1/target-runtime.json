@@ -1,0 +1,11 @@
+{
+  "configuration_sha256": "65f157700c17f2e9b6ebb47952d00caea52b7182a9670c8fc5891d62aa3ce9d6",
+  "image": "nginx@sha256:dc5069ad14f19660b141b21236140b91656bf89bbc3e2417c70ae650cd66104c",
+  "image_id": "sha256:dc5069ad14f19660b141b21236140b91656bf89bbc3e2417c70ae650cd66104c",
+  "nginx_version": "nginx version: nginx/1.30.4",
+  "port": 62179,
+  "recorded_before_requests_at": "2026-09-14T15:58:40.333176+00:00",
+  "repo_digests": [
+    "nginx@sha256:dc5069ad14f19660b141b21236140b91656bf89bbc3e2417c70ae650cd66104c"
+  ]
+}

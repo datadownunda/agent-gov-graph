@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "campaign": {
+      "type": "string"
+    },
+    "baseline_commit": {
+      "const": "435d15f4c705e9cbd55f28baee7c4e1136867b07"
+    },
+    "protocol_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "producer_ref": {
+      "type": "string"
+    },
+    "configuration_ref": {
+      "type": "string"
+    },
+    "capture_complete": {
+      "type": "boolean"
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision": {
+      "enum": [
+        "PRODUCER_CONTRACT_SUPPORTED",
+        "FORWARDED_AND_GENERATED_IDS_CONFLATED",
+        "PRODUCER_CONTRACT_CONTRADICTED",
+        "NOT_EVALUABLE"
+      ]
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "observations": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "method": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "observed_incoming_x_request_id": {
+            "type": "string"
+          },
+          "generated_request_id": {
+            "type": "string"
+          },
+          "raw_request_ref": {
+            "type": "string"
+          },
+          "raw_response_ref": {
+            "type": "string"
+          },
+          "request_number": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8
+          },
+          "sent_x_request_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "returned_response_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "integer"
+          },
+          "generated_equals_incoming": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "matching_generated_id_requests": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8
+            }
+          },
+          "access_log_ref": {
+            "type": "object",
+            "required": [
+              "path",
+              "line",
+              "byte_offset",
+              "byte_length"
+            ],
+            "properties": {
+              "path": {
+                "const": "native/access.jsonl"
+              },
+              "line": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "byte_offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "byte_length": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "method",
+          "uri",
+          "observed_incoming_x_request_id",
+          "generated_request_id",
+          "raw_request_ref",
+          "raw_response_ref",
+          "request_number",
+          "sent_x_request_id",
+          "returned_response_ids",
+          "status",
+          "generated_equals_incoming",
+          "matching_generated_id_requests",
+          "access_log_ref"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "campaign",
+    "baseline_commit",
+    "protocol_sha256",
+    "producer_ref",
+    "configuration_ref",
+    "capture_complete",
+    "errors",
+    "decision_reasons",
+    "limitations",
+    "decision",
+    "checks",
+    "observations"
+  ]
+}

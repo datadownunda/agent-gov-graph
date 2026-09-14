@@ -1,0 +1,212 @@
+{
+  "baseline_commit": "435d15f4c705e9cbd55f28baee7c4e1136867b07",
+  "campaign": "nginx-producer-conformance-v1",
+  "capture_complete": true,
+  "checks": {
+    "capture_complete": true,
+    "no_duplicate_native_ids_observed": true,
+    "pair_1_2_equal_incoming_distinct_native": true,
+    "pair_7_8_equal_incoming_distinct_native": true,
+    "request_1": true,
+    "request_2": true,
+    "request_3": true,
+    "request_4": true,
+    "request_5": true,
+    "request_6": true,
+    "request_7": true,
+    "request_8": true,
+    "supplied_incoming_distinct_from_native": true
+  },
+  "configuration_ref": "nginx.conf",
+  "decision": "PRODUCER_CONTRACT_SUPPORTED",
+  "decision_reasons": [
+    "All preregistered checks passed"
+  ],
+  "errors": [],
+  "limitations": [
+    "Finite eight-request observation; no cryptographic uniqueness or collision impossibility claim.",
+    "Custody hashes do not authenticate producers.",
+    "Historical FAILED and scores remain unchanged."
+  ],
+  "observations": [
+    {
+      "access_log_ref": {
+        "byte_length": 298,
+        "byte_offset": 0,
+        "line": 1,
+        "path": "native/access.jsonl"
+      },
+      "generated_equals_incoming": false,
+      "generated_request_id": "762a616db388341ab1f75a0e4da4a7fe",
+      "matching_generated_id_requests": [],
+      "method": "GET",
+      "observed_incoming_x_request_id": "SAME-VALUE",
+      "raw_request_ref": "requests/001.http",
+      "raw_response_ref": "responses/001.http",
+      "request_number": 1,
+      "returned_response_ids": [
+        "762a616db388341ab1f75a0e4da4a7fe"
+      ],
+      "sent_x_request_id": "SAME-VALUE",
+      "status": 200,
+      "uri": "/complaints/complaint-789.json"
+    },
+    {
+      "access_log_ref": {
+        "byte_length": 298,
+        "byte_offset": 298,
+        "line": 2,
+        "path": "native/access.jsonl"
+      },
+      "generated_equals_incoming": false,
+      "generated_request_id": "ddd49b4560f3297e9a011ae048656b9b",
+      "matching_generated_id_requests": [],
+      "method": "GET",
+      "observed_incoming_x_request_id": "SAME-VALUE",
+      "raw_request_ref": "requests/002.http",
+      "raw_response_ref": "responses/002.http",
+      "request_number": 2,
+      "returned_response_ids": [
+        "ddd49b4560f3297e9a011ae048656b9b"
+      ],
+      "sent_x_request_id": "SAME-VALUE",
+      "status": 200,
+      "uri": "/complaints/complaint-789.json"
+    },
+    {
+      "access_log_ref": {
+        "byte_length": 288,
+        "byte_offset": 596,
+        "line": 3,
+        "path": "native/access.jsonl"
+      },
+      "generated_equals_incoming": null,
+      "generated_request_id": "0cf60616db20dc9cdf35725232eeefca",
+      "matching_generated_id_requests": [],
+      "method": "GET",
+      "observed_incoming_x_request_id": "",
+      "raw_request_ref": "requests/003.http",
+      "raw_response_ref": "responses/003.http",
+      "request_number": 3,
+      "returned_response_ids": [
+        "0cf60616db20dc9cdf35725232eeefca"
+      ],
+      "sent_x_request_id": null,
+      "status": 200,
+      "uri": "/complaints/complaint-789.json"
+    },
+    {
+      "access_log_ref": {
+        "byte_length": 288,
+        "byte_offset": 884,
+        "line": 4,
+        "path": "native/access.jsonl"
+      },
+      "generated_equals_incoming": null,
+      "generated_request_id": "07399c2e9d5fb684093c69e949137ff3",
+      "matching_generated_id_requests": [],
+      "method": "GET",
+      "observed_incoming_x_request_id": "",
+      "raw_request_ref": "requests/004.http",
+      "raw_response_ref": "responses/004.http",
+      "request_number": 4,
+      "returned_response_ids": [
+        "07399c2e9d5fb684093c69e949137ff3"
+      ],
+      "sent_x_request_id": null,
+      "status": 200,
+      "uri": "/complaints/complaint-789.json"
+    },
+    {
+      "access_log_ref": {
+        "byte_length": 295,
+        "byte_offset": 1172,
+        "line": 5,
+        "path": "native/access.jsonl"
+      },
+      "generated_equals_incoming": false,
+      "generated_request_id": "c1453c873e899facc99937d89beccde3",
+      "matching_generated_id_requests": [],
+      "method": "GET",
+      "observed_incoming_x_request_id": "VALUE-A",
+      "raw_request_ref": "requests/005.http",
+      "raw_response_ref": "responses/005.http",
+      "request_number": 5,
+      "returned_response_ids": [
+        "c1453c873e899facc99937d89beccde3"
+      ],
+      "sent_x_request_id": "VALUE-A",
+      "status": 200,
+      "uri": "/complaints/complaint-789.json"
+    },
+    {
+      "access_log_ref": {
+        "byte_length": 295,
+        "byte_offset": 1467,
+        "line": 6,
+        "path": "native/access.jsonl"
+      },
+      "generated_equals_incoming": false,
+      "generated_request_id": "6ca64f6e4b690f7928d21bb375c26130",
+      "matching_generated_id_requests": [],
+      "method": "GET",
+      "observed_incoming_x_request_id": "VALUE-B",
+      "raw_request_ref": "requests/006.http",
+      "raw_response_ref": "responses/006.http",
+      "request_number": 6,
+      "returned_response_ids": [
+        "6ca64f6e4b690f7928d21bb375c26130"
+      ],
+      "sent_x_request_id": "VALUE-B",
+      "status": 200,
+      "uri": "/complaints/complaint-789.json"
+    },
+    {
+      "access_log_ref": {
+        "byte_length": 298,
+        "byte_offset": 1762,
+        "line": 7,
+        "path": "native/access.jsonl"
+      },
+      "generated_equals_incoming": false,
+      "generated_request_id": "d652669eea3a0cd5326302654b72afb1",
+      "matching_generated_id_requests": [],
+      "method": "GET",
+      "observed_incoming_x_request_id": "SAME-VALUE",
+      "raw_request_ref": "requests/007.http",
+      "raw_response_ref": "responses/007.http",
+      "request_number": 7,
+      "returned_response_ids": [
+        "d652669eea3a0cd5326302654b72afb1"
+      ],
+      "sent_x_request_id": "SAME-VALUE",
+      "status": 200,
+      "uri": "/complaints/complaint-456.json"
+    },
+    {
+      "access_log_ref": {
+        "byte_length": 298,
+        "byte_offset": 2060,
+        "line": 8,
+        "path": "native/access.jsonl"
+      },
+      "generated_equals_incoming": false,
+      "generated_request_id": "7e43f8968beefa9853fb1fbd1242677c",
+      "matching_generated_id_requests": [],
+      "method": "GET",
+      "observed_incoming_x_request_id": "SAME-VALUE",
+      "raw_request_ref": "requests/008.http",
+      "raw_response_ref": "responses/008.http",
+      "request_number": 8,
+      "returned_response_ids": [
+        "7e43f8968beefa9853fb1fbd1242677c"
+      ],
+      "sent_x_request_id": "SAME-VALUE",
+      "status": 200,
+      "uri": "/complaints/complaint-456.json"
+    }
+  ],
+  "producer_ref": "target-runtime.json",
+  "protocol_sha256": "f5da0eefad4f7d3e818b027a4894001d55d8d9973142b86a489c2d0f1f89b9df",
+  "schema_version": "1.0"
+}

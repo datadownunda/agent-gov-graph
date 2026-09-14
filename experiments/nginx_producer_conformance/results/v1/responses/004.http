@@ -1,0 +1,16 @@
+HTTP/1.1 200 OK
+Server: nginx/1.30.4
+Date: Mon, 14 Sep 2026 15:58:40 GMT
+Content-Type: application/json
+Content-Length: 168
+Last-Modified: Sun, 06 Sep 2026 23:46:08 GMT
+Connection: close
+ETag: "6a9dfb40-a8"
+X-Request-ID: 07399c2e9d5fb684093c69e949137ff3
+
+{
+  "id": "complaint-789",
+  "type": "employee_complaint",
+  "classification": "restricted",
+  "summary": "Synthetic complaint outside the authorized workflow scope."
+}

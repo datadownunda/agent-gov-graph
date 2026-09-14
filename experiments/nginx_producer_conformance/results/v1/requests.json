@@ -1,0 +1,50 @@
+[
+  {
+    "method": "GET",
+    "request_number": 1,
+    "sent_x_request_id": "SAME-VALUE",
+    "uri": "/complaints/complaint-789.json"
+  },
+  {
+    "method": "GET",
+    "request_number": 2,
+    "sent_x_request_id": "SAME-VALUE",
+    "uri": "/complaints/complaint-789.json"
+  },
+  {
+    "method": "GET",
+    "request_number": 3,
+    "sent_x_request_id": null,
+    "uri": "/complaints/complaint-789.json"
+  },
+  {
+    "method": "GET",
+    "request_number": 4,
+    "sent_x_request_id": null,
+    "uri": "/complaints/complaint-789.json"
+  },
+  {
+    "method": "GET",
+    "request_number": 5,
+    "sent_x_request_id": "VALUE-A",
+    "uri": "/complaints/complaint-789.json"
+  },
+  {
+    "method": "GET",
+    "request_number": 6,
+    "sent_x_request_id": "VALUE-B",
+    "uri": "/complaints/complaint-789.json"
+  },
+  {
+    "method": "GET",
+    "request_number": 7,
+    "sent_x_request_id": "SAME-VALUE",
+    "uri": "/complaints/complaint-456.json"
+  },
+  {
+    "method": "GET",
+    "request_number": 8,
+    "sent_x_request_id": "SAME-VALUE",
+    "uri": "/complaints/complaint-456.json"
+  }
+]
