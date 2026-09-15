@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "agg-m9b-a63386469ff2",
+    "date",
+    "-u",
+    "+%s"
+  ],
+  "end": {
+    "monotonic_ns": 3784015258818848,
+    "wall_ns": 1789407728974687000
+  },
+  "returncode": 0,
+  "start": {
+    "monotonic_ns": 3784015140612754,
+    "wall_ns": 1789407728856481000
+  },
+  "timeout_seconds": 30
+}

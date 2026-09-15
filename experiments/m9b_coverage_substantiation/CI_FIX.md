@@ -1,0 +1,9 @@
+# Additive CI checkout history repair
+
+The published negative checkpoint at `1ee92c58a6bee4a86379bcd7ea4473136aba9fe5` encountered four harness failures in [GitHub Actions run 34874589967](https://github.com/datadownunda/agent-gov-graph/actions/runs/34874589967). The shallow CI checkout omitted the frozen baseline required by the diagnostic's existing Git checks. This infrastructure failure is preserved; it is not an empirical coverage result.
+
+A new root `conftest.py` restores full Git history only when one of the four frozen M9b campaign-harness tests requests its session prerequisite and the checkout is shallow. It fetches from the existing origin and requires the exact frozen baseline commit. Fetch failure remains a test error. Complete clones require no network access. Git history hydration changes repository metadata, not source files or the checkout revision.
+
+The original runner, protocol, tests, workflow, archived results and every baseline file remain unchanged. The baseline constant, baseline modification check, freeze hashes and ancestry checks are neither substituted nor mocked. The four harness tests still use their existing mocked public API; their passing results do not establish live coverage. A committed change to a protected baseline file remains detectable after hydration.
+
+Validation: all 12 original M9b harness tests and two new CI infrastructure tests pass in a complete clone. The new tests use local file origins to verify successful hydration preserves HEAD and exposes a committed protected-file modification, and that an unavailable origin fails without suppressing the error. An additional depth-one clone of this complete repository, using a local `file://` origin, validates the actual unchanged harness with the baseline initially absent. No external network is required for these local checks. Remote checkpoint CI must be reported separately after publication.

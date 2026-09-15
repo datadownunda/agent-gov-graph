@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "docker",
+    "inspect",
+    "agg-m9b-a63386469ff2"
+  ],
+  "end": {
+    "monotonic_ns": 3784019034720763,
+    "wall_ns": 1789407732750633000
+  },
+  "returncode": 0,
+  "start": {
+    "monotonic_ns": 3784018972389935,
+    "wall_ns": 1789407732688301000
+  },
+  "timeout_seconds": 30
+}

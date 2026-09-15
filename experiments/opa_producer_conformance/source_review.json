@@ -1,0 +1,16 @@
+{
+  "status": "SUPPORTED",
+  "references": [
+    "https://github.com/open-policy-agent/opa/blob/v1.19.0/cmd/exec.go#L129-L160",
+    "https://github.com/open-policy-agent/opa/blob/v1.19.0/cmd/internal/exec/exec.go#L32-L67",
+    "https://github.com/open-policy-agent/opa/blob/v1.19.0/cmd/internal/exec/json_reporter.go#L45-L59",
+    "https://github.com/open-policy-agent/opa/blob/v1.19.0/v1/sdk/opa.go#L304-L313",
+    "https://github.com/open-policy-agent/opa/blob/v1.19.0/v1/sdk/opa.go#L363-L444",
+    "https://github.com/open-policy-agent/opa/blob/v1.19.0/internal/uuid/uuid.go#L19-L30",
+    "https://github.com/open-policy-agent/opa/blob/v1.19.0/v1/runtime/runtime.go#L930-L937",
+    "https://github.com/open-policy-agent/opa/blob/v1.19.0/v1/runtime/runtime.go#L1127-L1132",
+    "https://github.com/open-policy-agent/opa/blob/v1.19.0/v1/server/server.go",
+    "https://www.openpolicyagent.org/docs/rest-api"
+  ],
+  "scope": "stock-opa-exec-1.19.0"
+}

@@ -1,0 +1,85 @@
+{
+  "cases": [
+    {
+      "case": "baseline",
+      "coverage_basis_codes": [
+        "BOUNDED_TARGET_COVERAGE_ADEQUATE"
+      ],
+      "coverage_result": "ADEQUATE",
+      "evaluation_status": "EVALUATED",
+      "finding": "CONTROL_EFFECTIVE",
+      "receipt_basis_codes": [],
+      "receipt_status": "VERIFIED"
+    },
+    {
+      "case": "missing_support",
+      "coverage_basis_codes": [
+        "CAPTURE_FINALIZATION_NOT_SUBSTANTIATED",
+        "CLOCK_ASSUMPTIONS_NOT_SUBSTANTIATED"
+      ],
+      "coverage_result": "UNKNOWN",
+      "evaluation_status": "INSUFFICIENT_EVIDENCE",
+      "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+      "receipt_basis_codes": [],
+      "receipt_status": "VERIFIED"
+    },
+    {
+      "case": "short_capture",
+      "coverage_basis_codes": [
+        "TARGET_CAPTURE_INTERVAL_OR_FINALIZATION_INADEQUATE"
+      ],
+      "coverage_result": "INADEQUATE",
+      "evaluation_status": "INSUFFICIENT_EVIDENCE",
+      "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+      "receipt_basis_codes": [],
+      "receipt_status": "VERIFIED"
+    },
+    {
+      "case": "identity_scope",
+      "coverage_basis_codes": [
+        "CONTROL_COVERAGE_BINDING_MISMATCH"
+      ],
+      "coverage_result": "INADEQUATE",
+      "evaluation_status": "INSUFFICIENT_EVIDENCE",
+      "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+      "receipt_basis_codes": [],
+      "receipt_status": "VERIFIED"
+    },
+    {
+      "case": "snapshot_mismatch",
+      "coverage_basis_codes": null,
+      "coverage_result": null,
+      "evaluation_status": "NOT_EVALUABLE",
+      "finding": null,
+      "receipt_basis_codes": [
+        "REFERENCED_EVIDENCE_OR_CONTROL_INTEGRITY_DEFECT"
+      ],
+      "receipt_status": "EVIDENCE_DEFECT"
+    },
+    {
+      "case": "unmeasured_clock_basis",
+      "coverage_basis_codes": [
+        "BOUNDED_TARGET_COVERAGE_ADEQUATE"
+      ],
+      "coverage_result": "ADEQUATE",
+      "evaluation_status": "EVALUATED",
+      "finding": "CONTROL_EFFECTIVE",
+      "receipt_basis_codes": [],
+      "receipt_status": "VERIFIED"
+    },
+    {
+      "case": "unresolved_gaps",
+      "coverage_basis_codes": [
+        "UNRESOLVED_OBSERVATION_GAPS_OR_CANDIDATES"
+      ],
+      "coverage_result": "INADEQUATE",
+      "evaluation_status": "INSUFFICIENT_EVIDENCE",
+      "finding": "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+      "receipt_basis_codes": [],
+      "receipt_status": "VERIFIED"
+    }
+  ],
+  "empirical_coverage_substantiated": false,
+  "evidence_kind": "EXISTING_DETERMINISTIC_SYNTHETIC_FIXTURE",
+  "status": "COMPLETED"
+}

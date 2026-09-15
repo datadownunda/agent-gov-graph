@@ -1,0 +1,394 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "rule_version": {
+      "const": "delegation/1"
+    },
+    "query": {
+      "$ref": "#/$defs/query"
+    },
+    "authority_revision": {
+      "$ref": "#/$defs/revision"
+    },
+    "delegation_revision": {
+      "$ref": "#/$defs/revision"
+    },
+    "resolution": {
+      "$ref": "#/$defs/resolution"
+    },
+    "governance_binding": {
+      "type": "object",
+      "properties": {
+        "event_digest": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority_resolution_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "opa_decision_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "m4_reconstruction": {
+          "type": "object"
+        },
+        "at_authority_resolution": {
+          "$ref": "#/$defs/resolution"
+        },
+        "boundary_status": {
+          "enum": [
+            "STABLE",
+            "TEMPORAL_BOUNDARY_AMBIGUITY"
+          ]
+        }
+      },
+      "required": [
+        "event_digest",
+        "authority_resolution_at",
+        "opa_decision_at",
+        "m4_reconstruction",
+        "at_authority_resolution",
+        "boundary_status"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "rule_version",
+    "query",
+    "authority_revision",
+    "delegation_revision",
+    "resolution"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "query": {
+      "type": "object",
+      "properties": {
+        "actor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resource_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resource_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effective_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "actor",
+        "action",
+        "resource_type",
+        "resource_id",
+        "effective_at"
+      ],
+      "additionalProperties": false
+    },
+    "revision": {
+      "type": "object",
+      "properties": {
+        "file": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}\\.json$"
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "file",
+        "digest",
+        "source_id",
+        "source_version"
+      ],
+      "additionalProperties": false
+    },
+    "parent": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "authority",
+            "delegation"
+          ]
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "kind",
+        "record_id",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resource_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resource_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "action",
+        "resource_type",
+        "resource_ids"
+      ],
+      "additionalProperties": false
+    },
+    "issue": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "enum": [
+            "AUTHORITY_CONFLICT",
+            "DELEGATION_CHAIN_BROKEN",
+            "DELEGATION_SCOPE_EXCEEDED",
+            "ONWARD_DELEGATION_NOT_PERMITTED",
+            "DELEGATION_EXPIRED",
+            "DELEGATION_CONFLICT",
+            "DELEGATION_CYCLE",
+            "INSUFFICIENT_EVIDENCE",
+            "EVIDENCE_DEFECT",
+            "DELEGATION_VALIDITY_EXCEEDED",
+            "DELEGATION_NOT_YET_VALID",
+            "DELEGATION_NOT_PERMITTED"
+          ]
+        },
+        "record": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/parent"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "detail": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "code",
+        "record",
+        "detail"
+      ],
+      "additionalProperties": false
+    },
+    "path": {
+      "type": "object",
+      "properties": {
+        "authority_kind": {
+          "enum": [
+            "DIRECT",
+            "DELEGATED"
+          ]
+        },
+        "proposed_actor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "root_principal": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "terminal": {
+          "$ref": "#/$defs/parent"
+        },
+        "chain": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/parent"
+          }
+        },
+        "status": {
+          "enum": [
+            "RESOLVED",
+            "DELEGATION_REJECTED",
+            "AUTHORITY_CONFLICT",
+            "DELEGATION_CHAIN_BROKEN",
+            "DELEGATION_SCOPE_EXCEEDED",
+            "ONWARD_DELEGATION_NOT_PERMITTED",
+            "DELEGATION_EXPIRED",
+            "DELEGATION_CONFLICT",
+            "DELEGATION_CYCLE",
+            "INSUFFICIENT_EVIDENCE",
+            "EVIDENCE_DEFECT",
+            "DELEGATION_VALIDITY_EXCEEDED",
+            "DELEGATION_NOT_YET_VALID",
+            "DELEGATION_NOT_PERMITTED"
+          ]
+        },
+        "permission_result": {
+          "enum": [
+            "PERMITTED",
+            "NOT_PERMITTED",
+            "NOT_EVALUABLE"
+          ]
+        },
+        "effective_scopes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/scope"
+          }
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/issue"
+          }
+        }
+      },
+      "required": [
+        "authority_kind",
+        "proposed_actor",
+        "root_principal",
+        "terminal",
+        "chain",
+        "status",
+        "permission_result",
+        "effective_scopes",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "resolution": {
+      "type": "object",
+      "properties": {
+        "rule_version": {
+          "const": "delegation/1"
+        },
+        "query": {
+          "$ref": "#/$defs/query"
+        },
+        "status": {
+          "enum": [
+            "RESOLVED",
+            "MULTIPLE_VALID_BASES",
+            "DELEGATION_REJECTED",
+            "AUTHORITY_CONFLICT",
+            "DELEGATION_CHAIN_BROKEN",
+            "DELEGATION_SCOPE_EXCEEDED",
+            "ONWARD_DELEGATION_NOT_PERMITTED",
+            "DELEGATION_EXPIRED",
+            "DELEGATION_CONFLICT",
+            "DELEGATION_CYCLE",
+            "INSUFFICIENT_EVIDENCE",
+            "EVIDENCE_DEFECT",
+            "DELEGATION_VALIDITY_EXCEEDED",
+            "DELEGATION_NOT_YET_VALID",
+            "DELEGATION_NOT_PERMITTED"
+          ]
+        },
+        "permission_result": {
+          "enum": [
+            "PERMITTED",
+            "NOT_PERMITTED",
+            "NOT_EVALUABLE"
+          ]
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/path"
+          }
+        },
+        "valid_bases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/path"
+          }
+        },
+        "evidence_issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              },
+              "record_digest": {
+                "type": "string",
+                "minLength": 1
+              },
+              "detail": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code",
+              "record_digest",
+              "detail"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "direct_authority": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "rule_version",
+        "query",
+        "status",
+        "permission_result",
+        "candidates",
+        "valid_bases",
+        "evidence_issues",
+        "direct_authority"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

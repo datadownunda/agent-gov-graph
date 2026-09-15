@@ -1,0 +1,32 @@
+{
+  "assertion_id": "sha256:edee02b21eacae8c76cb19ae0bd22dc977b0e6e3949280d48926c1f180a5045b",
+  "basis_codes": [
+    "REFERENCED_EVIDENCE_OR_CONTROL_INTEGRITY_DEFECT"
+  ],
+  "control_reference": {
+    "content_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+    "control_id": "complaint-deny-prevents-serving",
+    "control_version": "1"
+  },
+  "correlation_assertion_refs": [],
+  "coverage_assessment": null,
+  "evaluation_status": "NOT_EVALUABLE",
+  "exception_paths": [],
+  "finding": null,
+  "limitations": [
+    "This finding concerns exactly one evaluated reconciliation/action and its declared observation boundary; no population-wide inference.",
+    "REPRESENTATION_SERVED means the configured target reports serving representation bytes; it does not establish downstream consumption, interpretation or use.",
+    "A target-effect exception is not root-cause attribution and makes no claim about why the effect occurred.",
+    "A positive finding is conditional on the specific observation interval, capture evidence and clock bounds, not unlimited future prevention.",
+    "Content identity and deterministic replay are not cryptographic provenance authentication.",
+    "Issuer/namespace qualification checks declarations only; neither independent authentication nor producer enforcement is established."
+  ],
+  "reconciliation_reference": "sha256:9ffef8be58a1aa72f1c5c324fdbd049d9483ae38fca3bf69e3f4bef7566bad4e",
+  "rule_version": "control-attestation/2",
+  "schema_version": "1.2",
+  "scope": {
+    "cardinality": "SINGLE_ACTION"
+  },
+  "source_evidence_refs": [],
+  "verification_reference": "sha256:29bc01823e2a0e2e83b51dd676832251e7c1cdf26112cf7d5b86a6590b95917e"
+}

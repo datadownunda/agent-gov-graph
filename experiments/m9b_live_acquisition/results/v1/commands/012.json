@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "agg-m9b-a63386469ff2",
+    "cat",
+    "/proc/self/timens_offsets"
+  ],
+  "end": {
+    "monotonic_ns": 3784007430565256,
+    "wall_ns": 1789407721146344000
+  },
+  "returncode": 0,
+  "start": {
+    "monotonic_ns": 3784007347746938,
+    "wall_ns": 1789407721063524000
+  },
+  "timeout_seconds": 30
+}

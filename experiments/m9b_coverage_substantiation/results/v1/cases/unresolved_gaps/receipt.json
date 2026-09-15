@@ -1,0 +1,66 @@
+{
+  "archive_digest": "sha256:62ae63247327952c71a6ceb2b4c40d79875a0783a40770c05e38ffafa426ba52",
+  "basis_codes": [],
+  "control_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+  "coverage_assessment": {
+    "basis_codes": [
+      "UNRESOLVED_OBSERVATION_GAPS_OR_CANDIDATES"
+    ],
+    "control_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+    "coverage_ref": "sha256:125637044b6ba6d8a1aa87a22ea95e1a2f79d98a5d8d9f123c48963f480b1153",
+    "interval": {
+      "end": "2026-09-05T12:00:12Z",
+      "start": "2026-09-05T12:00:02Z"
+    },
+    "result": "INADEQUATE",
+    "support_ref": "sha256:02d932f5f279141a537f655cd62769ef94be0cbae9d5aa9d277cc2d2e4304d69"
+  },
+  "dependency_refs": [
+    "sha256:08895c9b8a48474bc8fdfe9a4560f6ab6757c485d3af977690010b7391e89632",
+    "sha256:0b164386f668e281c213bc8d87fa78c0fb59acea9f9488b957b26754d1a9edb4",
+    "sha256:1aa2801af2587fe4bbe97fb41657e3ea25f8a5f8d61073bfc58868522cc19b57",
+    "sha256:6aa6426c294bc443c6db6aad4b30c599af2d4cf5e7aaab0828c84ecdbb9c28b8",
+    "sha256:aba8a2d1edd6b354d56b451a129dc78b7a0175873db8abf07be0751b3d7ab360",
+    "sha256:be709c9380c880afcbf7c195ccae12c6f78e64150fdcafc1eaaf4d50ac06ee07",
+    "sha256:cad76343a5cde6307fab9c1d6f3f180381b6db3d6cb4226642d1ade8abdc643b",
+    "sha256:e2351f4a4b7067d56f2d30baa1c7738d2805320f646e8076a8fb6425085e2a60",
+    "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sha256:e50812cead9282236de81f40664b3144585325ac8c3e65558d330db17dfb38ce",
+    "sha256:faae2c92a411bbc334d909c7f1f36bc43c9a14ef303c22564f915a4c7b2a3aed"
+  ],
+  "facts": {
+    "consistent_with_blocking": true,
+    "exception_paths": [],
+    "governance": {
+      "action": "read",
+      "actor": {
+        "id": "fixture-agent",
+        "namespace": "agent"
+      },
+      "decision": "DENY",
+      "evidence_ref": "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391",
+      "observed_at": "2026-09-05T12:00:02Z",
+      "resource_id": "complaint-789",
+      "resource_type": "employee_complaint"
+    },
+    "prohibited_effect_established": false,
+    "reconciliation_result": "CONSISTENT",
+    "relevant_correlation_ambiguous": false,
+    "source_refs": [
+      "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391"
+    ],
+    "supporting_correlation_refs": [],
+    "supporting_effect_refs": [],
+    "target_contract_verified": true,
+    "undermining_uncertainty": false
+  },
+  "limitations": [
+    "Archive and receipt digests identify content; they do not authenticate producers.",
+    "Coverage observations remain evidence subject to their stated provenance and clock assumptions."
+  ],
+  "receipt_id": "sha256:eb8ee738d6e9a33c168e7d8f7187cfe87b599880af35ce0f9be38d85f849a9d6",
+  "reconciliation_ref": "sha256:9ffef8be58a1aa72f1c5c324fdbd049d9483ae38fca3bf69e3f4bef7566bad4e",
+  "rule_version": "m6-attestation-verification/2",
+  "schema_version": "1.2",
+  "status": "VERIFIED"
+}

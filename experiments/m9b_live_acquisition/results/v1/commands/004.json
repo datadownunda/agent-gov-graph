@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "docker",
+    "image",
+    "inspect",
+    "openpolicyagent/opa:1.19.0"
+  ],
+  "end": {
+    "monotonic_ns": 3783996953131197,
+    "wall_ns": 1789407710668789000
+  },
+  "returncode": 0,
+  "start": {
+    "monotonic_ns": 3783996902121734,
+    "wall_ns": 1789407710617779000
+  },
+  "timeout_seconds": 30
+}

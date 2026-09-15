@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "reconciliation_assertion",
+  "required": [
+    "schema_version",
+    "rule_version",
+    "assertion_id",
+    "source_evidence",
+    "correlation_assertions",
+    "correlation_paths",
+    "claims",
+    "comparisons",
+    "issue_codes",
+    "result",
+    "evidence_coverage",
+    "time_assumptions",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "rule_version": {
+      "const": "action-reconciliation/1"
+    },
+    "assertion_id": {
+      "type": "string"
+    },
+    "source_evidence": {
+      "type": "array"
+    },
+    "correlation_assertions": {
+      "type": "array"
+    },
+    "correlation_paths": {
+      "type": "array"
+    },
+    "claims": {
+      "type": "object",
+      "required": [
+        "governance",
+        "execution",
+        "outcome"
+      ]
+    },
+    "comparisons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "left_ref",
+          "right_ref",
+          "dimension",
+          "left",
+          "right",
+          "relation"
+        ],
+        "properties": {
+          "dimension": {
+            "enum": [
+              "actor",
+              "action",
+              "resource_id",
+              "resource_type"
+            ]
+          },
+          "relation": {
+            "enum": [
+              "SAME",
+              "DIFFERENT",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    },
+    "issue_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "result": {
+      "enum": [
+        "CONSISTENT",
+        "EXPLAINED_DIVERGENCE",
+        "UNEXPLAINED_DIVERGENCE",
+        "CONTRADICTION",
+        "INSUFFICIENT_EVIDENCE",
+        "NOT_EVALUABLE"
+      ]
+    },
+    "evidence_coverage": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "time_assumptions": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array"
+    }
+  }
+}

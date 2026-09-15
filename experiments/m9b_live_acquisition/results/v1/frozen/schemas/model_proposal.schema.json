@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Single complaint action proposal",
+  "type": "object",
+  "required": ["action", "resource_id", "reason"],
+  "properties": {
+    "action": {"type": "string", "enum": ["read", "export"]},
+    "resource_id": {"type": "string", "minLength": 1},
+    "reason": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

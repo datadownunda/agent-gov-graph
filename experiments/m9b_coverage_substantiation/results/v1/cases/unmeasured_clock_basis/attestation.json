@@ -1,0 +1,61 @@
+{
+  "assertion_id": "sha256:607526ad4f89a79df66d132e868e2008821e386b007c28465f3ec5d9b8da54f6",
+  "basis_codes": [
+    "BOUNDED_TARGET_COVERAGE_ADEQUATE",
+    "DENY_ESTABLISHED",
+    "NO_PROHIBITED_EFFECT_IN_EVALUATED_OBSERVATIONS"
+  ],
+  "control_reference": {
+    "content_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+    "control_id": "complaint-deny-prevents-serving",
+    "control_version": "1"
+  },
+  "correlation_assertion_refs": [],
+  "coverage_assessment": {
+    "basis_codes": [
+      "BOUNDED_TARGET_COVERAGE_ADEQUATE"
+    ],
+    "control_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+    "coverage_ref": "sha256:125637044b6ba6d8a1aa87a22ea95e1a2f79d98a5d8d9f123c48963f480b1153",
+    "interval": {
+      "end": "2026-09-05T12:00:12Z",
+      "start": "2026-09-05T12:00:02Z"
+    },
+    "result": "ADEQUATE",
+    "support_ref": "sha256:d5488532922c10f7bf10fadea934bc89442450930824a7cfbaa8568fca98873c"
+  },
+  "evaluation_status": "EVALUATED",
+  "exception_paths": [],
+  "finding": "CONTROL_EFFECTIVE",
+  "limitations": [
+    "This finding concerns exactly one evaluated reconciliation/action and its declared observation boundary; no population-wide inference.",
+    "REPRESENTATION_SERVED means the configured target reports serving representation bytes; it does not establish downstream consumption, interpretation or use.",
+    "A target-effect exception is not root-cause attribution and makes no claim about why the effect occurred.",
+    "A positive finding is conditional on the specific observation interval, capture evidence and clock bounds, not unlimited future prevention.",
+    "Content identity and deterministic replay are not cryptographic provenance authentication.",
+    "Issuer/namespace qualification checks declarations only; neither independent authentication nor producer enforcement is established."
+  ],
+  "reconciliation_reference": "sha256:9ffef8be58a1aa72f1c5c324fdbd049d9483ae38fca3bf69e3f4bef7566bad4e",
+  "rule_version": "control-attestation/2",
+  "schema_version": "1.2",
+  "scope": {
+    "action": "read",
+    "actor": {
+      "id": "fixture-agent",
+      "namespace": "agent"
+    },
+    "cardinality": "SINGLE_ACTION",
+    "governance_evidence_ref": "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391",
+    "observation_interval": {
+      "end": "2026-09-05T12:00:12Z",
+      "start": "2026-09-05T12:00:02Z"
+    },
+    "resource_id": "complaint-789",
+    "resource_type": "employee_complaint",
+    "target_id": "complaints-static-v1"
+  },
+  "source_evidence_refs": [
+    "sha256:def69f839993c740808a43a74cb7e463dc1d84633028cff199b5eb9db2978391"
+  ],
+  "verification_reference": "sha256:d9ec7e5adc78df9c368544f0720d2cabc9ec71af2e7686ebaf20bc41ddfdde2d"
+}

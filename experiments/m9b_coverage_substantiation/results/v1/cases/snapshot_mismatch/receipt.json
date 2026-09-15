@@ -1,0 +1,19 @@
+{
+  "archive_digest": "sha256:72ddb95b8d1b45efe39d21bcab1013a592742a1e79b2298e0f9937a5f6e37522",
+  "basis_codes": [
+    "REFERENCED_EVIDENCE_OR_CONTROL_INTEGRITY_DEFECT"
+  ],
+  "control_digest": "sha256:f2e9d5aa605488a9864bd5f9c4114b5d805578a59fcf70e98652b395aa735ed3",
+  "coverage_assessment": null,
+  "dependency_refs": [],
+  "facts": null,
+  "limitations": [
+    "Archive and receipt digests identify content; they do not authenticate producers.",
+    "Coverage observations remain evidence subject to their stated provenance and clock assumptions."
+  ],
+  "receipt_id": "sha256:29bc01823e2a0e2e83b51dd676832251e7c1cdf26112cf7d5b86a6590b95917e",
+  "reconciliation_ref": "sha256:9ffef8be58a1aa72f1c5c324fdbd049d9483ae38fca3bf69e3f4bef7566bad4e",
+  "rule_version": "m6-attestation-verification/2",
+  "schema_version": "1.2",
+  "status": "EVIDENCE_DEFECT"
+}

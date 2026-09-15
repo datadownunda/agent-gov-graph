@@ -1,0 +1,336 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "rule_version",
+    "assertion_id",
+    "control_reference",
+    "reconciliation_reference",
+    "verification_reference",
+    "scope",
+    "source_evidence_refs",
+    "correlation_assertion_refs",
+    "coverage_assessment",
+    "evaluation_status",
+    "finding",
+    "basis_codes",
+    "limitations",
+    "exception_paths"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.2"
+    },
+    "rule_version": {
+      "const": "control-attestation/2"
+    },
+    "assertion_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "control_reference": {
+      "type": "object",
+      "required": [
+        "content_digest"
+      ]
+    },
+    "reconciliation_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "verification_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "cardinality"
+      ],
+      "properties": {
+        "cardinality": {
+          "const": "SINGLE_ACTION"
+        }
+      }
+    },
+    "source_evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "correlation_assertion_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "coverage_assessment": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "result": {
+          "enum": [
+            "ADEQUATE",
+            "INADEQUATE",
+            "UNKNOWN"
+          ]
+        }
+      }
+    },
+    "evaluation_status": {
+      "enum": [
+        "EVALUATED",
+        "INSUFFICIENT_EVIDENCE",
+        "NOT_EVALUABLE",
+        "NOT_APPLICABLE",
+        "INTERNAL_ERROR"
+      ]
+    },
+    "finding": {
+      "enum": [
+        "CONTROL_EFFECTIVE",
+        "CONTROL_EFFECTIVENESS_EXCEPTION",
+        "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED",
+        null
+      ]
+    },
+    "basis_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "exception_paths": {
+      "$ref": "#/$defs/exception_paths"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "evaluation_status": {
+            "const": "EVALUATED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "finding": {
+            "enum": [
+              "CONTROL_EFFECTIVE",
+              "CONTROL_EFFECTIVENESS_EXCEPTION"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evaluation_status": {
+            "const": "INSUFFICIENT_EVIDENCE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "finding": {
+            "enum": [
+              "CONTROL_EFFECTIVENESS_NOT_DEMONSTRATED"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evaluation_status": {
+            "const": "NOT_EVALUABLE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "finding": {
+            "enum": [
+              null
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evaluation_status": {
+            "const": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "finding": {
+            "enum": [
+              null
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evaluation_status": {
+            "const": "INTERNAL_ERROR"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "schema_version": {
+            "const": "1.2"
+          },
+          "finding": {
+            "const": null
+          },
+          "coverage_assessment": {
+            "const": null
+          },
+          "basis_codes": {
+            "const": [
+              "ADJUDICATOR_INTERNAL_ERROR"
+            ]
+          },
+          "exception_paths": {
+            "const": []
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "schema_version": {
+            "const": "1.2"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "finding": {
+            "const": "CONTROL_EFFECTIVENESS_EXCEPTION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "exception_paths": {
+            "contains": {
+              "properties": {
+                "scope_established": {
+                  "const": true
+                },
+                "namespace_declared_compatible": {
+                  "const": true
+                }
+              },
+              "required": [
+                "scope_established",
+                "namespace_declared_compatible"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "exception_paths": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "governance_ref",
+          "execution_ref",
+          "outcome_ref",
+          "correlation_refs",
+          "scope_kind",
+          "scope_established",
+          "namespace_declared_compatible",
+          "basis_codes"
+        ],
+        "properties": {
+          "governance_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "execution_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "outcome_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "correlation_refs": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "scope_kind": {
+            "enum": [
+              "SINGLE_ACTION",
+              "BOUNDED_ENVELOPE",
+              "RETRY_OF"
+            ]
+          },
+          "scope_established": {
+            "type": "boolean"
+          },
+          "namespace_declared_compatible": {
+            "type": "boolean"
+          },
+          "basis_codes": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "GOVERNANCE_SCOPE_NOT_ESTABLISHED",
+                "NATIVE_IDENTIFIER_NAMESPACE_NOT_ESTABLISHED",
+                "NATIVE_IDENTIFIER_NAMESPACE_CONFLICT"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
