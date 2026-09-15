@@ -1,6 +1,6 @@
 # Agent Gov Graph — canonical technical roadmap
 
-Decision baseline: approved M9b checkpoint [`54b18b6`](https://github.com/datadownunda/agent-gov-graph/pull/4), CI #39 green. Updated 2026-09-14 from the owner's roadmap/sequence instructions and the subsequent scoped feasibility review (publication and bounded source qualification approved). Closed means the bounded milestone is resolved; it does not imply a positive claim or a merged PR. Historical verdicts and evidence remain authoritative at their recorded scope.
+Decision baseline: approved M9b checkpoint [`54b18b6`](https://github.com/datadownunda/agent-gov-graph/pull/4), CI #39 green. Updated 2026-09-15 following owner acceptance of Enterprise Evidence Availability Qualification and the explicit external-evidence dependency. Closed means the bounded milestone is resolved; it does not imply a positive claim or a merged PR. Historical verdicts and evidence remain authoritative at their recorded scope.
 
 ## Closed milestones
 
@@ -32,9 +32,9 @@ Decision baseline: approved M9b checkpoint [`54b18b6`](https://github.com/datado
 
 ## Current protected sequence
 
-1. **Current gate: eligible ordinary retained enterprise evidence package.** Enterprise Evidence Availability Qualification is closed NOT_DEMONSTRATED. Recommended next milestone is conditional Kubernetes/Linux retained-package contract qualification; no eligible export is currently identified. First require an actual OPA timestamp-producer → container/task → host/boot association, stopping at the first missing edge. Do not search broadly for clock history before binding or start a new acquisition. [Milestone](milestones/enterprise-evidence-availability/MILESTONE.md)
-2. **Conditional M9b positive coverage demonstration:** only if feasibility identifies a credible existing source. Preregister a real bounded episode using it; retain the prior standard and negative results.
-3. **Conditional M9a-ii:** only after the coverage prerequisite is demonstrated. Candidate OPA → runtime → AWS API → CloudTrail; naturally available adjacent-system links, qualified producer semantics, no universal end-to-end ID requirement.
+1. **Current protected dependency: external evidence access.** Hold until an already-existing, independently operated deployment/evidence package is accessible. It must not have been created to demonstrate AGG. No eligible package is currently identified. [External Evidence Readiness Qualification](milestones/external-evidence-readiness/MILESTONE.md) is defined only, not executing; it assesses the unchanged environment before instrumentation changes or AGG-specific evidence production. The earlier Kubernetes/Linux recommendation is superseded by this eligibility gate, not permission to construct another deployment.
+2. **M9b further positive coverage work — BLOCKED:** requires access to that eligible external package and substantiation of applicable historical timing and channel completeness. Missing evidence is a result; no synthetic/local replacement or new telemetry to obtain a pass. Frozen M9b criteria and CLAIM_NOT_DEMONSTRATED remain unchanged.
+3. **M9a-ii — BLOCKED:** requires eligible external evidence access and demonstrated coverage prerequisites. Naturally available adjacent-system links remain the candidate approach; neither the earlier AWS example nor any vendor choice permits bypassing this gate.
 4. **Conditional population assurance coverage:** only after action-level prerequisites. For a defined population/period, distinguish evaluability, effectiveness, exceptions and reasons for insufficiency. Assurance coverage and control performance are separate denominators.
 5. **Conditional periodic control-level attestation:** a bounded report a control owner/risk/audit function can inspect and challenge. Recurring commercial-use-case hypothesis, not validated demand.
 
@@ -52,7 +52,7 @@ If existing evidence cannot address either M9b dimension, stop for an owner clai
 | Full bitemporality | No demonstrated requirement; deferred indefinitely pending new evidence. |
 | Broad observability, new telemetry, agent frameworks and other infrastructure | Outside the current proof and normally outside the product boundary. Existing ordinary evidence is preferred; any necessary new technology requires owner review. |
 
-GTM validation remains parallel: AI Agent Assurance; recurring control-effectiveness attestation; secondary incident reconstruction; financial services preferred early vertical. Buyer value, existing-source availability, adoption friction, time-to-value, distribution, packaging, monetization and differentiation must be challenged at material milestones. No buyer validation is inferred from technical success.
+GTM validation remains parallel: AI Agent Assurance; recurring control-effectiveness attestation; secondary incident reconstruction; financial services preferred early vertical. Buyer value, existing-source availability, adoption friction, time-to-value, distribution, packaging, monetization and differentiation must be challenged at material milestones. No buyer validation is inferred from technical success. Commercial/design-partner work continues in parallel: qualify operator interest, the real assurance problem, willingness and permissions to share existing evidence, retention/access friction and buyer value. Do not ask partners to change instrumentation or create AGG-specific evidence to pass readiness; technical execution remains on hold.
 
 ## Evidence-driven roadmap changes
 
@@ -72,6 +72,8 @@ GTM validation remains parallel: AI Agent Assurance; recurring control-effective
 - Owner-directed runtime binding test stopped at step 1: no retained association from the actual OPA timestamp producer to a container/task/PID. Host/boot comparison and namespace qualification were not run. Process lineage, rather than broad time-service discovery, is the first unresolved dependency; no historical verdict changed.
 
 - Owner closed retained-process-binding and authorized the fixed three-pattern Enterprise Evidence Availability Qualification. Documentation did not establish a complete arrangement; native capabilities are distinguished from actual retained practice. The next dependency is an eligible existing package, with Kubernetes/Linux the conditional first candidate. No boundary change or telemetry expansion is proposed; historical negatives remain unchanged.
+
+- Owner accepted and closed Enterprise Evidence Availability Qualification as NOT_DEMONSTRATED after PR #8 merged. None of the three fixed patterns demonstrated a complete native retained arrangement; this establishes neither universal enterprise unavailability nor necessary additional instrumentation. Recurring gaps are actual producer lineage, applicable historical timing and logging/channel completeness. External evidence access now explicitly blocks M9a-ii and further positive coverage work. External Evidence Readiness Qualification is defined, not executed; commercial/design-partner work remains parallel.
 
 ## Maintenance rule
 
