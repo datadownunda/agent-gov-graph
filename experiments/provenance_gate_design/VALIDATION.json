@@ -1,0 +1,14 @@
+{
+  "baseline_files_unchanged": 6114,
+  "m9b_hashes_verified": 185,
+  "original_source_manifests_verified": {
+    "M6": 15,
+    "strong_link_v4": 1021,
+    "scope_conformance_v1": 1099
+  },
+  "production_code_unchanged": true,
+  "roadmap_unchanged": true,
+  "protocol_commit": "acee5bd87a5d84bf694d84ed053fcb4eda76c500",
+  "assessed_edges": 68,
+  "method": "Manual cited premise qualification followed by deterministic P1 scoring; production attest() called read-only for live current result."
+}
