@@ -27,10 +27,11 @@ Decision baseline: approved M9b checkpoint [`54b18b6`](https://github.com/datado
 | M9b — bounded live acquisition | CLOSED — CLAIM_NOT_DEMONSTRATED | ACQUISITION_COMPLETED; coverage NOT_DEMONSTRATED. 185 files, >10-second hold and 12 successful samples do not establish continuous timing applicability or uninterrupted logging completeness. No live CONTROL_EFFECTIVE. [Milestone](milestones/m9b-coverage-substantiation/MILESTONE.md) |
 | Coverage-evidence feasibility review | CLOSED REVIEW — NOT_DEMONSTRATED; next step approved | Ordinary source candidates identified, but no available applicable package substantiates both dimensions. Not evidence of universal unavailability. [Findings](milestones/coverage-evidence-feasibility/FINDINGS.md) |
 | Historical-record coverage qualification | CLOSED — NOT_DEMONSTRATED (timing stop) | Retained samples/kernel observations and narrow historical time-service lookup do not establish applicable interval-wide timing bounds. Logging not tested after mandatory timing stop. [Result](milestones/historical-coverage-qualification/RESULT.md) |
+| Retained runtime process-binding test | CLOSED — NOT_DEMONSTRATED | Stopped at missing actual OPA container/task/PID binding; downstream host/boot and namespace tests not run. [Result](milestones/retained-process-binding/RESULT.md) |
 
 ## Current protected sequence
 
-1. **Current gate: missing retained timing evidence; acquisition remains pending.** Owner-approved historical qualification stopped at NOT_DEMONSTRATED for timing. Logging qualification was not run after the mandatory stop. Reopen only if applicable already-retained time history and OPA/target clock-domain evidence become available, or the owner makes an explicit claim-boundary decision. No new telemetry or capture is proposed. [Milestone](milestones/historical-coverage-qualification/MILESTONE.md)
+1. **Current gate: actual timestamp-producing process → host/boot/clock-domain binding.** Retained runtime qualification stopped at missing OPA container/task identity. Shared and distinct clock domains are both unproven. Do not search broadly for time-service history until binding is established; no new telemetry/acquisition is proposed and the frozen M9b UTC/applicability criterion is unchanged. [Milestone](milestones/retained-process-binding/MILESTONE.md)
 2. **Conditional M9b positive coverage demonstration:** only if feasibility identifies a credible existing source. Preregister a real bounded episode using it; retain the prior standard and negative results.
 3. **Conditional M9a-ii:** only after the coverage prerequisite is demonstrated. Candidate OPA → runtime → AWS API → CloudTrail; naturally available adjacent-system links, qualified producer semantics, no universal end-to-end ID requirement.
 4. **Conditional population assurance coverage:** only after action-level prerequisites. For a defined population/period, distinguish evaluability, effectiveness, exceptions and reasons for insufficiency. Assurance coverage and control performance are separate denominators.
@@ -66,6 +67,8 @@ GTM validation remains parallel: AI Agent Assurance; recurring control-effective
 - Owner clarified that no enterprise export/contact exists and directed continued source research, with acquisition pending. The ordinary-source assessment is expanded; a hypothetical combination does not qualify the local environment or change NOT_DEMONSTRATED.
 
 - Historical-record qualification stopped at the first unsupported dimension: interval timing/applicability. A narrow host time-service lookup returned no records; it does not prove global absence. Logging remains untested in this qualification and M9b remains CLAIM_NOT_DEMONSTRATED. The roadmap now records the missing-source gate without advancing acquisition.
+
+- Owner-directed runtime binding test stopped at step 1: no retained association from the actual OPA timestamp producer to a container/task/PID. Host/boot comparison and namespace qualification were not run. Process lineage, rather than broad time-service discovery, is the first unresolved dependency; no historical verdict changed.
 
 ## Maintenance rule
 

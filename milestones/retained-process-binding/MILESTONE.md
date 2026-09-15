@@ -2,7 +2,7 @@
 
 [Canonical roadmap](../../ROADMAP.md)
 
-Status: IN_PROGRESS. Owner authorized this retained-package-only test on 2026-09-15, after lineage review c0ff6a3e9726fcf20701b2091dd464356860a1c5. No new telemetry, acquisition, runtime queries or broad time-service search.
+Status: CLOSED — NOT_DEMONSTRATED; stopped at first binding. Owner authorized this retained-package-only test on 2026-09-15, after lineage review c0ff6a3e9726fcf20701b2091dd464356860a1c5. No new telemetry, acquisition, runtime queries or broad time-service search.
 
 ## Frozen test and stop rule
 
@@ -19,3 +19,8 @@ Both common-domain and different-domain conclusions require evidence. A failed b
 ## Closure
 
 Record exact retained sources, missing evidence, trust limits and future native retention requirements. Update this milestone and ROADMAP.md together. Owner authorized publication and CI if changes are documentation/analysis only. No new implementation or live experiment is authorized. Final result and checkpoint pending.
+
+
+## Close record
+
+[Result](RESULT.md) and [receipt](receipt.json): no actual OPA container/task/PID association found in the retained episode package. Steps 2–4 remain NOT_TESTED_AFTER_BINDING_STOP. All 185 archive hashes verified. No new telemetry, acquisition or broader time-service search. Owner authorized documentation/analysis publication and CI; exact final commit and CI are recorded in PR/briefing.
