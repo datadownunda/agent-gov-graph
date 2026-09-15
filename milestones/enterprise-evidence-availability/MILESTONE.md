@@ -26,3 +26,15 @@ Missing timing or completeness defeats a pattern's positive qualification; revie
 ## Deliverables and closure
 
 Official primary-source matrix; minimum viable evidence contract; adoption friction; falsification outcome; one recommended next technical milestone; roadmap implications. Freeze this protocol before source review. No live falsification is implied by a documentation test. Update roadmap/milestone together at close and publish documentation checkpoint with CI. Pause only for a material product-thesis/boundary change per latest owner instruction. Final result: NOT_DEMONSTRATED. See [assessment and minimum evidence contract](ASSESSMENT.md) and [seven-dimension matrix for all three patterns](EVIDENCE_MATRIX.md). No complete documented native arrangement was established; this does not prove universal enterprise unavailability or necessity of additional instrumentation. Next test is conditional on an eligible already-retained Kubernetes/Linux package. No implementation or acquisition occurred.
+
+
+## Owner acceptance and subsequent dependency
+
+Owner accepted and closed this milestone as **NOT_DEMONSTRATED** after [PR #8](https://github.com/datadownunda/agent-gov-graph/pull/8) merged at `6785497ede8363d5e8c49d1e53386890899ef57f`.
+
+- None of the three fixed patterns demonstrated a complete native retained evidence arrangement.
+- This does not establish universal enterprise unavailability.
+- It does not establish that additional instrumentation is necessarily required.
+- Recurring unresolved dimensions include actual producer lineage, applicable historical timing and logging/channel completeness.
+
+The historical assessment and recommendation remain preserved. The owner's subsequent decision supersedes the candidate-specific next-test recommendation with **external evidence access**: an already-existing, independently operated package, not a deployment constructed to demonstrate AGG. [External Evidence Readiness Qualification](../external-evidence-readiness/MILESTONE.md) is defined only. No new test or acquisition has begun.
