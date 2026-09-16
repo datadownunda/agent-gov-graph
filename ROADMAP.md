@@ -29,6 +29,7 @@ Decision baseline: approved M9b checkpoint [`54b18b6`](https://github.com/datado
 | Historical-record coverage qualification | CLOSED — NOT_DEMONSTRATED (timing stop) | Retained samples/kernel observations and narrow historical time-service lookup do not establish applicable interval-wide timing bounds. Logging not tested after mandatory timing stop. [Result](milestones/historical-coverage-qualification/RESULT.md) |
 | Retained runtime process-binding test | CLOSED — NOT_DEMONSTRATED | Stopped at missing actual OPA container/task/PID binding; downstream host/boot and namespace tests not run. [Result](milestones/retained-process-binding/RESULT.md) |
 | Enterprise Evidence Availability Qualification | CLOSED — NOT_DEMONSTRATED | Fixed Kubernetes/Linux, AWS EC2/S3 and Dynamics 365/Dataverse documentation review found useful native components but no complete demonstrated assurance arrangement. Not a claim of universal unavailability or necessary instrumentation. [Assessment](milestones/enterprise-evidence-availability/ASSESSMENT.md) |
+| Provenance Gate Design falsification | CLOSED — PROVENANCE_RULE_NOT_DEMONSTRATED | No false exceptions restored, but the live 168-byte exception was not restored: episode-specific runtime/client contract applicability is missing. Current v2 exception capability remains CURRENT_EXCEPTION_CAPABILITY_NOT_DEMONSTRATED. No production gate change justified; not a rejection of every provenance-based design. [Closure](experiments/provenance_gate_design/MILESTONE.md) |
 
 ## Current protected sequence
 
@@ -38,12 +39,15 @@ Decision baseline: approved M9b checkpoint [`54b18b6`](https://github.com/datado
 4. **Conditional population assurance coverage:** only after action-level prerequisites. For a defined population/period, distinguish evaluability, effectiveness, exceptions and reasons for insufficiency. Assurance coverage and control performance are separate denominators.
 5. **Conditional periodic control-level attestation:** a bounded report a control owner/risk/audit function can inspect and challenge. Recurring commercial-use-case hypothesis, not validated demand.
 
+Further exception-gate redesign is **not on the protected path** absent new episode-specific evidence establishing runtime/client implementation-contract applicability and owner review. Matching values, product identity, later documentation or preserved source alone cannot establish which implementation executed. Production v2 remains unchanged.
+
 If existing evidence cannot address either M9b dimension, stop for an owner claim-boundary/product decision. Do not advance because a later milestone is convenient, relax the standard, or build telemetry to obtain a pass.
 
 ## Parked items and reopening conditions
 
 | Item | Why parked / explicit reopening condition |
 |---|---|
+| Further exception-gate redesign | The retained package did not restore the live exception under P1. Reopen only with new episode-specific evidence binding the implementation contract to the episode and owner review; no replacement synthetic deployment or declaration-only repair. |
 | Live delegated-authority assurance | M5 used explicit records, not evidence from mainstream runtimes. First inspect 3–4 real frameworks for authority-bearing handoff artifacts versus tasks using separately provisioned credentials. If absent, document the gap and remove the live claim from the active thesis until evidence changes. Not automatically in the sequence. |
 | Neo4j / graph database Gate B | Gate A did not demonstrate incremental graph value. Reopen only for a real assurance/investigation query with material traversal value over a fair simpler representation. |
 | Production identifier-provenance extension | Necessity unproven; new labels do not create evidence. Reopen for a named protected consumer operation, concrete failure of evidence-plus-notes, and substantiated applicable producer semantics. |
@@ -74,6 +78,8 @@ GTM validation remains parallel: AI Agent Assurance; recurring control-effective
 - Owner closed retained-process-binding and authorized the fixed three-pattern Enterprise Evidence Availability Qualification. Documentation did not establish a complete arrangement; native capabilities are distinguished from actual retained practice. The next dependency is an eligible existing package, with Kubernetes/Linux the conditional first candidate. No boundary change or telemetry expansion is proposed; historical negatives remain unchanged.
 
 - Owner accepted and closed Enterprise Evidence Availability Qualification as NOT_DEMONSTRATED after PR #8 merged. None of the three fixed patterns demonstrated a complete native retained arrangement; this establishes neither universal enterprise unavailability nor necessary additional instrumentation. Recurring gaps are actual producer lineage, applicable historical timing and logging/channel completeness. External evidence access now explicitly blocks M9a-ii and further positive coverage work. External Evidence Readiness Qualification is defined, not executed; commercial/design-partner work remains parallel.
+
+- Owner accepted and closed Provenance Gate Design as PROVENANCE_RULE_NOT_DEMONSTRATED. Zero false exceptions and zero live exceptions were restored; current v2 exception capability remains CURRENT_EXCEPTION_CAPABILITY_NOT_DEMONSTRATED. The missing premise is episode-specific runtime/client implementation applicability. Further exception-gate redesign is parked pending new episode-specific evidence; the external-evidence dependency remains the protected gate and no new milestone starts.
 
 ## Maintenance rule
 
