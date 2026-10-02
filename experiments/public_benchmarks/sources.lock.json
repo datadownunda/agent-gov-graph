@@ -1,0 +1,50 @@
+[
+  {
+    "commit": "1c10507377c6c4095af70b55d14c4c6f8cf43a55",
+    "dirty": false,
+    "name": "counsel",
+    "url": "https://huggingface.co/datasets/SamuelChien821/counselbench-100"
+  },
+  {
+    "commit": "c059fa15a09b186427b4f6974b63cf605aa3dfac",
+    "dirty": false,
+    "name": "counsel-builder",
+    "url": "https://github.com/blobfishai/legal-agent-simulation.git"
+  },
+  {
+    "commit": "cdc0703c43cae78c2dea8a7254512d1430664888",
+    "dirty": false,
+    "name": "healthadmin",
+    "url": "https://github.com/som-shahlab/health-admin-bench.git"
+  },
+  {
+    "commit": "43e2b5fa3e7b41b7e26f7c04cc8f371ab98aa875",
+    "dirty": false,
+    "name": "interbolt",
+    "url": "https://github.com/deconvolute-labs/interbolt-agentdojo.git"
+  },
+  {
+    "commit": "37175af590d3b9c7d2288501b604020e547e3783",
+    "dirty": false,
+    "name": "itsm",
+    "url": "https://github.com/vibrantlabsai/Enterprise-Worlds.git"
+  },
+  {
+    "commit": "7119c09c0266162f89db29d3faa32d496837b5c3",
+    "dirty": false,
+    "name": "masdrift",
+    "url": "https://github.com/ZhuoningXu/MasDrift.git"
+  },
+  {
+    "commit": "fc8a5cc76f71c399a93b91ac7d0290ee188a356c",
+    "dirty": false,
+    "name": "modus",
+    "url": "https://github.com/modus-audit/financial-audit-bench.git"
+  },
+  {
+    "commit": "f4aa6b8fe8bd06e606c1636935a58afcd8275e57",
+    "dirty": false,
+    "name": "modus-trajectories",
+    "url": "https://huggingface.co/datasets/modusaudit/FinancialAuditBench-Trajectories"
+  }
+]

@@ -1,0 +1,10 @@
+--- a/src/interbolt_agentdojo/executor.py
++++ b/src/interbolt_agentdojo/executor.py
+@@ -62,6 +62,7 @@
+         record = {
+             "seq": self._seq,
+             "run_id": decision.run_id,
++            "decision_id": decision.decision_id,
+             "tool": tool,
+             "args": args,
+             "label_lineages": [label.model_dump(mode="json") for label in decision.contributing_labels],
